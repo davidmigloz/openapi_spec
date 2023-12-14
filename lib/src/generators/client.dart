@@ -657,11 +657,14 @@ class $clientName {
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 
     // Extract the description
-    String description = (operation.summary ?? '').replaceAll('\n', ' ');
+    String description = (operation.summary ?? '').trim().replaceAll('\n', ' ');
 
     if (operation.description != null) {
+      if (description.isNotEmpty) {
+        description += '\n///\n/// ';
+      }
       description +=
-          '\n///\n/// ${(operation.description ?? '').replaceAll('\n', '\n/// ')}';
+          (operation.description ?? '').trim().replaceAll('\n', '\n/// ');
     }
     if (description.isEmpty) {
       description = 'No description provided';
@@ -788,7 +791,13 @@ class $clientName {
           queryParams.add(qCode);
         },
         path: (p) {
-          input.add('required String ${pName.camelCase}');
+          final pDefaultValue = p.schema?.defaultValue;
+          if (pDefaultValue != null) {
+            input.add("String ${pName.camelCase} = '$pDefaultValue'");
+          } else {
+            input.add('required String ${pName.camelCase}');
+          }
+
           inputDescription.add(
             "`${pName.camelCase}`: ${p.description ?? 'No description'}",
           );
