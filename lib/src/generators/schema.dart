@@ -245,7 +245,7 @@ class SchemaGenerator extends BaseGenerator {
     // ==========================================
     
     /// $description
-    @Freezed(unionKey: '$unionKey')
+    @Freezed(unionKey: '$unionKey', unionValueCase: FreezedUnionCase.snake)
     sealed class $union with _\$$union  {
       const $union._();\n
     """, mode: FileMode.append);
