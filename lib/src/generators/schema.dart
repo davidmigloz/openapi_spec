@@ -565,7 +565,11 @@ class SchemaGenerator extends BaseGenerator {
               final uFactoryName =
                   options.onSchemaUnionFactoryName?.call(union, uSubClass) ??
                       uTypeName.camelCase;
-              final innerType = o.items.toDartType();
+              String innerType = o.items.toDartType();
+              if (innerType == 'double') {
+                // Some APIs serialize doubles as ints when they are whole numbers
+                innerType = 'num';
+              }
               fromJson.add(
                   'if (data is List && data.every((item) => item is $innerType)) {return $uSubClass(data.cast());}');
               toJson.add('$uSubClass(value: final v) => v,');
