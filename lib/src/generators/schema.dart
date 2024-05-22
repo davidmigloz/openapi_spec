@@ -566,12 +566,31 @@ class SchemaGenerator extends BaseGenerator {
                   options.onSchemaUnionFactoryName?.call(union, uSubClass) ??
                       uTypeName.camelCase;
               String innerType = o.items.toDartType();
+              String fromJsonBuilder = '$uSubClass(data.cast());';
+
+              // If inner type is not a primitive type, default to Map
+              if (!innerType.startsWith('bool') &&
+                  !innerType.startsWith('String') &&
+                  !innerType.startsWith('int') &&
+                  !innerType.startsWith('double') &&
+                  !innerType.startsWith('List')) {
+                fromJsonBuilder =
+                    '$uSubClass(data.map((i) => $innerType.fromJson(i as Map<String, dynamic>)).toList(growable: false));';
+                innerType = 'Map';
+              }
+
+              // Do not check list inner type
+              if (innerType.startsWith('List')) {
+                innerType = 'List';
+              }
+
+              // Some APIs serialize doubles as ints when they are whole numbers
               if (innerType == 'double') {
-                // Some APIs serialize doubles as ints when they are whole numbers
                 innerType = 'num';
               }
+
               fromJson.add(
-                  'if (data is List && data.every((item) => item is $innerType)) {return $uSubClass(data.cast());}');
+                  'if (data is List && data.every((item) => item is $innerType)) {return $fromJsonBuilder}');
               toJson.add('$uSubClass(value: final v) => v,');
               if (schema.defaultValue is List) {
                 defaultFallback = 'return $uSubClass(${schema.defaultValue});';
