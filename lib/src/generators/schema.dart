@@ -1091,6 +1091,10 @@ class SchemaGenerator extends BaseGenerator {
   // ------------------------------------------
 
   String _safeEnumValue(String value) {
+    // Reserved keywords
+    if(value == 'default') {
+      return 'vDefault';
+    }
     // Dart enums cannot start with a number
     if (value.startsWith(RegExp(r'[0-9]'))) {
       value = 'v$value';
