@@ -50,6 +50,7 @@ class SchemaGenerator extends BaseGenerator {
 
     final importCode = """
       import 'package:freezed_annotation/freezed_annotation.dart';
+      import 'dart:typed_data';
 
       part 'schema.g.dart';
       part 'schema.freezed.dart';\n
@@ -183,6 +184,12 @@ class SchemaGenerator extends BaseGenerator {
         _writeExtraSchemasIfAny(s);
       }
     }
+
+    // Write JSON converters for standard types
+    index.writeAsStringSync(
+      '\n\n${getStandardJsonConverters()}\n\n',
+      mode: FileMode.append,
+    );
   }
 
   // ------------------------------------------
@@ -944,8 +951,24 @@ class SchemaGenerator extends BaseGenerator {
               string: (s) => s,
               orElse: () => p,
             );
-        var (c, nullable) = propHeader(p.defaultValue, p.description);
-        c += "String ${nullable ? '?' : ''} $name,\n\n";
+        bool hasDefault = p.defaultValue != null;
+        bool nullable = (!hasDefault && !required) || property.nullable == true;
+        String c = formatDescription(p.description);
+        if (p.format == StringFormat.byte) {
+          c += "@Uint8ListConverter() ";
+        }
+        c += getJsonKey(nullable: nullable);
+        if (hasDefault && !required) {
+          c += "@Default('${p.defaultValue}') ";
+        }
+        if (required) {
+          c += "required ";
+        }
+        c += switch (p.format) {
+          StringFormat.byte => 'Uint8List',
+          _ => 'String',
+        };
+        c += "${nullable ? '?' : ''} $name,\n\n";
         file.writeAsStringSync(c, mode: FileMode.append);
 
         validation = SchemaValidation.string(
@@ -1092,7 +1115,7 @@ class SchemaGenerator extends BaseGenerator {
 
   String _safeEnumValue(String value) {
     // Reserved keywords
-    if(value == 'default') {
+    if (value == 'default') {
       return 'vDefault';
     }
     // Dart enums cannot start with a number
@@ -1324,4 +1347,22 @@ class SchemaGenerator extends BaseGenerator {
       _unions[name] = schemas;
     }
   }
+}
+
+String getStandardJsonConverters() {
+  return """
+class Uint8ListConverter implements JsonConverter<Uint8List, List<int>> {
+  const Uint8ListConverter();
+
+  @override
+  Uint8List fromJson(List<int> json) {
+    return Uint8List.fromList(json);
+  }
+
+  @override
+  List<int> toJson(Uint8List object) {
+    return object.toList();
+  }
+}
+""";
 }
