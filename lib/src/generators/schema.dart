@@ -305,6 +305,7 @@ class SchemaGenerator extends BaseGenerator {
       // ------------------------------------------
       
       /// $description
+      $unionValue
       const factory $union.$uFactoryName({
       """, mode: FileMode.append);
 
