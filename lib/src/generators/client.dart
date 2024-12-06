@@ -79,13 +79,13 @@ class ClientGenerator extends BaseGenerator {
           security.keys.contains(AuthType.keyHeader) ||
           security.keys.contains(AuthType.keyCookie)) {
         authInputs.add("this.$apiKeyVar = ''");
-        authVariables.add('final String $apiKeyVar;');
+        authVariables.add('String $apiKeyVar;');
       }
       if (security.keys.contains(AuthType.httpBasic)) {
         authInputs.add("this.$usernameVar = ''");
-        authVariables.add('final String $usernameVar;');
+        authVariables.add('String $usernameVar;');
         authInputs.add("this.$passwordVar = ''");
-        authVariables.add('final String $passwordVar;');
+        authVariables.add('String $passwordVar;');
       }
       if (security.keys.contains(AuthType.httpBearer)) {
         await security[AuthType.httpBearer]?.mapOrNull(
