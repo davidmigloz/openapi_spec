@@ -540,13 +540,10 @@ Map<String, dynamic> _formatSpecFromJson({
 
   // Handle allOf
   if (m.containsKey('allOf')) {
-    var s = _SchemaConverter()
-        .fromJson(m)
-        .mapOrNull(
-          object: (s) {
-            return s.copyWith(ref: s.allOf?.firstOrNull?.ref);
-          },
-        );
+    var s = switch (_SchemaConverter().fromJson(m)) {
+      SchemaObject s => s.copyWith(ref: s.allOf?.firstOrNull?.ref),
+      _ => null,
+    };
     if (s != null) {
       final newData = s.toJson();
       newData['default'] = m['default'];
@@ -566,13 +563,9 @@ Map<String, dynamic> _formatSpecFromJson({
   if (m.containsKey('\$ref')) {
     final ref = m['\$ref'].toString().split('/').last;
     if (schemas.containsKey(ref)) {
-      _SchemaConverter()
-          .fromJson(schemas[ref])
-          .mapOrNull(
-            enumeration: (_) {
-              m['type'] = 'enumeration';
-            },
-          );
+      if (_SchemaConverter().fromJson(schemas[ref]) case SchemaEnum _) {
+        m['type'] = 'enumeration';
+      }
     }
     return m;
   } else {
@@ -716,21 +709,26 @@ Map<String, dynamic> _formatSpecFromJson({
       schemaExtra[newSchema] = p['items'];
     } else {
       // No inner schemas found, check for unions in this property
+      bool? nullable;
+      switch (schema) {
+        case SchemaObject o:
+          if (o.nullable != null) {
+            nullable = o.nullable;
+          } else {
+            bool isRequired = o.required?.contains(entry.key) ?? false;
+            bool hasDefault = o.defaultValue != null;
+            nullable = !hasDefault && !isRequired;
+          }
+        default:
+          nullable = null;
+      }
+
       final (newPropSchema, extraPropSchema) = _extraPrimitiveUnionSchemas(
         newSchema: newSchema,
         propertyKey: entry.key,
         propertyMap: p,
         allSchemaNames: allSchemaNames,
-        nullable: schema.mapOrNull(
-          object: (o) {
-            if (o.nullable != null) {
-              return o.nullable;
-            }
-            bool isRequired = o.required?.contains(entry.key) ?? false;
-            bool hasDefault = o.defaultValue != null;
-            return !hasDefault && !isRequired;
-          },
-        ),
+        nullable: nullable,
       );
 
       if (extraPropSchema.isNotEmpty) {
@@ -747,20 +745,24 @@ Map<String, dynamic> _formatSpecFromJson({
 
   // Handle union types
   if (schemaMap['oneOf'] is List) {
+    bool? nullable;
+    switch (schema) {
+      case SchemaObject o:
+        if (o.nullable != null) {
+          nullable = o.nullable;
+        } else {
+          bool hasDefault = o.defaultValue != null;
+          nullable = !hasDefault;
+        }
+      default:
+        nullable = null;
+    }
     final (newPropSchema, extraPropSchema) = _extraPrimitiveUnionSchemas(
       newSchema: '',
       propertyKey: schemaKey,
       propertyMap: schemaMap,
       allSchemaNames: allSchemaNames,
-      nullable: schema.mapOrNull(
-        object: (o) {
-          if (o.nullable != null) {
-            return o.nullable;
-          }
-          bool hasDefault = o.defaultValue != null;
-          return !hasDefault;
-        },
-      ),
+      nullable: nullable,
     );
 
     if (extraPropSchema.isNotEmpty) {
@@ -840,8 +842,8 @@ Map<String, dynamic> _formatSpecFromJson({
       // Convert to schema
       var aSchema = Schema.fromJson(aMap);
 
-      aSchema.mapOrNull(
-        array: (o) {
+      switch (aSchema) {
+        case SchemaArray o:
           if (o.items.type == SchemaType.string) {
             aSchema = aSchema.copyWith(title: '${anyOfName}String');
           } else if (o.items.type == SchemaType.integer) {
@@ -851,8 +853,9 @@ Map<String, dynamic> _formatSpecFromJson({
           } else if (o.items.type == SchemaType.boolean) {
             aSchema = aSchema.copyWith(title: '${anyOfName}Boolean');
           }
-        },
-      );
+        default:
+          break;
+      }
 
       // Skip anyOf schemas that are references
       if (aSchema.ref == null) {

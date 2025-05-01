@@ -5,10 +5,7 @@ part of 'index.dart';
 // ==========================================
 
 class OperationData {
-  OperationData(
-    this.path,
-    this.method,
-  );
+  OperationData(this.path, this.method);
   final String path;
   final HttpMethod method;
   String name = '';
@@ -56,9 +53,10 @@ class ServerGenerator extends BaseGenerator {
       final params = p.parameters ?? [];
       var path = e.key;
       for (final param in params) {
-        final pattern = param.schema
-            ?.mapOrNull(string: (s) => s.pattern)
-            ?.replaceAll(RegExp(r'[\^$]'), '');
+        final pattern = switch (param.schema) {
+          SchemaString s => s.pattern,
+          _ => null,
+        }?.replaceAll(RegExp(r'[\^$]'), '');
         path = path.replaceAll(
           '{${param.name}}',
           '<${param.name}${pattern != null ? '|$pattern' : ''}>',
@@ -329,7 +327,8 @@ class $serverName {
 
     data.name = methodName;
 
-    data.description = operation.summary ??
+    data.description =
+        operation.summary ??
         operation.description ??
         'No description for $methodName';
 
@@ -403,13 +402,16 @@ class $serverName {
     String inputTypes = 'Request';
 
     for (final p in parameters + (operation.parameters ?? <Parameter>[])) {
-      p.mapOrNull(path: (p) {
-        if (p.name != null) {
-          inputs += ', ${p.name}';
-          inputsWrapper += ',String ${p.name}';
-          inputTypes += ',String';
-        }
-      });
+      switch (p) {
+        case ParameterPath p:
+          if (p.name != null) {
+            inputs += ', ${p.name}';
+            inputsWrapper += ',String ${p.name}';
+            inputTypes += ',String';
+          }
+        default:
+          break;
+      }
     }
 
     if (requestRef != null && request?.required == true) {
