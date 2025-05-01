@@ -6,7 +6,7 @@ part of 'index.dart';
 
 /// Text
 @freezed
-class ApiCallback with _$ApiCallback {
+abstract class ApiCallback with _$ApiCallback {
   const factory ApiCallback({
     /// The name of the callback
     required String name,
@@ -53,9 +53,7 @@ class _ApiCallbackMapConverter
     return data.values.toList().asMap().map((_, v) {
       final expression = v.expression.keys.first;
       final operation = v.expression.values.first.toJson();
-      return MapEntry(v.name, {
-        expression: operation,
-      });
+      return MapEntry(v.name, {expression: operation});
     });
   }
 }

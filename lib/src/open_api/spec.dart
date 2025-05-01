@@ -8,7 +8,7 @@ final _oAuthTypes = [
   'implicit',
   'password',
   'clientCredentials',
-  'authorizationCode'
+  'authorizationCode',
 ];
 
 // ==========================================
@@ -20,7 +20,7 @@ final _oAuthTypes = [
 /// This Dart class is a container around the spec in order to parse
 /// and generate clients, servers, component schemas, and documentation
 @freezed
-class OpenApi with _$OpenApi {
+abstract class OpenApi with _$OpenApi {
   const OpenApi._();
 
   const factory OpenApi({
@@ -107,10 +107,7 @@ class OpenApi with _$OpenApi {
   factory OpenApi.fromJson(Map<String, dynamic> json) {
     // Initialize the schemas, will be formatted in place below
     Map<String, dynamic> schemas = json['components']?['schemas'] ?? {};
-    final d = _formatSpecFromJson(
-      json: json,
-      schemas: schemas,
-    );
+    final d = _formatSpecFromJson(json: json, schemas: schemas);
 
     // Search for any extra schemas created by this generator
     // Used to improve the generated schema library
@@ -139,23 +136,29 @@ class OpenApi with _$OpenApi {
       version: d.containsKey('openapi') ? d['openapi'] : null,
       info: Info.fromJson(d['info']),
       jsonSchemaDialect: d['jsonSchemaDialect'],
-      externalDocs: d.containsKey('externalDocs')
-          ? ExternalDocs.fromJson(d['externalDocs'])
-          : null,
-      servers: (d['servers'] as List<dynamic>?)
-          ?.map((e) => Server.fromJson(e))
-          .toList(),
+      externalDocs:
+          d.containsKey('externalDocs')
+              ? ExternalDocs.fromJson(d['externalDocs'])
+              : null,
+      servers:
+          (d['servers'] as List<dynamic>?)
+              ?.map((e) => Server.fromJson(e))
+              .toList(),
       tags: (d['tags'] as List<dynamic>?)?.map((e) => Tag.fromJson(e)).toList(),
-      paths: (d['paths'] as Map<String, dynamic>?)
-          ?.map((k, e) => MapEntry(k, PathItem.fromJson(e))),
-      webhooks: (d['webhooks'] as Map<String, dynamic>?)
-          ?.map((k, e) => MapEntry(k, PathItem.fromJson(e))),
-      components: d.containsKey('components')
-          ? Components.fromJson(d['components'])
-          : null,
-      security: (d['security'] as List<dynamic>?)
-          ?.map((e) => Security.fromJson(e))
-          .toList(),
+      paths: (d['paths'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, PathItem.fromJson(e)),
+      ),
+      webhooks: (d['webhooks'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, PathItem.fromJson(e)),
+      ),
+      components:
+          d.containsKey('components')
+              ? Components.fromJson(d['components'])
+              : null,
+      security:
+          (d['security'] as List<dynamic>?)
+              ?.map((e) => Security.fromJson(e))
+              .toList(),
       extraSchemaMapping: extraSchemaMapping,
     );
 
@@ -270,10 +273,7 @@ class OpenApi with _$OpenApi {
       );
     } else {
       init.writeAsStringSync(
-        init.readAsStringSync().replaceAll(
-              'spec: spec,',
-              "url: '$url',",
-            ),
+        init.readAsStringSync().replaceAll('spec: spec,', "url: '$url',"),
         mode: FileMode.write,
       );
     }
@@ -281,9 +281,9 @@ class OpenApi with _$OpenApi {
     // Apply the index.html customizations
     final index = File(p.join(dirPath, 'index.html'));
     var indexText = index.readAsStringSync().replaceAll(
-          'OAS_HTML_TITLE',
-          info.title,
-        );
+      'OAS_HTML_TITLE',
+      info.title,
+    );
     index.writeAsStringSync(indexText);
 
     // Replace the favicons
@@ -401,10 +401,15 @@ class OpenApi with _$OpenApi {
 
     // Apply the Dart formatting and fix logic
     if (formatOutput) {
-      final resultFix =
-          await Process.run('dart', ['fix', '--apply', dir.absolute.path]);
-      final resultFormat =
-          await Process.run('dart', ['format', dir.absolute.path]);
+      final resultFix = await Process.run('dart', [
+        'fix',
+        '--apply',
+        dir.absolute.path,
+      ]);
+      final resultFormat = await Process.run('dart', [
+        'format',
+        dir.absolute.path,
+      ]);
       if (resultFix.exitCode != 0) {
         throw ('\n\nError running dart fix:\n${resultFix.stderr}\n');
       }
@@ -535,9 +540,10 @@ Map<String, dynamic> _formatSpecFromJson({
 
   // Handle allOf
   if (m.containsKey('allOf')) {
-    var s = _SchemaConverter().fromJson(m).mapOrNull(object: (s) {
-      return s.copyWith(ref: s.allOf?.firstOrNull?.ref);
-    });
+    var s = switch (_SchemaConverter().fromJson(m)) {
+      SchemaObject s => s.copyWith(ref: s.allOf?.firstOrNull?.ref),
+      _ => null,
+    };
     if (s != null) {
       final newData = s.toJson();
       newData['default'] = m['default'];
@@ -551,11 +557,13 @@ Map<String, dynamic> _formatSpecFromJson({
   if (m.containsKey('\$ref')) {
     final ref = m['\$ref'].toString().split('/').last;
     if (schemas.containsKey(ref)) {
-      _SchemaConverter().fromJson(schemas[ref]).mapOrNull(
-        enumeration: (_) {
+      switch (_SchemaConverter().fromJson(schemas[ref])) {
+        case SchemaEnum():
           m['type'] = 'enumeration';
-        },
-      );
+
+        default:
+          break;
+      }
     }
     return m;
   } else {
@@ -665,50 +673,60 @@ Map<String, dynamic> _formatSpecFromJson({
 
     if (p['type'] == 'enumeration' && p.containsKey('enum')) {
       // Handle inner enum definitions
-      props[entry.key] = Schema.enumeration(
-        description: p['description'],
-        defaultValue: p['default'],
-        nullable: p['nullable'],
-        ref: newSchema,
-      ).toJson();
+      props[entry.key] =
+          Schema.enumeration(
+            description: p['description'],
+            defaultValue: p['default'],
+            nullable: p['nullable'],
+            ref: newSchema,
+          ).toJson();
       schemaExtra[newSchema] = p;
     } else if (p['type'] == 'object' && p['properties'] != null) {
       // Handle inner object schemas
       // Only add the schema if it has properties
-      props[entry.key] = Schema.object(
-        description: p['description'],
-        defaultValue: p['default'],
-        nullable: p['nullable'],
-        ref: newSchema,
-      ).toJson();
+      props[entry.key] =
+          Schema.object(
+            description: p['description'],
+            defaultValue: p['default'],
+            nullable: p['nullable'],
+            ref: newSchema,
+          ).toJson();
       schemaExtra[newSchema] = p;
     } else if (p['type'] == 'array' &&
         p['items'] is Map &&
         p['items']['type'] == 'object') {
       // Handle inner array schemas for object types
       newSchema = '${newSchema}Inner';
-      props[entry.key] = Schema.array(
-        description: p['description'],
-        defaultValue: p['default'],
-        nullable: p['nullable'],
-        items: Schema.object(ref: newSchema),
-      ).toJson();
+      props[entry.key] =
+          Schema.array(
+            description: p['description'],
+            defaultValue: p['default'],
+            nullable: p['nullable'],
+            items: Schema.object(ref: newSchema),
+          ).toJson();
       schemaExtra[newSchema] = p['items'];
     } else {
       // No inner schemas found, check for unions in this property
+      bool? mapOrNull;
+      switch (schema) {
+        case SchemaObject o:
+          if (o.nullable != null) {
+            mapOrNull = o.nullable;
+          } else {
+            bool isRequired = o.required?.contains(entry.key) ?? false;
+            bool hasDefault = o.defaultValue != null;
+            mapOrNull = !hasDefault && !isRequired;
+          }
+        default:
+          mapOrNull = null;
+      }
+
       final (newPropSchema, extraPropSchema) = _extraPrimitiveUnionSchemas(
         newSchema: newSchema,
         propertyKey: entry.key,
         propertyMap: p,
         allSchemaNames: allSchemaNames,
-        nullable: schema.mapOrNull(object: (o) {
-          if (o.nullable != null) {
-            return o.nullable;
-          }
-          bool isRequired = o.required?.contains(entry.key) ?? false;
-          bool hasDefault = o.defaultValue != null;
-          return !hasDefault && !isRequired;
-        }),
+        nullable: mapOrNull,
       );
 
       if (extraPropSchema.isNotEmpty) {
@@ -784,10 +802,11 @@ Map<String, dynamic> _formatSpecFromJson({
           continue;
         }
       } else {
-        aType = aMap['type']
-            .toString()
-            .replaceAll('enumeration', 'enum')
-            .pascalCase;
+        aType =
+            aMap['type']
+                .toString()
+                .replaceAll('enumeration', 'enum')
+                .pascalCase;
       }
 
       String anyOfName = '$newSchema$aType';
@@ -799,27 +818,20 @@ Map<String, dynamic> _formatSpecFromJson({
       // Convert to schema
       var aSchema = Schema.fromJson(aMap);
 
-      aSchema.mapOrNull(
-        array: (o) {
+      switch (aSchema) {
+        case SchemaArray o:
           if (o.items.type == SchemaType.string) {
-            aSchema = aSchema.copyWith(
-              title: '${anyOfName}String',
-            );
+            aSchema = aSchema.copyWith(title: '${anyOfName}String');
           } else if (o.items.type == SchemaType.integer) {
-            aSchema = aSchema.copyWith(
-              title: '${anyOfName}Integer',
-            );
+            aSchema = aSchema.copyWith(title: '${anyOfName}Integer');
           } else if (o.items.type == SchemaType.number) {
-            aSchema = aSchema.copyWith(
-              title: '${anyOfName}Number',
-            );
+            aSchema = aSchema.copyWith(title: '${anyOfName}Number');
           } else if (o.items.type == SchemaType.boolean) {
-            aSchema = aSchema.copyWith(
-              title: '${anyOfName}Boolean',
-            );
+            aSchema = aSchema.copyWith(title: '${anyOfName}Boolean');
           }
-        },
-      );
+        default:
+          break;
+      }
 
       // Skip anyOf schemas that are references
       if (aSchema.ref == null) {
@@ -830,20 +842,22 @@ Map<String, dynamic> _formatSpecFromJson({
 
     if (anyOf.isNotEmpty) {
       // Create a custom union schema that is composed of the any of schemas
-      schemaExtra[newSchema] = Schema.object(
-        title: newSchema,
-        description: p['description'],
-        defaultValue: p['default'],
-        nullable: nullable,
-        anyOf: anyOf,
-      ).toJson();
+      schemaExtra[newSchema] =
+          Schema.object(
+            title: newSchema,
+            description: p['description'],
+            defaultValue: p['default'],
+            nullable: nullable,
+            anyOf: anyOf,
+          ).toJson();
 
-      propertyMapOut = Schema.object(
-        description: p['description'],
-        defaultValue: p['default'] is Map ? null : p['default'],
-        nullable: p['nullable'],
-        ref: newSchema,
-      ).toJson();
+      propertyMapOut =
+          Schema.object(
+            description: p['description'],
+            defaultValue: p['default'] is Map ? null : p['default'],
+            nullable: p['nullable'],
+            ref: newSchema,
+          ).toJson();
     }
   }
 

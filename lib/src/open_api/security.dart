@@ -8,7 +8,7 @@ part of 'index.dart';
 ///
 /// https://swagger.io/specification/#security-requirement-object
 @freezed
-class Security with _$Security {
+abstract class Security with _$Security {
   const Security._();
 
   const factory Security({
@@ -25,10 +25,7 @@ class Security with _$Security {
       return const Security();
     } else {
       final name = json.keys.first;
-      return Security(
-        name: name,
-        scopes: List<String>.from(json[name] ?? []),
-      );
+      return Security(name: name, scopes: List<String>.from(json[name] ?? []));
     }
   }
 
@@ -36,9 +33,7 @@ class Security with _$Security {
     if (name == null) {
       return {};
     } else {
-      return {
-        name!: scopes,
-      };
+      return {name!: scopes};
     }
   }
 }

@@ -6,7 +6,7 @@ part of 'index.dart';
 
 /// Text
 @freezed
-class RequestBody with _$RequestBody {
+abstract class RequestBody with _$RequestBody {
   const RequestBody._();
 
   // ------------------------------------------
@@ -39,9 +39,7 @@ class RequestBody with _$RequestBody {
   // METHOD: dereference
   // ------------------------------------------
 
-  RequestBody dereference({
-    required Map<String, RequestBody>? components,
-  }) {
+  RequestBody dereference({required Map<String, RequestBody>? components}) {
     if (ref == null) {
       return this;
     }

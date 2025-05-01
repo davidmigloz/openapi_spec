@@ -8,7 +8,7 @@ part of 'index.dart';
 ///
 /// https://swagger.io/specification/#Path-item-object
 @freezed
-class PathItem with _$PathItem {
+abstract class PathItem with _$PathItem {
   const PathItem._();
 
   // ------------------------------------------
@@ -64,9 +64,7 @@ class PathItem with _$PathItem {
   // METHOD: dereference
   // ------------------------------------------
 
-  PathItem dereference({
-    required Map<String, PathItem>? components,
-  }) {
+  PathItem dereference({required Map<String, PathItem>? components}) {
     if (ref == null) {
       return this;
     }

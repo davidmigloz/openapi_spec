@@ -10,7 +10,7 @@ part of 'index.dart';
 ///
 /// https://swagger.io/specification/#response-object
 @freezed
-class Response with _$Response {
+abstract class Response with _$Response {
   const Response._();
 
   // ------------------------------------------
@@ -45,9 +45,7 @@ class Response with _$Response {
   // METHOD: dereference
   // ------------------------------------------
 
-  Response dereference({
-    required Map<String, Response>? components,
-  }) {
+  Response dereference({required Map<String, Response>? components}) {
     if (ref == null) {
       return this;
     }

@@ -6,7 +6,7 @@ part of 'index.dart';
 
 /// Text
 @freezed
-class Example with _$Example {
+abstract class Example with _$Example {
   const Example._();
 
   // ------------------------------------------
@@ -37,9 +37,7 @@ class Example with _$Example {
   // METHOD: dereference
   // ------------------------------------------
 
-  Example dereference({
-    required Map<String, Example>? components,
-  }) {
+  Example dereference({required Map<String, Example>? components}) {
     if (ref == null) {
       return this;
     }
