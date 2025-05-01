@@ -5,7 +5,7 @@ part of 'index.dart';
 // ==========================================
 
 @freezed
-class OAuthFlows with _$OAuthFlows {
+abstract class OAuthFlows with _$OAuthFlows {
   const factory OAuthFlows({
     OAuthFlow? implicit,
     OAuthFlow? password,
@@ -22,31 +22,31 @@ class OAuthFlows with _$OAuthFlows {
 // ==========================================
 
 @freezed
-class OAuthFlow with _$OAuthFlow {
+sealed class OAuthFlow with _$OAuthFlow {
   const factory OAuthFlow.implicit({
     required String authorizationUrl,
     String? refreshUrl,
     required Map<String, String> scopes,
-  }) = _OAuthFlowImplicit;
+  }) = OAuthFlowImplicit;
 
   const factory OAuthFlow.password({
     required String tokenUrl,
     String? refreshUrl,
     required Map<String, String> scopes,
-  }) = _OAuthFlowPassword;
+  }) = OAuthFlowPassword;
 
   const factory OAuthFlow.clientCredentials({
     required String tokenUrl,
     String? refreshUrl,
     required Map<String, String> scopes,
-  }) = _OAuthFlowClientCredentials;
+  }) = OAuthFlowClientCredentials;
 
   const factory OAuthFlow.authorizationCode({
     required String authorizationUrl,
     required String tokenUrl,
     String? refreshUrl,
     required Map<String, String> scopes,
-  }) = _OAuthFlowAuthorizationCode;
+  }) = OAuthFlowAuthorizationCode;
 
   factory OAuthFlow.fromJson(Map<String, dynamic> json) =>
       _$OAuthFlowFromJson(json);

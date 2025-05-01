@@ -42,8 +42,8 @@ sealed class ChatCompletionRequestMessageContentPart
 
   /// Object construction from a JSON representation
   factory ChatCompletionRequestMessageContentPart.fromJson(
-          Map<String, dynamic> json) =>
-      _$ChatCompletionRequestMessageContentPartFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$ChatCompletionRequestMessageContentPartFromJson(json);
 }
 
 // ==========================================
@@ -72,7 +72,7 @@ enum ImageContentPartType {
 
 /// The URL of the image.
 @freezed
-class ImageContentPartImageUrl with _$ImageContentPartImageUrl {
+abstract class ImageContentPartImageUrl with _$ImageContentPartImageUrl {
   const ImageContentPartImageUrl._();
 
   /// Factory constructor for ImageContentPartImageUrl
@@ -99,10 +99,7 @@ class ImageContentPartImageUrl with _$ImageContentPartImageUrl {
 
   /// Map representation of object (not serialized)
   Map<String, dynamic> toMap() {
-    return {
-      'url': url,
-      'detail': detail,
-    };
+    return {'url': url, 'detail': detail};
   }
 }
 

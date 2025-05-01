@@ -37,7 +37,7 @@ enum SchemaType {
 /// https://swagger.io/specification/#schema-object
 /// https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md
 @Freezed(unionKey: 'type', fallbackUnion: 'object')
-class Schema with _$Schema {
+sealed class Schema with _$Schema {
   const Schema._();
 
   const factory Schema.object({
@@ -81,20 +81,20 @@ class Schema with _$Schema {
 
     /// Adds additional metadata to describe the XML representation of this property.
     Xml? xml,
-  }) = _SchemaObject;
+  }) = SchemaObject;
 
   /// Get the schema type based on the union type
   SchemaType get type {
-    return map(
-      object: (_) => SchemaType.object,
-      boolean: (_) => SchemaType.boolean,
-      string: (_) => SchemaType.string,
-      integer: (_) => SchemaType.integer,
-      number: (_) => SchemaType.number,
-      enumeration: (_) => SchemaType.enumeration,
-      array: (_) => SchemaType.array,
-      map: (_) => SchemaType.map,
-    );
+    return switch (this) {
+      SchemaObject() => SchemaType.object,
+      SchemaBoolean() => SchemaType.boolean,
+      SchemaString() => SchemaType.string,
+      SchemaInteger() => SchemaType.integer,
+      SchemaNumber() => SchemaType.number,
+      SchemaEnum() => SchemaType.enumeration,
+      SchemaArray() => SchemaType.array,
+      SchemaMap() => SchemaType.map,
+    };
   }
 
   // ------------------------------------------
@@ -109,7 +109,7 @@ class Schema with _$Schema {
     bool? nullable,
     bool? example,
     @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
-  }) = _SchemaBoolean;
+  }) = SchemaBoolean;
 
   // ------------------------------------------
   // FACTORY: Schema.string
@@ -130,7 +130,7 @@ class Schema with _$Schema {
     bool? exclusiveMinimum,
     bool? exclusiveMaximum,
     @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
-  }) = _SchemaString;
+  }) = SchemaString;
 
   // ------------------------------------------
   // FACTORY: Schema.integer
@@ -152,7 +152,7 @@ class Schema with _$Schema {
     bool? exclusiveMaximum,
     @JsonKey(fromJson: _fromJsonInt) int? multipleOf,
     @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
-  }) = _SchemaInteger;
+  }) = SchemaInteger;
 
   // ------------------------------------------
   // FACTORY: Schema.number
@@ -174,7 +174,7 @@ class Schema with _$Schema {
     bool? exclusiveMaximum,
     @JsonKey(fromJson: _fromJsonDouble) double? multipleOf,
     @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
-  }) = _SchemaNumber;
+  }) = SchemaNumber;
 
   // ------------------------------------------
   // FACTORY: Schema.enumeration
@@ -189,7 +189,7 @@ class Schema with _$Schema {
     @JsonKey(includeToJson: false, includeFromJson: false) String? unknownValue,
     @JsonKey(name: 'enum') List<String>? values,
     @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
-  }) = _SchemaEnum;
+  }) = SchemaEnum;
 
   // ------------------------------------------
   // FACTORY: Schema.array
@@ -207,7 +207,7 @@ class Schema with _$Schema {
     @JsonKey(fromJson: _fromJsonInt) int? maxItems,
     required Schema items,
     @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
-  }) = _SchemaArray;
+  }) = SchemaArray;
 
   // ------------------------------------------
   // FACTORY: Schema.map
@@ -222,12 +222,13 @@ class Schema with _$Schema {
     bool? nullable,
     Map? example,
     @JsonKey(
-        name: 'additionalProperties',
-        toJson: _toMapProps,
-        fromJson: _fromMapProps)
+      name: 'additionalProperties',
+      toJson: _toMapProps,
+      fromJson: _fromMapProps,
+    )
     Schema? valueSchema,
     @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
-  }) = _SchemaMap;
+  }) = SchemaMap;
 
   // ------------------------------------------
   // FACTORY: Schema.fromJson
@@ -240,9 +241,7 @@ class Schema with _$Schema {
   // METHOD: dereference
   // ------------------------------------------
 
-  Schema dereference({
-    required Map<String, Schema>? components,
-  }) {
+  Schema dereference({required Map<String, Schema>? components}) {
     if (ref == null) {
       return this;
     }
@@ -260,10 +259,10 @@ class Schema with _$Schema {
       return Schema.object(ref: ref);
     }
 
-    return map(
-      object: (s) {
+    switch (this) {
+      case SchemaObject s:
         // Handle List and Map defined as typedefs
-        if (sRef is _SchemaArray || sRef is _SchemaMap) {
+        if (sRef is SchemaArray || sRef is SchemaMap) {
           return copyWith(
             title: s.title ?? sRef.title,
             description: s.description ?? sRef.description,
@@ -271,28 +270,23 @@ class Schema with _$Schema {
           );
         }
 
-        return (sRef as _SchemaObject).copyWith(
+        return (sRef as SchemaObject).copyWith(
           ref: ref,
           title: s.title ?? sRef.title,
           description: s.description ?? sRef.description,
           defaultValue: s.defaultValue ?? sRef.defaultValue,
           nullable: s.nullable ?? sRef.nullable,
         );
-      },
-      boolean: (s) {
-        return (sRef as _SchemaBoolean).copyWith(ref: ref);
-      },
-      string: (s) {
-        return (sRef as _SchemaString).copyWith(ref: ref);
-      },
-      integer: (s) {
-        return (sRef as _SchemaInteger).copyWith(ref: ref);
-      },
-      number: (s) {
-        return (sRef as _SchemaNumber).copyWith(ref: ref);
-      },
-      enumeration: (s) {
-        return (sRef as _SchemaEnum).copyWith(
+      case SchemaBoolean():
+        return (sRef as SchemaBoolean).copyWith(ref: ref);
+      case SchemaString():
+        return (sRef as SchemaString).copyWith(ref: ref);
+      case SchemaInteger():
+        return (sRef as SchemaInteger).copyWith(ref: ref);
+      case SchemaNumber():
+        return (sRef as SchemaNumber).copyWith(ref: ref);
+      case SchemaEnum s:
+        return (sRef as SchemaEnum).copyWith(
           ref: ref,
           title: s.title ?? sRef.title,
           description: s.description ?? sRef.description,
@@ -300,16 +294,11 @@ class Schema with _$Schema {
           example: s.example ?? sRef.example,
           nullable: s.nullable ?? sRef.nullable,
         );
-      },
-      array: (s) {
-        return (sRef as _SchemaArray).copyWith(ref: ref);
-      },
-      map: (s) {
-        return (sRef as _SchemaMap).copyWith(
-          ref: ref,
-        );
-      },
-    );
+      case SchemaArray():
+        return (sRef as SchemaArray).copyWith(ref: ref);
+      case SchemaMap():
+        return (sRef as SchemaMap).copyWith(ref: ref);
+    }
   }
 
   // ------------------------------------------
@@ -317,11 +306,9 @@ class Schema with _$Schema {
   // ------------------------------------------
 
   /// Return a proper Dart type for this schema
-  String toDartType({
-    Map<String, List<String>>? unions,
-  }) {
-    return map(
-      object: (s) {
+  String toDartType({Map<String, List<String>>? unions}) {
+    switch (this) {
+      case SchemaObject s:
         if (s.anyOf != null && unions != null) {
           final subSchemas = s.anyOf!.map((e) => e.toDartType()).toList();
           final leq = ListEquality();
@@ -352,27 +339,20 @@ class Schema with _$Schema {
           return 'Map<String,dynamic>';
         }
         return 'dynamic';
-      },
-      boolean: (s) {
+      case SchemaBoolean s:
         return s.nullable == true ? 'bool?' : 'bool';
-      },
-      string: (s) {
+      case SchemaString s:
         return s.nullable == true ? 'String?' : 'String';
-      },
-      integer: (s) {
+      case SchemaInteger s:
         return s.nullable == true ? 'int?' : 'int';
-      },
-      number: (s) {
+      case SchemaNumber s:
         return s.nullable == true ? 'double?' : 'double';
-      },
-      enumeration: (s) {
+      case SchemaEnum s:
         return s.ref ?? 'String';
-      },
-      array: (s) {
+      case SchemaArray s:
         final itemType = s.items.toDartType();
         return s.nullable == true ? 'List<$itemType>?' : 'List<$itemType>';
-      },
-      map: (s) {
+      case SchemaMap s:
         String valueType = s.valueSchema?.toDartType() ?? 'dynamic';
         if (valueType != 'dynamic' && s.valueSchema?.nullable == true) {
           valueType = '$valueType?';
@@ -380,8 +360,7 @@ class Schema with _$Schema {
         return s.nullable == true
             ? 'Map<String,$valueType>?'
             : 'Map<String,$valueType>';
-      },
-    );
+    }
   }
 }
 
@@ -430,27 +409,27 @@ class _SchemaConverter implements JsonConverter<Schema, Map<String, dynamic>> {
     // Handle references
     if (s.ref != null) {
       final refMap = {'\$ref': _SchemaRefConverter().toJson(s.ref)};
-      return s.maybeMap(
-        object: (i) {
-          if (i.allOf == null && i.anyOf == null) {
-            return refMap;
-          } else {
-            return s.toJson();
-          }
-        },
-        orElse: () => refMap,
-      );
+      if (s case SchemaObject i) {
+        if (i.allOf == null && i.anyOf == null) {
+          return refMap;
+        } else {
+          return s.toJson();
+        }
+      } else {
+        return refMap;
+      }
     }
     // Conditional handling of scheme types
-    return s.maybeMap(
-      orElse: () => s.toJson(),
-    );
+    // return s.maybeMap(orElse: () => s.toJson());
+    return switch (s) {
+      _ => s.toJson(),
+    };
   }
 
   @override
   Schema fromJson(Map<String, dynamic> json) {
     if (json.containsKey('enum') && json['enum'].isNotEmpty) {
-      return _SchemaEnum.fromJson(json);
+      return SchemaEnum.fromJson(json);
     } else {
       return Schema.fromJson(json);
     }

@@ -10,7 +10,8 @@ part of open_a_i_schema;
 
 /// No Description
 @freezed
-class ChatCompletionMessageToolCall with _$ChatCompletionMessageToolCall {
+abstract class ChatCompletionMessageToolCall
+    with _$ChatCompletionMessageToolCall {
   const ChatCompletionMessageToolCall._();
 
   /// Factory constructor for ChatCompletionMessageToolCall
@@ -39,11 +40,7 @@ class ChatCompletionMessageToolCall with _$ChatCompletionMessageToolCall {
 
   /// Map representation of object (not serialized)
   Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'type': type,
-      'function': function,
-    };
+    return {'id': id, 'type': type, 'function': function};
   }
 }
 
@@ -63,7 +60,7 @@ enum ChatCompletionMessageToolCallType {
 
 /// The function that the model called.
 @freezed
-class ChatCompletionMessageToolCallFunction
+abstract class ChatCompletionMessageToolCallFunction
     with _$ChatCompletionMessageToolCallFunction {
   const ChatCompletionMessageToolCallFunction._();
 
@@ -78,8 +75,8 @@ class ChatCompletionMessageToolCallFunction
 
   /// Object construction from a JSON representation
   factory ChatCompletionMessageToolCallFunction.fromJson(
-          Map<String, dynamic> json) =>
-      _$ChatCompletionMessageToolCallFunctionFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$ChatCompletionMessageToolCallFunctionFromJson(json);
 
   /// List of all property names of schema
   static const List<String> propertyNames = ['name', 'arguments'];
@@ -91,9 +88,6 @@ class ChatCompletionMessageToolCallFunction
 
   /// Map representation of object (not serialized)
   Map<String, dynamic> toMap() {
-    return {
-      'name': name,
-      'arguments': arguments,
-    };
+    return {'name': name, 'arguments': arguments};
   }
 }
