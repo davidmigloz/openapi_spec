@@ -130,7 +130,7 @@ class SchemaGenerator extends BaseGenerator {
       }
 
       // Write individual schema definitions
-      switch (schemas) {
+      switch (schemas[s]) {
         case SchemaObject schema:
           _writeObject(name: name, schema: schema);
           // Check if there are any extra schemas to write in this file
