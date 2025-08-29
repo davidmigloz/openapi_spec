@@ -222,9 +222,10 @@ class Schema with _$Schema {
     bool? nullable,
     Map? example,
     @JsonKey(
-        name: 'additionalProperties',
-        toJson: _toMapProps,
-        fromJson: _fromMapProps)
+      name: 'additionalProperties',
+      toJson: _toMapProps,
+      fromJson: _fromMapProps,
+    )
     Schema? valueSchema,
     @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
   }) = _SchemaMap;
@@ -240,9 +241,7 @@ class Schema with _$Schema {
   // METHOD: dereference
   // ------------------------------------------
 
-  Schema dereference({
-    required Map<String, Schema>? components,
-  }) {
+  Schema dereference({required Map<String, Schema>? components}) {
     if (ref == null) {
       return this;
     }
@@ -305,9 +304,7 @@ class Schema with _$Schema {
         return (sRef as _SchemaArray).copyWith(ref: ref);
       },
       map: (s) {
-        return (sRef as _SchemaMap).copyWith(
-          ref: ref,
-        );
+        return (sRef as _SchemaMap).copyWith(ref: ref);
       },
     );
   }
@@ -317,9 +314,7 @@ class Schema with _$Schema {
   // ------------------------------------------
 
   /// Return a proper Dart type for this schema
-  String toDartType({
-    Map<String, List<String>>? unions,
-  }) {
+  String toDartType({Map<String, List<String>>? unions}) {
     return map(
       object: (s) {
         if (s.anyOf != null && unions != null) {
@@ -442,9 +437,7 @@ class _SchemaConverter implements JsonConverter<Schema, Map<String, dynamic>> {
       );
     }
     // Conditional handling of scheme types
-    return s.maybeMap(
-      orElse: () => s.toJson(),
-    );
+    return s.maybeMap(orElse: () => s.toJson());
   }
 
   @override

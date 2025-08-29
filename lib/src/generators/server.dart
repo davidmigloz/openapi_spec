@@ -5,10 +5,7 @@ part of 'index.dart';
 // ==========================================
 
 class OperationData {
-  OperationData(
-    this.path,
-    this.method,
-  );
+  OperationData(this.path, this.method);
   final String path;
   final HttpMethod method;
   String name = '';
@@ -329,7 +326,8 @@ class $serverName {
 
     data.name = methodName;
 
-    data.description = operation.summary ??
+    data.description =
+        operation.summary ??
         operation.description ??
         'No description for $methodName';
 
@@ -352,7 +350,8 @@ class $serverName {
 
     String decodeRequest = '';
     if (requestRef != null) {
-      decodeRequest = """
+      decodeRequest =
+          """
       $requestRef requestBody;
       try{
         requestBody = $requestRef.fromJson(await _decodeRequest(request),);
@@ -403,13 +402,15 @@ class $serverName {
     String inputTypes = 'Request';
 
     for (final p in parameters + (operation.parameters ?? <Parameter>[])) {
-      p.mapOrNull(path: (p) {
-        if (p.name != null) {
-          inputs += ', ${p.name}';
-          inputsWrapper += ',String ${p.name}';
-          inputTypes += ',String';
-        }
-      });
+      p.mapOrNull(
+        path: (p) {
+          if (p.name != null) {
+            inputs += ', ${p.name}';
+            inputsWrapper += ',String ${p.name}';
+            inputTypes += ',String';
+          }
+        },
+      );
     }
 
     if (requestRef != null && request?.required == true) {
@@ -444,7 +445,8 @@ class $serverName {
       bodyReturn = 'body: _encodeResponse(request,result),';
     }
 
-    data.handler = """
+    data.handler =
+        """
       ($inputsWrapper) async {
         try {
           $bodyCall

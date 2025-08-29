@@ -92,7 +92,8 @@ class ClientGenerator extends BaseGenerator {
           http: (o) async {
             authInputs.add("this.$bearerTokenVar = ''");
             authVariables.add('String $bearerTokenVar;');
-            authRequestHeader = """
+            authRequestHeader =
+                """
             // Add bearer token to request headers
             if ($bearerTokenVar.isNotEmpty){
               headers['${HttpHeaders.authorizationHeader}'] = 'Bearer \$$bearerTokenVar';
@@ -106,7 +107,8 @@ class ClientGenerator extends BaseGenerator {
           openIdConnect: (o) async {
             authInputs.add("this.$accessTokenVar = ''");
             authVariables.add('String $accessTokenVar;');
-            authRequestHeader = """
+            authRequestHeader =
+                """
             // Add access token to request headers
             if ($accessTokenVar.isNotEmpty){
               headers['${HttpHeaders.authorizationHeader}'] = 'Bearer \$$accessTokenVar';
@@ -634,9 +636,7 @@ class $clientName {
 
     for (final a in auth.keys) {
       final s = auth[a];
-      final name = s?.mapOrNull(
-        apiKey: (value) => value.name,
-      );
+      final name = s?.mapOrNull(apiKey: (value) => value.name);
 
       if (a == AuthType.keyQuery) {
         queryParams.add("if ($apiKeyVar.isNotEmpty) '$name': $apiKeyVar");
@@ -648,7 +648,8 @@ class $clientName {
         final creds =
             r"'Basic ${base64Encode(utf8.encode('$username:$password'))}'";
         headerParams.add(
-            "if ($usernameVar.isNotEmpty && $passwordVar.isNotEmpty) '${HttpHeaders.authorizationHeader}': $creds");
+          "if ($usernameVar.isNotEmpty && $passwordVar.isNotEmpty) '${HttpHeaders.authorizationHeader}': $creds",
+        );
       }
     }
 
@@ -663,8 +664,10 @@ class $clientName {
       if (description.isNotEmpty) {
         description += '\n///\n/// ';
       }
-      description +=
-          (operation.description ?? '').trim().replaceAll('\n', '\n/// ');
+      description += (operation.description ?? '').trim().replaceAll(
+        '\n',
+        '\n/// ',
+      );
     }
     if (description.isEmpty) {
       description = 'No description provided';
@@ -704,8 +707,10 @@ class $clientName {
           "`${e.key.camelCase}`: ${e.value.description ?? 'No description'}",
         );
         // Update the host definition
-        baseUrlDecoded =
-            baseUrlDecoded.replaceAll('{${e.key}}', '\${${e.key.camelCase}}');
+        baseUrlDecoded = baseUrlDecoded.replaceAll(
+          '{${e.key}}',
+          '\${${e.key.camelCase}}',
+        );
       }
     }
 
@@ -919,7 +924,8 @@ class $clientName {
         array: (s) {
           // Handle deserialization for array of objects
           if (s.items.ref != null) {
-            decoder = """
+            decoder =
+                """
               final list = _jsonDecode(r) as List;
               return list.map((e) => ${s.items.ref}.fromJson(e)).toList();
             """;
@@ -928,7 +934,8 @@ class $clientName {
         map: (s) {
           // Handle deserialization for map of objects
           if (s.valueSchema?.ref != null) {
-            decoder = """
+            decoder =
+                """
               final map = _jsonDecode(r) as Map<String, dynamic>;
               return map.map((k, v) => MapEntry(k, ${s.valueSchema?.ref}.fromJson(v)));
             """;
@@ -1007,9 +1014,7 @@ class $clientName {
   // ------------------------------------------
 
   Response? _getSuccessResponse(Operation o) {
-    final code = o.responses?.keys.firstWhereOrNull(
-      (c) => c.startsWith('2'),
-    );
+    final code = o.responses?.keys.firstWhereOrNull((c) => c.startsWith('2'));
     if (code != null) {
       return o.responses?[code]?.dereference(
         components: spec.components?.responses,

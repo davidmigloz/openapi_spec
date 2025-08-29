@@ -64,9 +64,7 @@ class PathItem with _$PathItem {
   // METHOD: dereference
   // ------------------------------------------
 
-  PathItem dereference({
-    required Map<String, PathItem>? components,
-  }) {
+  PathItem dereference({required Map<String, PathItem>? components}) {
     if (ref == null) {
       return this;
     }

@@ -1,9 +1,6 @@
 part of 'index.dart';
 
-enum SchemaValidationType {
-  numeric,
-  string,
-}
+enum SchemaValidationType { numeric, string }
 
 // ==========================================
 // CLASS: SchemaValidation
@@ -138,61 +135,52 @@ class SchemaValidation {
         final operator = exclusiveMinimum ?? false ? '<=' : '<';
         final conName = '${name}_min_value'.camelCase;
         final message = "The value of '$name' cannot be $operator \$$conName";
-        operations.add(
-          """
+        operations.add("""
           if ($nullName $operator $conName) {
             return "$message";
-          }""",
-        );
+          }""");
         constants[conName] = minimum!;
       }
       if (maximum != null) {
         final operator = exclusiveMaximum ?? false ? '>=' : '>';
         final conName = '${name}_max_value'.camelCase;
         final message = "The value of '$name' cannot be $operator \$$conName";
-        operations.add(
-          """
+        operations.add("""
           if ($nullName $operator $conName) {
             return "$message";
-          }""",
-        );
+          }""");
         constants[conName] = maximum!;
       }
       if (multipleOf != null) {
         final conName = '${name}_multiple_value'.camelCase;
         final message = "The value of '$name' must be a multiple of \$$conName";
-        operations.add(
-          """
+        operations.add("""
           if ($nullName % $conName != 0) {
             return "$message";
-          }""",
-        );
+          }""");
         constants[conName] = multipleOf!;
       }
     } else if (type == SchemaValidationType.string) {
-      final nullName =
-          nullable ? '$name != null && $name!.length' : '$name.length';
+      final nullName = nullable
+          ? '$name != null && $name!.length'
+          : '$name.length';
 
       if (minLength != null) {
         final operator = exclusiveMinimum ?? false ? '<=' : '<';
         final conName = '${name}_minLength_value'.camelCase;
-        operations.add(
-          """
+        operations.add("""
           if ($nullName $operator $conName) {
             return "The value of '$name' cannot be $operator \$$conName characters";
-          }""",
-        );
+          }""");
         constants[conName] = minLength!;
       }
       if (maxLength != null) {
         final operator = exclusiveMaximum ?? false ? '>=' : '>';
         final conName = '${name}_maxLength_value'.camelCase;
-        operations.add(
-          """
+        operations.add("""
           if ($nullName $operator $conName) {
             return "The length of '$name' cannot be $operator \$$conName characters";
-          }""",
-        );
+          }""");
         constants[conName] = maxLength!;
       }
     }

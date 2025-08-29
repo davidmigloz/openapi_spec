@@ -18,6 +18,6 @@ class SchemaGeneratorOptions extends BaseGeneratorOptions {
   final String? Function(String, List<String>)? onSchemaUnionName;
   final String? Function(String, List<String>)? onSchemaUnionKey;
   final String? Function(String union, String unionSubclass)?
-      onSchemaUnionFactoryName;
+  onSchemaUnionFactoryName;
   final String Function(String)? onSchemaPropertyName;
 }

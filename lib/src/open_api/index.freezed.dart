@@ -12,7 +12,8 @@ part of 'index.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 OAuthFlows _$OAuthFlowsFromJson(Map<String, dynamic> json) {
   return _OAuthFlows.fromJson(json);
@@ -28,21 +29,23 @@ mixin _$OAuthFlows {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_OAuthFlows value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_OAuthFlows value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_OAuthFlows value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this OAuthFlows to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OAuthFlows
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OAuthFlowsCopyWith<OAuthFlows> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,14 +53,16 @@ mixin _$OAuthFlows {
 /// @nodoc
 abstract class $OAuthFlowsCopyWith<$Res> {
   factory $OAuthFlowsCopyWith(
-          OAuthFlows value, $Res Function(OAuthFlows) then) =
-      _$OAuthFlowsCopyWithImpl<$Res, OAuthFlows>;
+    OAuthFlows value,
+    $Res Function(OAuthFlows) then,
+  ) = _$OAuthFlowsCopyWithImpl<$Res, OAuthFlows>;
   @useResult
-  $Res call(
-      {OAuthFlow? implicit,
-      OAuthFlow? password,
-      OAuthFlow? clientCredentials,
-      OAuthFlow? authorizationCode});
+  $Res call({
+    OAuthFlow? implicit,
+    OAuthFlow? password,
+    OAuthFlow? clientCredentials,
+    OAuthFlow? authorizationCode,
+  });
 
   $OAuthFlowCopyWith<$Res>? get implicit;
   $OAuthFlowCopyWith<$Res>? get password;
@@ -75,6 +80,8 @@ class _$OAuthFlowsCopyWithImpl<$Res, $Val extends OAuthFlows>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OAuthFlows
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -83,26 +90,31 @@ class _$OAuthFlowsCopyWithImpl<$Res, $Val extends OAuthFlows>
     Object? clientCredentials = freezed,
     Object? authorizationCode = freezed,
   }) {
-    return _then(_value.copyWith(
-      implicit: freezed == implicit
-          ? _value.implicit
-          : implicit // ignore: cast_nullable_to_non_nullable
-              as OAuthFlow?,
-      password: freezed == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as OAuthFlow?,
-      clientCredentials: freezed == clientCredentials
-          ? _value.clientCredentials
-          : clientCredentials // ignore: cast_nullable_to_non_nullable
-              as OAuthFlow?,
-      authorizationCode: freezed == authorizationCode
-          ? _value.authorizationCode
-          : authorizationCode // ignore: cast_nullable_to_non_nullable
-              as OAuthFlow?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            implicit: freezed == implicit
+                ? _value.implicit
+                : implicit // ignore: cast_nullable_to_non_nullable
+                      as OAuthFlow?,
+            password: freezed == password
+                ? _value.password
+                : password // ignore: cast_nullable_to_non_nullable
+                      as OAuthFlow?,
+            clientCredentials: freezed == clientCredentials
+                ? _value.clientCredentials
+                : clientCredentials // ignore: cast_nullable_to_non_nullable
+                      as OAuthFlow?,
+            authorizationCode: freezed == authorizationCode
+                ? _value.authorizationCode
+                : authorizationCode // ignore: cast_nullable_to_non_nullable
+                      as OAuthFlow?,
+          )
+          as $Val,
+    );
   }
 
+  /// Create a copy of OAuthFlows
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OAuthFlowCopyWith<$Res>? get implicit {
@@ -115,6 +127,8 @@ class _$OAuthFlowsCopyWithImpl<$Res, $Val extends OAuthFlows>
     });
   }
 
+  /// Create a copy of OAuthFlows
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OAuthFlowCopyWith<$Res>? get password {
@@ -127,6 +141,8 @@ class _$OAuthFlowsCopyWithImpl<$Res, $Val extends OAuthFlows>
     });
   }
 
+  /// Create a copy of OAuthFlows
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OAuthFlowCopyWith<$Res>? get clientCredentials {
@@ -139,6 +155,8 @@ class _$OAuthFlowsCopyWithImpl<$Res, $Val extends OAuthFlows>
     });
   }
 
+  /// Create a copy of OAuthFlows
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OAuthFlowCopyWith<$Res>? get authorizationCode {
@@ -156,15 +174,17 @@ class _$OAuthFlowsCopyWithImpl<$Res, $Val extends OAuthFlows>
 abstract class _$$OAuthFlowsImplCopyWith<$Res>
     implements $OAuthFlowsCopyWith<$Res> {
   factory _$$OAuthFlowsImplCopyWith(
-          _$OAuthFlowsImpl value, $Res Function(_$OAuthFlowsImpl) then) =
-      __$$OAuthFlowsImplCopyWithImpl<$Res>;
+    _$OAuthFlowsImpl value,
+    $Res Function(_$OAuthFlowsImpl) then,
+  ) = __$$OAuthFlowsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {OAuthFlow? implicit,
-      OAuthFlow? password,
-      OAuthFlow? clientCredentials,
-      OAuthFlow? authorizationCode});
+  $Res call({
+    OAuthFlow? implicit,
+    OAuthFlow? password,
+    OAuthFlow? clientCredentials,
+    OAuthFlow? authorizationCode,
+  });
 
   @override
   $OAuthFlowCopyWith<$Res>? get implicit;
@@ -181,9 +201,12 @@ class __$$OAuthFlowsImplCopyWithImpl<$Res>
     extends _$OAuthFlowsCopyWithImpl<$Res, _$OAuthFlowsImpl>
     implements _$$OAuthFlowsImplCopyWith<$Res> {
   __$$OAuthFlowsImplCopyWithImpl(
-      _$OAuthFlowsImpl _value, $Res Function(_$OAuthFlowsImpl) _then)
-      : super(_value, _then);
+    _$OAuthFlowsImpl _value,
+    $Res Function(_$OAuthFlowsImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of OAuthFlows
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -192,35 +215,38 @@ class __$$OAuthFlowsImplCopyWithImpl<$Res>
     Object? clientCredentials = freezed,
     Object? authorizationCode = freezed,
   }) {
-    return _then(_$OAuthFlowsImpl(
-      implicit: freezed == implicit
-          ? _value.implicit
-          : implicit // ignore: cast_nullable_to_non_nullable
-              as OAuthFlow?,
-      password: freezed == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as OAuthFlow?,
-      clientCredentials: freezed == clientCredentials
-          ? _value.clientCredentials
-          : clientCredentials // ignore: cast_nullable_to_non_nullable
-              as OAuthFlow?,
-      authorizationCode: freezed == authorizationCode
-          ? _value.authorizationCode
-          : authorizationCode // ignore: cast_nullable_to_non_nullable
-              as OAuthFlow?,
-    ));
+    return _then(
+      _$OAuthFlowsImpl(
+        implicit: freezed == implicit
+            ? _value.implicit
+            : implicit // ignore: cast_nullable_to_non_nullable
+                  as OAuthFlow?,
+        password: freezed == password
+            ? _value.password
+            : password // ignore: cast_nullable_to_non_nullable
+                  as OAuthFlow?,
+        clientCredentials: freezed == clientCredentials
+            ? _value.clientCredentials
+            : clientCredentials // ignore: cast_nullable_to_non_nullable
+                  as OAuthFlow?,
+        authorizationCode: freezed == authorizationCode
+            ? _value.authorizationCode
+            : authorizationCode // ignore: cast_nullable_to_non_nullable
+                  as OAuthFlow?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$OAuthFlowsImpl implements _OAuthFlows {
-  const _$OAuthFlowsImpl(
-      {this.implicit,
-      this.password,
-      this.clientCredentials,
-      this.authorizationCode});
+  const _$OAuthFlowsImpl({
+    this.implicit,
+    this.password,
+    this.clientCredentials,
+    this.authorizationCode,
+  });
 
   factory _$OAuthFlowsImpl.fromJson(Map<String, dynamic> json) =>
       _$$OAuthFlowsImplFromJson(json);
@@ -240,7 +266,7 @@ class _$OAuthFlowsImpl implements _OAuthFlows {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OAuthFlowsImpl &&
@@ -254,12 +280,19 @@ class _$OAuthFlowsImpl implements _OAuthFlows {
                 other.authorizationCode == authorizationCode));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, implicit, password, clientCredentials, authorizationCode);
+    runtimeType,
+    implicit,
+    password,
+    clientCredentials,
+    authorizationCode,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OAuthFlows
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OAuthFlowsImplCopyWith<_$OAuthFlowsImpl> get copyWith =>
@@ -295,18 +328,17 @@ class _$OAuthFlowsImpl implements _OAuthFlows {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$OAuthFlowsImplToJson(
-      this,
-    );
+    return _$$OAuthFlowsImplToJson(this);
   }
 }
 
 abstract class _OAuthFlows implements OAuthFlows {
-  const factory _OAuthFlows(
-      {final OAuthFlow? implicit,
-      final OAuthFlow? password,
-      final OAuthFlow? clientCredentials,
-      final OAuthFlow? authorizationCode}) = _$OAuthFlowsImpl;
+  const factory _OAuthFlows({
+    final OAuthFlow? implicit,
+    final OAuthFlow? password,
+    final OAuthFlow? clientCredentials,
+    final OAuthFlow? authorizationCode,
+  }) = _$OAuthFlowsImpl;
 
   factory _OAuthFlows.fromJson(Map<String, dynamic> json) =
       _$OAuthFlowsImpl.fromJson;
@@ -319,8 +351,11 @@ abstract class _OAuthFlows implements OAuthFlows {
   OAuthFlow? get clientCredentials;
   @override
   OAuthFlow? get authorizationCode;
+
+  /// Create a copy of OAuthFlows
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OAuthFlowsImplCopyWith<_$OAuthFlowsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -337,8 +372,12 @@ OAuthFlow _$OAuthFlowFromJson(Map<String, dynamic> json) {
       return _OAuthFlowAuthorizationCode.fromJson(json);
 
     default:
-      throw CheckedFromJsonException(json, 'unionType', 'OAuthFlow',
-          'Invalid union type "${json['unionType']}"!');
+      throw CheckedFromJsonException(
+        json,
+        'unionType',
+        'OAuthFlow',
+        'Invalid union type "${json['unionType']}"!',
+      );
   }
 }
 
@@ -352,19 +391,17 @@ mixin _$OAuthFlow {
     required TResult Function(_OAuthFlowImplicit value) implicit,
     required TResult Function(_OAuthFlowPassword value) password,
     required TResult Function(_OAuthFlowClientCredentials value)
-        clientCredentials,
+    clientCredentials,
     required TResult Function(_OAuthFlowAuthorizationCode value)
-        authorizationCode,
-  }) =>
-      throw _privateConstructorUsedError;
+    authorizationCode,
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_OAuthFlowImplicit value)? implicit,
     TResult? Function(_OAuthFlowPassword value)? password,
     TResult? Function(_OAuthFlowClientCredentials value)? clientCredentials,
     TResult? Function(_OAuthFlowAuthorizationCode value)? authorizationCode,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_OAuthFlowImplicit value)? implicit,
@@ -372,10 +409,14 @@ mixin _$OAuthFlow {
     TResult Function(_OAuthFlowClientCredentials value)? clientCredentials,
     TResult Function(_OAuthFlowAuthorizationCode value)? authorizationCode,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this OAuthFlow to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OAuthFlow
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OAuthFlowCopyWith<OAuthFlow> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -398,47 +439,54 @@ class _$OAuthFlowCopyWithImpl<$Res, $Val extends OAuthFlow>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OAuthFlow
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? refreshUrl = freezed,
-    Object? scopes = null,
-  }) {
-    return _then(_value.copyWith(
-      refreshUrl: freezed == refreshUrl
-          ? _value.refreshUrl
-          : refreshUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      scopes: null == scopes
-          ? _value.scopes
-          : scopes // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>,
-    ) as $Val);
+  $Res call({Object? refreshUrl = freezed, Object? scopes = null}) {
+    return _then(
+      _value.copyWith(
+            refreshUrl: freezed == refreshUrl
+                ? _value.refreshUrl
+                : refreshUrl // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            scopes: null == scopes
+                ? _value.scopes
+                : scopes // ignore: cast_nullable_to_non_nullable
+                      as Map<String, String>,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$OAuthFlowImplicitImplCopyWith<$Res>
     implements $OAuthFlowCopyWith<$Res> {
-  factory _$$OAuthFlowImplicitImplCopyWith(_$OAuthFlowImplicitImpl value,
-          $Res Function(_$OAuthFlowImplicitImpl) then) =
-      __$$OAuthFlowImplicitImplCopyWithImpl<$Res>;
+  factory _$$OAuthFlowImplicitImplCopyWith(
+    _$OAuthFlowImplicitImpl value,
+    $Res Function(_$OAuthFlowImplicitImpl) then,
+  ) = __$$OAuthFlowImplicitImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String authorizationUrl,
-      String? refreshUrl,
-      Map<String, String> scopes});
+  $Res call({
+    String authorizationUrl,
+    String? refreshUrl,
+    Map<String, String> scopes,
+  });
 }
 
 /// @nodoc
 class __$$OAuthFlowImplicitImplCopyWithImpl<$Res>
     extends _$OAuthFlowCopyWithImpl<$Res, _$OAuthFlowImplicitImpl>
     implements _$$OAuthFlowImplicitImplCopyWith<$Res> {
-  __$$OAuthFlowImplicitImplCopyWithImpl(_$OAuthFlowImplicitImpl _value,
-      $Res Function(_$OAuthFlowImplicitImpl) _then)
-      : super(_value, _then);
+  __$$OAuthFlowImplicitImplCopyWithImpl(
+    _$OAuthFlowImplicitImpl _value,
+    $Res Function(_$OAuthFlowImplicitImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of OAuthFlow
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -446,33 +494,35 @@ class __$$OAuthFlowImplicitImplCopyWithImpl<$Res>
     Object? refreshUrl = freezed,
     Object? scopes = null,
   }) {
-    return _then(_$OAuthFlowImplicitImpl(
-      authorizationUrl: null == authorizationUrl
-          ? _value.authorizationUrl
-          : authorizationUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      refreshUrl: freezed == refreshUrl
-          ? _value.refreshUrl
-          : refreshUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      scopes: null == scopes
-          ? _value._scopes
-          : scopes // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>,
-    ));
+    return _then(
+      _$OAuthFlowImplicitImpl(
+        authorizationUrl: null == authorizationUrl
+            ? _value.authorizationUrl
+            : authorizationUrl // ignore: cast_nullable_to_non_nullable
+                  as String,
+        refreshUrl: freezed == refreshUrl
+            ? _value.refreshUrl
+            : refreshUrl // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        scopes: null == scopes
+            ? _value._scopes
+            : scopes // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$OAuthFlowImplicitImpl implements _OAuthFlowImplicit {
-  const _$OAuthFlowImplicitImpl(
-      {required this.authorizationUrl,
-      this.refreshUrl,
-      required final Map<String, String> scopes,
-      final String? $type})
-      : _scopes = scopes,
-        $type = $type ?? 'implicit';
+  const _$OAuthFlowImplicitImpl({
+    required this.authorizationUrl,
+    this.refreshUrl,
+    required final Map<String, String> scopes,
+    final String? $type,
+  }) : _scopes = scopes,
+       $type = $type ?? 'implicit';
 
   factory _$OAuthFlowImplicitImpl.fromJson(Map<String, dynamic> json) =>
       _$$OAuthFlowImplicitImplFromJson(json);
@@ -498,7 +548,7 @@ class _$OAuthFlowImplicitImpl implements _OAuthFlowImplicit {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OAuthFlowImplicitImpl &&
@@ -509,17 +559,25 @@ class _$OAuthFlowImplicitImpl implements _OAuthFlowImplicit {
             const DeepCollectionEquality().equals(other._scopes, _scopes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, authorizationUrl, refreshUrl,
-      const DeepCollectionEquality().hash(_scopes));
+  int get hashCode => Object.hash(
+    runtimeType,
+    authorizationUrl,
+    refreshUrl,
+    const DeepCollectionEquality().hash(_scopes),
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OAuthFlow
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OAuthFlowImplicitImplCopyWith<_$OAuthFlowImplicitImpl> get copyWith =>
       __$$OAuthFlowImplicitImplCopyWithImpl<_$OAuthFlowImplicitImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -527,9 +585,9 @@ class _$OAuthFlowImplicitImpl implements _OAuthFlowImplicit {
     required TResult Function(_OAuthFlowImplicit value) implicit,
     required TResult Function(_OAuthFlowPassword value) password,
     required TResult Function(_OAuthFlowClientCredentials value)
-        clientCredentials,
+    clientCredentials,
     required TResult Function(_OAuthFlowAuthorizationCode value)
-        authorizationCode,
+    authorizationCode,
   }) {
     return implicit(this);
   }
@@ -562,17 +620,16 @@ class _$OAuthFlowImplicitImpl implements _OAuthFlowImplicit {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$OAuthFlowImplicitImplToJson(
-      this,
-    );
+    return _$$OAuthFlowImplicitImplToJson(this);
   }
 }
 
 abstract class _OAuthFlowImplicit implements OAuthFlow {
-  const factory _OAuthFlowImplicit(
-      {required final String authorizationUrl,
-      final String? refreshUrl,
-      required final Map<String, String> scopes}) = _$OAuthFlowImplicitImpl;
+  const factory _OAuthFlowImplicit({
+    required final String authorizationUrl,
+    final String? refreshUrl,
+    required final Map<String, String> scopes,
+  }) = _$OAuthFlowImplicitImpl;
 
   factory _OAuthFlowImplicit.fromJson(Map<String, dynamic> json) =
       _$OAuthFlowImplicitImpl.fromJson;
@@ -582,8 +639,11 @@ abstract class _OAuthFlowImplicit implements OAuthFlow {
   String? get refreshUrl;
   @override
   Map<String, String> get scopes;
+
+  /// Create a copy of OAuthFlow
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OAuthFlowImplicitImplCopyWith<_$OAuthFlowImplicitImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -591,9 +651,10 @@ abstract class _OAuthFlowImplicit implements OAuthFlow {
 /// @nodoc
 abstract class _$$OAuthFlowPasswordImplCopyWith<$Res>
     implements $OAuthFlowCopyWith<$Res> {
-  factory _$$OAuthFlowPasswordImplCopyWith(_$OAuthFlowPasswordImpl value,
-          $Res Function(_$OAuthFlowPasswordImpl) then) =
-      __$$OAuthFlowPasswordImplCopyWithImpl<$Res>;
+  factory _$$OAuthFlowPasswordImplCopyWith(
+    _$OAuthFlowPasswordImpl value,
+    $Res Function(_$OAuthFlowPasswordImpl) then,
+  ) = __$$OAuthFlowPasswordImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String tokenUrl, String? refreshUrl, Map<String, String> scopes});
@@ -603,10 +664,13 @@ abstract class _$$OAuthFlowPasswordImplCopyWith<$Res>
 class __$$OAuthFlowPasswordImplCopyWithImpl<$Res>
     extends _$OAuthFlowCopyWithImpl<$Res, _$OAuthFlowPasswordImpl>
     implements _$$OAuthFlowPasswordImplCopyWith<$Res> {
-  __$$OAuthFlowPasswordImplCopyWithImpl(_$OAuthFlowPasswordImpl _value,
-      $Res Function(_$OAuthFlowPasswordImpl) _then)
-      : super(_value, _then);
+  __$$OAuthFlowPasswordImplCopyWithImpl(
+    _$OAuthFlowPasswordImpl _value,
+    $Res Function(_$OAuthFlowPasswordImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of OAuthFlow
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -614,33 +678,35 @@ class __$$OAuthFlowPasswordImplCopyWithImpl<$Res>
     Object? refreshUrl = freezed,
     Object? scopes = null,
   }) {
-    return _then(_$OAuthFlowPasswordImpl(
-      tokenUrl: null == tokenUrl
-          ? _value.tokenUrl
-          : tokenUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      refreshUrl: freezed == refreshUrl
-          ? _value.refreshUrl
-          : refreshUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      scopes: null == scopes
-          ? _value._scopes
-          : scopes // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>,
-    ));
+    return _then(
+      _$OAuthFlowPasswordImpl(
+        tokenUrl: null == tokenUrl
+            ? _value.tokenUrl
+            : tokenUrl // ignore: cast_nullable_to_non_nullable
+                  as String,
+        refreshUrl: freezed == refreshUrl
+            ? _value.refreshUrl
+            : refreshUrl // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        scopes: null == scopes
+            ? _value._scopes
+            : scopes // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$OAuthFlowPasswordImpl implements _OAuthFlowPassword {
-  const _$OAuthFlowPasswordImpl(
-      {required this.tokenUrl,
-      this.refreshUrl,
-      required final Map<String, String> scopes,
-      final String? $type})
-      : _scopes = scopes,
-        $type = $type ?? 'password';
+  const _$OAuthFlowPasswordImpl({
+    required this.tokenUrl,
+    this.refreshUrl,
+    required final Map<String, String> scopes,
+    final String? $type,
+  }) : _scopes = scopes,
+       $type = $type ?? 'password';
 
   factory _$OAuthFlowPasswordImpl.fromJson(Map<String, dynamic> json) =>
       _$$OAuthFlowPasswordImplFromJson(json);
@@ -666,7 +732,7 @@ class _$OAuthFlowPasswordImpl implements _OAuthFlowPassword {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OAuthFlowPasswordImpl &&
@@ -677,17 +743,25 @@ class _$OAuthFlowPasswordImpl implements _OAuthFlowPassword {
             const DeepCollectionEquality().equals(other._scopes, _scopes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, tokenUrl, refreshUrl,
-      const DeepCollectionEquality().hash(_scopes));
+  int get hashCode => Object.hash(
+    runtimeType,
+    tokenUrl,
+    refreshUrl,
+    const DeepCollectionEquality().hash(_scopes),
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OAuthFlow
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OAuthFlowPasswordImplCopyWith<_$OAuthFlowPasswordImpl> get copyWith =>
       __$$OAuthFlowPasswordImplCopyWithImpl<_$OAuthFlowPasswordImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -695,9 +769,9 @@ class _$OAuthFlowPasswordImpl implements _OAuthFlowPassword {
     required TResult Function(_OAuthFlowImplicit value) implicit,
     required TResult Function(_OAuthFlowPassword value) password,
     required TResult Function(_OAuthFlowClientCredentials value)
-        clientCredentials,
+    clientCredentials,
     required TResult Function(_OAuthFlowAuthorizationCode value)
-        authorizationCode,
+    authorizationCode,
   }) {
     return password(this);
   }
@@ -730,17 +804,16 @@ class _$OAuthFlowPasswordImpl implements _OAuthFlowPassword {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$OAuthFlowPasswordImplToJson(
-      this,
-    );
+    return _$$OAuthFlowPasswordImplToJson(this);
   }
 }
 
 abstract class _OAuthFlowPassword implements OAuthFlow {
-  const factory _OAuthFlowPassword(
-      {required final String tokenUrl,
-      final String? refreshUrl,
-      required final Map<String, String> scopes}) = _$OAuthFlowPasswordImpl;
+  const factory _OAuthFlowPassword({
+    required final String tokenUrl,
+    final String? refreshUrl,
+    required final Map<String, String> scopes,
+  }) = _$OAuthFlowPasswordImpl;
 
   factory _OAuthFlowPassword.fromJson(Map<String, dynamic> json) =
       _$OAuthFlowPasswordImpl.fromJson;
@@ -750,8 +823,11 @@ abstract class _OAuthFlowPassword implements OAuthFlow {
   String? get refreshUrl;
   @override
   Map<String, String> get scopes;
+
+  /// Create a copy of OAuthFlow
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OAuthFlowPasswordImplCopyWith<_$OAuthFlowPasswordImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -760,9 +836,9 @@ abstract class _OAuthFlowPassword implements OAuthFlow {
 abstract class _$$OAuthFlowClientCredentialsImplCopyWith<$Res>
     implements $OAuthFlowCopyWith<$Res> {
   factory _$$OAuthFlowClientCredentialsImplCopyWith(
-          _$OAuthFlowClientCredentialsImpl value,
-          $Res Function(_$OAuthFlowClientCredentialsImpl) then) =
-      __$$OAuthFlowClientCredentialsImplCopyWithImpl<$Res>;
+    _$OAuthFlowClientCredentialsImpl value,
+    $Res Function(_$OAuthFlowClientCredentialsImpl) then,
+  ) = __$$OAuthFlowClientCredentialsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String tokenUrl, String? refreshUrl, Map<String, String> scopes});
@@ -773,10 +849,12 @@ class __$$OAuthFlowClientCredentialsImplCopyWithImpl<$Res>
     extends _$OAuthFlowCopyWithImpl<$Res, _$OAuthFlowClientCredentialsImpl>
     implements _$$OAuthFlowClientCredentialsImplCopyWith<$Res> {
   __$$OAuthFlowClientCredentialsImplCopyWithImpl(
-      _$OAuthFlowClientCredentialsImpl _value,
-      $Res Function(_$OAuthFlowClientCredentialsImpl) _then)
-      : super(_value, _then);
+    _$OAuthFlowClientCredentialsImpl _value,
+    $Res Function(_$OAuthFlowClientCredentialsImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of OAuthFlow
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -784,37 +862,39 @@ class __$$OAuthFlowClientCredentialsImplCopyWithImpl<$Res>
     Object? refreshUrl = freezed,
     Object? scopes = null,
   }) {
-    return _then(_$OAuthFlowClientCredentialsImpl(
-      tokenUrl: null == tokenUrl
-          ? _value.tokenUrl
-          : tokenUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      refreshUrl: freezed == refreshUrl
-          ? _value.refreshUrl
-          : refreshUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      scopes: null == scopes
-          ? _value._scopes
-          : scopes // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>,
-    ));
+    return _then(
+      _$OAuthFlowClientCredentialsImpl(
+        tokenUrl: null == tokenUrl
+            ? _value.tokenUrl
+            : tokenUrl // ignore: cast_nullable_to_non_nullable
+                  as String,
+        refreshUrl: freezed == refreshUrl
+            ? _value.refreshUrl
+            : refreshUrl // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        scopes: null == scopes
+            ? _value._scopes
+            : scopes // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$OAuthFlowClientCredentialsImpl implements _OAuthFlowClientCredentials {
-  const _$OAuthFlowClientCredentialsImpl(
-      {required this.tokenUrl,
-      this.refreshUrl,
-      required final Map<String, String> scopes,
-      final String? $type})
-      : _scopes = scopes,
-        $type = $type ?? 'clientCredentials';
+  const _$OAuthFlowClientCredentialsImpl({
+    required this.tokenUrl,
+    this.refreshUrl,
+    required final Map<String, String> scopes,
+    final String? $type,
+  }) : _scopes = scopes,
+       $type = $type ?? 'clientCredentials';
 
   factory _$OAuthFlowClientCredentialsImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$OAuthFlowClientCredentialsImplFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$$OAuthFlowClientCredentialsImplFromJson(json);
 
   @override
   final String tokenUrl;
@@ -837,7 +917,7 @@ class _$OAuthFlowClientCredentialsImpl implements _OAuthFlowClientCredentials {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OAuthFlowClientCredentialsImpl &&
@@ -848,17 +928,25 @@ class _$OAuthFlowClientCredentialsImpl implements _OAuthFlowClientCredentials {
             const DeepCollectionEquality().equals(other._scopes, _scopes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, tokenUrl, refreshUrl,
-      const DeepCollectionEquality().hash(_scopes));
+  int get hashCode => Object.hash(
+    runtimeType,
+    tokenUrl,
+    refreshUrl,
+    const DeepCollectionEquality().hash(_scopes),
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OAuthFlow
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OAuthFlowClientCredentialsImplCopyWith<_$OAuthFlowClientCredentialsImpl>
-      get copyWith => __$$OAuthFlowClientCredentialsImplCopyWithImpl<
-          _$OAuthFlowClientCredentialsImpl>(this, _$identity);
+  get copyWith =>
+      __$$OAuthFlowClientCredentialsImplCopyWithImpl<
+        _$OAuthFlowClientCredentialsImpl
+      >(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -866,9 +954,9 @@ class _$OAuthFlowClientCredentialsImpl implements _OAuthFlowClientCredentials {
     required TResult Function(_OAuthFlowImplicit value) implicit,
     required TResult Function(_OAuthFlowPassword value) password,
     required TResult Function(_OAuthFlowClientCredentials value)
-        clientCredentials,
+    clientCredentials,
     required TResult Function(_OAuthFlowAuthorizationCode value)
-        authorizationCode,
+    authorizationCode,
   }) {
     return clientCredentials(this);
   }
@@ -901,18 +989,16 @@ class _$OAuthFlowClientCredentialsImpl implements _OAuthFlowClientCredentials {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$OAuthFlowClientCredentialsImplToJson(
-      this,
-    );
+    return _$$OAuthFlowClientCredentialsImplToJson(this);
   }
 }
 
 abstract class _OAuthFlowClientCredentials implements OAuthFlow {
-  const factory _OAuthFlowClientCredentials(
-          {required final String tokenUrl,
-          final String? refreshUrl,
-          required final Map<String, String> scopes}) =
-      _$OAuthFlowClientCredentialsImpl;
+  const factory _OAuthFlowClientCredentials({
+    required final String tokenUrl,
+    final String? refreshUrl,
+    required final Map<String, String> scopes,
+  }) = _$OAuthFlowClientCredentialsImpl;
 
   factory _OAuthFlowClientCredentials.fromJson(Map<String, dynamic> json) =
       _$OAuthFlowClientCredentialsImpl.fromJson;
@@ -922,26 +1008,30 @@ abstract class _OAuthFlowClientCredentials implements OAuthFlow {
   String? get refreshUrl;
   @override
   Map<String, String> get scopes;
+
+  /// Create a copy of OAuthFlow
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OAuthFlowClientCredentialsImplCopyWith<_$OAuthFlowClientCredentialsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$OAuthFlowAuthorizationCodeImplCopyWith<$Res>
     implements $OAuthFlowCopyWith<$Res> {
   factory _$$OAuthFlowAuthorizationCodeImplCopyWith(
-          _$OAuthFlowAuthorizationCodeImpl value,
-          $Res Function(_$OAuthFlowAuthorizationCodeImpl) then) =
-      __$$OAuthFlowAuthorizationCodeImplCopyWithImpl<$Res>;
+    _$OAuthFlowAuthorizationCodeImpl value,
+    $Res Function(_$OAuthFlowAuthorizationCodeImpl) then,
+  ) = __$$OAuthFlowAuthorizationCodeImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String authorizationUrl,
-      String tokenUrl,
-      String? refreshUrl,
-      Map<String, String> scopes});
+  $Res call({
+    String authorizationUrl,
+    String tokenUrl,
+    String? refreshUrl,
+    Map<String, String> scopes,
+  });
 }
 
 /// @nodoc
@@ -949,10 +1039,12 @@ class __$$OAuthFlowAuthorizationCodeImplCopyWithImpl<$Res>
     extends _$OAuthFlowCopyWithImpl<$Res, _$OAuthFlowAuthorizationCodeImpl>
     implements _$$OAuthFlowAuthorizationCodeImplCopyWith<$Res> {
   __$$OAuthFlowAuthorizationCodeImplCopyWithImpl(
-      _$OAuthFlowAuthorizationCodeImpl _value,
-      $Res Function(_$OAuthFlowAuthorizationCodeImpl) _then)
-      : super(_value, _then);
+    _$OAuthFlowAuthorizationCodeImpl _value,
+    $Res Function(_$OAuthFlowAuthorizationCodeImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of OAuthFlow
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -961,42 +1053,44 @@ class __$$OAuthFlowAuthorizationCodeImplCopyWithImpl<$Res>
     Object? refreshUrl = freezed,
     Object? scopes = null,
   }) {
-    return _then(_$OAuthFlowAuthorizationCodeImpl(
-      authorizationUrl: null == authorizationUrl
-          ? _value.authorizationUrl
-          : authorizationUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      tokenUrl: null == tokenUrl
-          ? _value.tokenUrl
-          : tokenUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      refreshUrl: freezed == refreshUrl
-          ? _value.refreshUrl
-          : refreshUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      scopes: null == scopes
-          ? _value._scopes
-          : scopes // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>,
-    ));
+    return _then(
+      _$OAuthFlowAuthorizationCodeImpl(
+        authorizationUrl: null == authorizationUrl
+            ? _value.authorizationUrl
+            : authorizationUrl // ignore: cast_nullable_to_non_nullable
+                  as String,
+        tokenUrl: null == tokenUrl
+            ? _value.tokenUrl
+            : tokenUrl // ignore: cast_nullable_to_non_nullable
+                  as String,
+        refreshUrl: freezed == refreshUrl
+            ? _value.refreshUrl
+            : refreshUrl // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        scopes: null == scopes
+            ? _value._scopes
+            : scopes // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$OAuthFlowAuthorizationCodeImpl implements _OAuthFlowAuthorizationCode {
-  const _$OAuthFlowAuthorizationCodeImpl(
-      {required this.authorizationUrl,
-      required this.tokenUrl,
-      this.refreshUrl,
-      required final Map<String, String> scopes,
-      final String? $type})
-      : _scopes = scopes,
-        $type = $type ?? 'authorizationCode';
+  const _$OAuthFlowAuthorizationCodeImpl({
+    required this.authorizationUrl,
+    required this.tokenUrl,
+    this.refreshUrl,
+    required final Map<String, String> scopes,
+    final String? $type,
+  }) : _scopes = scopes,
+       $type = $type ?? 'authorizationCode';
 
   factory _$OAuthFlowAuthorizationCodeImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$OAuthFlowAuthorizationCodeImplFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$$OAuthFlowAuthorizationCodeImplFromJson(json);
 
   @override
   final String authorizationUrl;
@@ -1021,7 +1115,7 @@ class _$OAuthFlowAuthorizationCodeImpl implements _OAuthFlowAuthorizationCode {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OAuthFlowAuthorizationCodeImpl &&
@@ -1034,17 +1128,26 @@ class _$OAuthFlowAuthorizationCodeImpl implements _OAuthFlowAuthorizationCode {
             const DeepCollectionEquality().equals(other._scopes, _scopes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, authorizationUrl, tokenUrl,
-      refreshUrl, const DeepCollectionEquality().hash(_scopes));
+  int get hashCode => Object.hash(
+    runtimeType,
+    authorizationUrl,
+    tokenUrl,
+    refreshUrl,
+    const DeepCollectionEquality().hash(_scopes),
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OAuthFlow
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OAuthFlowAuthorizationCodeImplCopyWith<_$OAuthFlowAuthorizationCodeImpl>
-      get copyWith => __$$OAuthFlowAuthorizationCodeImplCopyWithImpl<
-          _$OAuthFlowAuthorizationCodeImpl>(this, _$identity);
+  get copyWith =>
+      __$$OAuthFlowAuthorizationCodeImplCopyWithImpl<
+        _$OAuthFlowAuthorizationCodeImpl
+      >(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1052,9 +1155,9 @@ class _$OAuthFlowAuthorizationCodeImpl implements _OAuthFlowAuthorizationCode {
     required TResult Function(_OAuthFlowImplicit value) implicit,
     required TResult Function(_OAuthFlowPassword value) password,
     required TResult Function(_OAuthFlowClientCredentials value)
-        clientCredentials,
+    clientCredentials,
     required TResult Function(_OAuthFlowAuthorizationCode value)
-        authorizationCode,
+    authorizationCode,
   }) {
     return authorizationCode(this);
   }
@@ -1087,19 +1190,17 @@ class _$OAuthFlowAuthorizationCodeImpl implements _OAuthFlowAuthorizationCode {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$OAuthFlowAuthorizationCodeImplToJson(
-      this,
-    );
+    return _$$OAuthFlowAuthorizationCodeImplToJson(this);
   }
 }
 
 abstract class _OAuthFlowAuthorizationCode implements OAuthFlow {
-  const factory _OAuthFlowAuthorizationCode(
-          {required final String authorizationUrl,
-          required final String tokenUrl,
-          final String? refreshUrl,
-          required final Map<String, String> scopes}) =
-      _$OAuthFlowAuthorizationCodeImpl;
+  const factory _OAuthFlowAuthorizationCode({
+    required final String authorizationUrl,
+    required final String tokenUrl,
+    final String? refreshUrl,
+    required final Map<String, String> scopes,
+  }) = _$OAuthFlowAuthorizationCodeImpl;
 
   factory _OAuthFlowAuthorizationCode.fromJson(Map<String, dynamic> json) =
       _$OAuthFlowAuthorizationCodeImpl.fromJson;
@@ -1110,10 +1211,13 @@ abstract class _OAuthFlowAuthorizationCode implements OAuthFlow {
   String? get refreshUrl;
   @override
   Map<String, String> get scopes;
+
+  /// Create a copy of OAuthFlow
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OAuthFlowAuthorizationCodeImplCopyWith<_$OAuthFlowAuthorizationCodeImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1127,21 +1231,20 @@ mixin _$ApiCallback {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_ApiCallback value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_ApiCallback value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_ApiCallback value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApiCallback
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ApiCallbackCopyWith<ApiCallback> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1149,8 +1252,9 @@ mixin _$ApiCallback {
 /// @nodoc
 abstract class $ApiCallbackCopyWith<$Res> {
   factory $ApiCallbackCopyWith(
-          ApiCallback value, $Res Function(ApiCallback) then) =
-      _$ApiCallbackCopyWithImpl<$Res, ApiCallback>;
+    ApiCallback value,
+    $Res Function(ApiCallback) then,
+  ) = _$ApiCallbackCopyWithImpl<$Res, ApiCallback>;
   @useResult
   $Res call({String name, Map<String, PathItem> expression});
 }
@@ -1165,22 +1269,24 @@ class _$ApiCallbackCopyWithImpl<$Res, $Val extends ApiCallback>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ApiCallback
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? name = null,
-    Object? expression = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      expression: null == expression
-          ? _value.expression
-          : expression // ignore: cast_nullable_to_non_nullable
-              as Map<String, PathItem>,
-    ) as $Val);
+  $Res call({Object? name = null, Object? expression = null}) {
+    return _then(
+      _value.copyWith(
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String,
+            expression: null == expression
+                ? _value.expression
+                : expression // ignore: cast_nullable_to_non_nullable
+                      as Map<String, PathItem>,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -1188,8 +1294,9 @@ class _$ApiCallbackCopyWithImpl<$Res, $Val extends ApiCallback>
 abstract class _$$ApiCallbackImplCopyWith<$Res>
     implements $ApiCallbackCopyWith<$Res> {
   factory _$$ApiCallbackImplCopyWith(
-          _$ApiCallbackImpl value, $Res Function(_$ApiCallbackImpl) then) =
-      __$$ApiCallbackImplCopyWithImpl<$Res>;
+    _$ApiCallbackImpl value,
+    $Res Function(_$ApiCallbackImpl) then,
+  ) = __$$ApiCallbackImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name, Map<String, PathItem> expression});
@@ -1200,34 +1307,37 @@ class __$$ApiCallbackImplCopyWithImpl<$Res>
     extends _$ApiCallbackCopyWithImpl<$Res, _$ApiCallbackImpl>
     implements _$$ApiCallbackImplCopyWith<$Res> {
   __$$ApiCallbackImplCopyWithImpl(
-      _$ApiCallbackImpl _value, $Res Function(_$ApiCallbackImpl) _then)
-      : super(_value, _then);
+    _$ApiCallbackImpl _value,
+    $Res Function(_$ApiCallbackImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of ApiCallback
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? name = null,
-    Object? expression = null,
-  }) {
-    return _then(_$ApiCallbackImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      expression: null == expression
-          ? _value._expression
-          : expression // ignore: cast_nullable_to_non_nullable
-              as Map<String, PathItem>,
-    ));
+  $Res call({Object? name = null, Object? expression = null}) {
+    return _then(
+      _$ApiCallbackImpl(
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        expression: null == expression
+            ? _value._expression
+            : expression // ignore: cast_nullable_to_non_nullable
+                  as Map<String, PathItem>,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$ApiCallbackImpl implements _ApiCallback {
-  const _$ApiCallbackImpl(
-      {required this.name, required final Map<String, PathItem> expression})
-      : _expression = expression;
+  const _$ApiCallbackImpl({
+    required this.name,
+    required final Map<String, PathItem> expression,
+  }) : _expression = expression;
 
   /// The name of the callback
   @override
@@ -1250,20 +1360,27 @@ class _$ApiCallbackImpl implements _ApiCallback {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ApiCallbackImpl &&
             (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality()
-                .equals(other._expression, _expression));
+            const DeepCollectionEquality().equals(
+              other._expression,
+              _expression,
+            ));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, name, const DeepCollectionEquality().hash(_expression));
+    runtimeType,
+    name,
+    const DeepCollectionEquality().hash(_expression),
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApiCallback
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ApiCallbackImplCopyWith<_$ApiCallbackImpl> get copyWith =>
@@ -1299,20 +1416,23 @@ class _$ApiCallbackImpl implements _ApiCallback {
 }
 
 abstract class _ApiCallback implements ApiCallback {
-  const factory _ApiCallback(
-      {required final String name,
-      required final Map<String, PathItem> expression}) = _$ApiCallbackImpl;
-
-  @override
+  const factory _ApiCallback({
+    required final String name,
+    required final Map<String, PathItem> expression,
+  }) = _$ApiCallbackImpl;
 
   /// The name of the callback
-  String get name;
   @override
+  String get name;
 
   /// The callback expression to evaluate and operation to perform
-  Map<String, PathItem> get expression;
   @override
-  @JsonKey(ignore: true)
+  Map<String, PathItem> get expression;
+
+  /// Create a copy of ApiCallback
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ApiCallbackImplCopyWith<_$ApiCallbackImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1360,21 +1480,23 @@ mixin _$Components {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_Components value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_Components value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_Components value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Components to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Components
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ComponentsCopyWith<Components> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1382,20 +1504,22 @@ mixin _$Components {
 /// @nodoc
 abstract class $ComponentsCopyWith<$Res> {
   factory $ComponentsCopyWith(
-          Components value, $Res Function(Components) then) =
-      _$ComponentsCopyWithImpl<$Res, Components>;
+    Components value,
+    $Res Function(Components) then,
+  ) = _$ComponentsCopyWithImpl<$Res, Components>;
   @useResult
-  $Res call(
-      {@_SchemaMapConverter() Map<String, Schema>? schemas,
-      Map<String, Response>? responses,
-      Map<String, Parameter>? parameters,
-      Map<String, Example>? examples,
-      Map<String, RequestBody>? requestBodies,
-      Map<String, Header>? headers,
-      Map<String, SecurityScheme>? securitySchemes,
-      Map<String, Link>? links,
-      @_ApiCallbackMapConverter() Map<String, ApiCallback>? callbacks,
-      Map<String, PathItem>? pathItems});
+  $Res call({
+    @_SchemaMapConverter() Map<String, Schema>? schemas,
+    Map<String, Response>? responses,
+    Map<String, Parameter>? parameters,
+    Map<String, Example>? examples,
+    Map<String, RequestBody>? requestBodies,
+    Map<String, Header>? headers,
+    Map<String, SecurityScheme>? securitySchemes,
+    Map<String, Link>? links,
+    @_ApiCallbackMapConverter() Map<String, ApiCallback>? callbacks,
+    Map<String, PathItem>? pathItems,
+  });
 }
 
 /// @nodoc
@@ -1408,6 +1532,8 @@ class _$ComponentsCopyWithImpl<$Res, $Val extends Components>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Components
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1422,48 +1548,51 @@ class _$ComponentsCopyWithImpl<$Res, $Val extends Components>
     Object? callbacks = freezed,
     Object? pathItems = freezed,
   }) {
-    return _then(_value.copyWith(
-      schemas: freezed == schemas
-          ? _value.schemas
-          : schemas // ignore: cast_nullable_to_non_nullable
-              as Map<String, Schema>?,
-      responses: freezed == responses
-          ? _value.responses
-          : responses // ignore: cast_nullable_to_non_nullable
-              as Map<String, Response>?,
-      parameters: freezed == parameters
-          ? _value.parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
-              as Map<String, Parameter>?,
-      examples: freezed == examples
-          ? _value.examples
-          : examples // ignore: cast_nullable_to_non_nullable
-              as Map<String, Example>?,
-      requestBodies: freezed == requestBodies
-          ? _value.requestBodies
-          : requestBodies // ignore: cast_nullable_to_non_nullable
-              as Map<String, RequestBody>?,
-      headers: freezed == headers
-          ? _value.headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, Header>?,
-      securitySchemes: freezed == securitySchemes
-          ? _value.securitySchemes
-          : securitySchemes // ignore: cast_nullable_to_non_nullable
-              as Map<String, SecurityScheme>?,
-      links: freezed == links
-          ? _value.links
-          : links // ignore: cast_nullable_to_non_nullable
-              as Map<String, Link>?,
-      callbacks: freezed == callbacks
-          ? _value.callbacks
-          : callbacks // ignore: cast_nullable_to_non_nullable
-              as Map<String, ApiCallback>?,
-      pathItems: freezed == pathItems
-          ? _value.pathItems
-          : pathItems // ignore: cast_nullable_to_non_nullable
-              as Map<String, PathItem>?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            schemas: freezed == schemas
+                ? _value.schemas
+                : schemas // ignore: cast_nullable_to_non_nullable
+                      as Map<String, Schema>?,
+            responses: freezed == responses
+                ? _value.responses
+                : responses // ignore: cast_nullable_to_non_nullable
+                      as Map<String, Response>?,
+            parameters: freezed == parameters
+                ? _value.parameters
+                : parameters // ignore: cast_nullable_to_non_nullable
+                      as Map<String, Parameter>?,
+            examples: freezed == examples
+                ? _value.examples
+                : examples // ignore: cast_nullable_to_non_nullable
+                      as Map<String, Example>?,
+            requestBodies: freezed == requestBodies
+                ? _value.requestBodies
+                : requestBodies // ignore: cast_nullable_to_non_nullable
+                      as Map<String, RequestBody>?,
+            headers: freezed == headers
+                ? _value.headers
+                : headers // ignore: cast_nullable_to_non_nullable
+                      as Map<String, Header>?,
+            securitySchemes: freezed == securitySchemes
+                ? _value.securitySchemes
+                : securitySchemes // ignore: cast_nullable_to_non_nullable
+                      as Map<String, SecurityScheme>?,
+            links: freezed == links
+                ? _value.links
+                : links // ignore: cast_nullable_to_non_nullable
+                      as Map<String, Link>?,
+            callbacks: freezed == callbacks
+                ? _value.callbacks
+                : callbacks // ignore: cast_nullable_to_non_nullable
+                      as Map<String, ApiCallback>?,
+            pathItems: freezed == pathItems
+                ? _value.pathItems
+                : pathItems // ignore: cast_nullable_to_non_nullable
+                      as Map<String, PathItem>?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -1471,21 +1600,23 @@ class _$ComponentsCopyWithImpl<$Res, $Val extends Components>
 abstract class _$$ComponentsImplCopyWith<$Res>
     implements $ComponentsCopyWith<$Res> {
   factory _$$ComponentsImplCopyWith(
-          _$ComponentsImpl value, $Res Function(_$ComponentsImpl) then) =
-      __$$ComponentsImplCopyWithImpl<$Res>;
+    _$ComponentsImpl value,
+    $Res Function(_$ComponentsImpl) then,
+  ) = __$$ComponentsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@_SchemaMapConverter() Map<String, Schema>? schemas,
-      Map<String, Response>? responses,
-      Map<String, Parameter>? parameters,
-      Map<String, Example>? examples,
-      Map<String, RequestBody>? requestBodies,
-      Map<String, Header>? headers,
-      Map<String, SecurityScheme>? securitySchemes,
-      Map<String, Link>? links,
-      @_ApiCallbackMapConverter() Map<String, ApiCallback>? callbacks,
-      Map<String, PathItem>? pathItems});
+  $Res call({
+    @_SchemaMapConverter() Map<String, Schema>? schemas,
+    Map<String, Response>? responses,
+    Map<String, Parameter>? parameters,
+    Map<String, Example>? examples,
+    Map<String, RequestBody>? requestBodies,
+    Map<String, Header>? headers,
+    Map<String, SecurityScheme>? securitySchemes,
+    Map<String, Link>? links,
+    @_ApiCallbackMapConverter() Map<String, ApiCallback>? callbacks,
+    Map<String, PathItem>? pathItems,
+  });
 }
 
 /// @nodoc
@@ -1493,9 +1624,12 @@ class __$$ComponentsImplCopyWithImpl<$Res>
     extends _$ComponentsCopyWithImpl<$Res, _$ComponentsImpl>
     implements _$$ComponentsImplCopyWith<$Res> {
   __$$ComponentsImplCopyWithImpl(
-      _$ComponentsImpl _value, $Res Function(_$ComponentsImpl) _then)
-      : super(_value, _then);
+    _$ComponentsImpl _value,
+    $Res Function(_$ComponentsImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Components
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1510,75 +1644,77 @@ class __$$ComponentsImplCopyWithImpl<$Res>
     Object? callbacks = freezed,
     Object? pathItems = freezed,
   }) {
-    return _then(_$ComponentsImpl(
-      schemas: freezed == schemas
-          ? _value._schemas
-          : schemas // ignore: cast_nullable_to_non_nullable
-              as Map<String, Schema>?,
-      responses: freezed == responses
-          ? _value._responses
-          : responses // ignore: cast_nullable_to_non_nullable
-              as Map<String, Response>?,
-      parameters: freezed == parameters
-          ? _value._parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
-              as Map<String, Parameter>?,
-      examples: freezed == examples
-          ? _value._examples
-          : examples // ignore: cast_nullable_to_non_nullable
-              as Map<String, Example>?,
-      requestBodies: freezed == requestBodies
-          ? _value._requestBodies
-          : requestBodies // ignore: cast_nullable_to_non_nullable
-              as Map<String, RequestBody>?,
-      headers: freezed == headers
-          ? _value._headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, Header>?,
-      securitySchemes: freezed == securitySchemes
-          ? _value._securitySchemes
-          : securitySchemes // ignore: cast_nullable_to_non_nullable
-              as Map<String, SecurityScheme>?,
-      links: freezed == links
-          ? _value._links
-          : links // ignore: cast_nullable_to_non_nullable
-              as Map<String, Link>?,
-      callbacks: freezed == callbacks
-          ? _value._callbacks
-          : callbacks // ignore: cast_nullable_to_non_nullable
-              as Map<String, ApiCallback>?,
-      pathItems: freezed == pathItems
-          ? _value._pathItems
-          : pathItems // ignore: cast_nullable_to_non_nullable
-              as Map<String, PathItem>?,
-    ));
+    return _then(
+      _$ComponentsImpl(
+        schemas: freezed == schemas
+            ? _value._schemas
+            : schemas // ignore: cast_nullable_to_non_nullable
+                  as Map<String, Schema>?,
+        responses: freezed == responses
+            ? _value._responses
+            : responses // ignore: cast_nullable_to_non_nullable
+                  as Map<String, Response>?,
+        parameters: freezed == parameters
+            ? _value._parameters
+            : parameters // ignore: cast_nullable_to_non_nullable
+                  as Map<String, Parameter>?,
+        examples: freezed == examples
+            ? _value._examples
+            : examples // ignore: cast_nullable_to_non_nullable
+                  as Map<String, Example>?,
+        requestBodies: freezed == requestBodies
+            ? _value._requestBodies
+            : requestBodies // ignore: cast_nullable_to_non_nullable
+                  as Map<String, RequestBody>?,
+        headers: freezed == headers
+            ? _value._headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, Header>?,
+        securitySchemes: freezed == securitySchemes
+            ? _value._securitySchemes
+            : securitySchemes // ignore: cast_nullable_to_non_nullable
+                  as Map<String, SecurityScheme>?,
+        links: freezed == links
+            ? _value._links
+            : links // ignore: cast_nullable_to_non_nullable
+                  as Map<String, Link>?,
+        callbacks: freezed == callbacks
+            ? _value._callbacks
+            : callbacks // ignore: cast_nullable_to_non_nullable
+                  as Map<String, ApiCallback>?,
+        pathItems: freezed == pathItems
+            ? _value._pathItems
+            : pathItems // ignore: cast_nullable_to_non_nullable
+                  as Map<String, PathItem>?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ComponentsImpl implements _Components {
-  const _$ComponentsImpl(
-      {@_SchemaMapConverter() final Map<String, Schema>? schemas,
-      final Map<String, Response>? responses,
-      final Map<String, Parameter>? parameters,
-      final Map<String, Example>? examples,
-      final Map<String, RequestBody>? requestBodies,
-      final Map<String, Header>? headers,
-      final Map<String, SecurityScheme>? securitySchemes,
-      final Map<String, Link>? links,
-      @_ApiCallbackMapConverter() final Map<String, ApiCallback>? callbacks,
-      final Map<String, PathItem>? pathItems})
-      : _schemas = schemas,
-        _responses = responses,
-        _parameters = parameters,
-        _examples = examples,
-        _requestBodies = requestBodies,
-        _headers = headers,
-        _securitySchemes = securitySchemes,
-        _links = links,
-        _callbacks = callbacks,
-        _pathItems = pathItems;
+  const _$ComponentsImpl({
+    @_SchemaMapConverter() final Map<String, Schema>? schemas,
+    final Map<String, Response>? responses,
+    final Map<String, Parameter>? parameters,
+    final Map<String, Example>? examples,
+    final Map<String, RequestBody>? requestBodies,
+    final Map<String, Header>? headers,
+    final Map<String, SecurityScheme>? securitySchemes,
+    final Map<String, Link>? links,
+    @_ApiCallbackMapConverter() final Map<String, ApiCallback>? callbacks,
+    final Map<String, PathItem>? pathItems,
+  }) : _schemas = schemas,
+       _responses = responses,
+       _parameters = parameters,
+       _examples = examples,
+       _requestBodies = requestBodies,
+       _headers = headers,
+       _securitySchemes = securitySchemes,
+       _links = links,
+       _callbacks = callbacks,
+       _pathItems = pathItems;
 
   factory _$ComponentsImpl.fromJson(Map<String, dynamic> json) =>
       _$$ComponentsImplFromJson(json);
@@ -1721,44 +1857,59 @@ class _$ComponentsImpl implements _Components {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ComponentsImpl &&
             const DeepCollectionEquality().equals(other._schemas, _schemas) &&
-            const DeepCollectionEquality()
-                .equals(other._responses, _responses) &&
-            const DeepCollectionEquality()
-                .equals(other._parameters, _parameters) &&
+            const DeepCollectionEquality().equals(
+              other._responses,
+              _responses,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._parameters,
+              _parameters,
+            ) &&
             const DeepCollectionEquality().equals(other._examples, _examples) &&
-            const DeepCollectionEquality()
-                .equals(other._requestBodies, _requestBodies) &&
+            const DeepCollectionEquality().equals(
+              other._requestBodies,
+              _requestBodies,
+            ) &&
             const DeepCollectionEquality().equals(other._headers, _headers) &&
-            const DeepCollectionEquality()
-                .equals(other._securitySchemes, _securitySchemes) &&
+            const DeepCollectionEquality().equals(
+              other._securitySchemes,
+              _securitySchemes,
+            ) &&
             const DeepCollectionEquality().equals(other._links, _links) &&
-            const DeepCollectionEquality()
-                .equals(other._callbacks, _callbacks) &&
-            const DeepCollectionEquality()
-                .equals(other._pathItems, _pathItems));
+            const DeepCollectionEquality().equals(
+              other._callbacks,
+              _callbacks,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._pathItems,
+              _pathItems,
+            ));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_schemas),
-      const DeepCollectionEquality().hash(_responses),
-      const DeepCollectionEquality().hash(_parameters),
-      const DeepCollectionEquality().hash(_examples),
-      const DeepCollectionEquality().hash(_requestBodies),
-      const DeepCollectionEquality().hash(_headers),
-      const DeepCollectionEquality().hash(_securitySchemes),
-      const DeepCollectionEquality().hash(_links),
-      const DeepCollectionEquality().hash(_callbacks),
-      const DeepCollectionEquality().hash(_pathItems));
+    runtimeType,
+    const DeepCollectionEquality().hash(_schemas),
+    const DeepCollectionEquality().hash(_responses),
+    const DeepCollectionEquality().hash(_parameters),
+    const DeepCollectionEquality().hash(_examples),
+    const DeepCollectionEquality().hash(_requestBodies),
+    const DeepCollectionEquality().hash(_headers),
+    const DeepCollectionEquality().hash(_securitySchemes),
+    const DeepCollectionEquality().hash(_links),
+    const DeepCollectionEquality().hash(_callbacks),
+    const DeepCollectionEquality().hash(_pathItems),
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Components
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ComponentsImplCopyWith<_$ComponentsImpl> get copyWith =>
@@ -1794,72 +1945,73 @@ class _$ComponentsImpl implements _Components {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ComponentsImplToJson(
-      this,
-    );
+    return _$$ComponentsImplToJson(this);
   }
 }
 
 abstract class _Components implements Components {
-  const factory _Components(
-      {@_SchemaMapConverter() final Map<String, Schema>? schemas,
-      final Map<String, Response>? responses,
-      final Map<String, Parameter>? parameters,
-      final Map<String, Example>? examples,
-      final Map<String, RequestBody>? requestBodies,
-      final Map<String, Header>? headers,
-      final Map<String, SecurityScheme>? securitySchemes,
-      final Map<String, Link>? links,
-      @_ApiCallbackMapConverter() final Map<String, ApiCallback>? callbacks,
-      final Map<String, PathItem>? pathItems}) = _$ComponentsImpl;
+  const factory _Components({
+    @_SchemaMapConverter() final Map<String, Schema>? schemas,
+    final Map<String, Response>? responses,
+    final Map<String, Parameter>? parameters,
+    final Map<String, Example>? examples,
+    final Map<String, RequestBody>? requestBodies,
+    final Map<String, Header>? headers,
+    final Map<String, SecurityScheme>? securitySchemes,
+    final Map<String, Link>? links,
+    @_ApiCallbackMapConverter() final Map<String, ApiCallback>? callbacks,
+    final Map<String, PathItem>? pathItems,
+  }) = _$ComponentsImpl;
 
   factory _Components.fromJson(Map<String, dynamic> json) =
       _$ComponentsImpl.fromJson;
 
-  @override
-
   /// A set of reusable [Schema] objects.
+  @override
   @_SchemaMapConverter()
   Map<String, Schema>? get schemas;
-  @override
 
   /// A set of reusable [Response] objects.
-  Map<String, Response>? get responses;
   @override
+  Map<String, Response>? get responses;
 
   /// A set of reusable [Parameter] objects.
-  Map<String, Parameter>? get parameters;
   @override
+  Map<String, Parameter>? get parameters;
 
   /// A set of reusable [Example] objects.
-  Map<String, Example>? get examples;
   @override
+  Map<String, Example>? get examples;
 
   /// A set of reusable [RequestBody.component] objects.
-  Map<String, RequestBody>? get requestBodies;
   @override
+  Map<String, RequestBody>? get requestBodies;
 
   /// A set of reusable [Header] objects.
-  Map<String, Header>? get headers;
   @override
+  Map<String, Header>? get headers;
 
   /// A set of reusable [SecurityScheme] objects.
-  Map<String, SecurityScheme>? get securitySchemes;
   @override
+  Map<String, SecurityScheme>? get securitySchemes;
 
   /// A set of reusable [Link] objects.
-  Map<String, Link>? get links;
   @override
+  Map<String, Link>? get links;
 
   /// A set of reusable [ApiCallback] objects.
+  @override
   @_ApiCallbackMapConverter()
   Map<String, ApiCallback>? get callbacks;
-  @override
 
   /// A set of reusable [PathItem] objects.
-  Map<String, PathItem>? get pathItems;
   @override
-  @JsonKey(ignore: true)
+  Map<String, PathItem>? get pathItems;
+
+  /// Create a copy of Components
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ComponentsImplCopyWith<_$ComponentsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1884,21 +2036,23 @@ mixin _$Contact {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_Contact value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_Contact value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_Contact value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Contact to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Contact
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ContactCopyWith<Contact> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1920,6 +2074,8 @@ class _$ContactCopyWithImpl<$Res, $Val extends Contact>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Contact
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1927,28 +2083,32 @@ class _$ContactCopyWithImpl<$Res, $Val extends Contact>
     Object? email = freezed,
     Object? url = freezed,
   }) {
-    return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            name: freezed == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            email: freezed == email
+                ? _value.email
+                : email // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            url: freezed == url
+                ? _value.url
+                : url // ignore: cast_nullable_to_non_nullable
+                      as String?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$ContactImplCopyWith<$Res> implements $ContactCopyWith<$Res> {
   factory _$$ContactImplCopyWith(
-          _$ContactImpl value, $Res Function(_$ContactImpl) then) =
-      __$$ContactImplCopyWithImpl<$Res>;
+    _$ContactImpl value,
+    $Res Function(_$ContactImpl) then,
+  ) = __$$ContactImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? name, String? email, String? url});
@@ -1959,9 +2119,12 @@ class __$$ContactImplCopyWithImpl<$Res>
     extends _$ContactCopyWithImpl<$Res, _$ContactImpl>
     implements _$$ContactImplCopyWith<$Res> {
   __$$ContactImplCopyWithImpl(
-      _$ContactImpl _value, $Res Function(_$ContactImpl) _then)
-      : super(_value, _then);
+    _$ContactImpl _value,
+    $Res Function(_$ContactImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Contact
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1969,20 +2132,22 @@ class __$$ContactImplCopyWithImpl<$Res>
     Object? email = freezed,
     Object? url = freezed,
   }) {
-    return _then(_$ContactImpl(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$ContactImpl(
+        name: freezed == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        email: freezed == email
+            ? _value.email
+            : email // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        url: freezed == url
+            ? _value.url
+            : url // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -2014,7 +2179,7 @@ class _$ContactImpl implements _Contact {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ContactImpl &&
@@ -2023,11 +2188,13 @@ class _$ContactImpl implements _Contact {
             (identical(other.url, url) || other.url == url));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, email, url);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Contact
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ContactImplCopyWith<_$ContactImpl> get copyWith =>
@@ -2063,36 +2230,37 @@ class _$ContactImpl implements _Contact {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ContactImplToJson(
-      this,
-    );
+    return _$$ContactImplToJson(this);
   }
 }
 
 abstract class _Contact implements Contact {
-  const factory _Contact(
-      {final String? name,
-      final String? email,
-      final String? url}) = _$ContactImpl;
+  const factory _Contact({
+    final String? name,
+    final String? email,
+    final String? url,
+  }) = _$ContactImpl;
 
   factory _Contact.fromJson(Map<String, dynamic> json) = _$ContactImpl.fromJson;
 
-  @override
-
   /// The identifying name of the contact person/organization.
-  String? get name;
   @override
+  String? get name;
 
   /// The email address of the contact person/organization.
   /// This must be in the form of an email address.
-  String? get email;
   @override
+  String? get email;
 
   /// The URL pointing to the contact information.
   /// This must be in the form of a URL.
-  String? get url;
   @override
-  @JsonKey(ignore: true)
+  String? get url;
+
+  /// Create a copy of Contact
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ContactImplCopyWith<_$ContactImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2112,21 +2280,23 @@ mixin _$Discriminator {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_Discriminator value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_Discriminator value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_Discriminator value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Discriminator to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Discriminator
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DiscriminatorCopyWith<Discriminator> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2134,8 +2304,9 @@ mixin _$Discriminator {
 /// @nodoc
 abstract class $DiscriminatorCopyWith<$Res> {
   factory $DiscriminatorCopyWith(
-          Discriminator value, $Res Function(Discriminator) then) =
-      _$DiscriminatorCopyWithImpl<$Res, Discriminator>;
+    Discriminator value,
+    $Res Function(Discriminator) then,
+  ) = _$DiscriminatorCopyWithImpl<$Res, Discriminator>;
   @useResult
   $Res call({String propertyName, Map<String, String>? mapping});
 }
@@ -2150,22 +2321,24 @@ class _$DiscriminatorCopyWithImpl<$Res, $Val extends Discriminator>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Discriminator
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? propertyName = null,
-    Object? mapping = freezed,
-  }) {
-    return _then(_value.copyWith(
-      propertyName: null == propertyName
-          ? _value.propertyName
-          : propertyName // ignore: cast_nullable_to_non_nullable
-              as String,
-      mapping: freezed == mapping
-          ? _value.mapping
-          : mapping // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-    ) as $Val);
+  $Res call({Object? propertyName = null, Object? mapping = freezed}) {
+    return _then(
+      _value.copyWith(
+            propertyName: null == propertyName
+                ? _value.propertyName
+                : propertyName // ignore: cast_nullable_to_non_nullable
+                      as String,
+            mapping: freezed == mapping
+                ? _value.mapping
+                : mapping // ignore: cast_nullable_to_non_nullable
+                      as Map<String, String>?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -2173,8 +2346,9 @@ class _$DiscriminatorCopyWithImpl<$Res, $Val extends Discriminator>
 abstract class _$$DiscriminatorImplCopyWith<$Res>
     implements $DiscriminatorCopyWith<$Res> {
   factory _$$DiscriminatorImplCopyWith(
-          _$DiscriminatorImpl value, $Res Function(_$DiscriminatorImpl) then) =
-      __$$DiscriminatorImplCopyWithImpl<$Res>;
+    _$DiscriminatorImpl value,
+    $Res Function(_$DiscriminatorImpl) then,
+  ) = __$$DiscriminatorImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String propertyName, Map<String, String>? mapping});
@@ -2185,34 +2359,37 @@ class __$$DiscriminatorImplCopyWithImpl<$Res>
     extends _$DiscriminatorCopyWithImpl<$Res, _$DiscriminatorImpl>
     implements _$$DiscriminatorImplCopyWith<$Res> {
   __$$DiscriminatorImplCopyWithImpl(
-      _$DiscriminatorImpl _value, $Res Function(_$DiscriminatorImpl) _then)
-      : super(_value, _then);
+    _$DiscriminatorImpl _value,
+    $Res Function(_$DiscriminatorImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Discriminator
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? propertyName = null,
-    Object? mapping = freezed,
-  }) {
-    return _then(_$DiscriminatorImpl(
-      propertyName: null == propertyName
-          ? _value.propertyName
-          : propertyName // ignore: cast_nullable_to_non_nullable
-              as String,
-      mapping: freezed == mapping
-          ? _value._mapping
-          : mapping // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-    ));
+  $Res call({Object? propertyName = null, Object? mapping = freezed}) {
+    return _then(
+      _$DiscriminatorImpl(
+        propertyName: null == propertyName
+            ? _value.propertyName
+            : propertyName // ignore: cast_nullable_to_non_nullable
+                  as String,
+        mapping: freezed == mapping
+            ? _value._mapping
+            : mapping // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$DiscriminatorImpl implements _Discriminator {
-  const _$DiscriminatorImpl(
-      {required this.propertyName, final Map<String, String>? mapping})
-      : _mapping = mapping;
+  const _$DiscriminatorImpl({
+    required this.propertyName,
+    final Map<String, String>? mapping,
+  }) : _mapping = mapping;
 
   factory _$DiscriminatorImpl.fromJson(Map<String, dynamic> json) =>
       _$$DiscriminatorImplFromJson(json);
@@ -2240,7 +2417,7 @@ class _$DiscriminatorImpl implements _Discriminator {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DiscriminatorImpl &&
@@ -2249,12 +2426,17 @@ class _$DiscriminatorImpl implements _Discriminator {
             const DeepCollectionEquality().equals(other._mapping, _mapping));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, propertyName, const DeepCollectionEquality().hash(_mapping));
+    runtimeType,
+    propertyName,
+    const DeepCollectionEquality().hash(_mapping),
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Discriminator
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DiscriminatorImplCopyWith<_$DiscriminatorImpl> get copyWith =>
@@ -2290,30 +2472,31 @@ class _$DiscriminatorImpl implements _Discriminator {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$DiscriminatorImplToJson(
-      this,
-    );
+    return _$$DiscriminatorImplToJson(this);
   }
 }
 
 abstract class _Discriminator implements Discriminator {
-  const factory _Discriminator(
-      {required final String propertyName,
-      final Map<String, String>? mapping}) = _$DiscriminatorImpl;
+  const factory _Discriminator({
+    required final String propertyName,
+    final Map<String, String>? mapping,
+  }) = _$DiscriminatorImpl;
 
   factory _Discriminator.fromJson(Map<String, dynamic> json) =
       _$DiscriminatorImpl.fromJson;
 
-  @override
-
   /// The name of the property in the payload that will hold the discriminator value.
-  String get propertyName;
   @override
+  String get propertyName;
 
   /// An object to hold mappings between payload values and schema names or references.
-  Map<String, String>? get mapping;
   @override
-  @JsonKey(ignore: true)
+  Map<String, String>? get mapping;
+
+  /// Create a copy of Discriminator
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DiscriminatorImplCopyWith<_$DiscriminatorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2330,21 +2513,23 @@ mixin _$Encoding {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_Encoding value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_Encoding value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_Encoding value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Encoding to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Encoding
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EncodingCopyWith<Encoding> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2367,17 +2552,20 @@ class _$EncodingCopyWithImpl<$Res, $Val extends Encoding>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Encoding
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? contentType = freezed,
-  }) {
-    return _then(_value.copyWith(
-      contentType: freezed == contentType
-          ? _value.contentType
-          : contentType // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  $Res call({Object? contentType = freezed}) {
+    return _then(
+      _value.copyWith(
+            contentType: freezed == contentType
+                ? _value.contentType
+                : contentType // ignore: cast_nullable_to_non_nullable
+                      as String?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -2385,8 +2573,9 @@ class _$EncodingCopyWithImpl<$Res, $Val extends Encoding>
 abstract class _$$EncodingImplCopyWith<$Res>
     implements $EncodingCopyWith<$Res> {
   factory _$$EncodingImplCopyWith(
-          _$EncodingImpl value, $Res Function(_$EncodingImpl) then) =
-      __$$EncodingImplCopyWithImpl<$Res>;
+    _$EncodingImpl value,
+    $Res Function(_$EncodingImpl) then,
+  ) = __$$EncodingImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? contentType});
@@ -2397,20 +2586,23 @@ class __$$EncodingImplCopyWithImpl<$Res>
     extends _$EncodingCopyWithImpl<$Res, _$EncodingImpl>
     implements _$$EncodingImplCopyWith<$Res> {
   __$$EncodingImplCopyWithImpl(
-      _$EncodingImpl _value, $Res Function(_$EncodingImpl) _then)
-      : super(_value, _then);
+    _$EncodingImpl _value,
+    $Res Function(_$EncodingImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Encoding
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? contentType = freezed,
-  }) {
-    return _then(_$EncodingImpl(
-      contentType: freezed == contentType
-          ? _value.contentType
-          : contentType // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? contentType = freezed}) {
+    return _then(
+      _$EncodingImpl(
+        contentType: freezed == contentType
+            ? _value.contentType
+            : contentType // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -2432,7 +2624,7 @@ class _$EncodingImpl implements _Encoding {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EncodingImpl &&
@@ -2440,11 +2632,13 @@ class _$EncodingImpl implements _Encoding {
                 other.contentType == contentType));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, contentType);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Encoding
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EncodingImplCopyWith<_$EncodingImpl> get copyWith =>
@@ -2480,9 +2674,7 @@ class _$EncodingImpl implements _Encoding {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$EncodingImplToJson(
-      this,
-    );
+    return _$$EncodingImplToJson(this);
   }
 }
 
@@ -2492,12 +2684,14 @@ abstract class _Encoding implements Encoding {
   factory _Encoding.fromJson(Map<String, dynamic> json) =
       _$EncodingImpl.fromJson;
 
-  @override
-
   /// The Content-Type for encoding a specific property.
-  String? get contentType;
   @override
-  @JsonKey(ignore: true)
+  String? get contentType;
+
+  /// Create a copy of Encoding
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EncodingImplCopyWith<_$EncodingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2528,21 +2722,23 @@ mixin _$Example {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(ExampleObject value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(ExampleObject value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(ExampleObject value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Example to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Example
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ExampleCopyWith<Example> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2551,12 +2747,13 @@ abstract class $ExampleCopyWith<$Res> {
   factory $ExampleCopyWith(Example value, $Res Function(Example) then) =
       _$ExampleCopyWithImpl<$Res, Example>;
   @useResult
-  $Res call(
-      {String? summary,
-      String? description,
-      dynamic value,
-      String? externalValue,
-      @JsonKey(name: '\$ref') @_ExampleRefConverter() String? ref});
+  $Res call({
+    String? summary,
+    String? description,
+    dynamic value,
+    String? externalValue,
+    @JsonKey(name: '\$ref') @_ExampleRefConverter() String? ref,
+  });
 }
 
 /// @nodoc
@@ -2569,6 +2766,8 @@ class _$ExampleCopyWithImpl<$Res, $Val extends Example>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Example
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2578,28 +2777,31 @@ class _$ExampleCopyWithImpl<$Res, $Val extends Example>
     Object? externalValue = freezed,
     Object? ref = freezed,
   }) {
-    return _then(_value.copyWith(
-      summary: freezed == summary
-          ? _value.summary
-          : summary // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      value: freezed == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      externalValue: freezed == externalValue
-          ? _value.externalValue
-          : externalValue // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            summary: freezed == summary
+                ? _value.summary
+                : summary // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            description: freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            value: freezed == value
+                ? _value.value
+                : value // ignore: cast_nullable_to_non_nullable
+                      as dynamic,
+            externalValue: freezed == externalValue
+                ? _value.externalValue
+                : externalValue // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            ref: freezed == ref
+                ? _value.ref
+                : ref // ignore: cast_nullable_to_non_nullable
+                      as String?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -2607,16 +2809,18 @@ class _$ExampleCopyWithImpl<$Res, $Val extends Example>
 abstract class _$$ExampleObjectImplCopyWith<$Res>
     implements $ExampleCopyWith<$Res> {
   factory _$$ExampleObjectImplCopyWith(
-          _$ExampleObjectImpl value, $Res Function(_$ExampleObjectImpl) then) =
-      __$$ExampleObjectImplCopyWithImpl<$Res>;
+    _$ExampleObjectImpl value,
+    $Res Function(_$ExampleObjectImpl) then,
+  ) = __$$ExampleObjectImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? summary,
-      String? description,
-      dynamic value,
-      String? externalValue,
-      @JsonKey(name: '\$ref') @_ExampleRefConverter() String? ref});
+  $Res call({
+    String? summary,
+    String? description,
+    dynamic value,
+    String? externalValue,
+    @JsonKey(name: '\$ref') @_ExampleRefConverter() String? ref,
+  });
 }
 
 /// @nodoc
@@ -2624,9 +2828,12 @@ class __$$ExampleObjectImplCopyWithImpl<$Res>
     extends _$ExampleCopyWithImpl<$Res, _$ExampleObjectImpl>
     implements _$$ExampleObjectImplCopyWith<$Res> {
   __$$ExampleObjectImplCopyWithImpl(
-      _$ExampleObjectImpl _value, $Res Function(_$ExampleObjectImpl) _then)
-      : super(_value, _then);
+    _$ExampleObjectImpl _value,
+    $Res Function(_$ExampleObjectImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Example
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2636,41 +2843,43 @@ class __$$ExampleObjectImplCopyWithImpl<$Res>
     Object? externalValue = freezed,
     Object? ref = freezed,
   }) {
-    return _then(_$ExampleObjectImpl(
-      summary: freezed == summary
-          ? _value.summary
-          : summary // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      value: freezed == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      externalValue: freezed == externalValue
-          ? _value.externalValue
-          : externalValue // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$ExampleObjectImpl(
+        summary: freezed == summary
+            ? _value.summary
+            : summary // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        value: freezed == value
+            ? _value.value
+            : value // ignore: cast_nullable_to_non_nullable
+                  as dynamic,
+        externalValue: freezed == externalValue
+            ? _value.externalValue
+            : externalValue // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ExampleObjectImpl extends ExampleObject {
-  const _$ExampleObjectImpl(
-      {this.summary,
-      this.description,
-      this.value,
-      this.externalValue,
-      @JsonKey(name: '\$ref') @_ExampleRefConverter() this.ref})
-      : super._();
+  const _$ExampleObjectImpl({
+    this.summary,
+    this.description,
+    this.value,
+    this.externalValue,
+    @JsonKey(name: '\$ref') @_ExampleRefConverter() this.ref,
+  }) : super._();
 
   factory _$ExampleObjectImpl.fromJson(Map<String, dynamic> json) =>
       _$$ExampleObjectImplFromJson(json);
@@ -2703,7 +2912,7 @@ class _$ExampleObjectImpl extends ExampleObject {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ExampleObjectImpl &&
@@ -2716,12 +2925,20 @@ class _$ExampleObjectImpl extends ExampleObject {
             (identical(other.ref, ref) || other.ref == ref));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, summary, description,
-      const DeepCollectionEquality().hash(value), externalValue, ref);
+  int get hashCode => Object.hash(
+    runtimeType,
+    summary,
+    description,
+    const DeepCollectionEquality().hash(value),
+    externalValue,
+    ref,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Example
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ExampleObjectImplCopyWith<_$ExampleObjectImpl> get copyWith =>
@@ -2757,49 +2974,49 @@ class _$ExampleObjectImpl extends ExampleObject {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ExampleObjectImplToJson(
-      this,
-    );
+    return _$$ExampleObjectImplToJson(this);
   }
 }
 
 abstract class ExampleObject extends Example {
-  const factory ExampleObject(
-          {final String? summary,
-          final String? description,
-          final dynamic value,
-          final String? externalValue,
-          @JsonKey(name: '\$ref') @_ExampleRefConverter() final String? ref}) =
-      _$ExampleObjectImpl;
+  const factory ExampleObject({
+    final String? summary,
+    final String? description,
+    final dynamic value,
+    final String? externalValue,
+    @JsonKey(name: '\$ref') @_ExampleRefConverter() final String? ref,
+  }) = _$ExampleObjectImpl;
   const ExampleObject._() : super._();
 
   factory ExampleObject.fromJson(Map<String, dynamic> json) =
       _$ExampleObjectImpl.fromJson;
 
-  @override
-
   /// Short description for the example.
-  String? get summary;
   @override
+  String? get summary;
 
   /// Long description for the example.
-  String? get description;
   @override
+  String? get description;
 
   /// Embedded literal example
-  dynamic get value;
   @override
+  dynamic get value;
 
   /// A URI that points to the literal example.
-  String? get externalValue;
   @override
+  String? get externalValue;
 
   /// Reference to a response defined in [Components.examples]
+  @override
   @JsonKey(name: '\$ref')
   @_ExampleRefConverter()
   String? get ref;
+
+  /// Create a copy of Example
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ExampleObjectImplCopyWith<_$ExampleObjectImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2819,21 +3036,23 @@ mixin _$ExternalDocs {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_ExternalDocs value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_ExternalDocs value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_ExternalDocs value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this ExternalDocs to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ExternalDocs
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ExternalDocsCopyWith<ExternalDocs> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2841,8 +3060,9 @@ mixin _$ExternalDocs {
 /// @nodoc
 abstract class $ExternalDocsCopyWith<$Res> {
   factory $ExternalDocsCopyWith(
-          ExternalDocs value, $Res Function(ExternalDocs) then) =
-      _$ExternalDocsCopyWithImpl<$Res, ExternalDocs>;
+    ExternalDocs value,
+    $Res Function(ExternalDocs) then,
+  ) = _$ExternalDocsCopyWithImpl<$Res, ExternalDocs>;
   @useResult
   $Res call({String? description, String url});
 }
@@ -2857,22 +3077,24 @@ class _$ExternalDocsCopyWithImpl<$Res, $Val extends ExternalDocs>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ExternalDocs
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? description = freezed,
-    Object? url = null,
-  }) {
-    return _then(_value.copyWith(
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  $Res call({Object? description = freezed, Object? url = null}) {
+    return _then(
+      _value.copyWith(
+            description: freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            url: null == url
+                ? _value.url
+                : url // ignore: cast_nullable_to_non_nullable
+                      as String,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -2880,8 +3102,9 @@ class _$ExternalDocsCopyWithImpl<$Res, $Val extends ExternalDocs>
 abstract class _$$ExternalDocsImplCopyWith<$Res>
     implements $ExternalDocsCopyWith<$Res> {
   factory _$$ExternalDocsImplCopyWith(
-          _$ExternalDocsImpl value, $Res Function(_$ExternalDocsImpl) then) =
-      __$$ExternalDocsImplCopyWithImpl<$Res>;
+    _$ExternalDocsImpl value,
+    $Res Function(_$ExternalDocsImpl) then,
+  ) = __$$ExternalDocsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? description, String url});
@@ -2892,25 +3115,27 @@ class __$$ExternalDocsImplCopyWithImpl<$Res>
     extends _$ExternalDocsCopyWithImpl<$Res, _$ExternalDocsImpl>
     implements _$$ExternalDocsImplCopyWith<$Res> {
   __$$ExternalDocsImplCopyWithImpl(
-      _$ExternalDocsImpl _value, $Res Function(_$ExternalDocsImpl) _then)
-      : super(_value, _then);
+    _$ExternalDocsImpl _value,
+    $Res Function(_$ExternalDocsImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of ExternalDocs
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? description = freezed,
-    Object? url = null,
-  }) {
-    return _then(_$ExternalDocsImpl(
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? description = freezed, Object? url = null}) {
+    return _then(
+      _$ExternalDocsImpl(
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        url: null == url
+            ? _value.url
+            : url // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -2936,7 +3161,7 @@ class _$ExternalDocsImpl implements _ExternalDocs {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ExternalDocsImpl &&
@@ -2945,11 +3170,13 @@ class _$ExternalDocsImpl implements _ExternalDocs {
             (identical(other.url, url) || other.url == url));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, description, url);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ExternalDocs
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ExternalDocsImplCopyWith<_$ExternalDocsImpl> get copyWith =>
@@ -2985,30 +3212,31 @@ class _$ExternalDocsImpl implements _ExternalDocs {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ExternalDocsImplToJson(
-      this,
-    );
+    return _$$ExternalDocsImplToJson(this);
   }
 }
 
 abstract class _ExternalDocs implements ExternalDocs {
-  const factory _ExternalDocs(
-      {final String? description,
-      required final String url}) = _$ExternalDocsImpl;
+  const factory _ExternalDocs({
+    final String? description,
+    required final String url,
+  }) = _$ExternalDocsImpl;
 
   factory _ExternalDocs.fromJson(Map<String, dynamic> json) =
       _$ExternalDocsImpl.fromJson;
 
-  @override
-
   /// A description of the target documentation.
-  String? get description;
   @override
+  String? get description;
 
   /// The URL for the target documentation. This must be in the form of a URL.
-  String get url;
   @override
-  @JsonKey(ignore: true)
+  String get url;
+
+  /// Create a copy of ExternalDocs
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ExternalDocsImplCopyWith<_$ExternalDocsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3028,21 +3256,23 @@ mixin _$Header {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_Header value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_Header value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_Header value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Header to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Header
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $HeaderCopyWith<Header> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -3066,24 +3296,28 @@ class _$HeaderCopyWithImpl<$Res, $Val extends Header>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Header
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? description = freezed,
-    Object? schema = freezed,
-  }) {
-    return _then(_value.copyWith(
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      schema: freezed == schema
-          ? _value.schema
-          : schema // ignore: cast_nullable_to_non_nullable
-              as Schema?,
-    ) as $Val);
+  $Res call({Object? description = freezed, Object? schema = freezed}) {
+    return _then(
+      _value.copyWith(
+            description: freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            schema: freezed == schema
+                ? _value.schema
+                : schema // ignore: cast_nullable_to_non_nullable
+                      as Schema?,
+          )
+          as $Val,
+    );
   }
 
+  /// Create a copy of Header
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SchemaCopyWith<$Res>? get schema {
@@ -3100,8 +3334,9 @@ class _$HeaderCopyWithImpl<$Res, $Val extends Header>
 /// @nodoc
 abstract class _$$HeaderImplCopyWith<$Res> implements $HeaderCopyWith<$Res> {
   factory _$$HeaderImplCopyWith(
-          _$HeaderImpl value, $Res Function(_$HeaderImpl) then) =
-      __$$HeaderImplCopyWithImpl<$Res>;
+    _$HeaderImpl value,
+    $Res Function(_$HeaderImpl) then,
+  ) = __$$HeaderImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? description, Schema? schema});
@@ -3115,25 +3350,27 @@ class __$$HeaderImplCopyWithImpl<$Res>
     extends _$HeaderCopyWithImpl<$Res, _$HeaderImpl>
     implements _$$HeaderImplCopyWith<$Res> {
   __$$HeaderImplCopyWithImpl(
-      _$HeaderImpl _value, $Res Function(_$HeaderImpl) _then)
-      : super(_value, _then);
+    _$HeaderImpl _value,
+    $Res Function(_$HeaderImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Header
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? description = freezed,
-    Object? schema = freezed,
-  }) {
-    return _then(_$HeaderImpl(
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      schema: freezed == schema
-          ? _value.schema
-          : schema // ignore: cast_nullable_to_non_nullable
-              as Schema?,
-    ));
+  $Res call({Object? description = freezed, Object? schema = freezed}) {
+    return _then(
+      _$HeaderImpl(
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        schema: freezed == schema
+            ? _value.schema
+            : schema // ignore: cast_nullable_to_non_nullable
+                  as Schema?,
+      ),
+    );
   }
 }
 
@@ -3159,7 +3396,7 @@ class _$HeaderImpl implements _Header {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HeaderImpl &&
@@ -3168,11 +3405,13 @@ class _$HeaderImpl implements _Header {
             (identical(other.schema, schema) || other.schema == schema));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, description, schema);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Header
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$HeaderImplCopyWith<_$HeaderImpl> get copyWith =>
@@ -3208,9 +3447,7 @@ class _$HeaderImpl implements _Header {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$HeaderImplToJson(
-      this,
-    );
+    return _$$HeaderImplToJson(this);
   }
 }
 
@@ -3220,16 +3457,18 @@ abstract class _Header implements Header {
 
   factory _Header.fromJson(Map<String, dynamic> json) = _$HeaderImpl.fromJson;
 
-  @override
-
   /// Text
-  String? get description;
   @override
+  String? get description;
 
   /// The schema of the content
-  Schema? get schema;
   @override
-  @JsonKey(ignore: true)
+  Schema? get schema;
+
+  /// Create a copy of Header
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HeaderImplCopyWith<_$HeaderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3265,21 +3504,23 @@ mixin _$Info {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_Info value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_Info value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_Info value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Info to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Info
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $InfoCopyWith<Info> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -3288,14 +3529,15 @@ abstract class $InfoCopyWith<$Res> {
   factory $InfoCopyWith(Info value, $Res Function(Info) then) =
       _$InfoCopyWithImpl<$Res, Info>;
   @useResult
-  $Res call(
-      {String title,
-      String? summary,
-      String? description,
-      String? termsOfService,
-      Contact? contact,
-      License? license,
-      String version});
+  $Res call({
+    String title,
+    String? summary,
+    String? description,
+    String? termsOfService,
+    Contact? contact,
+    License? license,
+    String version,
+  });
 
   $ContactCopyWith<$Res>? get contact;
   $LicenseCopyWith<$Res>? get license;
@@ -3311,6 +3553,8 @@ class _$InfoCopyWithImpl<$Res, $Val extends Info>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Info
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3322,38 +3566,43 @@ class _$InfoCopyWithImpl<$Res, $Val extends Info>
     Object? license = freezed,
     Object? version = null,
   }) {
-    return _then(_value.copyWith(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      summary: freezed == summary
-          ? _value.summary
-          : summary // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      termsOfService: freezed == termsOfService
-          ? _value.termsOfService
-          : termsOfService // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contact: freezed == contact
-          ? _value.contact
-          : contact // ignore: cast_nullable_to_non_nullable
-              as Contact?,
-      license: freezed == license
-          ? _value.license
-          : license // ignore: cast_nullable_to_non_nullable
-              as License?,
-      version: null == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            title: null == title
+                ? _value.title
+                : title // ignore: cast_nullable_to_non_nullable
+                      as String,
+            summary: freezed == summary
+                ? _value.summary
+                : summary // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            description: freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            termsOfService: freezed == termsOfService
+                ? _value.termsOfService
+                : termsOfService // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            contact: freezed == contact
+                ? _value.contact
+                : contact // ignore: cast_nullable_to_non_nullable
+                      as Contact?,
+            license: freezed == license
+                ? _value.license
+                : license // ignore: cast_nullable_to_non_nullable
+                      as License?,
+            version: null == version
+                ? _value.version
+                : version // ignore: cast_nullable_to_non_nullable
+                      as String,
+          )
+          as $Val,
+    );
   }
 
+  /// Create a copy of Info
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ContactCopyWith<$Res>? get contact {
@@ -3366,6 +3615,8 @@ class _$InfoCopyWithImpl<$Res, $Val extends Info>
     });
   }
 
+  /// Create a copy of Info
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $LicenseCopyWith<$Res>? get license {
@@ -3382,18 +3633,20 @@ class _$InfoCopyWithImpl<$Res, $Val extends Info>
 /// @nodoc
 abstract class _$$InfoImplCopyWith<$Res> implements $InfoCopyWith<$Res> {
   factory _$$InfoImplCopyWith(
-          _$InfoImpl value, $Res Function(_$InfoImpl) then) =
-      __$$InfoImplCopyWithImpl<$Res>;
+    _$InfoImpl value,
+    $Res Function(_$InfoImpl) then,
+  ) = __$$InfoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String title,
-      String? summary,
-      String? description,
-      String? termsOfService,
-      Contact? contact,
-      License? license,
-      String version});
+  $Res call({
+    String title,
+    String? summary,
+    String? description,
+    String? termsOfService,
+    Contact? contact,
+    License? license,
+    String version,
+  });
 
   @override
   $ContactCopyWith<$Res>? get contact;
@@ -3406,8 +3659,10 @@ class __$$InfoImplCopyWithImpl<$Res>
     extends _$InfoCopyWithImpl<$Res, _$InfoImpl>
     implements _$$InfoImplCopyWith<$Res> {
   __$$InfoImplCopyWithImpl(_$InfoImpl _value, $Res Function(_$InfoImpl) _then)
-      : super(_value, _then);
+    : super(_value, _then);
 
+  /// Create a copy of Info
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3419,50 +3674,53 @@ class __$$InfoImplCopyWithImpl<$Res>
     Object? license = freezed,
     Object? version = null,
   }) {
-    return _then(_$InfoImpl(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      summary: freezed == summary
-          ? _value.summary
-          : summary // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      termsOfService: freezed == termsOfService
-          ? _value.termsOfService
-          : termsOfService // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contact: freezed == contact
-          ? _value.contact
-          : contact // ignore: cast_nullable_to_non_nullable
-              as Contact?,
-      license: freezed == license
-          ? _value.license
-          : license // ignore: cast_nullable_to_non_nullable
-              as License?,
-      version: null == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      _$InfoImpl(
+        title: null == title
+            ? _value.title
+            : title // ignore: cast_nullable_to_non_nullable
+                  as String,
+        summary: freezed == summary
+            ? _value.summary
+            : summary // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        termsOfService: freezed == termsOfService
+            ? _value.termsOfService
+            : termsOfService // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        contact: freezed == contact
+            ? _value.contact
+            : contact // ignore: cast_nullable_to_non_nullable
+                  as Contact?,
+        license: freezed == license
+            ? _value.license
+            : license // ignore: cast_nullable_to_non_nullable
+                  as License?,
+        version: null == version
+            ? _value.version
+            : version // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$InfoImpl implements _Info {
-  const _$InfoImpl(
-      {required this.title,
-      this.summary,
-      this.description,
-      this.termsOfService,
-      this.contact,
-      this.license,
-      required this.version});
+  const _$InfoImpl({
+    required this.title,
+    this.summary,
+    this.description,
+    this.termsOfService,
+    this.contact,
+    this.license,
+    required this.version,
+  });
 
   factory _$InfoImpl.fromJson(Map<String, dynamic> json) =>
       _$$InfoImplFromJson(json);
@@ -3502,7 +3760,7 @@ class _$InfoImpl implements _Info {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InfoImpl &&
@@ -3517,12 +3775,22 @@ class _$InfoImpl implements _Info {
             (identical(other.version, version) || other.version == version));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, title, summary, description,
-      termsOfService, contact, license, version);
+  int get hashCode => Object.hash(
+    runtimeType,
+    title,
+    summary,
+    description,
+    termsOfService,
+    contact,
+    license,
+    version,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Info
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InfoImplCopyWith<_$InfoImpl> get copyWith =>
@@ -3530,9 +3798,7 @@ class _$InfoImpl implements _Info {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Info value) $default,
-  ) {
+  TResult map<TResult extends Object?>(TResult Function(_Info value) $default) {
     return $default(this);
   }
 
@@ -3558,55 +3824,56 @@ class _$InfoImpl implements _Info {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$InfoImplToJson(
-      this,
-    );
+    return _$$InfoImplToJson(this);
   }
 }
 
 abstract class _Info implements Info {
-  const factory _Info(
-      {required final String title,
-      final String? summary,
-      final String? description,
-      final String? termsOfService,
-      final Contact? contact,
-      final License? license,
-      required final String version}) = _$InfoImpl;
+  const factory _Info({
+    required final String title,
+    final String? summary,
+    final String? description,
+    final String? termsOfService,
+    final Contact? contact,
+    final License? license,
+    required final String version,
+  }) = _$InfoImpl;
 
   factory _Info.fromJson(Map<String, dynamic> json) = _$InfoImpl.fromJson;
 
-  @override
-
   /// The title of the API.
-  String get title;
   @override
+  String get title;
 
   /// A short summary of the API.
-  String? get summary;
   @override
+  String? get summary;
 
   /// A description of the API.
-  String? get description;
   @override
+  String? get description;
 
   /// A URL to the Terms of Service for the API.
   /// This must be in the form of a URL.
-  String? get termsOfService;
   @override
+  String? get termsOfService;
 
   /// The contact information for the exposed API.
-  Contact? get contact;
   @override
+  Contact? get contact;
 
   /// The license information for the exposed API.
-  License? get license;
   @override
+  License? get license;
 
   /// The version of the OpenAPI document. Distinct from [OpenApi.openapi].
-  String get version;
   @override
-  @JsonKey(ignore: true)
+  String get version;
+
+  /// Create a copy of Info
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InfoImplCopyWith<_$InfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3631,21 +3898,23 @@ mixin _$License {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_License value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_License value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_License value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this License to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of License
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LicenseCopyWith<License> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -3667,6 +3936,8 @@ class _$LicenseCopyWithImpl<$Res, $Val extends License>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of License
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3674,28 +3945,32 @@ class _$LicenseCopyWithImpl<$Res, $Val extends License>
     Object? identifier = freezed,
     Object? url = freezed,
   }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      identifier: freezed == identifier
-          ? _value.identifier
-          : identifier // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String,
+            identifier: freezed == identifier
+                ? _value.identifier
+                : identifier // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            url: freezed == url
+                ? _value.url
+                : url // ignore: cast_nullable_to_non_nullable
+                      as String?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$LicenseImplCopyWith<$Res> implements $LicenseCopyWith<$Res> {
   factory _$$LicenseImplCopyWith(
-          _$LicenseImpl value, $Res Function(_$LicenseImpl) then) =
-      __$$LicenseImplCopyWithImpl<$Res>;
+    _$LicenseImpl value,
+    $Res Function(_$LicenseImpl) then,
+  ) = __$$LicenseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name, String? identifier, String? url});
@@ -3706,9 +3981,12 @@ class __$$LicenseImplCopyWithImpl<$Res>
     extends _$LicenseCopyWithImpl<$Res, _$LicenseImpl>
     implements _$$LicenseImplCopyWith<$Res> {
   __$$LicenseImplCopyWithImpl(
-      _$LicenseImpl _value, $Res Function(_$LicenseImpl) _then)
-      : super(_value, _then);
+    _$LicenseImpl _value,
+    $Res Function(_$LicenseImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of License
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3716,20 +3994,22 @@ class __$$LicenseImplCopyWithImpl<$Res>
     Object? identifier = freezed,
     Object? url = freezed,
   }) {
-    return _then(_$LicenseImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      identifier: freezed == identifier
-          ? _value.identifier
-          : identifier // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$LicenseImpl(
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        identifier: freezed == identifier
+            ? _value.identifier
+            : identifier // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        url: freezed == url
+            ? _value.url
+            : url // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -3761,7 +4041,7 @@ class _$LicenseImpl implements _License {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LicenseImpl &&
@@ -3771,11 +4051,13 @@ class _$LicenseImpl implements _License {
             (identical(other.url, url) || other.url == url));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, identifier, url);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of License
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LicenseImplCopyWith<_$LicenseImpl> get copyWith =>
@@ -3811,36 +4093,37 @@ class _$LicenseImpl implements _License {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$LicenseImplToJson(
-      this,
-    );
+    return _$$LicenseImplToJson(this);
   }
 }
 
 abstract class _License implements License {
-  const factory _License(
-      {required final String name,
-      final String? identifier,
-      final String? url}) = _$LicenseImpl;
+  const factory _License({
+    required final String name,
+    final String? identifier,
+    final String? url,
+  }) = _$LicenseImpl;
 
   factory _License.fromJson(Map<String, dynamic> json) = _$LicenseImpl.fromJson;
 
-  @override
-
   /// The license name used for the API.
-  String get name;
   @override
+  String get name;
 
   /// An [SPDX](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60) license expression for the API.
   /// The identifier field is mutually exclusive of the url field.
-  String? get identifier;
   @override
+  String? get identifier;
 
   /// A URL to the license used for the API. This must be in the form of a URL.
   /// The [url] field is mutually exclusive of the [identifier] field.
-  String? get url;
   @override
-  @JsonKey(ignore: true)
+  String? get url;
+
+  /// Create a copy of License
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LicenseImplCopyWith<_$LicenseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3867,21 +4150,23 @@ mixin _$Link {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_Link value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_Link value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_Link value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Link to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Link
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LinkCopyWith<Link> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -3890,10 +4175,11 @@ abstract class $LinkCopyWith<$Res> {
   factory $LinkCopyWith(Link value, $Res Function(Link) then) =
       _$LinkCopyWithImpl<$Res, Link>;
   @useResult
-  $Res call(
-      {@JsonKey(name: '\$ref') @_LinkRefConverter() String? ref,
-      String? operationId,
-      Map<String, String>? parameters});
+  $Res call({
+    @JsonKey(name: '\$ref') @_LinkRefConverter() String? ref,
+    String? operationId,
+    Map<String, String>? parameters,
+  });
 }
 
 /// @nodoc
@@ -3906,6 +4192,8 @@ class _$LinkCopyWithImpl<$Res, $Val extends Link>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Link
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3913,34 +4201,39 @@ class _$LinkCopyWithImpl<$Res, $Val extends Link>
     Object? operationId = freezed,
     Object? parameters = freezed,
   }) {
-    return _then(_value.copyWith(
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-      operationId: freezed == operationId
-          ? _value.operationId
-          : operationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      parameters: freezed == parameters
-          ? _value.parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            ref: freezed == ref
+                ? _value.ref
+                : ref // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            operationId: freezed == operationId
+                ? _value.operationId
+                : operationId // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            parameters: freezed == parameters
+                ? _value.parameters
+                : parameters // ignore: cast_nullable_to_non_nullable
+                      as Map<String, String>?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$LinkImplCopyWith<$Res> implements $LinkCopyWith<$Res> {
   factory _$$LinkImplCopyWith(
-          _$LinkImpl value, $Res Function(_$LinkImpl) then) =
-      __$$LinkImplCopyWithImpl<$Res>;
+    _$LinkImpl value,
+    $Res Function(_$LinkImpl) then,
+  ) = __$$LinkImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: '\$ref') @_LinkRefConverter() String? ref,
-      String? operationId,
-      Map<String, String>? parameters});
+  $Res call({
+    @JsonKey(name: '\$ref') @_LinkRefConverter() String? ref,
+    String? operationId,
+    Map<String, String>? parameters,
+  });
 }
 
 /// @nodoc
@@ -3948,8 +4241,10 @@ class __$$LinkImplCopyWithImpl<$Res>
     extends _$LinkCopyWithImpl<$Res, _$LinkImpl>
     implements _$$LinkImplCopyWith<$Res> {
   __$$LinkImplCopyWithImpl(_$LinkImpl _value, $Res Function(_$LinkImpl) _then)
-      : super(_value, _then);
+    : super(_value, _then);
 
+  /// Create a copy of Link
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3957,31 +4252,33 @@ class __$$LinkImplCopyWithImpl<$Res>
     Object? operationId = freezed,
     Object? parameters = freezed,
   }) {
-    return _then(_$LinkImpl(
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-      operationId: freezed == operationId
-          ? _value.operationId
-          : operationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      parameters: freezed == parameters
-          ? _value._parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-    ));
+    return _then(
+      _$LinkImpl(
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        operationId: freezed == operationId
+            ? _value.operationId
+            : operationId // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        parameters: freezed == parameters
+            ? _value._parameters
+            : parameters // ignore: cast_nullable_to_non_nullable
+                  as Map<String, String>?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$LinkImpl implements _Link {
-  const _$LinkImpl(
-      {@JsonKey(name: '\$ref') @_LinkRefConverter() this.ref,
-      this.operationId,
-      final Map<String, String>? parameters})
-      : _parameters = parameters;
+  const _$LinkImpl({
+    @JsonKey(name: '\$ref') @_LinkRefConverter() this.ref,
+    this.operationId,
+    final Map<String, String>? parameters,
+  }) : _parameters = parameters;
 
   factory _$LinkImpl.fromJson(Map<String, dynamic> json) =>
       _$$LinkImplFromJson(json);
@@ -4018,23 +4315,31 @@ class _$LinkImpl implements _Link {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LinkImpl &&
             (identical(other.ref, ref) || other.ref == ref) &&
             (identical(other.operationId, operationId) ||
                 other.operationId == operationId) &&
-            const DeepCollectionEquality()
-                .equals(other._parameters, _parameters));
+            const DeepCollectionEquality().equals(
+              other._parameters,
+              _parameters,
+            ));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, ref, operationId,
-      const DeepCollectionEquality().hash(_parameters));
+  int get hashCode => Object.hash(
+    runtimeType,
+    ref,
+    operationId,
+    const DeepCollectionEquality().hash(_parameters),
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Link
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LinkImplCopyWith<_$LinkImpl> get copyWith =>
@@ -4042,9 +4347,7 @@ class _$LinkImpl implements _Link {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Link value) $default,
-  ) {
+  TResult map<TResult extends Object?>(TResult Function(_Link value) $default) {
     return $default(this);
   }
 
@@ -4070,38 +4373,39 @@ class _$LinkImpl implements _Link {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$LinkImplToJson(
-      this,
-    );
+    return _$$LinkImplToJson(this);
   }
 }
 
 abstract class _Link implements Link {
-  const factory _Link(
-      {@JsonKey(name: '\$ref') @_LinkRefConverter() final String? ref,
-      final String? operationId,
-      final Map<String, String>? parameters}) = _$LinkImpl;
+  const factory _Link({
+    @JsonKey(name: '\$ref') @_LinkRefConverter() final String? ref,
+    final String? operationId,
+    final Map<String, String>? parameters,
+  }) = _$LinkImpl;
 
   factory _Link.fromJson(Map<String, dynamic> json) = _$LinkImpl.fromJson;
 
-  @override
-
   /// A relative or absolute URI reference to an OAS operation.
+  @override
   @JsonKey(name: '\$ref')
   @_LinkRefConverter()
   String? get ref;
-  @override
 
   /// The name of an existing, resolvable OAS operation,
   /// as defined with a unique operationId.
-  String? get operationId;
   @override
+  String? get operationId;
 
   /// A map representing parameters to pass to an operation
   /// as specified with operationId or identified via [ref].
-  Map<String, String>? get parameters;
   @override
-  @JsonKey(ignore: true)
+  Map<String, String>? get parameters;
+
+  /// Create a copy of Link
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LinkImplCopyWith<_$LinkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4126,21 +4430,23 @@ mixin _$MediaType {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_MediaType value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_MediaType value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_MediaType value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this MediaType to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MediaType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MediaTypeCopyWith<MediaType> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4150,11 +4456,12 @@ abstract class $MediaTypeCopyWith<$Res> {
   factory $MediaTypeCopyWith(MediaType value, $Res Function(MediaType) then) =
       _$MediaTypeCopyWithImpl<$Res, MediaType>;
   @useResult
-  $Res call(
-      {Schema? schema,
-      dynamic example,
-      Map<String, Example>? examples,
-      Map<String, Encoding>? encoding});
+  $Res call({
+    Schema? schema,
+    dynamic example,
+    Map<String, Example>? examples,
+    Map<String, Encoding>? encoding,
+  });
 
   $SchemaCopyWith<$Res>? get schema;
 }
@@ -4169,6 +4476,8 @@ class _$MediaTypeCopyWithImpl<$Res, $Val extends MediaType>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MediaType
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4177,26 +4486,31 @@ class _$MediaTypeCopyWithImpl<$Res, $Val extends MediaType>
     Object? examples = freezed,
     Object? encoding = freezed,
   }) {
-    return _then(_value.copyWith(
-      schema: freezed == schema
-          ? _value.schema
-          : schema // ignore: cast_nullable_to_non_nullable
-              as Schema?,
-      example: freezed == example
-          ? _value.example
-          : example // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      examples: freezed == examples
-          ? _value.examples
-          : examples // ignore: cast_nullable_to_non_nullable
-              as Map<String, Example>?,
-      encoding: freezed == encoding
-          ? _value.encoding
-          : encoding // ignore: cast_nullable_to_non_nullable
-              as Map<String, Encoding>?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            schema: freezed == schema
+                ? _value.schema
+                : schema // ignore: cast_nullable_to_non_nullable
+                      as Schema?,
+            example: freezed == example
+                ? _value.example
+                : example // ignore: cast_nullable_to_non_nullable
+                      as dynamic,
+            examples: freezed == examples
+                ? _value.examples
+                : examples // ignore: cast_nullable_to_non_nullable
+                      as Map<String, Example>?,
+            encoding: freezed == encoding
+                ? _value.encoding
+                : encoding // ignore: cast_nullable_to_non_nullable
+                      as Map<String, Encoding>?,
+          )
+          as $Val,
+    );
   }
 
+  /// Create a copy of MediaType
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SchemaCopyWith<$Res>? get schema {
@@ -4214,15 +4528,17 @@ class _$MediaTypeCopyWithImpl<$Res, $Val extends MediaType>
 abstract class _$$MediaTypeImplCopyWith<$Res>
     implements $MediaTypeCopyWith<$Res> {
   factory _$$MediaTypeImplCopyWith(
-          _$MediaTypeImpl value, $Res Function(_$MediaTypeImpl) then) =
-      __$$MediaTypeImplCopyWithImpl<$Res>;
+    _$MediaTypeImpl value,
+    $Res Function(_$MediaTypeImpl) then,
+  ) = __$$MediaTypeImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {Schema? schema,
-      dynamic example,
-      Map<String, Example>? examples,
-      Map<String, Encoding>? encoding});
+  $Res call({
+    Schema? schema,
+    dynamic example,
+    Map<String, Example>? examples,
+    Map<String, Encoding>? encoding,
+  });
 
   @override
   $SchemaCopyWith<$Res>? get schema;
@@ -4233,9 +4549,12 @@ class __$$MediaTypeImplCopyWithImpl<$Res>
     extends _$MediaTypeCopyWithImpl<$Res, _$MediaTypeImpl>
     implements _$$MediaTypeImplCopyWith<$Res> {
   __$$MediaTypeImplCopyWithImpl(
-      _$MediaTypeImpl _value, $Res Function(_$MediaTypeImpl) _then)
-      : super(_value, _then);
+    _$MediaTypeImpl _value,
+    $Res Function(_$MediaTypeImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of MediaType
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4244,37 +4563,39 @@ class __$$MediaTypeImplCopyWithImpl<$Res>
     Object? examples = freezed,
     Object? encoding = freezed,
   }) {
-    return _then(_$MediaTypeImpl(
-      schema: freezed == schema
-          ? _value.schema
-          : schema // ignore: cast_nullable_to_non_nullable
-              as Schema?,
-      example: freezed == example
-          ? _value.example
-          : example // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      examples: freezed == examples
-          ? _value._examples
-          : examples // ignore: cast_nullable_to_non_nullable
-              as Map<String, Example>?,
-      encoding: freezed == encoding
-          ? _value._encoding
-          : encoding // ignore: cast_nullable_to_non_nullable
-              as Map<String, Encoding>?,
-    ));
+    return _then(
+      _$MediaTypeImpl(
+        schema: freezed == schema
+            ? _value.schema
+            : schema // ignore: cast_nullable_to_non_nullable
+                  as Schema?,
+        example: freezed == example
+            ? _value.example
+            : example // ignore: cast_nullable_to_non_nullable
+                  as dynamic,
+        examples: freezed == examples
+            ? _value._examples
+            : examples // ignore: cast_nullable_to_non_nullable
+                  as Map<String, Example>?,
+        encoding: freezed == encoding
+            ? _value._encoding
+            : encoding // ignore: cast_nullable_to_non_nullable
+                  as Map<String, Encoding>?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$MediaTypeImpl implements _MediaType {
-  const _$MediaTypeImpl(
-      {this.schema,
-      this.example,
-      final Map<String, Example>? examples,
-      final Map<String, Encoding>? encoding})
-      : _examples = examples,
-        _encoding = encoding;
+  const _$MediaTypeImpl({
+    this.schema,
+    this.example,
+    final Map<String, Example>? examples,
+    final Map<String, Encoding>? encoding,
+  }) : _examples = examples,
+       _encoding = encoding;
 
   factory _$MediaTypeImpl.fromJson(Map<String, dynamic> json) =>
       _$$MediaTypeImplFromJson(json);
@@ -4286,9 +4607,9 @@ class _$MediaTypeImpl implements _MediaType {
   /// Example of the media type.
   @override
   final dynamic example;
-// Examples of the media type.
+  // Examples of the media type.
   final Map<String, Example>? _examples;
-// Examples of the media type.
+  // Examples of the media type.
   @override
   Map<String, Example>? get examples {
     final value = _examples;
@@ -4317,7 +4638,7 @@ class _$MediaTypeImpl implements _MediaType {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MediaTypeImpl &&
@@ -4327,16 +4648,19 @@ class _$MediaTypeImpl implements _MediaType {
             const DeepCollectionEquality().equals(other._encoding, _encoding));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      schema,
-      const DeepCollectionEquality().hash(example),
-      const DeepCollectionEquality().hash(_examples),
-      const DeepCollectionEquality().hash(_encoding));
+    runtimeType,
+    schema,
+    const DeepCollectionEquality().hash(example),
+    const DeepCollectionEquality().hash(_examples),
+    const DeepCollectionEquality().hash(_encoding),
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MediaType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MediaTypeImplCopyWith<_$MediaTypeImpl> get copyWith =>
@@ -4372,38 +4696,39 @@ class _$MediaTypeImpl implements _MediaType {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$MediaTypeImplToJson(
-      this,
-    );
+    return _$$MediaTypeImplToJson(this);
   }
 }
 
 abstract class _MediaType implements MediaType {
-  const factory _MediaType(
-      {final Schema? schema,
-      final dynamic example,
-      final Map<String, Example>? examples,
-      final Map<String, Encoding>? encoding}) = _$MediaTypeImpl;
+  const factory _MediaType({
+    final Schema? schema,
+    final dynamic example,
+    final Map<String, Example>? examples,
+    final Map<String, Encoding>? encoding,
+  }) = _$MediaTypeImpl;
 
   factory _MediaType.fromJson(Map<String, dynamic> json) =
       _$MediaTypeImpl.fromJson;
 
-  @override
-
   /// The schema defining the content of the request, response, or parameter.
-  Schema? get schema;
   @override
+  Schema? get schema;
 
   /// Example of the media type.
-  dynamic get example;
-  @override // Examples of the media type.
-  Map<String, Example>? get examples;
   @override
+  dynamic get example; // Examples of the media type.
+  @override
+  Map<String, Example>? get examples;
 
   /// A map between a property name and its encoding information.
-  Map<String, Encoding>? get encoding;
   @override
-  @JsonKey(ignore: true)
+  Map<String, Encoding>? get encoding;
+
+  /// Create a copy of MediaType
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MediaTypeImplCopyWith<_$MediaTypeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4462,21 +4787,23 @@ mixin _$Operation {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_Operation value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_Operation value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_Operation value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Operation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Operation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OperationCopyWith<Operation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4486,19 +4813,20 @@ abstract class $OperationCopyWith<$Res> {
   factory $OperationCopyWith(Operation value, $Res Function(Operation) then) =
       _$OperationCopyWithImpl<$Res, Operation>;
   @useResult
-  $Res call(
-      {List<String>? tags,
-      String? summary,
-      String? description,
-      ExternalDocs? externalDocs,
-      @JsonKey(name: 'operationId') String? id,
-      List<Parameter>? parameters,
-      RequestBody? requestBody,
-      Map<String, Response>? responses,
-      @_ApiCallbackMapConverter() Map<String, ApiCallback>? callbacks,
-      bool? deprecated,
-      List<Security>? security,
-      List<Server>? servers});
+  $Res call({
+    List<String>? tags,
+    String? summary,
+    String? description,
+    ExternalDocs? externalDocs,
+    @JsonKey(name: 'operationId') String? id,
+    List<Parameter>? parameters,
+    RequestBody? requestBody,
+    Map<String, Response>? responses,
+    @_ApiCallbackMapConverter() Map<String, ApiCallback>? callbacks,
+    bool? deprecated,
+    List<Security>? security,
+    List<Server>? servers,
+  });
 
   $ExternalDocsCopyWith<$Res>? get externalDocs;
   $RequestBodyCopyWith<$Res>? get requestBody;
@@ -4514,6 +4842,8 @@ class _$OperationCopyWithImpl<$Res, $Val extends Operation>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Operation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4530,58 +4860,63 @@ class _$OperationCopyWithImpl<$Res, $Val extends Operation>
     Object? security = freezed,
     Object? servers = freezed,
   }) {
-    return _then(_value.copyWith(
-      tags: freezed == tags
-          ? _value.tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      summary: freezed == summary
-          ? _value.summary
-          : summary // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      externalDocs: freezed == externalDocs
-          ? _value.externalDocs
-          : externalDocs // ignore: cast_nullable_to_non_nullable
-              as ExternalDocs?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      parameters: freezed == parameters
-          ? _value.parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
-              as List<Parameter>?,
-      requestBody: freezed == requestBody
-          ? _value.requestBody
-          : requestBody // ignore: cast_nullable_to_non_nullable
-              as RequestBody?,
-      responses: freezed == responses
-          ? _value.responses
-          : responses // ignore: cast_nullable_to_non_nullable
-              as Map<String, Response>?,
-      callbacks: freezed == callbacks
-          ? _value.callbacks
-          : callbacks // ignore: cast_nullable_to_non_nullable
-              as Map<String, ApiCallback>?,
-      deprecated: freezed == deprecated
-          ? _value.deprecated
-          : deprecated // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      security: freezed == security
-          ? _value.security
-          : security // ignore: cast_nullable_to_non_nullable
-              as List<Security>?,
-      servers: freezed == servers
-          ? _value.servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<Server>?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            tags: freezed == tags
+                ? _value.tags
+                : tags // ignore: cast_nullable_to_non_nullable
+                      as List<String>?,
+            summary: freezed == summary
+                ? _value.summary
+                : summary // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            description: freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            externalDocs: freezed == externalDocs
+                ? _value.externalDocs
+                : externalDocs // ignore: cast_nullable_to_non_nullable
+                      as ExternalDocs?,
+            id: freezed == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            parameters: freezed == parameters
+                ? _value.parameters
+                : parameters // ignore: cast_nullable_to_non_nullable
+                      as List<Parameter>?,
+            requestBody: freezed == requestBody
+                ? _value.requestBody
+                : requestBody // ignore: cast_nullable_to_non_nullable
+                      as RequestBody?,
+            responses: freezed == responses
+                ? _value.responses
+                : responses // ignore: cast_nullable_to_non_nullable
+                      as Map<String, Response>?,
+            callbacks: freezed == callbacks
+                ? _value.callbacks
+                : callbacks // ignore: cast_nullable_to_non_nullable
+                      as Map<String, ApiCallback>?,
+            deprecated: freezed == deprecated
+                ? _value.deprecated
+                : deprecated // ignore: cast_nullable_to_non_nullable
+                      as bool?,
+            security: freezed == security
+                ? _value.security
+                : security // ignore: cast_nullable_to_non_nullable
+                      as List<Security>?,
+            servers: freezed == servers
+                ? _value.servers
+                : servers // ignore: cast_nullable_to_non_nullable
+                      as List<Server>?,
+          )
+          as $Val,
+    );
   }
 
+  /// Create a copy of Operation
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ExternalDocsCopyWith<$Res>? get externalDocs {
@@ -4594,6 +4929,8 @@ class _$OperationCopyWithImpl<$Res, $Val extends Operation>
     });
   }
 
+  /// Create a copy of Operation
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RequestBodyCopyWith<$Res>? get requestBody {
@@ -4611,23 +4948,25 @@ class _$OperationCopyWithImpl<$Res, $Val extends Operation>
 abstract class _$$OperationImplCopyWith<$Res>
     implements $OperationCopyWith<$Res> {
   factory _$$OperationImplCopyWith(
-          _$OperationImpl value, $Res Function(_$OperationImpl) then) =
-      __$$OperationImplCopyWithImpl<$Res>;
+    _$OperationImpl value,
+    $Res Function(_$OperationImpl) then,
+  ) = __$$OperationImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {List<String>? tags,
-      String? summary,
-      String? description,
-      ExternalDocs? externalDocs,
-      @JsonKey(name: 'operationId') String? id,
-      List<Parameter>? parameters,
-      RequestBody? requestBody,
-      Map<String, Response>? responses,
-      @_ApiCallbackMapConverter() Map<String, ApiCallback>? callbacks,
-      bool? deprecated,
-      List<Security>? security,
-      List<Server>? servers});
+  $Res call({
+    List<String>? tags,
+    String? summary,
+    String? description,
+    ExternalDocs? externalDocs,
+    @JsonKey(name: 'operationId') String? id,
+    List<Parameter>? parameters,
+    RequestBody? requestBody,
+    Map<String, Response>? responses,
+    @_ApiCallbackMapConverter() Map<String, ApiCallback>? callbacks,
+    bool? deprecated,
+    List<Security>? security,
+    List<Server>? servers,
+  });
 
   @override
   $ExternalDocsCopyWith<$Res>? get externalDocs;
@@ -4640,9 +4979,12 @@ class __$$OperationImplCopyWithImpl<$Res>
     extends _$OperationCopyWithImpl<$Res, _$OperationImpl>
     implements _$$OperationImplCopyWith<$Res> {
   __$$OperationImplCopyWithImpl(
-      _$OperationImpl _value, $Res Function(_$OperationImpl) _then)
-      : super(_value, _then);
+    _$OperationImpl _value,
+    $Res Function(_$OperationImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Operation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4659,81 +5001,83 @@ class __$$OperationImplCopyWithImpl<$Res>
     Object? security = freezed,
     Object? servers = freezed,
   }) {
-    return _then(_$OperationImpl(
-      tags: freezed == tags
-          ? _value._tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      summary: freezed == summary
-          ? _value.summary
-          : summary // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      externalDocs: freezed == externalDocs
-          ? _value.externalDocs
-          : externalDocs // ignore: cast_nullable_to_non_nullable
-              as ExternalDocs?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      parameters: freezed == parameters
-          ? _value._parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
-              as List<Parameter>?,
-      requestBody: freezed == requestBody
-          ? _value.requestBody
-          : requestBody // ignore: cast_nullable_to_non_nullable
-              as RequestBody?,
-      responses: freezed == responses
-          ? _value._responses
-          : responses // ignore: cast_nullable_to_non_nullable
-              as Map<String, Response>?,
-      callbacks: freezed == callbacks
-          ? _value._callbacks
-          : callbacks // ignore: cast_nullable_to_non_nullable
-              as Map<String, ApiCallback>?,
-      deprecated: freezed == deprecated
-          ? _value.deprecated
-          : deprecated // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      security: freezed == security
-          ? _value._security
-          : security // ignore: cast_nullable_to_non_nullable
-              as List<Security>?,
-      servers: freezed == servers
-          ? _value._servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<Server>?,
-    ));
+    return _then(
+      _$OperationImpl(
+        tags: freezed == tags
+            ? _value._tags
+            : tags // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        summary: freezed == summary
+            ? _value.summary
+            : summary // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        externalDocs: freezed == externalDocs
+            ? _value.externalDocs
+            : externalDocs // ignore: cast_nullable_to_non_nullable
+                  as ExternalDocs?,
+        id: freezed == id
+            ? _value.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        parameters: freezed == parameters
+            ? _value._parameters
+            : parameters // ignore: cast_nullable_to_non_nullable
+                  as List<Parameter>?,
+        requestBody: freezed == requestBody
+            ? _value.requestBody
+            : requestBody // ignore: cast_nullable_to_non_nullable
+                  as RequestBody?,
+        responses: freezed == responses
+            ? _value._responses
+            : responses // ignore: cast_nullable_to_non_nullable
+                  as Map<String, Response>?,
+        callbacks: freezed == callbacks
+            ? _value._callbacks
+            : callbacks // ignore: cast_nullable_to_non_nullable
+                  as Map<String, ApiCallback>?,
+        deprecated: freezed == deprecated
+            ? _value.deprecated
+            : deprecated // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        security: freezed == security
+            ? _value._security
+            : security // ignore: cast_nullable_to_non_nullable
+                  as List<Security>?,
+        servers: freezed == servers
+            ? _value._servers
+            : servers // ignore: cast_nullable_to_non_nullable
+                  as List<Server>?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$OperationImpl implements _Operation {
-  const _$OperationImpl(
-      {final List<String>? tags,
-      this.summary,
-      this.description,
-      this.externalDocs,
-      @JsonKey(name: 'operationId') this.id,
-      final List<Parameter>? parameters,
-      this.requestBody,
-      final Map<String, Response>? responses,
-      @_ApiCallbackMapConverter() final Map<String, ApiCallback>? callbacks,
-      this.deprecated,
-      final List<Security>? security,
-      final List<Server>? servers})
-      : _tags = tags,
-        _parameters = parameters,
-        _responses = responses,
-        _callbacks = callbacks,
-        _security = security,
-        _servers = servers;
+  const _$OperationImpl({
+    final List<String>? tags,
+    this.summary,
+    this.description,
+    this.externalDocs,
+    @JsonKey(name: 'operationId') this.id,
+    final List<Parameter>? parameters,
+    this.requestBody,
+    final Map<String, Response>? responses,
+    @_ApiCallbackMapConverter() final Map<String, ApiCallback>? callbacks,
+    this.deprecated,
+    final List<Security>? security,
+    final List<Server>? servers,
+  }) : _tags = tags,
+       _parameters = parameters,
+       _responses = responses,
+       _callbacks = callbacks,
+       _security = security,
+       _servers = servers;
 
   factory _$OperationImpl.fromJson(Map<String, dynamic> json) =>
       _$$OperationImplFromJson(json);
@@ -4861,7 +5205,7 @@ class _$OperationImpl implements _Operation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OperationImpl &&
@@ -4872,38 +5216,47 @@ class _$OperationImpl implements _Operation {
             (identical(other.externalDocs, externalDocs) ||
                 other.externalDocs == externalDocs) &&
             (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality()
-                .equals(other._parameters, _parameters) &&
+            const DeepCollectionEquality().equals(
+              other._parameters,
+              _parameters,
+            ) &&
             (identical(other.requestBody, requestBody) ||
                 other.requestBody == requestBody) &&
-            const DeepCollectionEquality()
-                .equals(other._responses, _responses) &&
-            const DeepCollectionEquality()
-                .equals(other._callbacks, _callbacks) &&
+            const DeepCollectionEquality().equals(
+              other._responses,
+              _responses,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._callbacks,
+              _callbacks,
+            ) &&
             (identical(other.deprecated, deprecated) ||
                 other.deprecated == deprecated) &&
             const DeepCollectionEquality().equals(other._security, _security) &&
             const DeepCollectionEquality().equals(other._servers, _servers));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_tags),
-      summary,
-      description,
-      externalDocs,
-      id,
-      const DeepCollectionEquality().hash(_parameters),
-      requestBody,
-      const DeepCollectionEquality().hash(_responses),
-      const DeepCollectionEquality().hash(_callbacks),
-      deprecated,
-      const DeepCollectionEquality().hash(_security),
-      const DeepCollectionEquality().hash(_servers));
+    runtimeType,
+    const DeepCollectionEquality().hash(_tags),
+    summary,
+    description,
+    externalDocs,
+    id,
+    const DeepCollectionEquality().hash(_parameters),
+    requestBody,
+    const DeepCollectionEquality().hash(_responses),
+    const DeepCollectionEquality().hash(_callbacks),
+    deprecated,
+    const DeepCollectionEquality().hash(_security),
+    const DeepCollectionEquality().hash(_servers),
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Operation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OperationImplCopyWith<_$OperationImpl> get copyWith =>
@@ -4939,89 +5292,90 @@ class _$OperationImpl implements _Operation {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$OperationImplToJson(
-      this,
-    );
+    return _$$OperationImplToJson(this);
   }
 }
 
 abstract class _Operation implements Operation {
-  const factory _Operation(
-      {final List<String>? tags,
-      final String? summary,
-      final String? description,
-      final ExternalDocs? externalDocs,
-      @JsonKey(name: 'operationId') final String? id,
-      final List<Parameter>? parameters,
-      final RequestBody? requestBody,
-      final Map<String, Response>? responses,
-      @_ApiCallbackMapConverter() final Map<String, ApiCallback>? callbacks,
-      final bool? deprecated,
-      final List<Security>? security,
-      final List<Server>? servers}) = _$OperationImpl;
+  const factory _Operation({
+    final List<String>? tags,
+    final String? summary,
+    final String? description,
+    final ExternalDocs? externalDocs,
+    @JsonKey(name: 'operationId') final String? id,
+    final List<Parameter>? parameters,
+    final RequestBody? requestBody,
+    final Map<String, Response>? responses,
+    @_ApiCallbackMapConverter() final Map<String, ApiCallback>? callbacks,
+    final bool? deprecated,
+    final List<Security>? security,
+    final List<Server>? servers,
+  }) = _$OperationImpl;
 
   factory _Operation.fromJson(Map<String, dynamic> json) =
       _$OperationImpl.fromJson;
 
-  @override
-
   /// A list of tags for API documentation control.
-  List<String>? get tags;
   @override
+  List<String>? get tags;
 
   /// A short summary of what the operation does.
-  String? get summary;
   @override
+  String? get summary;
 
   /// An optional string describing the host designated by the URL.
-  String? get description;
   @override
+  String? get description;
 
   /// Additional external documentation for this schema.
-  ExternalDocs? get externalDocs;
   @override
+  ExternalDocs? get externalDocs;
 
   /// Unique string used to identify the operation.
   /// The id MUST be unique among all operations described in the API.
+  @override
   @JsonKey(name: 'operationId')
   String? get id;
-  @override
 
   /// A list of parameters that are applicable for this operation.
   /// If a parameter is already defined at the [PathItem] level,
   /// the new definition will override it but can never remove it.
-  List<Parameter>? get parameters;
   @override
+  List<Parameter>? get parameters;
 
   /// The request body applicable for this operation.
-  RequestBody? get requestBody;
   @override
+  RequestBody? get requestBody;
 
   /// The list of possible responses as they are returned from executing this operation.
-  Map<String, Response>? get responses;
   @override
+  Map<String, Response>? get responses;
 
   /// A map of possible out-of band callbacks related to the parent operation.
   /// The key is a unique identifier for the [ApiCallback] Object.
+  @override
   @_ApiCallbackMapConverter()
   Map<String, ApiCallback>? get callbacks;
-  @override
 
   /// Declares this operation to be deprecated.
-  bool? get deprecated;
   @override
+  bool? get deprecated;
 
   /// A declaration of which security mechanisms can be used for this operation.
   /// The list of values includes alternative security requirement objects that can be used.
-  List<Security>? get security;
   @override
+  List<Security>? get security;
 
   /// An alternative [Server] array to service this operation.
   /// If an alternative [Server] object is specified at the [PathItem] level,
   /// it will be overridden by this value.
-  List<Server>? get servers;
   @override
-  @JsonKey(ignore: true)
+  List<Server>? get servers;
+
+  /// Create a copy of Operation
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OperationImplCopyWith<_$OperationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5120,21 +5474,23 @@ mixin _$OpenId {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_OpenId value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_OpenId value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_OpenId value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this OpenId to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OpenId
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OpenIdCopyWith<OpenId> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -5143,37 +5499,38 @@ abstract class $OpenIdCopyWith<$Res> {
   factory $OpenIdCopyWith(OpenId value, $Res Function(OpenId) then) =
       _$OpenIdCopyWithImpl<$Res, OpenId>;
   @useResult
-  $Res call(
-      {String? issuer,
-      @JsonKey(name: 'authorization_endpoint') String? authorizationEndpoint,
-      @JsonKey(name: 'token_endpoint') String? tokenEndpoint,
-      @JsonKey(name: 'device_authorization_endpoint')
-      String? deviceAuthorizationEndpoint,
-      @JsonKey(name: 'userinfo_endpoint') String? userinfoEndpoint,
-      @JsonKey(name: 'mfa_challenge_endpoint') String? mfaChallengeEndpoint,
-      @JsonKey(name: 'jwks_uri') String? jwksUri,
-      @JsonKey(name: 'registration_endpoint') String? registrationEndpoint,
-      @JsonKey(name: 'revocation_endpoint') String? revocationEndpoint,
-      @JsonKey(name: 'scopes_supported') List<String>? scopesSupported,
-      @JsonKey(name: 'response_types_supported')
-      List<String>? responseTypesSupported,
-      @JsonKey(name: 'code_challenge_methods_supported')
-      List<String>? codeChallengeMethodsSupported,
-      @JsonKey(name: 'response_modes_supported')
-      List<String>? responseModesSupported,
-      @JsonKey(name: 'subject_types_supported')
-      List<String>? subjectTypesSupported,
-      @JsonKey(name: 'id_token_signing_alg_values_supported')
-      List<String>? idTokenSigningAlgValuesSupported,
-      @JsonKey(name: 'token_endpoint_auth_methods_supported')
-      List<String>? tokenEndpointAuthMethodsSupported,
-      @JsonKey(name: 'claims_supported') List<String>? claimsSupported,
-      @JsonKey(name: 'request_uri_parameter_supported')
-      bool? requestUriParameterSupported,
-      @JsonKey(name: 'request_parameter_supported')
-      bool? requestParameterSupported,
-      @JsonKey(name: 'token_endpoint_auth_signing_alg_values_supported')
-      List<String>? tokenEndpointAuthSigningAlgValuesSupported});
+  $Res call({
+    String? issuer,
+    @JsonKey(name: 'authorization_endpoint') String? authorizationEndpoint,
+    @JsonKey(name: 'token_endpoint') String? tokenEndpoint,
+    @JsonKey(name: 'device_authorization_endpoint')
+    String? deviceAuthorizationEndpoint,
+    @JsonKey(name: 'userinfo_endpoint') String? userinfoEndpoint,
+    @JsonKey(name: 'mfa_challenge_endpoint') String? mfaChallengeEndpoint,
+    @JsonKey(name: 'jwks_uri') String? jwksUri,
+    @JsonKey(name: 'registration_endpoint') String? registrationEndpoint,
+    @JsonKey(name: 'revocation_endpoint') String? revocationEndpoint,
+    @JsonKey(name: 'scopes_supported') List<String>? scopesSupported,
+    @JsonKey(name: 'response_types_supported')
+    List<String>? responseTypesSupported,
+    @JsonKey(name: 'code_challenge_methods_supported')
+    List<String>? codeChallengeMethodsSupported,
+    @JsonKey(name: 'response_modes_supported')
+    List<String>? responseModesSupported,
+    @JsonKey(name: 'subject_types_supported')
+    List<String>? subjectTypesSupported,
+    @JsonKey(name: 'id_token_signing_alg_values_supported')
+    List<String>? idTokenSigningAlgValuesSupported,
+    @JsonKey(name: 'token_endpoint_auth_methods_supported')
+    List<String>? tokenEndpointAuthMethodsSupported,
+    @JsonKey(name: 'claims_supported') List<String>? claimsSupported,
+    @JsonKey(name: 'request_uri_parameter_supported')
+    bool? requestUriParameterSupported,
+    @JsonKey(name: 'request_parameter_supported')
+    bool? requestParameterSupported,
+    @JsonKey(name: 'token_endpoint_auth_signing_alg_values_supported')
+    List<String>? tokenEndpointAuthSigningAlgValuesSupported,
+  });
 }
 
 /// @nodoc
@@ -5186,6 +5543,8 @@ class _$OpenIdCopyWithImpl<$Res, $Val extends OpenId>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OpenId
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5210,132 +5569,139 @@ class _$OpenIdCopyWithImpl<$Res, $Val extends OpenId>
     Object? requestParameterSupported = freezed,
     Object? tokenEndpointAuthSigningAlgValuesSupported = freezed,
   }) {
-    return _then(_value.copyWith(
-      issuer: freezed == issuer
-          ? _value.issuer
-          : issuer // ignore: cast_nullable_to_non_nullable
-              as String?,
-      authorizationEndpoint: freezed == authorizationEndpoint
-          ? _value.authorizationEndpoint
-          : authorizationEndpoint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tokenEndpoint: freezed == tokenEndpoint
-          ? _value.tokenEndpoint
-          : tokenEndpoint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      deviceAuthorizationEndpoint: freezed == deviceAuthorizationEndpoint
-          ? _value.deviceAuthorizationEndpoint
-          : deviceAuthorizationEndpoint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userinfoEndpoint: freezed == userinfoEndpoint
-          ? _value.userinfoEndpoint
-          : userinfoEndpoint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mfaChallengeEndpoint: freezed == mfaChallengeEndpoint
-          ? _value.mfaChallengeEndpoint
-          : mfaChallengeEndpoint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      jwksUri: freezed == jwksUri
-          ? _value.jwksUri
-          : jwksUri // ignore: cast_nullable_to_non_nullable
-              as String?,
-      registrationEndpoint: freezed == registrationEndpoint
-          ? _value.registrationEndpoint
-          : registrationEndpoint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      revocationEndpoint: freezed == revocationEndpoint
-          ? _value.revocationEndpoint
-          : revocationEndpoint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      scopesSupported: freezed == scopesSupported
-          ? _value.scopesSupported
-          : scopesSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      responseTypesSupported: freezed == responseTypesSupported
-          ? _value.responseTypesSupported
-          : responseTypesSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      codeChallengeMethodsSupported: freezed == codeChallengeMethodsSupported
-          ? _value.codeChallengeMethodsSupported
-          : codeChallengeMethodsSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      responseModesSupported: freezed == responseModesSupported
-          ? _value.responseModesSupported
-          : responseModesSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      subjectTypesSupported: freezed == subjectTypesSupported
-          ? _value.subjectTypesSupported
-          : subjectTypesSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      idTokenSigningAlgValuesSupported: freezed ==
-              idTokenSigningAlgValuesSupported
-          ? _value.idTokenSigningAlgValuesSupported
-          : idTokenSigningAlgValuesSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      tokenEndpointAuthMethodsSupported: freezed ==
-              tokenEndpointAuthMethodsSupported
-          ? _value.tokenEndpointAuthMethodsSupported
-          : tokenEndpointAuthMethodsSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      claimsSupported: freezed == claimsSupported
-          ? _value.claimsSupported
-          : claimsSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      requestUriParameterSupported: freezed == requestUriParameterSupported
-          ? _value.requestUriParameterSupported
-          : requestUriParameterSupported // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      requestParameterSupported: freezed == requestParameterSupported
-          ? _value.requestParameterSupported
-          : requestParameterSupported // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      tokenEndpointAuthSigningAlgValuesSupported: freezed ==
-              tokenEndpointAuthSigningAlgValuesSupported
-          ? _value.tokenEndpointAuthSigningAlgValuesSupported
-          : tokenEndpointAuthSigningAlgValuesSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            issuer: freezed == issuer
+                ? _value.issuer
+                : issuer // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            authorizationEndpoint: freezed == authorizationEndpoint
+                ? _value.authorizationEndpoint
+                : authorizationEndpoint // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            tokenEndpoint: freezed == tokenEndpoint
+                ? _value.tokenEndpoint
+                : tokenEndpoint // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            deviceAuthorizationEndpoint: freezed == deviceAuthorizationEndpoint
+                ? _value.deviceAuthorizationEndpoint
+                : deviceAuthorizationEndpoint // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            userinfoEndpoint: freezed == userinfoEndpoint
+                ? _value.userinfoEndpoint
+                : userinfoEndpoint // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            mfaChallengeEndpoint: freezed == mfaChallengeEndpoint
+                ? _value.mfaChallengeEndpoint
+                : mfaChallengeEndpoint // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            jwksUri: freezed == jwksUri
+                ? _value.jwksUri
+                : jwksUri // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            registrationEndpoint: freezed == registrationEndpoint
+                ? _value.registrationEndpoint
+                : registrationEndpoint // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            revocationEndpoint: freezed == revocationEndpoint
+                ? _value.revocationEndpoint
+                : revocationEndpoint // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            scopesSupported: freezed == scopesSupported
+                ? _value.scopesSupported
+                : scopesSupported // ignore: cast_nullable_to_non_nullable
+                      as List<String>?,
+            responseTypesSupported: freezed == responseTypesSupported
+                ? _value.responseTypesSupported
+                : responseTypesSupported // ignore: cast_nullable_to_non_nullable
+                      as List<String>?,
+            codeChallengeMethodsSupported:
+                freezed == codeChallengeMethodsSupported
+                ? _value.codeChallengeMethodsSupported
+                : codeChallengeMethodsSupported // ignore: cast_nullable_to_non_nullable
+                      as List<String>?,
+            responseModesSupported: freezed == responseModesSupported
+                ? _value.responseModesSupported
+                : responseModesSupported // ignore: cast_nullable_to_non_nullable
+                      as List<String>?,
+            subjectTypesSupported: freezed == subjectTypesSupported
+                ? _value.subjectTypesSupported
+                : subjectTypesSupported // ignore: cast_nullable_to_non_nullable
+                      as List<String>?,
+            idTokenSigningAlgValuesSupported:
+                freezed == idTokenSigningAlgValuesSupported
+                ? _value.idTokenSigningAlgValuesSupported
+                : idTokenSigningAlgValuesSupported // ignore: cast_nullable_to_non_nullable
+                      as List<String>?,
+            tokenEndpointAuthMethodsSupported:
+                freezed == tokenEndpointAuthMethodsSupported
+                ? _value.tokenEndpointAuthMethodsSupported
+                : tokenEndpointAuthMethodsSupported // ignore: cast_nullable_to_non_nullable
+                      as List<String>?,
+            claimsSupported: freezed == claimsSupported
+                ? _value.claimsSupported
+                : claimsSupported // ignore: cast_nullable_to_non_nullable
+                      as List<String>?,
+            requestUriParameterSupported:
+                freezed == requestUriParameterSupported
+                ? _value.requestUriParameterSupported
+                : requestUriParameterSupported // ignore: cast_nullable_to_non_nullable
+                      as bool?,
+            requestParameterSupported: freezed == requestParameterSupported
+                ? _value.requestParameterSupported
+                : requestParameterSupported // ignore: cast_nullable_to_non_nullable
+                      as bool?,
+            tokenEndpointAuthSigningAlgValuesSupported:
+                freezed == tokenEndpointAuthSigningAlgValuesSupported
+                ? _value.tokenEndpointAuthSigningAlgValuesSupported
+                : tokenEndpointAuthSigningAlgValuesSupported // ignore: cast_nullable_to_non_nullable
+                      as List<String>?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$OpenIdImplCopyWith<$Res> implements $OpenIdCopyWith<$Res> {
   factory _$$OpenIdImplCopyWith(
-          _$OpenIdImpl value, $Res Function(_$OpenIdImpl) then) =
-      __$$OpenIdImplCopyWithImpl<$Res>;
+    _$OpenIdImpl value,
+    $Res Function(_$OpenIdImpl) then,
+  ) = __$$OpenIdImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? issuer,
-      @JsonKey(name: 'authorization_endpoint') String? authorizationEndpoint,
-      @JsonKey(name: 'token_endpoint') String? tokenEndpoint,
-      @JsonKey(name: 'device_authorization_endpoint')
-      String? deviceAuthorizationEndpoint,
-      @JsonKey(name: 'userinfo_endpoint') String? userinfoEndpoint,
-      @JsonKey(name: 'mfa_challenge_endpoint') String? mfaChallengeEndpoint,
-      @JsonKey(name: 'jwks_uri') String? jwksUri,
-      @JsonKey(name: 'registration_endpoint') String? registrationEndpoint,
-      @JsonKey(name: 'revocation_endpoint') String? revocationEndpoint,
-      @JsonKey(name: 'scopes_supported') List<String>? scopesSupported,
-      @JsonKey(name: 'response_types_supported')
-      List<String>? responseTypesSupported,
-      @JsonKey(name: 'code_challenge_methods_supported')
-      List<String>? codeChallengeMethodsSupported,
-      @JsonKey(name: 'response_modes_supported')
-      List<String>? responseModesSupported,
-      @JsonKey(name: 'subject_types_supported')
-      List<String>? subjectTypesSupported,
-      @JsonKey(name: 'id_token_signing_alg_values_supported')
-      List<String>? idTokenSigningAlgValuesSupported,
-      @JsonKey(name: 'token_endpoint_auth_methods_supported')
-      List<String>? tokenEndpointAuthMethodsSupported,
-      @JsonKey(name: 'claims_supported') List<String>? claimsSupported,
-      @JsonKey(name: 'request_uri_parameter_supported')
-      bool? requestUriParameterSupported,
-      @JsonKey(name: 'request_parameter_supported')
-      bool? requestParameterSupported,
-      @JsonKey(name: 'token_endpoint_auth_signing_alg_values_supported')
-      List<String>? tokenEndpointAuthSigningAlgValuesSupported});
+  $Res call({
+    String? issuer,
+    @JsonKey(name: 'authorization_endpoint') String? authorizationEndpoint,
+    @JsonKey(name: 'token_endpoint') String? tokenEndpoint,
+    @JsonKey(name: 'device_authorization_endpoint')
+    String? deviceAuthorizationEndpoint,
+    @JsonKey(name: 'userinfo_endpoint') String? userinfoEndpoint,
+    @JsonKey(name: 'mfa_challenge_endpoint') String? mfaChallengeEndpoint,
+    @JsonKey(name: 'jwks_uri') String? jwksUri,
+    @JsonKey(name: 'registration_endpoint') String? registrationEndpoint,
+    @JsonKey(name: 'revocation_endpoint') String? revocationEndpoint,
+    @JsonKey(name: 'scopes_supported') List<String>? scopesSupported,
+    @JsonKey(name: 'response_types_supported')
+    List<String>? responseTypesSupported,
+    @JsonKey(name: 'code_challenge_methods_supported')
+    List<String>? codeChallengeMethodsSupported,
+    @JsonKey(name: 'response_modes_supported')
+    List<String>? responseModesSupported,
+    @JsonKey(name: 'subject_types_supported')
+    List<String>? subjectTypesSupported,
+    @JsonKey(name: 'id_token_signing_alg_values_supported')
+    List<String>? idTokenSigningAlgValuesSupported,
+    @JsonKey(name: 'token_endpoint_auth_methods_supported')
+    List<String>? tokenEndpointAuthMethodsSupported,
+    @JsonKey(name: 'claims_supported') List<String>? claimsSupported,
+    @JsonKey(name: 'request_uri_parameter_supported')
+    bool? requestUriParameterSupported,
+    @JsonKey(name: 'request_parameter_supported')
+    bool? requestParameterSupported,
+    @JsonKey(name: 'token_endpoint_auth_signing_alg_values_supported')
+    List<String>? tokenEndpointAuthSigningAlgValuesSupported,
+  });
 }
 
 /// @nodoc
@@ -5343,9 +5709,12 @@ class __$$OpenIdImplCopyWithImpl<$Res>
     extends _$OpenIdCopyWithImpl<$Res, _$OpenIdImpl>
     implements _$$OpenIdImplCopyWith<$Res> {
   __$$OpenIdImplCopyWithImpl(
-      _$OpenIdImpl _value, $Res Function(_$OpenIdImpl) _then)
-      : super(_value, _then);
+    _$OpenIdImpl _value,
+    $Res Function(_$OpenIdImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of OpenId
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5370,138 +5739,140 @@ class __$$OpenIdImplCopyWithImpl<$Res>
     Object? requestParameterSupported = freezed,
     Object? tokenEndpointAuthSigningAlgValuesSupported = freezed,
   }) {
-    return _then(_$OpenIdImpl(
-      issuer: freezed == issuer
-          ? _value.issuer
-          : issuer // ignore: cast_nullable_to_non_nullable
-              as String?,
-      authorizationEndpoint: freezed == authorizationEndpoint
-          ? _value.authorizationEndpoint
-          : authorizationEndpoint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tokenEndpoint: freezed == tokenEndpoint
-          ? _value.tokenEndpoint
-          : tokenEndpoint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      deviceAuthorizationEndpoint: freezed == deviceAuthorizationEndpoint
-          ? _value.deviceAuthorizationEndpoint
-          : deviceAuthorizationEndpoint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userinfoEndpoint: freezed == userinfoEndpoint
-          ? _value.userinfoEndpoint
-          : userinfoEndpoint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mfaChallengeEndpoint: freezed == mfaChallengeEndpoint
-          ? _value.mfaChallengeEndpoint
-          : mfaChallengeEndpoint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      jwksUri: freezed == jwksUri
-          ? _value.jwksUri
-          : jwksUri // ignore: cast_nullable_to_non_nullable
-              as String?,
-      registrationEndpoint: freezed == registrationEndpoint
-          ? _value.registrationEndpoint
-          : registrationEndpoint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      revocationEndpoint: freezed == revocationEndpoint
-          ? _value.revocationEndpoint
-          : revocationEndpoint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      scopesSupported: freezed == scopesSupported
-          ? _value._scopesSupported
-          : scopesSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      responseTypesSupported: freezed == responseTypesSupported
-          ? _value._responseTypesSupported
-          : responseTypesSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      codeChallengeMethodsSupported: freezed == codeChallengeMethodsSupported
-          ? _value._codeChallengeMethodsSupported
-          : codeChallengeMethodsSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      responseModesSupported: freezed == responseModesSupported
-          ? _value._responseModesSupported
-          : responseModesSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      subjectTypesSupported: freezed == subjectTypesSupported
-          ? _value._subjectTypesSupported
-          : subjectTypesSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      idTokenSigningAlgValuesSupported: freezed ==
-              idTokenSigningAlgValuesSupported
-          ? _value._idTokenSigningAlgValuesSupported
-          : idTokenSigningAlgValuesSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      tokenEndpointAuthMethodsSupported: freezed ==
-              tokenEndpointAuthMethodsSupported
-          ? _value._tokenEndpointAuthMethodsSupported
-          : tokenEndpointAuthMethodsSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      claimsSupported: freezed == claimsSupported
-          ? _value._claimsSupported
-          : claimsSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      requestUriParameterSupported: freezed == requestUriParameterSupported
-          ? _value.requestUriParameterSupported
-          : requestUriParameterSupported // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      requestParameterSupported: freezed == requestParameterSupported
-          ? _value.requestParameterSupported
-          : requestParameterSupported // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      tokenEndpointAuthSigningAlgValuesSupported: freezed ==
-              tokenEndpointAuthSigningAlgValuesSupported
-          ? _value._tokenEndpointAuthSigningAlgValuesSupported
-          : tokenEndpointAuthSigningAlgValuesSupported // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ));
+    return _then(
+      _$OpenIdImpl(
+        issuer: freezed == issuer
+            ? _value.issuer
+            : issuer // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        authorizationEndpoint: freezed == authorizationEndpoint
+            ? _value.authorizationEndpoint
+            : authorizationEndpoint // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        tokenEndpoint: freezed == tokenEndpoint
+            ? _value.tokenEndpoint
+            : tokenEndpoint // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        deviceAuthorizationEndpoint: freezed == deviceAuthorizationEndpoint
+            ? _value.deviceAuthorizationEndpoint
+            : deviceAuthorizationEndpoint // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        userinfoEndpoint: freezed == userinfoEndpoint
+            ? _value.userinfoEndpoint
+            : userinfoEndpoint // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        mfaChallengeEndpoint: freezed == mfaChallengeEndpoint
+            ? _value.mfaChallengeEndpoint
+            : mfaChallengeEndpoint // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        jwksUri: freezed == jwksUri
+            ? _value.jwksUri
+            : jwksUri // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        registrationEndpoint: freezed == registrationEndpoint
+            ? _value.registrationEndpoint
+            : registrationEndpoint // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        revocationEndpoint: freezed == revocationEndpoint
+            ? _value.revocationEndpoint
+            : revocationEndpoint // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        scopesSupported: freezed == scopesSupported
+            ? _value._scopesSupported
+            : scopesSupported // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        responseTypesSupported: freezed == responseTypesSupported
+            ? _value._responseTypesSupported
+            : responseTypesSupported // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        codeChallengeMethodsSupported: freezed == codeChallengeMethodsSupported
+            ? _value._codeChallengeMethodsSupported
+            : codeChallengeMethodsSupported // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        responseModesSupported: freezed == responseModesSupported
+            ? _value._responseModesSupported
+            : responseModesSupported // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        subjectTypesSupported: freezed == subjectTypesSupported
+            ? _value._subjectTypesSupported
+            : subjectTypesSupported // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        idTokenSigningAlgValuesSupported:
+            freezed == idTokenSigningAlgValuesSupported
+            ? _value._idTokenSigningAlgValuesSupported
+            : idTokenSigningAlgValuesSupported // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        tokenEndpointAuthMethodsSupported:
+            freezed == tokenEndpointAuthMethodsSupported
+            ? _value._tokenEndpointAuthMethodsSupported
+            : tokenEndpointAuthMethodsSupported // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        claimsSupported: freezed == claimsSupported
+            ? _value._claimsSupported
+            : claimsSupported // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        requestUriParameterSupported: freezed == requestUriParameterSupported
+            ? _value.requestUriParameterSupported
+            : requestUriParameterSupported // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        requestParameterSupported: freezed == requestParameterSupported
+            ? _value.requestParameterSupported
+            : requestParameterSupported // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        tokenEndpointAuthSigningAlgValuesSupported:
+            freezed == tokenEndpointAuthSigningAlgValuesSupported
+            ? _value._tokenEndpointAuthSigningAlgValuesSupported
+            : tokenEndpointAuthSigningAlgValuesSupported // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$OpenIdImpl implements _OpenId {
-  const _$OpenIdImpl(
-      {this.issuer,
-      @JsonKey(name: 'authorization_endpoint') this.authorizationEndpoint,
-      @JsonKey(name: 'token_endpoint') this.tokenEndpoint,
-      @JsonKey(name: 'device_authorization_endpoint')
-      this.deviceAuthorizationEndpoint,
-      @JsonKey(name: 'userinfo_endpoint') this.userinfoEndpoint,
-      @JsonKey(name: 'mfa_challenge_endpoint') this.mfaChallengeEndpoint,
-      @JsonKey(name: 'jwks_uri') this.jwksUri,
-      @JsonKey(name: 'registration_endpoint') this.registrationEndpoint,
-      @JsonKey(name: 'revocation_endpoint') this.revocationEndpoint,
-      @JsonKey(name: 'scopes_supported') final List<String>? scopesSupported,
-      @JsonKey(name: 'response_types_supported')
-      final List<String>? responseTypesSupported,
-      @JsonKey(name: 'code_challenge_methods_supported')
-      final List<String>? codeChallengeMethodsSupported,
-      @JsonKey(name: 'response_modes_supported')
-      final List<String>? responseModesSupported,
-      @JsonKey(name: 'subject_types_supported')
-      final List<String>? subjectTypesSupported,
-      @JsonKey(name: 'id_token_signing_alg_values_supported')
-      final List<String>? idTokenSigningAlgValuesSupported,
-      @JsonKey(name: 'token_endpoint_auth_methods_supported')
-      final List<String>? tokenEndpointAuthMethodsSupported,
-      @JsonKey(name: 'claims_supported') final List<String>? claimsSupported,
-      @JsonKey(name: 'request_uri_parameter_supported')
-      this.requestUriParameterSupported,
-      @JsonKey(name: 'request_parameter_supported')
-      this.requestParameterSupported,
-      @JsonKey(name: 'token_endpoint_auth_signing_alg_values_supported')
-      final List<String>? tokenEndpointAuthSigningAlgValuesSupported})
-      : _scopesSupported = scopesSupported,
-        _responseTypesSupported = responseTypesSupported,
-        _codeChallengeMethodsSupported = codeChallengeMethodsSupported,
-        _responseModesSupported = responseModesSupported,
-        _subjectTypesSupported = subjectTypesSupported,
-        _idTokenSigningAlgValuesSupported = idTokenSigningAlgValuesSupported,
-        _tokenEndpointAuthMethodsSupported = tokenEndpointAuthMethodsSupported,
-        _claimsSupported = claimsSupported,
-        _tokenEndpointAuthSigningAlgValuesSupported =
-            tokenEndpointAuthSigningAlgValuesSupported;
+  const _$OpenIdImpl({
+    this.issuer,
+    @JsonKey(name: 'authorization_endpoint') this.authorizationEndpoint,
+    @JsonKey(name: 'token_endpoint') this.tokenEndpoint,
+    @JsonKey(name: 'device_authorization_endpoint')
+    this.deviceAuthorizationEndpoint,
+    @JsonKey(name: 'userinfo_endpoint') this.userinfoEndpoint,
+    @JsonKey(name: 'mfa_challenge_endpoint') this.mfaChallengeEndpoint,
+    @JsonKey(name: 'jwks_uri') this.jwksUri,
+    @JsonKey(name: 'registration_endpoint') this.registrationEndpoint,
+    @JsonKey(name: 'revocation_endpoint') this.revocationEndpoint,
+    @JsonKey(name: 'scopes_supported') final List<String>? scopesSupported,
+    @JsonKey(name: 'response_types_supported')
+    final List<String>? responseTypesSupported,
+    @JsonKey(name: 'code_challenge_methods_supported')
+    final List<String>? codeChallengeMethodsSupported,
+    @JsonKey(name: 'response_modes_supported')
+    final List<String>? responseModesSupported,
+    @JsonKey(name: 'subject_types_supported')
+    final List<String>? subjectTypesSupported,
+    @JsonKey(name: 'id_token_signing_alg_values_supported')
+    final List<String>? idTokenSigningAlgValuesSupported,
+    @JsonKey(name: 'token_endpoint_auth_methods_supported')
+    final List<String>? tokenEndpointAuthMethodsSupported,
+    @JsonKey(name: 'claims_supported') final List<String>? claimsSupported,
+    @JsonKey(name: 'request_uri_parameter_supported')
+    this.requestUriParameterSupported,
+    @JsonKey(name: 'request_parameter_supported')
+    this.requestParameterSupported,
+    @JsonKey(name: 'token_endpoint_auth_signing_alg_values_supported')
+    final List<String>? tokenEndpointAuthSigningAlgValuesSupported,
+  }) : _scopesSupported = scopesSupported,
+       _responseTypesSupported = responseTypesSupported,
+       _codeChallengeMethodsSupported = codeChallengeMethodsSupported,
+       _responseModesSupported = responseModesSupported,
+       _subjectTypesSupported = subjectTypesSupported,
+       _idTokenSigningAlgValuesSupported = idTokenSigningAlgValuesSupported,
+       _tokenEndpointAuthMethodsSupported = tokenEndpointAuthMethodsSupported,
+       _claimsSupported = claimsSupported,
+       _tokenEndpointAuthSigningAlgValuesSupported =
+           tokenEndpointAuthSigningAlgValuesSupported;
 
   factory _$OpenIdImpl.fromJson(Map<String, dynamic> json) =>
       _$$OpenIdImplFromJson(json);
@@ -5700,7 +6071,7 @@ class _$OpenIdImpl implements _OpenId {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OpenIdImpl &&
@@ -5709,8 +6080,10 @@ class _$OpenIdImpl implements _OpenId {
                 other.authorizationEndpoint == authorizationEndpoint) &&
             (identical(other.tokenEndpoint, tokenEndpoint) ||
                 other.tokenEndpoint == tokenEndpoint) &&
-            (identical(other.deviceAuthorizationEndpoint,
-                    deviceAuthorizationEndpoint) ||
+            (identical(
+                  other.deviceAuthorizationEndpoint,
+                  deviceAuthorizationEndpoint,
+                ) ||
                 other.deviceAuthorizationEndpoint ==
                     deviceAuthorizationEndpoint) &&
             (identical(other.userinfoEndpoint, userinfoEndpoint) ||
@@ -5722,65 +6095,86 @@ class _$OpenIdImpl implements _OpenId {
                 other.registrationEndpoint == registrationEndpoint) &&
             (identical(other.revocationEndpoint, revocationEndpoint) ||
                 other.revocationEndpoint == revocationEndpoint) &&
-            const DeepCollectionEquality()
-                .equals(other._scopesSupported, _scopesSupported) &&
             const DeepCollectionEquality().equals(
-                other._responseTypesSupported, _responseTypesSupported) &&
+              other._scopesSupported,
+              _scopesSupported,
+            ) &&
             const DeepCollectionEquality().equals(
-                other._codeChallengeMethodsSupported,
-                _codeChallengeMethodsSupported) &&
+              other._responseTypesSupported,
+              _responseTypesSupported,
+            ) &&
             const DeepCollectionEquality().equals(
-                other._responseModesSupported, _responseModesSupported) &&
-            const DeepCollectionEquality()
-                .equals(other._subjectTypesSupported, _subjectTypesSupported) &&
+              other._codeChallengeMethodsSupported,
+              _codeChallengeMethodsSupported,
+            ) &&
             const DeepCollectionEquality().equals(
-                other._idTokenSigningAlgValuesSupported,
-                _idTokenSigningAlgValuesSupported) &&
+              other._responseModesSupported,
+              _responseModesSupported,
+            ) &&
             const DeepCollectionEquality().equals(
-                other._tokenEndpointAuthMethodsSupported,
-                _tokenEndpointAuthMethodsSupported) &&
-            const DeepCollectionEquality()
-                .equals(other._claimsSupported, _claimsSupported) &&
-            (identical(other.requestUriParameterSupported,
-                    requestUriParameterSupported) ||
+              other._subjectTypesSupported,
+              _subjectTypesSupported,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._idTokenSigningAlgValuesSupported,
+              _idTokenSigningAlgValuesSupported,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._tokenEndpointAuthMethodsSupported,
+              _tokenEndpointAuthMethodsSupported,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._claimsSupported,
+              _claimsSupported,
+            ) &&
+            (identical(
+                  other.requestUriParameterSupported,
+                  requestUriParameterSupported,
+                ) ||
                 other.requestUriParameterSupported ==
                     requestUriParameterSupported) &&
-            (identical(other.requestParameterSupported,
-                    requestParameterSupported) ||
+            (identical(
+                  other.requestParameterSupported,
+                  requestParameterSupported,
+                ) ||
                 other.requestParameterSupported == requestParameterSupported) &&
             const DeepCollectionEquality().equals(
-                other._tokenEndpointAuthSigningAlgValuesSupported,
-                _tokenEndpointAuthSigningAlgValuesSupported));
+              other._tokenEndpointAuthSigningAlgValuesSupported,
+              _tokenEndpointAuthSigningAlgValuesSupported,
+            ));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
-        runtimeType,
-        issuer,
-        authorizationEndpoint,
-        tokenEndpoint,
-        deviceAuthorizationEndpoint,
-        userinfoEndpoint,
-        mfaChallengeEndpoint,
-        jwksUri,
-        registrationEndpoint,
-        revocationEndpoint,
-        const DeepCollectionEquality().hash(_scopesSupported),
-        const DeepCollectionEquality().hash(_responseTypesSupported),
-        const DeepCollectionEquality().hash(_codeChallengeMethodsSupported),
-        const DeepCollectionEquality().hash(_responseModesSupported),
-        const DeepCollectionEquality().hash(_subjectTypesSupported),
-        const DeepCollectionEquality().hash(_idTokenSigningAlgValuesSupported),
-        const DeepCollectionEquality().hash(_tokenEndpointAuthMethodsSupported),
-        const DeepCollectionEquality().hash(_claimsSupported),
-        requestUriParameterSupported,
-        requestParameterSupported,
-        const DeepCollectionEquality()
-            .hash(_tokenEndpointAuthSigningAlgValuesSupported)
-      ]);
+    runtimeType,
+    issuer,
+    authorizationEndpoint,
+    tokenEndpoint,
+    deviceAuthorizationEndpoint,
+    userinfoEndpoint,
+    mfaChallengeEndpoint,
+    jwksUri,
+    registrationEndpoint,
+    revocationEndpoint,
+    const DeepCollectionEquality().hash(_scopesSupported),
+    const DeepCollectionEquality().hash(_responseTypesSupported),
+    const DeepCollectionEquality().hash(_codeChallengeMethodsSupported),
+    const DeepCollectionEquality().hash(_responseModesSupported),
+    const DeepCollectionEquality().hash(_subjectTypesSupported),
+    const DeepCollectionEquality().hash(_idTokenSigningAlgValuesSupported),
+    const DeepCollectionEquality().hash(_tokenEndpointAuthMethodsSupported),
+    const DeepCollectionEquality().hash(_claimsSupported),
+    requestUriParameterSupported,
+    requestParameterSupported,
+    const DeepCollectionEquality().hash(
+      _tokenEndpointAuthSigningAlgValuesSupported,
+    ),
+  ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OpenId
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OpenIdImplCopyWith<_$OpenIdImpl> get copyWith =>
@@ -5816,152 +6210,150 @@ class _$OpenIdImpl implements _OpenId {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$OpenIdImplToJson(
-      this,
-    );
+    return _$$OpenIdImplToJson(this);
   }
 }
 
 abstract class _OpenId implements OpenId {
-  const factory _OpenId(
-      {final String? issuer,
-      @JsonKey(name: 'authorization_endpoint')
-      final String? authorizationEndpoint,
-      @JsonKey(name: 'token_endpoint') final String? tokenEndpoint,
-      @JsonKey(name: 'device_authorization_endpoint')
-      final String? deviceAuthorizationEndpoint,
-      @JsonKey(name: 'userinfo_endpoint') final String? userinfoEndpoint,
-      @JsonKey(name: 'mfa_challenge_endpoint')
-      final String? mfaChallengeEndpoint,
-      @JsonKey(name: 'jwks_uri') final String? jwksUri,
-      @JsonKey(name: 'registration_endpoint')
-      final String? registrationEndpoint,
-      @JsonKey(name: 'revocation_endpoint') final String? revocationEndpoint,
-      @JsonKey(name: 'scopes_supported') final List<String>? scopesSupported,
-      @JsonKey(name: 'response_types_supported')
-      final List<String>? responseTypesSupported,
-      @JsonKey(name: 'code_challenge_methods_supported')
-      final List<String>? codeChallengeMethodsSupported,
-      @JsonKey(name: 'response_modes_supported')
-      final List<String>? responseModesSupported,
-      @JsonKey(name: 'subject_types_supported')
-      final List<String>? subjectTypesSupported,
-      @JsonKey(name: 'id_token_signing_alg_values_supported')
-      final List<String>? idTokenSigningAlgValuesSupported,
-      @JsonKey(name: 'token_endpoint_auth_methods_supported')
-      final List<String>? tokenEndpointAuthMethodsSupported,
-      @JsonKey(name: 'claims_supported') final List<String>? claimsSupported,
-      @JsonKey(name: 'request_uri_parameter_supported')
-      final bool? requestUriParameterSupported,
-      @JsonKey(name: 'request_parameter_supported')
-      final bool? requestParameterSupported,
-      @JsonKey(name: 'token_endpoint_auth_signing_alg_values_supported')
-      final List<String>?
-          tokenEndpointAuthSigningAlgValuesSupported}) = _$OpenIdImpl;
+  const factory _OpenId({
+    final String? issuer,
+    @JsonKey(name: 'authorization_endpoint')
+    final String? authorizationEndpoint,
+    @JsonKey(name: 'token_endpoint') final String? tokenEndpoint,
+    @JsonKey(name: 'device_authorization_endpoint')
+    final String? deviceAuthorizationEndpoint,
+    @JsonKey(name: 'userinfo_endpoint') final String? userinfoEndpoint,
+    @JsonKey(name: 'mfa_challenge_endpoint') final String? mfaChallengeEndpoint,
+    @JsonKey(name: 'jwks_uri') final String? jwksUri,
+    @JsonKey(name: 'registration_endpoint') final String? registrationEndpoint,
+    @JsonKey(name: 'revocation_endpoint') final String? revocationEndpoint,
+    @JsonKey(name: 'scopes_supported') final List<String>? scopesSupported,
+    @JsonKey(name: 'response_types_supported')
+    final List<String>? responseTypesSupported,
+    @JsonKey(name: 'code_challenge_methods_supported')
+    final List<String>? codeChallengeMethodsSupported,
+    @JsonKey(name: 'response_modes_supported')
+    final List<String>? responseModesSupported,
+    @JsonKey(name: 'subject_types_supported')
+    final List<String>? subjectTypesSupported,
+    @JsonKey(name: 'id_token_signing_alg_values_supported')
+    final List<String>? idTokenSigningAlgValuesSupported,
+    @JsonKey(name: 'token_endpoint_auth_methods_supported')
+    final List<String>? tokenEndpointAuthMethodsSupported,
+    @JsonKey(name: 'claims_supported') final List<String>? claimsSupported,
+    @JsonKey(name: 'request_uri_parameter_supported')
+    final bool? requestUriParameterSupported,
+    @JsonKey(name: 'request_parameter_supported')
+    final bool? requestParameterSupported,
+    @JsonKey(name: 'token_endpoint_auth_signing_alg_values_supported')
+    final List<String>? tokenEndpointAuthSigningAlgValuesSupported,
+  }) = _$OpenIdImpl;
 
   factory _OpenId.fromJson(Map<String, dynamic> json) = _$OpenIdImpl.fromJson;
 
-  @override
-
   /// Text
+  @override
   String? get issuer;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'authorization_endpoint')
   String? get authorizationEndpoint;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'token_endpoint')
   String? get tokenEndpoint;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'device_authorization_endpoint')
   String? get deviceAuthorizationEndpoint;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'userinfo_endpoint')
   String? get userinfoEndpoint;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'mfa_challenge_endpoint')
   String? get mfaChallengeEndpoint;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'jwks_uri')
   String? get jwksUri;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'registration_endpoint')
   String? get registrationEndpoint;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'revocation_endpoint')
   String? get revocationEndpoint;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'scopes_supported')
   List<String>? get scopesSupported;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'response_types_supported')
   List<String>? get responseTypesSupported;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'code_challenge_methods_supported')
   List<String>? get codeChallengeMethodsSupported;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'response_modes_supported')
   List<String>? get responseModesSupported;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'subject_types_supported')
   List<String>? get subjectTypesSupported;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'id_token_signing_alg_values_supported')
   List<String>? get idTokenSigningAlgValuesSupported;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'token_endpoint_auth_methods_supported')
   List<String>? get tokenEndpointAuthMethodsSupported;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'claims_supported')
   List<String>? get claimsSupported;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'request_uri_parameter_supported')
   bool? get requestUriParameterSupported;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'request_parameter_supported')
   bool? get requestParameterSupported;
-  @override
 
   /// Text
+  @override
   @JsonKey(name: 'token_endpoint_auth_signing_alg_values_supported')
   List<String>? get tokenEndpointAuthSigningAlgValuesSupported;
+
+  /// Create a copy of OpenId
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OpenIdImplCopyWith<_$OpenIdImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5979,7 +6371,11 @@ Parameter _$ParameterFromJson(Map<String, dynamic> json) {
 
     default:
       throw CheckedFromJsonException(
-          json, 'in', 'Parameter', 'Invalid union type "${json['in']}"!');
+        json,
+        'in',
+        'Parameter',
+        'Invalid union type "${json['in']}"!',
+      );
   }
 }
 
@@ -6003,16 +6399,14 @@ mixin _$Parameter {
     required TResult Function(_ParameterHeader value) header,
     required TResult Function(_ParameterQuery value) query,
     required TResult Function(_ParameterPath value) path,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ParameterCookie value)? cookie,
     TResult? Function(_ParameterHeader value)? header,
     TResult? Function(_ParameterQuery value)? query,
     TResult? Function(_ParameterPath value)? path,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ParameterCookie value)? cookie,
@@ -6020,10 +6414,14 @@ mixin _$Parameter {
     TResult Function(_ParameterQuery value)? query,
     TResult Function(_ParameterPath value)? path,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Parameter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ParameterCopyWith<Parameter> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -6033,16 +6431,17 @@ abstract class $ParameterCopyWith<$Res> {
   factory $ParameterCopyWith(Parameter value, $Res Function(Parameter) then) =
       _$ParameterCopyWithImpl<$Res, Parameter>;
   @useResult
-  $Res call(
-      {String? name,
-      String? description,
-      bool? deprecated,
-      String? style,
-      bool? explode,
-      bool? allowReserved,
-      String? example,
-      Schema schema,
-      @JsonKey(name: '\$ref') @_ParamRefConverter() String? ref});
+  $Res call({
+    String? name,
+    String? description,
+    bool? deprecated,
+    String? style,
+    bool? explode,
+    bool? allowReserved,
+    String? example,
+    Schema schema,
+    @JsonKey(name: '\$ref') @_ParamRefConverter() String? ref,
+  });
 
   $SchemaCopyWith<$Res>? get schema;
 }
@@ -6057,6 +6456,8 @@ class _$ParameterCopyWithImpl<$Res, $Val extends Parameter>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6070,46 +6471,51 @@ class _$ParameterCopyWithImpl<$Res, $Val extends Parameter>
     Object? schema = null,
     Object? ref = freezed,
   }) {
-    return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      deprecated: freezed == deprecated
-          ? _value.deprecated
-          : deprecated // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      style: freezed == style
-          ? _value.style
-          : style // ignore: cast_nullable_to_non_nullable
-              as String?,
-      explode: freezed == explode
-          ? _value.explode
-          : explode // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      allowReserved: freezed == allowReserved
-          ? _value.allowReserved
-          : allowReserved // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      example: freezed == example
-          ? _value.example
-          : example // ignore: cast_nullable_to_non_nullable
-              as String?,
-      schema: null == schema
-          ? _value.schema!
-          : schema // ignore: cast_nullable_to_non_nullable
-              as Schema,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            name: freezed == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            description: freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            deprecated: freezed == deprecated
+                ? _value.deprecated
+                : deprecated // ignore: cast_nullable_to_non_nullable
+                      as bool?,
+            style: freezed == style
+                ? _value.style
+                : style // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            explode: freezed == explode
+                ? _value.explode
+                : explode // ignore: cast_nullable_to_non_nullable
+                      as bool?,
+            allowReserved: freezed == allowReserved
+                ? _value.allowReserved
+                : allowReserved // ignore: cast_nullable_to_non_nullable
+                      as bool?,
+            example: freezed == example
+                ? _value.example
+                : example // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            schema: null == schema
+                ? _value.schema!
+                : schema // ignore: cast_nullable_to_non_nullable
+                      as Schema,
+            ref: freezed == ref
+                ? _value.ref
+                : ref // ignore: cast_nullable_to_non_nullable
+                      as String?,
+          )
+          as $Val,
+    );
   }
 
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SchemaCopyWith<$Res>? get schema {
@@ -6126,22 +6532,24 @@ class _$ParameterCopyWithImpl<$Res, $Val extends Parameter>
 /// @nodoc
 abstract class _$$ParameterCookieImplCopyWith<$Res>
     implements $ParameterCopyWith<$Res> {
-  factory _$$ParameterCookieImplCopyWith(_$ParameterCookieImpl value,
-          $Res Function(_$ParameterCookieImpl) then) =
-      __$$ParameterCookieImplCopyWithImpl<$Res>;
+  factory _$$ParameterCookieImplCopyWith(
+    _$ParameterCookieImpl value,
+    $Res Function(_$ParameterCookieImpl) then,
+  ) = __$$ParameterCookieImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? name,
-      String? description,
-      bool? required,
-      bool? deprecated,
-      String? style,
-      bool? explode,
-      bool? allowReserved,
-      String? example,
-      Schema schema,
-      @JsonKey(name: '\$ref') @_ParamRefConverter() String? ref});
+  $Res call({
+    String? name,
+    String? description,
+    bool? required,
+    bool? deprecated,
+    String? style,
+    bool? explode,
+    bool? allowReserved,
+    String? example,
+    Schema schema,
+    @JsonKey(name: '\$ref') @_ParamRefConverter() String? ref,
+  });
 
   @override
   $SchemaCopyWith<$Res> get schema;
@@ -6152,9 +6560,12 @@ class __$$ParameterCookieImplCopyWithImpl<$Res>
     extends _$ParameterCopyWithImpl<$Res, _$ParameterCookieImpl>
     implements _$$ParameterCookieImplCopyWith<$Res> {
   __$$ParameterCookieImplCopyWithImpl(
-      _$ParameterCookieImpl _value, $Res Function(_$ParameterCookieImpl) _then)
-      : super(_value, _then);
+    _$ParameterCookieImpl _value,
+    $Res Function(_$ParameterCookieImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6169,50 +6580,54 @@ class __$$ParameterCookieImplCopyWithImpl<$Res>
     Object? schema = null,
     Object? ref = freezed,
   }) {
-    return _then(_$ParameterCookieImpl(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      required: freezed == required
-          ? _value.required
-          : required // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      deprecated: freezed == deprecated
-          ? _value.deprecated
-          : deprecated // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      style: freezed == style
-          ? _value.style
-          : style // ignore: cast_nullable_to_non_nullable
-              as String?,
-      explode: freezed == explode
-          ? _value.explode
-          : explode // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      allowReserved: freezed == allowReserved
-          ? _value.allowReserved
-          : allowReserved // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      example: freezed == example
-          ? _value.example
-          : example // ignore: cast_nullable_to_non_nullable
-              as String?,
-      schema: null == schema
-          ? _value.schema
-          : schema // ignore: cast_nullable_to_non_nullable
-              as Schema,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$ParameterCookieImpl(
+        name: freezed == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        required: freezed == required
+            ? _value.required
+            : required // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        deprecated: freezed == deprecated
+            ? _value.deprecated
+            : deprecated // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        style: freezed == style
+            ? _value.style
+            : style // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        explode: freezed == explode
+            ? _value.explode
+            : explode // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        allowReserved: freezed == allowReserved
+            ? _value.allowReserved
+            : allowReserved // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        example: freezed == example
+            ? _value.example
+            : example // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        schema: null == schema
+            ? _value.schema
+            : schema // ignore: cast_nullable_to_non_nullable
+                  as Schema,
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SchemaCopyWith<$Res> get schema {
@@ -6225,24 +6640,28 @@ class __$$ParameterCookieImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ParameterCookieImpl extends _ParameterCookie {
-  const _$ParameterCookieImpl(
-      {this.name,
-      this.description,
-      this.required,
-      this.deprecated,
-      this.style,
-      this.explode,
-      this.allowReserved,
-      this.example,
-      required this.schema,
-      @JsonKey(name: '\$ref') @_ParamRefConverter() this.ref,
-      final String? $type})
-      : assert((name == null && ref == null) == false,
-            'Must provide either name or ref'),
-        assert((name != null && ref != null) == false,
-            'Must provide either name or ref, not both'),
-        $type = $type ?? 'cookie',
-        super._();
+  const _$ParameterCookieImpl({
+    this.name,
+    this.description,
+    this.required,
+    this.deprecated,
+    this.style,
+    this.explode,
+    this.allowReserved,
+    this.example,
+    required this.schema,
+    @JsonKey(name: '\$ref') @_ParamRefConverter() this.ref,
+    final String? $type,
+  }) : assert(
+         (name == null && ref == null) == false,
+         'Must provide either name or ref',
+       ),
+       assert(
+         (name != null && ref != null) == false,
+         'Must provide either name or ref, not both',
+       ),
+       $type = $type ?? 'cookie',
+       super._();
 
   factory _$ParameterCookieImpl.fromJson(Map<String, dynamic> json) =>
       _$$ParameterCookieImplFromJson(json);
@@ -6279,7 +6698,7 @@ class _$ParameterCookieImpl extends _ParameterCookie {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ParameterCookieImpl &&
@@ -6299,17 +6718,32 @@ class _$ParameterCookieImpl extends _ParameterCookie {
             (identical(other.ref, ref) || other.ref == ref));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, name, description, required,
-      deprecated, style, explode, allowReserved, example, schema, ref);
+  int get hashCode => Object.hash(
+    runtimeType,
+    name,
+    description,
+    required,
+    deprecated,
+    style,
+    explode,
+    allowReserved,
+    example,
+    schema,
+    ref,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ParameterCookieImplCopyWith<_$ParameterCookieImpl> get copyWith =>
       __$$ParameterCookieImplCopyWithImpl<_$ParameterCookieImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -6350,25 +6784,23 @@ class _$ParameterCookieImpl extends _ParameterCookie {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ParameterCookieImplToJson(
-      this,
-    );
+    return _$$ParameterCookieImplToJson(this);
   }
 }
 
 abstract class _ParameterCookie extends Parameter {
-  const factory _ParameterCookie(
-          {final String? name,
-          final String? description,
-          final bool? required,
-          final bool? deprecated,
-          final String? style,
-          final bool? explode,
-          final bool? allowReserved,
-          final String? example,
-          required final Schema schema,
-          @JsonKey(name: '\$ref') @_ParamRefConverter() final String? ref}) =
-      _$ParameterCookieImpl;
+  const factory _ParameterCookie({
+    final String? name,
+    final String? description,
+    final bool? required,
+    final bool? deprecated,
+    final String? style,
+    final bool? explode,
+    final bool? allowReserved,
+    final String? example,
+    required final Schema schema,
+    @JsonKey(name: '\$ref') @_ParamRefConverter() final String? ref,
+  }) = _$ParameterCookieImpl;
   const _ParameterCookie._() : super._();
 
   factory _ParameterCookie.fromJson(Map<String, dynamic> json) =
@@ -6395,8 +6827,11 @@ abstract class _ParameterCookie extends Parameter {
   @JsonKey(name: '\$ref')
   @_ParamRefConverter()
   String? get ref;
+
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ParameterCookieImplCopyWith<_$ParameterCookieImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -6404,22 +6839,24 @@ abstract class _ParameterCookie extends Parameter {
 /// @nodoc
 abstract class _$$ParameterHeaderImplCopyWith<$Res>
     implements $ParameterCopyWith<$Res> {
-  factory _$$ParameterHeaderImplCopyWith(_$ParameterHeaderImpl value,
-          $Res Function(_$ParameterHeaderImpl) then) =
-      __$$ParameterHeaderImplCopyWithImpl<$Res>;
+  factory _$$ParameterHeaderImplCopyWith(
+    _$ParameterHeaderImpl value,
+    $Res Function(_$ParameterHeaderImpl) then,
+  ) = __$$ParameterHeaderImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? name,
-      String? description,
-      bool? required,
-      bool? deprecated,
-      String? style,
-      bool? explode,
-      bool? allowReserved,
-      String? example,
-      Schema schema,
-      @JsonKey(name: '\$ref') @_ParamRefConverter() String? ref});
+  $Res call({
+    String? name,
+    String? description,
+    bool? required,
+    bool? deprecated,
+    String? style,
+    bool? explode,
+    bool? allowReserved,
+    String? example,
+    Schema schema,
+    @JsonKey(name: '\$ref') @_ParamRefConverter() String? ref,
+  });
 
   @override
   $SchemaCopyWith<$Res> get schema;
@@ -6430,9 +6867,12 @@ class __$$ParameterHeaderImplCopyWithImpl<$Res>
     extends _$ParameterCopyWithImpl<$Res, _$ParameterHeaderImpl>
     implements _$$ParameterHeaderImplCopyWith<$Res> {
   __$$ParameterHeaderImplCopyWithImpl(
-      _$ParameterHeaderImpl _value, $Res Function(_$ParameterHeaderImpl) _then)
-      : super(_value, _then);
+    _$ParameterHeaderImpl _value,
+    $Res Function(_$ParameterHeaderImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6447,50 +6887,54 @@ class __$$ParameterHeaderImplCopyWithImpl<$Res>
     Object? schema = null,
     Object? ref = freezed,
   }) {
-    return _then(_$ParameterHeaderImpl(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      required: freezed == required
-          ? _value.required
-          : required // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      deprecated: freezed == deprecated
-          ? _value.deprecated
-          : deprecated // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      style: freezed == style
-          ? _value.style
-          : style // ignore: cast_nullable_to_non_nullable
-              as String?,
-      explode: freezed == explode
-          ? _value.explode
-          : explode // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      allowReserved: freezed == allowReserved
-          ? _value.allowReserved
-          : allowReserved // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      example: freezed == example
-          ? _value.example
-          : example // ignore: cast_nullable_to_non_nullable
-              as String?,
-      schema: null == schema
-          ? _value.schema
-          : schema // ignore: cast_nullable_to_non_nullable
-              as Schema,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$ParameterHeaderImpl(
+        name: freezed == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        required: freezed == required
+            ? _value.required
+            : required // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        deprecated: freezed == deprecated
+            ? _value.deprecated
+            : deprecated // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        style: freezed == style
+            ? _value.style
+            : style // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        explode: freezed == explode
+            ? _value.explode
+            : explode // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        allowReserved: freezed == allowReserved
+            ? _value.allowReserved
+            : allowReserved // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        example: freezed == example
+            ? _value.example
+            : example // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        schema: null == schema
+            ? _value.schema
+            : schema // ignore: cast_nullable_to_non_nullable
+                  as Schema,
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SchemaCopyWith<$Res> get schema {
@@ -6503,24 +6947,28 @@ class __$$ParameterHeaderImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ParameterHeaderImpl extends _ParameterHeader {
-  const _$ParameterHeaderImpl(
-      {this.name,
-      this.description,
-      this.required,
-      this.deprecated,
-      this.style,
-      this.explode,
-      this.allowReserved,
-      this.example,
-      required this.schema,
-      @JsonKey(name: '\$ref') @_ParamRefConverter() this.ref,
-      final String? $type})
-      : assert((name == null && ref == null) == false,
-            'Must provide either name or ref'),
-        assert((name != null && ref != null) == false,
-            'Must provide either name or ref, not both'),
-        $type = $type ?? 'header',
-        super._();
+  const _$ParameterHeaderImpl({
+    this.name,
+    this.description,
+    this.required,
+    this.deprecated,
+    this.style,
+    this.explode,
+    this.allowReserved,
+    this.example,
+    required this.schema,
+    @JsonKey(name: '\$ref') @_ParamRefConverter() this.ref,
+    final String? $type,
+  }) : assert(
+         (name == null && ref == null) == false,
+         'Must provide either name or ref',
+       ),
+       assert(
+         (name != null && ref != null) == false,
+         'Must provide either name or ref, not both',
+       ),
+       $type = $type ?? 'header',
+       super._();
 
   factory _$ParameterHeaderImpl.fromJson(Map<String, dynamic> json) =>
       _$$ParameterHeaderImplFromJson(json);
@@ -6557,7 +7005,7 @@ class _$ParameterHeaderImpl extends _ParameterHeader {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ParameterHeaderImpl &&
@@ -6577,17 +7025,32 @@ class _$ParameterHeaderImpl extends _ParameterHeader {
             (identical(other.ref, ref) || other.ref == ref));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, name, description, required,
-      deprecated, style, explode, allowReserved, example, schema, ref);
+  int get hashCode => Object.hash(
+    runtimeType,
+    name,
+    description,
+    required,
+    deprecated,
+    style,
+    explode,
+    allowReserved,
+    example,
+    schema,
+    ref,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ParameterHeaderImplCopyWith<_$ParameterHeaderImpl> get copyWith =>
       __$$ParameterHeaderImplCopyWithImpl<_$ParameterHeaderImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -6628,25 +7091,23 @@ class _$ParameterHeaderImpl extends _ParameterHeader {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ParameterHeaderImplToJson(
-      this,
-    );
+    return _$$ParameterHeaderImplToJson(this);
   }
 }
 
 abstract class _ParameterHeader extends Parameter {
-  const factory _ParameterHeader(
-          {final String? name,
-          final String? description,
-          final bool? required,
-          final bool? deprecated,
-          final String? style,
-          final bool? explode,
-          final bool? allowReserved,
-          final String? example,
-          required final Schema schema,
-          @JsonKey(name: '\$ref') @_ParamRefConverter() final String? ref}) =
-      _$ParameterHeaderImpl;
+  const factory _ParameterHeader({
+    final String? name,
+    final String? description,
+    final bool? required,
+    final bool? deprecated,
+    final String? style,
+    final bool? explode,
+    final bool? allowReserved,
+    final String? example,
+    required final Schema schema,
+    @JsonKey(name: '\$ref') @_ParamRefConverter() final String? ref,
+  }) = _$ParameterHeaderImpl;
   const _ParameterHeader._() : super._();
 
   factory _ParameterHeader.fromJson(Map<String, dynamic> json) =
@@ -6673,8 +7134,11 @@ abstract class _ParameterHeader extends Parameter {
   @JsonKey(name: '\$ref')
   @_ParamRefConverter()
   String? get ref;
+
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ParameterHeaderImplCopyWith<_$ParameterHeaderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -6682,22 +7146,24 @@ abstract class _ParameterHeader extends Parameter {
 /// @nodoc
 abstract class _$$ParameterQueryImplCopyWith<$Res>
     implements $ParameterCopyWith<$Res> {
-  factory _$$ParameterQueryImplCopyWith(_$ParameterQueryImpl value,
-          $Res Function(_$ParameterQueryImpl) then) =
-      __$$ParameterQueryImplCopyWithImpl<$Res>;
+  factory _$$ParameterQueryImplCopyWith(
+    _$ParameterQueryImpl value,
+    $Res Function(_$ParameterQueryImpl) then,
+  ) = __$$ParameterQueryImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? name,
-      String? description,
-      bool? required,
-      bool? deprecated,
-      String? style,
-      bool? explode,
-      bool? allowReserved,
-      String? example,
-      Schema schema,
-      @JsonKey(name: '\$ref') @_ParamRefConverter() String? ref});
+  $Res call({
+    String? name,
+    String? description,
+    bool? required,
+    bool? deprecated,
+    String? style,
+    bool? explode,
+    bool? allowReserved,
+    String? example,
+    Schema schema,
+    @JsonKey(name: '\$ref') @_ParamRefConverter() String? ref,
+  });
 
   @override
   $SchemaCopyWith<$Res> get schema;
@@ -6708,9 +7174,12 @@ class __$$ParameterQueryImplCopyWithImpl<$Res>
     extends _$ParameterCopyWithImpl<$Res, _$ParameterQueryImpl>
     implements _$$ParameterQueryImplCopyWith<$Res> {
   __$$ParameterQueryImplCopyWithImpl(
-      _$ParameterQueryImpl _value, $Res Function(_$ParameterQueryImpl) _then)
-      : super(_value, _then);
+    _$ParameterQueryImpl _value,
+    $Res Function(_$ParameterQueryImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6725,50 +7194,54 @@ class __$$ParameterQueryImplCopyWithImpl<$Res>
     Object? schema = null,
     Object? ref = freezed,
   }) {
-    return _then(_$ParameterQueryImpl(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      required: freezed == required
-          ? _value.required
-          : required // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      deprecated: freezed == deprecated
-          ? _value.deprecated
-          : deprecated // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      style: freezed == style
-          ? _value.style
-          : style // ignore: cast_nullable_to_non_nullable
-              as String?,
-      explode: freezed == explode
-          ? _value.explode
-          : explode // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      allowReserved: freezed == allowReserved
-          ? _value.allowReserved
-          : allowReserved // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      example: freezed == example
-          ? _value.example
-          : example // ignore: cast_nullable_to_non_nullable
-              as String?,
-      schema: null == schema
-          ? _value.schema
-          : schema // ignore: cast_nullable_to_non_nullable
-              as Schema,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$ParameterQueryImpl(
+        name: freezed == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        required: freezed == required
+            ? _value.required
+            : required // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        deprecated: freezed == deprecated
+            ? _value.deprecated
+            : deprecated // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        style: freezed == style
+            ? _value.style
+            : style // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        explode: freezed == explode
+            ? _value.explode
+            : explode // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        allowReserved: freezed == allowReserved
+            ? _value.allowReserved
+            : allowReserved // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        example: freezed == example
+            ? _value.example
+            : example // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        schema: null == schema
+            ? _value.schema
+            : schema // ignore: cast_nullable_to_non_nullable
+                  as Schema,
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SchemaCopyWith<$Res> get schema {
@@ -6781,24 +7254,28 @@ class __$$ParameterQueryImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ParameterQueryImpl extends _ParameterQuery {
-  const _$ParameterQueryImpl(
-      {this.name,
-      this.description,
-      this.required,
-      this.deprecated,
-      this.style,
-      this.explode,
-      this.allowReserved,
-      this.example,
-      required this.schema,
-      @JsonKey(name: '\$ref') @_ParamRefConverter() this.ref,
-      final String? $type})
-      : assert((name == null && ref == null) == false,
-            'Must provide either name or ref'),
-        assert((name != null && ref != null) == false,
-            'Must provide either name or ref, not both'),
-        $type = $type ?? 'query',
-        super._();
+  const _$ParameterQueryImpl({
+    this.name,
+    this.description,
+    this.required,
+    this.deprecated,
+    this.style,
+    this.explode,
+    this.allowReserved,
+    this.example,
+    required this.schema,
+    @JsonKey(name: '\$ref') @_ParamRefConverter() this.ref,
+    final String? $type,
+  }) : assert(
+         (name == null && ref == null) == false,
+         'Must provide either name or ref',
+       ),
+       assert(
+         (name != null && ref != null) == false,
+         'Must provide either name or ref, not both',
+       ),
+       $type = $type ?? 'query',
+       super._();
 
   factory _$ParameterQueryImpl.fromJson(Map<String, dynamic> json) =>
       _$$ParameterQueryImplFromJson(json);
@@ -6835,7 +7312,7 @@ class _$ParameterQueryImpl extends _ParameterQuery {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ParameterQueryImpl &&
@@ -6855,17 +7332,32 @@ class _$ParameterQueryImpl extends _ParameterQuery {
             (identical(other.ref, ref) || other.ref == ref));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, name, description, required,
-      deprecated, style, explode, allowReserved, example, schema, ref);
+  int get hashCode => Object.hash(
+    runtimeType,
+    name,
+    description,
+    required,
+    deprecated,
+    style,
+    explode,
+    allowReserved,
+    example,
+    schema,
+    ref,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ParameterQueryImplCopyWith<_$ParameterQueryImpl> get copyWith =>
       __$$ParameterQueryImplCopyWithImpl<_$ParameterQueryImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -6906,25 +7398,23 @@ class _$ParameterQueryImpl extends _ParameterQuery {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ParameterQueryImplToJson(
-      this,
-    );
+    return _$$ParameterQueryImplToJson(this);
   }
 }
 
 abstract class _ParameterQuery extends Parameter {
-  const factory _ParameterQuery(
-          {final String? name,
-          final String? description,
-          final bool? required,
-          final bool? deprecated,
-          final String? style,
-          final bool? explode,
-          final bool? allowReserved,
-          final String? example,
-          required final Schema schema,
-          @JsonKey(name: '\$ref') @_ParamRefConverter() final String? ref}) =
-      _$ParameterQueryImpl;
+  const factory _ParameterQuery({
+    final String? name,
+    final String? description,
+    final bool? required,
+    final bool? deprecated,
+    final String? style,
+    final bool? explode,
+    final bool? allowReserved,
+    final String? example,
+    required final Schema schema,
+    @JsonKey(name: '\$ref') @_ParamRefConverter() final String? ref,
+  }) = _$ParameterQueryImpl;
   const _ParameterQuery._() : super._();
 
   factory _ParameterQuery.fromJson(Map<String, dynamic> json) =
@@ -6951,8 +7441,11 @@ abstract class _ParameterQuery extends Parameter {
   @JsonKey(name: '\$ref')
   @_ParamRefConverter()
   String? get ref;
+
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ParameterQueryImplCopyWith<_$ParameterQueryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -6961,20 +7454,22 @@ abstract class _ParameterQuery extends Parameter {
 abstract class _$$ParameterPathImplCopyWith<$Res>
     implements $ParameterCopyWith<$Res> {
   factory _$$ParameterPathImplCopyWith(
-          _$ParameterPathImpl value, $Res Function(_$ParameterPathImpl) then) =
-      __$$ParameterPathImplCopyWithImpl<$Res>;
+    _$ParameterPathImpl value,
+    $Res Function(_$ParameterPathImpl) then,
+  ) = __$$ParameterPathImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? name,
-      String? description,
-      bool? deprecated,
-      String? style,
-      bool? explode,
-      bool? allowReserved,
-      String? example,
-      Schema? schema,
-      @JsonKey(name: '\$ref') @_ParamRefConverter() String? ref});
+  $Res call({
+    String? name,
+    String? description,
+    bool? deprecated,
+    String? style,
+    bool? explode,
+    bool? allowReserved,
+    String? example,
+    Schema? schema,
+    @JsonKey(name: '\$ref') @_ParamRefConverter() String? ref,
+  });
 
   @override
   $SchemaCopyWith<$Res>? get schema;
@@ -6985,9 +7480,12 @@ class __$$ParameterPathImplCopyWithImpl<$Res>
     extends _$ParameterCopyWithImpl<$Res, _$ParameterPathImpl>
     implements _$$ParameterPathImplCopyWith<$Res> {
   __$$ParameterPathImplCopyWithImpl(
-      _$ParameterPathImpl _value, $Res Function(_$ParameterPathImpl) _then)
-      : super(_value, _then);
+    _$ParameterPathImpl _value,
+    $Res Function(_$ParameterPathImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7001,67 +7499,73 @@ class __$$ParameterPathImplCopyWithImpl<$Res>
     Object? schema = freezed,
     Object? ref = freezed,
   }) {
-    return _then(_$ParameterPathImpl(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      deprecated: freezed == deprecated
-          ? _value.deprecated
-          : deprecated // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      style: freezed == style
-          ? _value.style
-          : style // ignore: cast_nullable_to_non_nullable
-              as String?,
-      explode: freezed == explode
-          ? _value.explode
-          : explode // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      allowReserved: freezed == allowReserved
-          ? _value.allowReserved
-          : allowReserved // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      example: freezed == example
-          ? _value.example
-          : example // ignore: cast_nullable_to_non_nullable
-              as String?,
-      schema: freezed == schema
-          ? _value.schema
-          : schema // ignore: cast_nullable_to_non_nullable
-              as Schema?,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$ParameterPathImpl(
+        name: freezed == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        deprecated: freezed == deprecated
+            ? _value.deprecated
+            : deprecated // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        style: freezed == style
+            ? _value.style
+            : style // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        explode: freezed == explode
+            ? _value.explode
+            : explode // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        allowReserved: freezed == allowReserved
+            ? _value.allowReserved
+            : allowReserved // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        example: freezed == example
+            ? _value.example
+            : example // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        schema: freezed == schema
+            ? _value.schema
+            : schema // ignore: cast_nullable_to_non_nullable
+                  as Schema?,
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ParameterPathImpl extends _ParameterPath {
-  const _$ParameterPathImpl(
-      {this.name,
-      this.description,
-      this.deprecated,
-      this.style,
-      this.explode,
-      this.allowReserved,
-      this.example,
-      this.schema,
-      @JsonKey(name: '\$ref') @_ParamRefConverter() this.ref,
-      final String? $type})
-      : assert((name == null && ref == null) == false,
-            'Must provide either name or ref'),
-        assert((name != null && ref != null) == false,
-            'Must provide either name or ref, not both'),
-        $type = $type ?? 'path',
-        super._();
+  const _$ParameterPathImpl({
+    this.name,
+    this.description,
+    this.deprecated,
+    this.style,
+    this.explode,
+    this.allowReserved,
+    this.example,
+    this.schema,
+    @JsonKey(name: '\$ref') @_ParamRefConverter() this.ref,
+    final String? $type,
+  }) : assert(
+         (name == null && ref == null) == false,
+         'Must provide either name or ref',
+       ),
+       assert(
+         (name != null && ref != null) == false,
+         'Must provide either name or ref, not both',
+       ),
+       $type = $type ?? 'path',
+       super._();
 
   factory _$ParameterPathImpl.fromJson(Map<String, dynamic> json) =>
       _$$ParameterPathImplFromJson(json);
@@ -7096,7 +7600,7 @@ class _$ParameterPathImpl extends _ParameterPath {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ParameterPathImpl &&
@@ -7114,12 +7618,24 @@ class _$ParameterPathImpl extends _ParameterPath {
             (identical(other.ref, ref) || other.ref == ref));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, name, description, deprecated,
-      style, explode, allowReserved, example, schema, ref);
+  int get hashCode => Object.hash(
+    runtimeType,
+    name,
+    description,
+    deprecated,
+    style,
+    explode,
+    allowReserved,
+    example,
+    schema,
+    ref,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ParameterPathImplCopyWith<_$ParameterPathImpl> get copyWith =>
@@ -7164,24 +7680,22 @@ class _$ParameterPathImpl extends _ParameterPath {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ParameterPathImplToJson(
-      this,
-    );
+    return _$$ParameterPathImplToJson(this);
   }
 }
 
 abstract class _ParameterPath extends Parameter {
-  const factory _ParameterPath(
-          {final String? name,
-          final String? description,
-          final bool? deprecated,
-          final String? style,
-          final bool? explode,
-          final bool? allowReserved,
-          final String? example,
-          final Schema? schema,
-          @JsonKey(name: '\$ref') @_ParamRefConverter() final String? ref}) =
-      _$ParameterPathImpl;
+  const factory _ParameterPath({
+    final String? name,
+    final String? description,
+    final bool? deprecated,
+    final String? style,
+    final bool? explode,
+    final bool? allowReserved,
+    final String? example,
+    final Schema? schema,
+    @JsonKey(name: '\$ref') @_ParamRefConverter() final String? ref,
+  }) = _$ParameterPathImpl;
   const _ParameterPath._() : super._();
 
   factory _ParameterPath.fromJson(Map<String, dynamic> json) =
@@ -7207,8 +7721,11 @@ abstract class _ParameterPath extends Parameter {
   @JsonKey(name: '\$ref')
   @_ParamRefConverter()
   String? get ref;
+
+  /// Create a copy of Parameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ParameterPathImplCopyWith<_$ParameterPathImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -7264,21 +7781,23 @@ mixin _$PathItem {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_PathItem value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_PathItem value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_PathItem value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this PathItem to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PathItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PathItemCopyWith<PathItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -7288,20 +7807,21 @@ abstract class $PathItemCopyWith<$Res> {
   factory $PathItemCopyWith(PathItem value, $Res Function(PathItem) then) =
       _$PathItemCopyWithImpl<$Res, PathItem>;
   @useResult
-  $Res call(
-      {String? summary,
-      String? description,
-      Operation? get,
-      Operation? put,
-      Operation? post,
-      Operation? delete,
-      Operation? options,
-      Operation? head,
-      Operation? patch,
-      Operation? trace,
-      List<Server>? servers,
-      List<Parameter>? parameters,
-      @JsonKey(name: '\$ref') @_PathRefConverter() String? ref});
+  $Res call({
+    String? summary,
+    String? description,
+    Operation? get,
+    Operation? put,
+    Operation? post,
+    Operation? delete,
+    Operation? options,
+    Operation? head,
+    Operation? patch,
+    Operation? trace,
+    List<Server>? servers,
+    List<Parameter>? parameters,
+    @JsonKey(name: '\$ref') @_PathRefConverter() String? ref,
+  });
 
   $OperationCopyWith<$Res>? get get;
   $OperationCopyWith<$Res>? get put;
@@ -7323,6 +7843,8 @@ class _$PathItemCopyWithImpl<$Res, $Val extends PathItem>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PathItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7340,62 +7862,67 @@ class _$PathItemCopyWithImpl<$Res, $Val extends PathItem>
     Object? parameters = freezed,
     Object? ref = freezed,
   }) {
-    return _then(_value.copyWith(
-      summary: freezed == summary
-          ? _value.summary
-          : summary // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      get: freezed == get
-          ? _value.get
-          : get // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      put: freezed == put
-          ? _value.put
-          : put // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      post: freezed == post
-          ? _value.post
-          : post // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      delete: freezed == delete
-          ? _value.delete
-          : delete // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      options: freezed == options
-          ? _value.options
-          : options // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      head: freezed == head
-          ? _value.head
-          : head // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      patch: freezed == patch
-          ? _value.patch
-          : patch // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      trace: freezed == trace
-          ? _value.trace
-          : trace // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      servers: freezed == servers
-          ? _value.servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<Server>?,
-      parameters: freezed == parameters
-          ? _value.parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
-              as List<Parameter>?,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            summary: freezed == summary
+                ? _value.summary
+                : summary // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            description: freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            get: freezed == get
+                ? _value.get
+                : get // ignore: cast_nullable_to_non_nullable
+                      as Operation?,
+            put: freezed == put
+                ? _value.put
+                : put // ignore: cast_nullable_to_non_nullable
+                      as Operation?,
+            post: freezed == post
+                ? _value.post
+                : post // ignore: cast_nullable_to_non_nullable
+                      as Operation?,
+            delete: freezed == delete
+                ? _value.delete
+                : delete // ignore: cast_nullable_to_non_nullable
+                      as Operation?,
+            options: freezed == options
+                ? _value.options
+                : options // ignore: cast_nullable_to_non_nullable
+                      as Operation?,
+            head: freezed == head
+                ? _value.head
+                : head // ignore: cast_nullable_to_non_nullable
+                      as Operation?,
+            patch: freezed == patch
+                ? _value.patch
+                : patch // ignore: cast_nullable_to_non_nullable
+                      as Operation?,
+            trace: freezed == trace
+                ? _value.trace
+                : trace // ignore: cast_nullable_to_non_nullable
+                      as Operation?,
+            servers: freezed == servers
+                ? _value.servers
+                : servers // ignore: cast_nullable_to_non_nullable
+                      as List<Server>?,
+            parameters: freezed == parameters
+                ? _value.parameters
+                : parameters // ignore: cast_nullable_to_non_nullable
+                      as List<Parameter>?,
+            ref: freezed == ref
+                ? _value.ref
+                : ref // ignore: cast_nullable_to_non_nullable
+                      as String?,
+          )
+          as $Val,
+    );
   }
 
+  /// Create a copy of PathItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OperationCopyWith<$Res>? get get {
@@ -7408,6 +7935,8 @@ class _$PathItemCopyWithImpl<$Res, $Val extends PathItem>
     });
   }
 
+  /// Create a copy of PathItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OperationCopyWith<$Res>? get put {
@@ -7420,6 +7949,8 @@ class _$PathItemCopyWithImpl<$Res, $Val extends PathItem>
     });
   }
 
+  /// Create a copy of PathItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OperationCopyWith<$Res>? get post {
@@ -7432,6 +7963,8 @@ class _$PathItemCopyWithImpl<$Res, $Val extends PathItem>
     });
   }
 
+  /// Create a copy of PathItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OperationCopyWith<$Res>? get delete {
@@ -7444,6 +7977,8 @@ class _$PathItemCopyWithImpl<$Res, $Val extends PathItem>
     });
   }
 
+  /// Create a copy of PathItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OperationCopyWith<$Res>? get options {
@@ -7456,6 +7991,8 @@ class _$PathItemCopyWithImpl<$Res, $Val extends PathItem>
     });
   }
 
+  /// Create a copy of PathItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OperationCopyWith<$Res>? get head {
@@ -7468,6 +8005,8 @@ class _$PathItemCopyWithImpl<$Res, $Val extends PathItem>
     });
   }
 
+  /// Create a copy of PathItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OperationCopyWith<$Res>? get patch {
@@ -7480,6 +8019,8 @@ class _$PathItemCopyWithImpl<$Res, $Val extends PathItem>
     });
   }
 
+  /// Create a copy of PathItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OperationCopyWith<$Res>? get trace {
@@ -7497,24 +8038,26 @@ class _$PathItemCopyWithImpl<$Res, $Val extends PathItem>
 abstract class _$$PathItemImplCopyWith<$Res>
     implements $PathItemCopyWith<$Res> {
   factory _$$PathItemImplCopyWith(
-          _$PathItemImpl value, $Res Function(_$PathItemImpl) then) =
-      __$$PathItemImplCopyWithImpl<$Res>;
+    _$PathItemImpl value,
+    $Res Function(_$PathItemImpl) then,
+  ) = __$$PathItemImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? summary,
-      String? description,
-      Operation? get,
-      Operation? put,
-      Operation? post,
-      Operation? delete,
-      Operation? options,
-      Operation? head,
-      Operation? patch,
-      Operation? trace,
-      List<Server>? servers,
-      List<Parameter>? parameters,
-      @JsonKey(name: '\$ref') @_PathRefConverter() String? ref});
+  $Res call({
+    String? summary,
+    String? description,
+    Operation? get,
+    Operation? put,
+    Operation? post,
+    Operation? delete,
+    Operation? options,
+    Operation? head,
+    Operation? patch,
+    Operation? trace,
+    List<Server>? servers,
+    List<Parameter>? parameters,
+    @JsonKey(name: '\$ref') @_PathRefConverter() String? ref,
+  });
 
   @override
   $OperationCopyWith<$Res>? get get;
@@ -7539,9 +8082,12 @@ class __$$PathItemImplCopyWithImpl<$Res>
     extends _$PathItemCopyWithImpl<$Res, _$PathItemImpl>
     implements _$$PathItemImplCopyWith<$Res> {
   __$$PathItemImplCopyWithImpl(
-      _$PathItemImpl _value, $Res Function(_$PathItemImpl) _then)
-      : super(_value, _then);
+    _$PathItemImpl _value,
+    $Res Function(_$PathItemImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of PathItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7559,83 +8105,85 @@ class __$$PathItemImplCopyWithImpl<$Res>
     Object? parameters = freezed,
     Object? ref = freezed,
   }) {
-    return _then(_$PathItemImpl(
-      summary: freezed == summary
-          ? _value.summary
-          : summary // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      get: freezed == get
-          ? _value.get
-          : get // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      put: freezed == put
-          ? _value.put
-          : put // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      post: freezed == post
-          ? _value.post
-          : post // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      delete: freezed == delete
-          ? _value.delete
-          : delete // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      options: freezed == options
-          ? _value.options
-          : options // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      head: freezed == head
-          ? _value.head
-          : head // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      patch: freezed == patch
-          ? _value.patch
-          : patch // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      trace: freezed == trace
-          ? _value.trace
-          : trace // ignore: cast_nullable_to_non_nullable
-              as Operation?,
-      servers: freezed == servers
-          ? _value._servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<Server>?,
-      parameters: freezed == parameters
-          ? _value._parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
-              as List<Parameter>?,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$PathItemImpl(
+        summary: freezed == summary
+            ? _value.summary
+            : summary // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        get: freezed == get
+            ? _value.get
+            : get // ignore: cast_nullable_to_non_nullable
+                  as Operation?,
+        put: freezed == put
+            ? _value.put
+            : put // ignore: cast_nullable_to_non_nullable
+                  as Operation?,
+        post: freezed == post
+            ? _value.post
+            : post // ignore: cast_nullable_to_non_nullable
+                  as Operation?,
+        delete: freezed == delete
+            ? _value.delete
+            : delete // ignore: cast_nullable_to_non_nullable
+                  as Operation?,
+        options: freezed == options
+            ? _value.options
+            : options // ignore: cast_nullable_to_non_nullable
+                  as Operation?,
+        head: freezed == head
+            ? _value.head
+            : head // ignore: cast_nullable_to_non_nullable
+                  as Operation?,
+        patch: freezed == patch
+            ? _value.patch
+            : patch // ignore: cast_nullable_to_non_nullable
+                  as Operation?,
+        trace: freezed == trace
+            ? _value.trace
+            : trace // ignore: cast_nullable_to_non_nullable
+                  as Operation?,
+        servers: freezed == servers
+            ? _value._servers
+            : servers // ignore: cast_nullable_to_non_nullable
+                  as List<Server>?,
+        parameters: freezed == parameters
+            ? _value._parameters
+            : parameters // ignore: cast_nullable_to_non_nullable
+                  as List<Parameter>?,
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$PathItemImpl extends _PathItem {
-  const _$PathItemImpl(
-      {this.summary,
-      this.description,
-      this.get,
-      this.put,
-      this.post,
-      this.delete,
-      this.options,
-      this.head,
-      this.patch,
-      this.trace,
-      final List<Server>? servers,
-      final List<Parameter>? parameters,
-      @JsonKey(name: '\$ref') @_PathRefConverter() this.ref})
-      : _servers = servers,
-        _parameters = parameters,
-        super._();
+  const _$PathItemImpl({
+    this.summary,
+    this.description,
+    this.get,
+    this.put,
+    this.post,
+    this.delete,
+    this.options,
+    this.head,
+    this.patch,
+    this.trace,
+    final List<Server>? servers,
+    final List<Parameter>? parameters,
+    @JsonKey(name: '\$ref') @_PathRefConverter() this.ref,
+  }) : _servers = servers,
+       _parameters = parameters,
+       super._();
 
   factory _$PathItemImpl.fromJson(Map<String, dynamic> json) =>
       _$$PathItemImplFromJson(json);
@@ -7720,7 +8268,7 @@ class _$PathItemImpl extends _PathItem {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PathItemImpl &&
@@ -7736,30 +8284,35 @@ class _$PathItemImpl extends _PathItem {
             (identical(other.patch, patch) || other.patch == patch) &&
             (identical(other.trace, trace) || other.trace == trace) &&
             const DeepCollectionEquality().equals(other._servers, _servers) &&
-            const DeepCollectionEquality()
-                .equals(other._parameters, _parameters) &&
+            const DeepCollectionEquality().equals(
+              other._parameters,
+              _parameters,
+            ) &&
             (identical(other.ref, ref) || other.ref == ref));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      summary,
-      description,
-      get,
-      put,
-      post,
-      delete,
-      options,
-      head,
-      patch,
-      trace,
-      const DeepCollectionEquality().hash(_servers),
-      const DeepCollectionEquality().hash(_parameters),
-      ref);
+    runtimeType,
+    summary,
+    description,
+    get,
+    put,
+    post,
+    delete,
+    options,
+    head,
+    patch,
+    trace,
+    const DeepCollectionEquality().hash(_servers),
+    const DeepCollectionEquality().hash(_parameters),
+    ref,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PathItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PathItemImplCopyWith<_$PathItemImpl> get copyWith =>
@@ -7795,90 +8348,90 @@ class _$PathItemImpl extends _PathItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$PathItemImplToJson(
-      this,
-    );
+    return _$$PathItemImplToJson(this);
   }
 }
 
 abstract class _PathItem extends PathItem {
-  const factory _PathItem(
-          {final String? summary,
-          final String? description,
-          final Operation? get,
-          final Operation? put,
-          final Operation? post,
-          final Operation? delete,
-          final Operation? options,
-          final Operation? head,
-          final Operation? patch,
-          final Operation? trace,
-          final List<Server>? servers,
-          final List<Parameter>? parameters,
-          @JsonKey(name: '\$ref') @_PathRefConverter() final String? ref}) =
-      _$PathItemImpl;
+  const factory _PathItem({
+    final String? summary,
+    final String? description,
+    final Operation? get,
+    final Operation? put,
+    final Operation? post,
+    final Operation? delete,
+    final Operation? options,
+    final Operation? head,
+    final Operation? patch,
+    final Operation? trace,
+    final List<Server>? servers,
+    final List<Parameter>? parameters,
+    @JsonKey(name: '\$ref') @_PathRefConverter() final String? ref,
+  }) = _$PathItemImpl;
   const _PathItem._() : super._();
 
   factory _PathItem.fromJson(Map<String, dynamic> json) =
       _$PathItemImpl.fromJson;
 
-  @override
-
   /// An optional, string summary, intended to apply to all operations in this Path.
-  String? get summary;
   @override
+  String? get summary;
 
   /// An optional, string description, intended to apply to all operations in this Path.
+  @override
   String? get description;
-  @override
 
   /// A definition of a GET operation on this Path.
+  @override
   Operation? get get;
-  @override
 
   /// A definition of a GET operation on this Path.
+  @override
   Operation? get put;
-  @override
 
   /// A definition of a GET operation on this Path.
+  @override
   Operation? get post;
-  @override
 
   /// A definition of a GET operation on this Path.
+  @override
   Operation? get delete;
-  @override
 
   /// A definition of a GET operation on this Path.
+  @override
   Operation? get options;
-  @override
 
   /// A definition of a GET operation on this Path.
+  @override
   Operation? get head;
-  @override
 
   /// A definition of a GET operation on this Path.
+  @override
   Operation? get patch;
-  @override
 
   /// A definition of a GET operation on this Path.
-  Operation? get trace;
   @override
+  Operation? get trace;
 
   /// An alternative [Server] array to service all operations in this Path.
-  List<Server>? get servers;
   @override
+  List<Server>? get servers;
 
   /// A list of parameters that are applicable for all the operations described under this Path.
   /// These parameters can be overridden at the operation level, but cannot be removed there.
-  List<Parameter>? get parameters;
   @override
+  List<Parameter>? get parameters;
 
   /// Reference to a response defined in [Components.pathItems]
+  @override
   @JsonKey(name: '\$ref')
   @_PathRefConverter()
   String? get ref;
+
+  /// Create a copy of PathItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PathItemImplCopyWith<_$PathItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -7906,21 +8459,23 @@ mixin _$RequestBody {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_RequestBody value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_RequestBody value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_RequestBody value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this RequestBody to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RequestBodyCopyWith<RequestBody> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -7928,14 +8483,16 @@ mixin _$RequestBody {
 /// @nodoc
 abstract class $RequestBodyCopyWith<$Res> {
   factory $RequestBodyCopyWith(
-          RequestBody value, $Res Function(RequestBody) then) =
-      _$RequestBodyCopyWithImpl<$Res, RequestBody>;
+    RequestBody value,
+    $Res Function(RequestBody) then,
+  ) = _$RequestBodyCopyWithImpl<$Res, RequestBody>;
   @useResult
-  $Res call(
-      {String? description,
-      bool? required,
-      Map<String, MediaType>? content,
-      @JsonKey(name: '\$ref') @_RequestRefConverter() String? ref});
+  $Res call({
+    String? description,
+    bool? required,
+    Map<String, MediaType>? content,
+    @JsonKey(name: '\$ref') @_RequestRefConverter() String? ref,
+  });
 }
 
 /// @nodoc
@@ -7948,6 +8505,8 @@ class _$RequestBodyCopyWithImpl<$Res, $Val extends RequestBody>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7956,24 +8515,27 @@ class _$RequestBodyCopyWithImpl<$Res, $Val extends RequestBody>
     Object? content = freezed,
     Object? ref = freezed,
   }) {
-    return _then(_value.copyWith(
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      required: freezed == required
-          ? _value.required
-          : required // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      content: freezed == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as Map<String, MediaType>?,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            description: freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            required: freezed == required
+                ? _value.required
+                : required // ignore: cast_nullable_to_non_nullable
+                      as bool?,
+            content: freezed == content
+                ? _value.content
+                : content // ignore: cast_nullable_to_non_nullable
+                      as Map<String, MediaType>?,
+            ref: freezed == ref
+                ? _value.ref
+                : ref // ignore: cast_nullable_to_non_nullable
+                      as String?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -7981,15 +8543,17 @@ class _$RequestBodyCopyWithImpl<$Res, $Val extends RequestBody>
 abstract class _$$RequestBodyImplCopyWith<$Res>
     implements $RequestBodyCopyWith<$Res> {
   factory _$$RequestBodyImplCopyWith(
-          _$RequestBodyImpl value, $Res Function(_$RequestBodyImpl) then) =
-      __$$RequestBodyImplCopyWithImpl<$Res>;
+    _$RequestBodyImpl value,
+    $Res Function(_$RequestBodyImpl) then,
+  ) = __$$RequestBodyImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? description,
-      bool? required,
-      Map<String, MediaType>? content,
-      @JsonKey(name: '\$ref') @_RequestRefConverter() String? ref});
+  $Res call({
+    String? description,
+    bool? required,
+    Map<String, MediaType>? content,
+    @JsonKey(name: '\$ref') @_RequestRefConverter() String? ref,
+  });
 }
 
 /// @nodoc
@@ -7997,9 +8561,12 @@ class __$$RequestBodyImplCopyWithImpl<$Res>
     extends _$RequestBodyCopyWithImpl<$Res, _$RequestBodyImpl>
     implements _$$RequestBodyImplCopyWith<$Res> {
   __$$RequestBodyImplCopyWithImpl(
-      _$RequestBodyImpl _value, $Res Function(_$RequestBodyImpl) _then)
-      : super(_value, _then);
+    _$RequestBodyImpl _value,
+    $Res Function(_$RequestBodyImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of RequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -8008,37 +8575,39 @@ class __$$RequestBodyImplCopyWithImpl<$Res>
     Object? content = freezed,
     Object? ref = freezed,
   }) {
-    return _then(_$RequestBodyImpl(
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      required: freezed == required
-          ? _value.required
-          : required // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      content: freezed == content
-          ? _value._content
-          : content // ignore: cast_nullable_to_non_nullable
-              as Map<String, MediaType>?,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$RequestBodyImpl(
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        required: freezed == required
+            ? _value.required
+            : required // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        content: freezed == content
+            ? _value._content
+            : content // ignore: cast_nullable_to_non_nullable
+                  as Map<String, MediaType>?,
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$RequestBodyImpl extends _RequestBody {
-  const _$RequestBodyImpl(
-      {this.description,
-      this.required,
-      final Map<String, MediaType>? content,
-      @JsonKey(name: '\$ref') @_RequestRefConverter() this.ref})
-      : _content = content,
-        super._();
+  const _$RequestBodyImpl({
+    this.description,
+    this.required,
+    final Map<String, MediaType>? content,
+    @JsonKey(name: '\$ref') @_RequestRefConverter() this.ref,
+  }) : _content = content,
+       super._();
 
   factory _$RequestBodyImpl.fromJson(Map<String, dynamic> json) =>
       _$$RequestBodyImplFromJson(json);
@@ -8076,7 +8645,7 @@ class _$RequestBodyImpl extends _RequestBody {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RequestBodyImpl &&
@@ -8088,12 +8657,19 @@ class _$RequestBodyImpl extends _RequestBody {
             (identical(other.ref, ref) || other.ref == ref));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, description, required,
-      const DeepCollectionEquality().hash(_content), ref);
+  int get hashCode => Object.hash(
+    runtimeType,
+    description,
+    required,
+    const DeepCollectionEquality().hash(_content),
+    ref,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RequestBodyImplCopyWith<_$RequestBodyImpl> get copyWith =>
@@ -8129,44 +8705,44 @@ class _$RequestBodyImpl extends _RequestBody {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RequestBodyImplToJson(
-      this,
-    );
+    return _$$RequestBodyImplToJson(this);
   }
 }
 
 abstract class _RequestBody extends RequestBody {
-  const factory _RequestBody(
-          {final String? description,
-          final bool? required,
-          final Map<String, MediaType>? content,
-          @JsonKey(name: '\$ref') @_RequestRefConverter() final String? ref}) =
-      _$RequestBodyImpl;
+  const factory _RequestBody({
+    final String? description,
+    final bool? required,
+    final Map<String, MediaType>? content,
+    @JsonKey(name: '\$ref') @_RequestRefConverter() final String? ref,
+  }) = _$RequestBodyImpl;
   const _RequestBody._() : super._();
 
   factory _RequestBody.fromJson(Map<String, dynamic> json) =
       _$RequestBodyImpl.fromJson;
 
-  @override
-
   /// A brief description of the request body.
-  String? get description;
   @override
+  String? get description;
 
   /// Determines if the request body is required in the request.
-  bool? get required;
   @override
+  bool? get required;
 
   /// The content of the request body.
-  Map<String, MediaType>? get content;
   @override
+  Map<String, MediaType>? get content;
 
   /// Reference to a response defined in [Components.requestBodies]
+  @override
   @JsonKey(name: '\$ref')
   @_RequestRefConverter()
   String? get ref;
+
+  /// Create a copy of RequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RequestBodyImplCopyWith<_$RequestBodyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -8197,21 +8773,23 @@ mixin _$Response {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_Response value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_Response value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_Response value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Response to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Response
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ResponseCopyWith<Response> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -8221,12 +8799,13 @@ abstract class $ResponseCopyWith<$Res> {
   factory $ResponseCopyWith(Response value, $Res Function(Response) then) =
       _$ResponseCopyWithImpl<$Res, Response>;
   @useResult
-  $Res call(
-      {String description,
-      Map<String, Header>? headers,
-      Map<String, MediaType>? content,
-      Map<String, Link>? links,
-      @JsonKey(name: '\$ref') @_ResponseRefConverter() String? ref});
+  $Res call({
+    String description,
+    Map<String, Header>? headers,
+    Map<String, MediaType>? content,
+    Map<String, Link>? links,
+    @JsonKey(name: '\$ref') @_ResponseRefConverter() String? ref,
+  });
 }
 
 /// @nodoc
@@ -8239,6 +8818,8 @@ class _$ResponseCopyWithImpl<$Res, $Val extends Response>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Response
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -8248,28 +8829,31 @@ class _$ResponseCopyWithImpl<$Res, $Val extends Response>
     Object? links = freezed,
     Object? ref = freezed,
   }) {
-    return _then(_value.copyWith(
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      headers: freezed == headers
-          ? _value.headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, Header>?,
-      content: freezed == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as Map<String, MediaType>?,
-      links: freezed == links
-          ? _value.links
-          : links // ignore: cast_nullable_to_non_nullable
-              as Map<String, Link>?,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            description: null == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                      as String,
+            headers: freezed == headers
+                ? _value.headers
+                : headers // ignore: cast_nullable_to_non_nullable
+                      as Map<String, Header>?,
+            content: freezed == content
+                ? _value.content
+                : content // ignore: cast_nullable_to_non_nullable
+                      as Map<String, MediaType>?,
+            links: freezed == links
+                ? _value.links
+                : links // ignore: cast_nullable_to_non_nullable
+                      as Map<String, Link>?,
+            ref: freezed == ref
+                ? _value.ref
+                : ref // ignore: cast_nullable_to_non_nullable
+                      as String?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -8277,16 +8861,18 @@ class _$ResponseCopyWithImpl<$Res, $Val extends Response>
 abstract class _$$ResponseImplCopyWith<$Res>
     implements $ResponseCopyWith<$Res> {
   factory _$$ResponseImplCopyWith(
-          _$ResponseImpl value, $Res Function(_$ResponseImpl) then) =
-      __$$ResponseImplCopyWithImpl<$Res>;
+    _$ResponseImpl value,
+    $Res Function(_$ResponseImpl) then,
+  ) = __$$ResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String description,
-      Map<String, Header>? headers,
-      Map<String, MediaType>? content,
-      Map<String, Link>? links,
-      @JsonKey(name: '\$ref') @_ResponseRefConverter() String? ref});
+  $Res call({
+    String description,
+    Map<String, Header>? headers,
+    Map<String, MediaType>? content,
+    Map<String, Link>? links,
+    @JsonKey(name: '\$ref') @_ResponseRefConverter() String? ref,
+  });
 }
 
 /// @nodoc
@@ -8294,9 +8880,12 @@ class __$$ResponseImplCopyWithImpl<$Res>
     extends _$ResponseCopyWithImpl<$Res, _$ResponseImpl>
     implements _$$ResponseImplCopyWith<$Res> {
   __$$ResponseImplCopyWithImpl(
-      _$ResponseImpl _value, $Res Function(_$ResponseImpl) _then)
-      : super(_value, _then);
+    _$ResponseImpl _value,
+    $Res Function(_$ResponseImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Response
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -8306,44 +8895,46 @@ class __$$ResponseImplCopyWithImpl<$Res>
     Object? links = freezed,
     Object? ref = freezed,
   }) {
-    return _then(_$ResponseImpl(
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      headers: freezed == headers
-          ? _value._headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as Map<String, Header>?,
-      content: freezed == content
-          ? _value._content
-          : content // ignore: cast_nullable_to_non_nullable
-              as Map<String, MediaType>?,
-      links: freezed == links
-          ? _value._links
-          : links // ignore: cast_nullable_to_non_nullable
-              as Map<String, Link>?,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$ResponseImpl(
+        description: null == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String,
+        headers: freezed == headers
+            ? _value._headers
+            : headers // ignore: cast_nullable_to_non_nullable
+                  as Map<String, Header>?,
+        content: freezed == content
+            ? _value._content
+            : content // ignore: cast_nullable_to_non_nullable
+                  as Map<String, MediaType>?,
+        links: freezed == links
+            ? _value._links
+            : links // ignore: cast_nullable_to_non_nullable
+                  as Map<String, Link>?,
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ResponseImpl extends _Response {
-  const _$ResponseImpl(
-      {this.description = '',
-      final Map<String, Header>? headers,
-      final Map<String, MediaType>? content,
-      final Map<String, Link>? links,
-      @JsonKey(name: '\$ref') @_ResponseRefConverter() this.ref})
-      : _headers = headers,
-        _content = content,
-        _links = links,
-        super._();
+  const _$ResponseImpl({
+    this.description = '',
+    final Map<String, Header>? headers,
+    final Map<String, MediaType>? content,
+    final Map<String, Link>? links,
+    @JsonKey(name: '\$ref') @_ResponseRefConverter() this.ref,
+  }) : _headers = headers,
+       _content = content,
+       _links = links,
+       super._();
 
   factory _$ResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$ResponseImplFromJson(json);
@@ -8404,7 +8995,7 @@ class _$ResponseImpl extends _Response {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ResponseImpl &&
@@ -8416,17 +9007,20 @@ class _$ResponseImpl extends _Response {
             (identical(other.ref, ref) || other.ref == ref));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      description,
-      const DeepCollectionEquality().hash(_headers),
-      const DeepCollectionEquality().hash(_content),
-      const DeepCollectionEquality().hash(_links),
-      ref);
+    runtimeType,
+    description,
+    const DeepCollectionEquality().hash(_headers),
+    const DeepCollectionEquality().hash(_content),
+    const DeepCollectionEquality().hash(_links),
+    ref,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Response
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ResponseImplCopyWith<_$ResponseImpl> get copyWith =>
@@ -8462,49 +9056,49 @@ class _$ResponseImpl extends _Response {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ResponseImplToJson(
-      this,
-    );
+    return _$$ResponseImplToJson(this);
   }
 }
 
 abstract class _Response extends Response {
-  const factory _Response(
-          {final String description,
-          final Map<String, Header>? headers,
-          final Map<String, MediaType>? content,
-          final Map<String, Link>? links,
-          @JsonKey(name: '\$ref') @_ResponseRefConverter() final String? ref}) =
-      _$ResponseImpl;
+  const factory _Response({
+    final String description,
+    final Map<String, Header>? headers,
+    final Map<String, MediaType>? content,
+    final Map<String, Link>? links,
+    @JsonKey(name: '\$ref') @_ResponseRefConverter() final String? ref,
+  }) = _$ResponseImpl;
   const _Response._() : super._();
 
   factory _Response.fromJson(Map<String, dynamic> json) =
       _$ResponseImpl.fromJson;
 
-  @override
-
   /// A description of the response
-  String get description;
   @override
+  String get description;
 
   /// Maps a header name to its definition. RFC7230 states header names are case insensitive.
+  @override
   Map<String, Header>? get headers;
-  @override
 
   /// A map containing descriptions of potential response payloads.
+  @override
   Map<String, MediaType>? get content;
-  @override
 
   /// A map containing descriptions of potential response payloads.
-  Map<String, Link>? get links;
   @override
+  Map<String, Link>? get links;
 
   /// Reference to a response defined in [Components.responses]
+  @override
   @JsonKey(name: '\$ref')
   @_ResponseRefConverter()
   String? get ref;
+
+  /// Create a copy of Response
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ResponseImplCopyWith<_$ResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -8560,8 +9154,7 @@ mixin _$Schema {
     required TResult Function(_SchemaEnum value) enumeration,
     required TResult Function(_SchemaArray value) array,
     required TResult Function(_SchemaMap value) map,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SchemaObject value)? object,
@@ -8572,8 +9165,7 @@ mixin _$Schema {
     TResult? Function(_SchemaEnum value)? enumeration,
     TResult? Function(_SchemaArray value)? array,
     TResult? Function(_SchemaMap value)? map,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SchemaObject value)? object,
@@ -8585,10 +9177,14 @@ mixin _$Schema {
     TResult Function(_SchemaArray value)? array,
     TResult Function(_SchemaMap value)? map,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Schema to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SchemaCopyWith<Schema> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -8597,11 +9193,12 @@ abstract class $SchemaCopyWith<$Res> {
   factory $SchemaCopyWith(Schema value, $Res Function(Schema) then) =
       _$SchemaCopyWithImpl<$Res, Schema>;
   @useResult
-  $Res call(
-      {String? title,
-      String? description,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
-      bool? nullable});
+  $Res call({
+    String? title,
+    String? description,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
+    bool? nullable,
+  });
 }
 
 /// @nodoc
@@ -8614,6 +9211,8 @@ class _$SchemaCopyWithImpl<$Res, $Val extends Schema>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -8622,24 +9221,27 @@ class _$SchemaCopyWithImpl<$Res, $Val extends Schema>
     Object? ref = freezed,
     Object? nullable = freezed,
   }) {
-    return _then(_value.copyWith(
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nullable: freezed == nullable
-          ? _value.nullable
-          : nullable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            title: freezed == title
+                ? _value.title
+                : title // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            description: freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            ref: freezed == ref
+                ? _value.ref
+                : ref // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            nullable: freezed == nullable
+                ? _value.nullable
+                : nullable // ignore: cast_nullable_to_non_nullable
+                      as bool?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -8647,23 +9249,25 @@ class _$SchemaCopyWithImpl<$Res, $Val extends Schema>
 abstract class _$$SchemaObjectImplCopyWith<$Res>
     implements $SchemaCopyWith<$Res> {
   factory _$$SchemaObjectImplCopyWith(
-          _$SchemaObjectImpl value, $Res Function(_$SchemaObjectImpl) then) =
-      __$$SchemaObjectImplCopyWithImpl<$Res>;
+    _$SchemaObjectImpl value,
+    $Res Function(_$SchemaObjectImpl) then,
+  ) = __$$SchemaObjectImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? title,
-      String? description,
-      dynamic defaultValue,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
-      @_SchemaListConverter() List<Schema>? allOf,
-      @_SchemaListConverter() List<Schema>? anyOf,
-      List<String>? required,
-      Discriminator? discriminator,
-      ExternalDocs? externalDocs,
-      Map<String, Schema>? properties,
-      bool? nullable,
-      Xml? xml});
+  $Res call({
+    String? title,
+    String? description,
+    dynamic defaultValue,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
+    @_SchemaListConverter() List<Schema>? allOf,
+    @_SchemaListConverter() List<Schema>? anyOf,
+    List<String>? required,
+    Discriminator? discriminator,
+    ExternalDocs? externalDocs,
+    Map<String, Schema>? properties,
+    bool? nullable,
+    Xml? xml,
+  });
 
   $DiscriminatorCopyWith<$Res>? get discriminator;
   $ExternalDocsCopyWith<$Res>? get externalDocs;
@@ -8675,9 +9279,12 @@ class __$$SchemaObjectImplCopyWithImpl<$Res>
     extends _$SchemaCopyWithImpl<$Res, _$SchemaObjectImpl>
     implements _$$SchemaObjectImplCopyWith<$Res> {
   __$$SchemaObjectImplCopyWithImpl(
-      _$SchemaObjectImpl _value, $Res Function(_$SchemaObjectImpl) _then)
-      : super(_value, _then);
+    _$SchemaObjectImpl _value,
+    $Res Function(_$SchemaObjectImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -8694,58 +9301,62 @@ class __$$SchemaObjectImplCopyWithImpl<$Res>
     Object? nullable = freezed,
     Object? xml = freezed,
   }) {
-    return _then(_$SchemaObjectImpl(
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      defaultValue: freezed == defaultValue
-          ? _value.defaultValue
-          : defaultValue // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-      allOf: freezed == allOf
-          ? _value._allOf
-          : allOf // ignore: cast_nullable_to_non_nullable
-              as List<Schema>?,
-      anyOf: freezed == anyOf
-          ? _value._anyOf
-          : anyOf // ignore: cast_nullable_to_non_nullable
-              as List<Schema>?,
-      required: freezed == required
-          ? _value._required
-          : required // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      discriminator: freezed == discriminator
-          ? _value.discriminator
-          : discriminator // ignore: cast_nullable_to_non_nullable
-              as Discriminator?,
-      externalDocs: freezed == externalDocs
-          ? _value.externalDocs
-          : externalDocs // ignore: cast_nullable_to_non_nullable
-              as ExternalDocs?,
-      properties: freezed == properties
-          ? _value._properties
-          : properties // ignore: cast_nullable_to_non_nullable
-              as Map<String, Schema>?,
-      nullable: freezed == nullable
-          ? _value.nullable
-          : nullable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      xml: freezed == xml
-          ? _value.xml
-          : xml // ignore: cast_nullable_to_non_nullable
-              as Xml?,
-    ));
+    return _then(
+      _$SchemaObjectImpl(
+        title: freezed == title
+            ? _value.title
+            : title // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        defaultValue: freezed == defaultValue
+            ? _value.defaultValue
+            : defaultValue // ignore: cast_nullable_to_non_nullable
+                  as dynamic,
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        allOf: freezed == allOf
+            ? _value._allOf
+            : allOf // ignore: cast_nullable_to_non_nullable
+                  as List<Schema>?,
+        anyOf: freezed == anyOf
+            ? _value._anyOf
+            : anyOf // ignore: cast_nullable_to_non_nullable
+                  as List<Schema>?,
+        required: freezed == required
+            ? _value._required
+            : required // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        discriminator: freezed == discriminator
+            ? _value.discriminator
+            : discriminator // ignore: cast_nullable_to_non_nullable
+                  as Discriminator?,
+        externalDocs: freezed == externalDocs
+            ? _value.externalDocs
+            : externalDocs // ignore: cast_nullable_to_non_nullable
+                  as ExternalDocs?,
+        properties: freezed == properties
+            ? _value._properties
+            : properties // ignore: cast_nullable_to_non_nullable
+                  as Map<String, Schema>?,
+        nullable: freezed == nullable
+            ? _value.nullable
+            : nullable // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        xml: freezed == xml
+            ? _value.xml
+            : xml // ignore: cast_nullable_to_non_nullable
+                  as Xml?,
+      ),
+    );
   }
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DiscriminatorCopyWith<$Res>? get discriminator {
@@ -8758,6 +9369,8 @@ class __$$SchemaObjectImplCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ExternalDocsCopyWith<$Res>? get externalDocs {
@@ -8770,6 +9383,8 @@ class __$$SchemaObjectImplCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $XmlCopyWith<$Res>? get xml {
@@ -8786,26 +9401,26 @@ class __$$SchemaObjectImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SchemaObjectImpl extends _SchemaObject {
-  const _$SchemaObjectImpl(
-      {this.title,
-      this.description,
-      this.defaultValue,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() this.ref,
-      @_SchemaListConverter() final List<Schema>? allOf,
-      @_SchemaListConverter() final List<Schema>? anyOf,
-      final List<String>? required,
-      this.discriminator,
-      this.externalDocs,
-      final Map<String, Schema>? properties,
-      this.nullable,
-      this.xml,
-      final String? $type})
-      : _allOf = allOf,
-        _anyOf = anyOf,
-        _required = required,
-        _properties = properties,
-        $type = $type ?? 'object',
-        super._();
+  const _$SchemaObjectImpl({
+    this.title,
+    this.description,
+    this.defaultValue,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() this.ref,
+    @_SchemaListConverter() final List<Schema>? allOf,
+    @_SchemaListConverter() final List<Schema>? anyOf,
+    final List<String>? required,
+    this.discriminator,
+    this.externalDocs,
+    final Map<String, Schema>? properties,
+    this.nullable,
+    this.xml,
+    final String? $type,
+  }) : _allOf = allOf,
+       _anyOf = anyOf,
+       _required = required,
+       _properties = properties,
+       $type = $type ?? 'object',
+       super._();
 
   factory _$SchemaObjectImpl.fromJson(Map<String, dynamic> json) =>
       _$$SchemaObjectImplFromJson(json);
@@ -8897,7 +9512,7 @@ class _$SchemaObjectImpl extends _SchemaObject {
   final bool? nullable;
 
   /// Any extra properties to add to this schema
-// Schema? additionalProperties,
+  // Schema? additionalProperties,
   /// Adds additional metadata to describe the XML representation of this property.
   @override
   final Xml? xml;
@@ -8911,15 +9526,17 @@ class _$SchemaObjectImpl extends _SchemaObject {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SchemaObjectImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            const DeepCollectionEquality()
-                .equals(other.defaultValue, defaultValue) &&
+            const DeepCollectionEquality().equals(
+              other.defaultValue,
+              defaultValue,
+            ) &&
             (identical(other.ref, ref) || other.ref == ref) &&
             const DeepCollectionEquality().equals(other._allOf, _allOf) &&
             const DeepCollectionEquality().equals(other._anyOf, _anyOf) &&
@@ -8928,31 +9545,36 @@ class _$SchemaObjectImpl extends _SchemaObject {
                 other.discriminator == discriminator) &&
             (identical(other.externalDocs, externalDocs) ||
                 other.externalDocs == externalDocs) &&
-            const DeepCollectionEquality()
-                .equals(other._properties, _properties) &&
+            const DeepCollectionEquality().equals(
+              other._properties,
+              _properties,
+            ) &&
             (identical(other.nullable, nullable) ||
                 other.nullable == nullable) &&
             (identical(other.xml, xml) || other.xml == xml));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      title,
-      description,
-      const DeepCollectionEquality().hash(defaultValue),
-      ref,
-      const DeepCollectionEquality().hash(_allOf),
-      const DeepCollectionEquality().hash(_anyOf),
-      const DeepCollectionEquality().hash(_required),
-      discriminator,
-      externalDocs,
-      const DeepCollectionEquality().hash(_properties),
-      nullable,
-      xml);
+    runtimeType,
+    title,
+    description,
+    const DeepCollectionEquality().hash(defaultValue),
+    ref,
+    const DeepCollectionEquality().hash(_allOf),
+    const DeepCollectionEquality().hash(_anyOf),
+    const DeepCollectionEquality().hash(_required),
+    discriminator,
+    externalDocs,
+    const DeepCollectionEquality().hash(_properties),
+    nullable,
+    xml,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SchemaObjectImplCopyWith<_$SchemaObjectImpl> get copyWith =>
@@ -9009,46 +9631,44 @@ class _$SchemaObjectImpl extends _SchemaObject {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SchemaObjectImplToJson(
-      this,
-    );
+    return _$$SchemaObjectImplToJson(this);
   }
 }
 
 abstract class _SchemaObject extends Schema {
-  const factory _SchemaObject(
-      {final String? title,
-      final String? description,
-      final dynamic defaultValue,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() final String? ref,
-      @_SchemaListConverter() final List<Schema>? allOf,
-      @_SchemaListConverter() final List<Schema>? anyOf,
-      final List<String>? required,
-      final Discriminator? discriminator,
-      final ExternalDocs? externalDocs,
-      final Map<String, Schema>? properties,
-      final bool? nullable,
-      final Xml? xml}) = _$SchemaObjectImpl;
+  const factory _SchemaObject({
+    final String? title,
+    final String? description,
+    final dynamic defaultValue,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() final String? ref,
+    @_SchemaListConverter() final List<Schema>? allOf,
+    @_SchemaListConverter() final List<Schema>? anyOf,
+    final List<String>? required,
+    final Discriminator? discriminator,
+    final ExternalDocs? externalDocs,
+    final Map<String, Schema>? properties,
+    final bool? nullable,
+    final Xml? xml,
+  }) = _$SchemaObjectImpl;
   const _SchemaObject._() : super._();
 
   factory _SchemaObject.fromJson(Map<String, dynamic> json) =
       _$SchemaObjectImpl.fromJson;
 
-  @override
-
   /// A summary title of the schema
-  String? get title;
   @override
+  String? get title;
 
   /// A short description of the schema
-  String? get description;
   @override
+  String? get description;
 
   /// The default value code to place into `@Default()`
-  dynamic get defaultValue;
   @override
+  dynamic get defaultValue;
 
   /// Reference to a schema definition
+  @override
   @JsonKey(name: '\$ref')
   @_SchemaRefConverter()
   String? get ref;
@@ -9074,17 +9694,20 @@ abstract class _SchemaObject extends Schema {
 
   /// The properties of the schema
   Map<String, Schema>? get properties;
-  @override
 
   /// Define if this scheme is nullable
+  @override
   bool? get nullable;
 
   /// Any extra properties to add to this schema
-// Schema? additionalProperties,
+  // Schema? additionalProperties,
   /// Adds additional metadata to describe the XML representation of this property.
   Xml? get xml;
+
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SchemaObjectImplCopyWith<_$SchemaObjectImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -9093,18 +9716,20 @@ abstract class _SchemaObject extends Schema {
 abstract class _$$SchemaBooleanImplCopyWith<$Res>
     implements $SchemaCopyWith<$Res> {
   factory _$$SchemaBooleanImplCopyWith(
-          _$SchemaBooleanImpl value, $Res Function(_$SchemaBooleanImpl) then) =
-      __$$SchemaBooleanImplCopyWithImpl<$Res>;
+    _$SchemaBooleanImpl value,
+    $Res Function(_$SchemaBooleanImpl) then,
+  ) = __$$SchemaBooleanImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {Xml? xml,
-      String? title,
-      String? description,
-      @JsonKey(name: 'default') bool? defaultValue,
-      bool? nullable,
-      bool? example,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref});
+  $Res call({
+    Xml? xml,
+    String? title,
+    String? description,
+    @JsonKey(name: 'default') bool? defaultValue,
+    bool? nullable,
+    bool? example,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
+  });
 
   $XmlCopyWith<$Res>? get xml;
 }
@@ -9114,9 +9739,12 @@ class __$$SchemaBooleanImplCopyWithImpl<$Res>
     extends _$SchemaCopyWithImpl<$Res, _$SchemaBooleanImpl>
     implements _$$SchemaBooleanImplCopyWith<$Res> {
   __$$SchemaBooleanImplCopyWithImpl(
-      _$SchemaBooleanImpl _value, $Res Function(_$SchemaBooleanImpl) _then)
-      : super(_value, _then);
+    _$SchemaBooleanImpl _value,
+    $Res Function(_$SchemaBooleanImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -9128,38 +9756,42 @@ class __$$SchemaBooleanImplCopyWithImpl<$Res>
     Object? example = freezed,
     Object? ref = freezed,
   }) {
-    return _then(_$SchemaBooleanImpl(
-      xml: freezed == xml
-          ? _value.xml
-          : xml // ignore: cast_nullable_to_non_nullable
-              as Xml?,
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      defaultValue: freezed == defaultValue
-          ? _value.defaultValue
-          : defaultValue // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      nullable: freezed == nullable
-          ? _value.nullable
-          : nullable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      example: freezed == example
-          ? _value.example
-          : example // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$SchemaBooleanImpl(
+        xml: freezed == xml
+            ? _value.xml
+            : xml // ignore: cast_nullable_to_non_nullable
+                  as Xml?,
+        title: freezed == title
+            ? _value.title
+            : title // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        defaultValue: freezed == defaultValue
+            ? _value.defaultValue
+            : defaultValue // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        nullable: freezed == nullable
+            ? _value.nullable
+            : nullable // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        example: freezed == example
+            ? _value.example
+            : example // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $XmlCopyWith<$Res>? get xml {
@@ -9176,17 +9808,17 @@ class __$$SchemaBooleanImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SchemaBooleanImpl extends _SchemaBoolean {
-  const _$SchemaBooleanImpl(
-      {this.xml,
-      this.title,
-      this.description,
-      @JsonKey(name: 'default') this.defaultValue,
-      this.nullable,
-      this.example,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() this.ref,
-      final String? $type})
-      : $type = $type ?? 'boolean',
-        super._();
+  const _$SchemaBooleanImpl({
+    this.xml,
+    this.title,
+    this.description,
+    @JsonKey(name: 'default') this.defaultValue,
+    this.nullable,
+    this.example,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() this.ref,
+    final String? $type,
+  }) : $type = $type ?? 'boolean',
+       super._();
 
   factory _$SchemaBooleanImpl.fromJson(Map<String, dynamic> json) =>
       _$$SchemaBooleanImplFromJson(json);
@@ -9218,7 +9850,7 @@ class _$SchemaBooleanImpl extends _SchemaBoolean {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SchemaBooleanImpl &&
@@ -9234,12 +9866,22 @@ class _$SchemaBooleanImpl extends _SchemaBoolean {
             (identical(other.ref, ref) || other.ref == ref));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, xml, title, description,
-      defaultValue, nullable, example, ref);
+  int get hashCode => Object.hash(
+    runtimeType,
+    xml,
+    title,
+    description,
+    defaultValue,
+    nullable,
+    example,
+    ref,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SchemaBooleanImplCopyWith<_$SchemaBooleanImpl> get copyWith =>
@@ -9296,22 +9938,20 @@ class _$SchemaBooleanImpl extends _SchemaBoolean {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SchemaBooleanImplToJson(
-      this,
-    );
+    return _$$SchemaBooleanImplToJson(this);
   }
 }
 
 abstract class _SchemaBoolean extends Schema {
-  const factory _SchemaBoolean(
-          {final Xml? xml,
-          final String? title,
-          final String? description,
-          @JsonKey(name: 'default') final bool? defaultValue,
-          final bool? nullable,
-          final bool? example,
-          @JsonKey(name: '\$ref') @_SchemaRefConverter() final String? ref}) =
-      _$SchemaBooleanImpl;
+  const factory _SchemaBoolean({
+    final Xml? xml,
+    final String? title,
+    final String? description,
+    @JsonKey(name: 'default') final bool? defaultValue,
+    final bool? nullable,
+    final bool? example,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() final String? ref,
+  }) = _$SchemaBooleanImpl;
   const _SchemaBoolean._() : super._();
 
   factory _SchemaBoolean.fromJson(Map<String, dynamic> json) =
@@ -9332,8 +9972,11 @@ abstract class _SchemaBoolean extends Schema {
   @JsonKey(name: '\$ref')
   @_SchemaRefConverter()
   String? get ref;
+
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SchemaBooleanImplCopyWith<_$SchemaBooleanImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -9342,25 +9985,27 @@ abstract class _SchemaBoolean extends Schema {
 abstract class _$$SchemaStringImplCopyWith<$Res>
     implements $SchemaCopyWith<$Res> {
   factory _$$SchemaStringImplCopyWith(
-          _$SchemaStringImpl value, $Res Function(_$SchemaStringImpl) then) =
-      __$$SchemaStringImplCopyWithImpl<$Res>;
+    _$SchemaStringImpl value,
+    $Res Function(_$SchemaStringImpl) then,
+  ) = __$$SchemaStringImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {Xml? xml,
-      String? title,
-      String? description,
-      @JsonKey(name: 'default') String? defaultValue,
-      bool? nullable,
-      @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
-      StringFormat? format,
-      String? pattern,
-      String? example,
-      @JsonKey(fromJson: _fromJsonInt) int? minLength,
-      @JsonKey(fromJson: _fromJsonInt) int? maxLength,
-      bool? exclusiveMinimum,
-      bool? exclusiveMaximum,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref});
+  $Res call({
+    Xml? xml,
+    String? title,
+    String? description,
+    @JsonKey(name: 'default') String? defaultValue,
+    bool? nullable,
+    @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
+    StringFormat? format,
+    String? pattern,
+    String? example,
+    @JsonKey(fromJson: _fromJsonInt) int? minLength,
+    @JsonKey(fromJson: _fromJsonInt) int? maxLength,
+    bool? exclusiveMinimum,
+    bool? exclusiveMaximum,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
+  });
 
   $XmlCopyWith<$Res>? get xml;
 }
@@ -9370,9 +10015,12 @@ class __$$SchemaStringImplCopyWithImpl<$Res>
     extends _$SchemaCopyWithImpl<$Res, _$SchemaStringImpl>
     implements _$$SchemaStringImplCopyWith<$Res> {
   __$$SchemaStringImplCopyWithImpl(
-      _$SchemaStringImpl _value, $Res Function(_$SchemaStringImpl) _then)
-      : super(_value, _then);
+    _$SchemaStringImpl _value,
+    $Res Function(_$SchemaStringImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -9390,62 +10038,66 @@ class __$$SchemaStringImplCopyWithImpl<$Res>
     Object? exclusiveMaximum = freezed,
     Object? ref = freezed,
   }) {
-    return _then(_$SchemaStringImpl(
-      xml: freezed == xml
-          ? _value.xml
-          : xml // ignore: cast_nullable_to_non_nullable
-              as Xml?,
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      defaultValue: freezed == defaultValue
-          ? _value.defaultValue
-          : defaultValue // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nullable: freezed == nullable
-          ? _value.nullable
-          : nullable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      format: freezed == format
-          ? _value.format
-          : format // ignore: cast_nullable_to_non_nullable
-              as StringFormat?,
-      pattern: freezed == pattern
-          ? _value.pattern
-          : pattern // ignore: cast_nullable_to_non_nullable
-              as String?,
-      example: freezed == example
-          ? _value.example
-          : example // ignore: cast_nullable_to_non_nullable
-              as String?,
-      minLength: freezed == minLength
-          ? _value.minLength
-          : minLength // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxLength: freezed == maxLength
-          ? _value.maxLength
-          : maxLength // ignore: cast_nullable_to_non_nullable
-              as int?,
-      exclusiveMinimum: freezed == exclusiveMinimum
-          ? _value.exclusiveMinimum
-          : exclusiveMinimum // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      exclusiveMaximum: freezed == exclusiveMaximum
-          ? _value.exclusiveMaximum
-          : exclusiveMaximum // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$SchemaStringImpl(
+        xml: freezed == xml
+            ? _value.xml
+            : xml // ignore: cast_nullable_to_non_nullable
+                  as Xml?,
+        title: freezed == title
+            ? _value.title
+            : title // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        defaultValue: freezed == defaultValue
+            ? _value.defaultValue
+            : defaultValue // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        nullable: freezed == nullable
+            ? _value.nullable
+            : nullable // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        format: freezed == format
+            ? _value.format
+            : format // ignore: cast_nullable_to_non_nullable
+                  as StringFormat?,
+        pattern: freezed == pattern
+            ? _value.pattern
+            : pattern // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        example: freezed == example
+            ? _value.example
+            : example // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        minLength: freezed == minLength
+            ? _value.minLength
+            : minLength // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maxLength: freezed == maxLength
+            ? _value.maxLength
+            : maxLength // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        exclusiveMinimum: freezed == exclusiveMinimum
+            ? _value.exclusiveMinimum
+            : exclusiveMinimum // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        exclusiveMaximum: freezed == exclusiveMaximum
+            ? _value.exclusiveMaximum
+            : exclusiveMaximum // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $XmlCopyWith<$Res>? get xml {
@@ -9462,23 +10114,23 @@ class __$$SchemaStringImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SchemaStringImpl extends _SchemaString {
-  const _$SchemaStringImpl(
-      {this.xml,
-      this.title,
-      this.description,
-      @JsonKey(name: 'default') this.defaultValue,
-      this.nullable,
-      @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue) this.format,
-      this.pattern,
-      this.example,
-      @JsonKey(fromJson: _fromJsonInt) this.minLength,
-      @JsonKey(fromJson: _fromJsonInt) this.maxLength,
-      this.exclusiveMinimum,
-      this.exclusiveMaximum,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() this.ref,
-      final String? $type})
-      : $type = $type ?? 'string',
-        super._();
+  const _$SchemaStringImpl({
+    this.xml,
+    this.title,
+    this.description,
+    @JsonKey(name: 'default') this.defaultValue,
+    this.nullable,
+    @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue) this.format,
+    this.pattern,
+    this.example,
+    @JsonKey(fromJson: _fromJsonInt) this.minLength,
+    @JsonKey(fromJson: _fromJsonInt) this.maxLength,
+    this.exclusiveMinimum,
+    this.exclusiveMaximum,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() this.ref,
+    final String? $type,
+  }) : $type = $type ?? 'string',
+       super._();
 
   factory _$SchemaStringImpl.fromJson(Map<String, dynamic> json) =>
       _$$SchemaStringImplFromJson(json);
@@ -9525,7 +10177,7 @@ class _$SchemaStringImpl extends _SchemaString {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SchemaStringImpl &&
@@ -9551,25 +10203,28 @@ class _$SchemaStringImpl extends _SchemaString {
             (identical(other.ref, ref) || other.ref == ref));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      xml,
-      title,
-      description,
-      defaultValue,
-      nullable,
-      format,
-      pattern,
-      example,
-      minLength,
-      maxLength,
-      exclusiveMinimum,
-      exclusiveMaximum,
-      ref);
+    runtimeType,
+    xml,
+    title,
+    description,
+    defaultValue,
+    nullable,
+    format,
+    pattern,
+    example,
+    minLength,
+    maxLength,
+    exclusiveMinimum,
+    exclusiveMaximum,
+    ref,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SchemaStringImplCopyWith<_$SchemaStringImpl> get copyWith =>
@@ -9626,29 +10281,27 @@ class _$SchemaStringImpl extends _SchemaString {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SchemaStringImplToJson(
-      this,
-    );
+    return _$$SchemaStringImplToJson(this);
   }
 }
 
 abstract class _SchemaString extends Schema {
-  const factory _SchemaString(
-          {final Xml? xml,
-          final String? title,
-          final String? description,
-          @JsonKey(name: 'default') final String? defaultValue,
-          final bool? nullable,
-          @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
-          final StringFormat? format,
-          final String? pattern,
-          final String? example,
-          @JsonKey(fromJson: _fromJsonInt) final int? minLength,
-          @JsonKey(fromJson: _fromJsonInt) final int? maxLength,
-          final bool? exclusiveMinimum,
-          final bool? exclusiveMaximum,
-          @JsonKey(name: '\$ref') @_SchemaRefConverter() final String? ref}) =
-      _$SchemaStringImpl;
+  const factory _SchemaString({
+    final Xml? xml,
+    final String? title,
+    final String? description,
+    @JsonKey(name: 'default') final String? defaultValue,
+    final bool? nullable,
+    @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
+    final StringFormat? format,
+    final String? pattern,
+    final String? example,
+    @JsonKey(fromJson: _fromJsonInt) final int? minLength,
+    @JsonKey(fromJson: _fromJsonInt) final int? maxLength,
+    final bool? exclusiveMinimum,
+    final bool? exclusiveMaximum,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() final String? ref,
+  }) = _$SchemaStringImpl;
   const _SchemaString._() : super._();
 
   factory _SchemaString.fromJson(Map<String, dynamic> json) =
@@ -9678,8 +10331,11 @@ abstract class _SchemaString extends Schema {
   @JsonKey(name: '\$ref')
   @_SchemaRefConverter()
   String? get ref;
+
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SchemaStringImplCopyWith<_$SchemaStringImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -9688,25 +10344,27 @@ abstract class _SchemaString extends Schema {
 abstract class _$$SchemaIntegerImplCopyWith<$Res>
     implements $SchemaCopyWith<$Res> {
   factory _$$SchemaIntegerImplCopyWith(
-          _$SchemaIntegerImpl value, $Res Function(_$SchemaIntegerImpl) then) =
-      __$$SchemaIntegerImplCopyWithImpl<$Res>;
+    _$SchemaIntegerImpl value,
+    $Res Function(_$SchemaIntegerImpl) then,
+  ) = __$$SchemaIntegerImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {Xml? xml,
-      String? title,
-      String? description,
-      @JsonKey(name: 'default', fromJson: _fromJsonInt) int? defaultValue,
-      bool? nullable,
-      @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
-      IntegerFormat? format,
-      @JsonKey(fromJson: _fromJsonInt) int? example,
-      @JsonKey(fromJson: _fromJsonInt) int? minimum,
-      @JsonKey(fromJson: _fromJsonInt) int? maximum,
-      bool? exclusiveMinimum,
-      bool? exclusiveMaximum,
-      @JsonKey(fromJson: _fromJsonInt) int? multipleOf,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref});
+  $Res call({
+    Xml? xml,
+    String? title,
+    String? description,
+    @JsonKey(name: 'default', fromJson: _fromJsonInt) int? defaultValue,
+    bool? nullable,
+    @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
+    IntegerFormat? format,
+    @JsonKey(fromJson: _fromJsonInt) int? example,
+    @JsonKey(fromJson: _fromJsonInt) int? minimum,
+    @JsonKey(fromJson: _fromJsonInt) int? maximum,
+    bool? exclusiveMinimum,
+    bool? exclusiveMaximum,
+    @JsonKey(fromJson: _fromJsonInt) int? multipleOf,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
+  });
 
   $XmlCopyWith<$Res>? get xml;
 }
@@ -9716,9 +10374,12 @@ class __$$SchemaIntegerImplCopyWithImpl<$Res>
     extends _$SchemaCopyWithImpl<$Res, _$SchemaIntegerImpl>
     implements _$$SchemaIntegerImplCopyWith<$Res> {
   __$$SchemaIntegerImplCopyWithImpl(
-      _$SchemaIntegerImpl _value, $Res Function(_$SchemaIntegerImpl) _then)
-      : super(_value, _then);
+    _$SchemaIntegerImpl _value,
+    $Res Function(_$SchemaIntegerImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -9736,62 +10397,66 @@ class __$$SchemaIntegerImplCopyWithImpl<$Res>
     Object? multipleOf = freezed,
     Object? ref = freezed,
   }) {
-    return _then(_$SchemaIntegerImpl(
-      xml: freezed == xml
-          ? _value.xml
-          : xml // ignore: cast_nullable_to_non_nullable
-              as Xml?,
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      defaultValue: freezed == defaultValue
-          ? _value.defaultValue
-          : defaultValue // ignore: cast_nullable_to_non_nullable
-              as int?,
-      nullable: freezed == nullable
-          ? _value.nullable
-          : nullable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      format: freezed == format
-          ? _value.format
-          : format // ignore: cast_nullable_to_non_nullable
-              as IntegerFormat?,
-      example: freezed == example
-          ? _value.example
-          : example // ignore: cast_nullable_to_non_nullable
-              as int?,
-      minimum: freezed == minimum
-          ? _value.minimum
-          : minimum // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maximum: freezed == maximum
-          ? _value.maximum
-          : maximum // ignore: cast_nullable_to_non_nullable
-              as int?,
-      exclusiveMinimum: freezed == exclusiveMinimum
-          ? _value.exclusiveMinimum
-          : exclusiveMinimum // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      exclusiveMaximum: freezed == exclusiveMaximum
-          ? _value.exclusiveMaximum
-          : exclusiveMaximum // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      multipleOf: freezed == multipleOf
-          ? _value.multipleOf
-          : multipleOf // ignore: cast_nullable_to_non_nullable
-              as int?,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$SchemaIntegerImpl(
+        xml: freezed == xml
+            ? _value.xml
+            : xml // ignore: cast_nullable_to_non_nullable
+                  as Xml?,
+        title: freezed == title
+            ? _value.title
+            : title // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        defaultValue: freezed == defaultValue
+            ? _value.defaultValue
+            : defaultValue // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        nullable: freezed == nullable
+            ? _value.nullable
+            : nullable // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        format: freezed == format
+            ? _value.format
+            : format // ignore: cast_nullable_to_non_nullable
+                  as IntegerFormat?,
+        example: freezed == example
+            ? _value.example
+            : example // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        minimum: freezed == minimum
+            ? _value.minimum
+            : minimum // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maximum: freezed == maximum
+            ? _value.maximum
+            : maximum // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        exclusiveMinimum: freezed == exclusiveMinimum
+            ? _value.exclusiveMinimum
+            : exclusiveMinimum // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        exclusiveMaximum: freezed == exclusiveMaximum
+            ? _value.exclusiveMaximum
+            : exclusiveMaximum // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        multipleOf: freezed == multipleOf
+            ? _value.multipleOf
+            : multipleOf // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $XmlCopyWith<$Res>? get xml {
@@ -9808,23 +10473,23 @@ class __$$SchemaIntegerImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SchemaIntegerImpl extends _SchemaInteger {
-  const _$SchemaIntegerImpl(
-      {this.xml,
-      this.title,
-      this.description,
-      @JsonKey(name: 'default', fromJson: _fromJsonInt) this.defaultValue,
-      this.nullable,
-      @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue) this.format,
-      @JsonKey(fromJson: _fromJsonInt) this.example,
-      @JsonKey(fromJson: _fromJsonInt) this.minimum,
-      @JsonKey(fromJson: _fromJsonInt) this.maximum,
-      this.exclusiveMinimum,
-      this.exclusiveMaximum,
-      @JsonKey(fromJson: _fromJsonInt) this.multipleOf,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() this.ref,
-      final String? $type})
-      : $type = $type ?? 'integer',
-        super._();
+  const _$SchemaIntegerImpl({
+    this.xml,
+    this.title,
+    this.description,
+    @JsonKey(name: 'default', fromJson: _fromJsonInt) this.defaultValue,
+    this.nullable,
+    @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue) this.format,
+    @JsonKey(fromJson: _fromJsonInt) this.example,
+    @JsonKey(fromJson: _fromJsonInt) this.minimum,
+    @JsonKey(fromJson: _fromJsonInt) this.maximum,
+    this.exclusiveMinimum,
+    this.exclusiveMaximum,
+    @JsonKey(fromJson: _fromJsonInt) this.multipleOf,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() this.ref,
+    final String? $type,
+  }) : $type = $type ?? 'integer',
+       super._();
 
   factory _$SchemaIntegerImpl.fromJson(Map<String, dynamic> json) =>
       _$$SchemaIntegerImplFromJson(json);
@@ -9873,7 +10538,7 @@ class _$SchemaIntegerImpl extends _SchemaInteger {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SchemaIntegerImpl &&
@@ -9898,25 +10563,28 @@ class _$SchemaIntegerImpl extends _SchemaInteger {
             (identical(other.ref, ref) || other.ref == ref));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      xml,
-      title,
-      description,
-      defaultValue,
-      nullable,
-      format,
-      example,
-      minimum,
-      maximum,
-      exclusiveMinimum,
-      exclusiveMaximum,
-      multipleOf,
-      ref);
+    runtimeType,
+    xml,
+    title,
+    description,
+    defaultValue,
+    nullable,
+    format,
+    example,
+    minimum,
+    maximum,
+    exclusiveMinimum,
+    exclusiveMaximum,
+    multipleOf,
+    ref,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SchemaIntegerImplCopyWith<_$SchemaIntegerImpl> get copyWith =>
@@ -9973,30 +10641,27 @@ class _$SchemaIntegerImpl extends _SchemaInteger {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SchemaIntegerImplToJson(
-      this,
-    );
+    return _$$SchemaIntegerImplToJson(this);
   }
 }
 
 abstract class _SchemaInteger extends Schema {
-  const factory _SchemaInteger(
-      {final Xml? xml,
-      final String? title,
-      final String? description,
-      @JsonKey(name: 'default', fromJson: _fromJsonInt) final int? defaultValue,
-      final bool? nullable,
-      @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
-      final IntegerFormat? format,
-      @JsonKey(fromJson: _fromJsonInt) final int? example,
-      @JsonKey(fromJson: _fromJsonInt) final int? minimum,
-      @JsonKey(fromJson: _fromJsonInt) final int? maximum,
-      final bool? exclusiveMinimum,
-      final bool? exclusiveMaximum,
-      @JsonKey(fromJson: _fromJsonInt) final int? multipleOf,
-      @JsonKey(name: '\$ref')
-      @_SchemaRefConverter()
-      final String? ref}) = _$SchemaIntegerImpl;
+  const factory _SchemaInteger({
+    final Xml? xml,
+    final String? title,
+    final String? description,
+    @JsonKey(name: 'default', fromJson: _fromJsonInt) final int? defaultValue,
+    final bool? nullable,
+    @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
+    final IntegerFormat? format,
+    @JsonKey(fromJson: _fromJsonInt) final int? example,
+    @JsonKey(fromJson: _fromJsonInt) final int? minimum,
+    @JsonKey(fromJson: _fromJsonInt) final int? maximum,
+    final bool? exclusiveMinimum,
+    final bool? exclusiveMaximum,
+    @JsonKey(fromJson: _fromJsonInt) final int? multipleOf,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() final String? ref,
+  }) = _$SchemaIntegerImpl;
   const _SchemaInteger._() : super._();
 
   factory _SchemaInteger.fromJson(Map<String, dynamic> json) =
@@ -10028,8 +10693,11 @@ abstract class _SchemaInteger extends Schema {
   @JsonKey(name: '\$ref')
   @_SchemaRefConverter()
   String? get ref;
+
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SchemaIntegerImplCopyWith<_$SchemaIntegerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -10038,25 +10706,27 @@ abstract class _SchemaInteger extends Schema {
 abstract class _$$SchemaNumberImplCopyWith<$Res>
     implements $SchemaCopyWith<$Res> {
   factory _$$SchemaNumberImplCopyWith(
-          _$SchemaNumberImpl value, $Res Function(_$SchemaNumberImpl) then) =
-      __$$SchemaNumberImplCopyWithImpl<$Res>;
+    _$SchemaNumberImpl value,
+    $Res Function(_$SchemaNumberImpl) then,
+  ) = __$$SchemaNumberImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {Xml? xml,
-      String? title,
-      String? description,
-      @JsonKey(name: 'default', fromJson: _fromJsonDouble) double? defaultValue,
-      bool? nullable,
-      @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
-      NumberFormat? format,
-      @JsonKey(fromJson: _fromJsonDouble) double? example,
-      @JsonKey(fromJson: _fromJsonDouble) double? minimum,
-      @JsonKey(fromJson: _fromJsonDouble) double? maximum,
-      bool? exclusiveMinimum,
-      bool? exclusiveMaximum,
-      @JsonKey(fromJson: _fromJsonDouble) double? multipleOf,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref});
+  $Res call({
+    Xml? xml,
+    String? title,
+    String? description,
+    @JsonKey(name: 'default', fromJson: _fromJsonDouble) double? defaultValue,
+    bool? nullable,
+    @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
+    NumberFormat? format,
+    @JsonKey(fromJson: _fromJsonDouble) double? example,
+    @JsonKey(fromJson: _fromJsonDouble) double? minimum,
+    @JsonKey(fromJson: _fromJsonDouble) double? maximum,
+    bool? exclusiveMinimum,
+    bool? exclusiveMaximum,
+    @JsonKey(fromJson: _fromJsonDouble) double? multipleOf,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
+  });
 
   $XmlCopyWith<$Res>? get xml;
 }
@@ -10066,9 +10736,12 @@ class __$$SchemaNumberImplCopyWithImpl<$Res>
     extends _$SchemaCopyWithImpl<$Res, _$SchemaNumberImpl>
     implements _$$SchemaNumberImplCopyWith<$Res> {
   __$$SchemaNumberImplCopyWithImpl(
-      _$SchemaNumberImpl _value, $Res Function(_$SchemaNumberImpl) _then)
-      : super(_value, _then);
+    _$SchemaNumberImpl _value,
+    $Res Function(_$SchemaNumberImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -10086,62 +10759,66 @@ class __$$SchemaNumberImplCopyWithImpl<$Res>
     Object? multipleOf = freezed,
     Object? ref = freezed,
   }) {
-    return _then(_$SchemaNumberImpl(
-      xml: freezed == xml
-          ? _value.xml
-          : xml // ignore: cast_nullable_to_non_nullable
-              as Xml?,
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      defaultValue: freezed == defaultValue
-          ? _value.defaultValue
-          : defaultValue // ignore: cast_nullable_to_non_nullable
-              as double?,
-      nullable: freezed == nullable
-          ? _value.nullable
-          : nullable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      format: freezed == format
-          ? _value.format
-          : format // ignore: cast_nullable_to_non_nullable
-              as NumberFormat?,
-      example: freezed == example
-          ? _value.example
-          : example // ignore: cast_nullable_to_non_nullable
-              as double?,
-      minimum: freezed == minimum
-          ? _value.minimum
-          : minimum // ignore: cast_nullable_to_non_nullable
-              as double?,
-      maximum: freezed == maximum
-          ? _value.maximum
-          : maximum // ignore: cast_nullable_to_non_nullable
-              as double?,
-      exclusiveMinimum: freezed == exclusiveMinimum
-          ? _value.exclusiveMinimum
-          : exclusiveMinimum // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      exclusiveMaximum: freezed == exclusiveMaximum
-          ? _value.exclusiveMaximum
-          : exclusiveMaximum // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      multipleOf: freezed == multipleOf
-          ? _value.multipleOf
-          : multipleOf // ignore: cast_nullable_to_non_nullable
-              as double?,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$SchemaNumberImpl(
+        xml: freezed == xml
+            ? _value.xml
+            : xml // ignore: cast_nullable_to_non_nullable
+                  as Xml?,
+        title: freezed == title
+            ? _value.title
+            : title // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        defaultValue: freezed == defaultValue
+            ? _value.defaultValue
+            : defaultValue // ignore: cast_nullable_to_non_nullable
+                  as double?,
+        nullable: freezed == nullable
+            ? _value.nullable
+            : nullable // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        format: freezed == format
+            ? _value.format
+            : format // ignore: cast_nullable_to_non_nullable
+                  as NumberFormat?,
+        example: freezed == example
+            ? _value.example
+            : example // ignore: cast_nullable_to_non_nullable
+                  as double?,
+        minimum: freezed == minimum
+            ? _value.minimum
+            : minimum // ignore: cast_nullable_to_non_nullable
+                  as double?,
+        maximum: freezed == maximum
+            ? _value.maximum
+            : maximum // ignore: cast_nullable_to_non_nullable
+                  as double?,
+        exclusiveMinimum: freezed == exclusiveMinimum
+            ? _value.exclusiveMinimum
+            : exclusiveMinimum // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        exclusiveMaximum: freezed == exclusiveMaximum
+            ? _value.exclusiveMaximum
+            : exclusiveMaximum // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        multipleOf: freezed == multipleOf
+            ? _value.multipleOf
+            : multipleOf // ignore: cast_nullable_to_non_nullable
+                  as double?,
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $XmlCopyWith<$Res>? get xml {
@@ -10158,23 +10835,23 @@ class __$$SchemaNumberImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SchemaNumberImpl extends _SchemaNumber {
-  const _$SchemaNumberImpl(
-      {this.xml,
-      this.title,
-      this.description,
-      @JsonKey(name: 'default', fromJson: _fromJsonDouble) this.defaultValue,
-      this.nullable,
-      @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue) this.format,
-      @JsonKey(fromJson: _fromJsonDouble) this.example,
-      @JsonKey(fromJson: _fromJsonDouble) this.minimum,
-      @JsonKey(fromJson: _fromJsonDouble) this.maximum,
-      this.exclusiveMinimum,
-      this.exclusiveMaximum,
-      @JsonKey(fromJson: _fromJsonDouble) this.multipleOf,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() this.ref,
-      final String? $type})
-      : $type = $type ?? 'number',
-        super._();
+  const _$SchemaNumberImpl({
+    this.xml,
+    this.title,
+    this.description,
+    @JsonKey(name: 'default', fromJson: _fromJsonDouble) this.defaultValue,
+    this.nullable,
+    @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue) this.format,
+    @JsonKey(fromJson: _fromJsonDouble) this.example,
+    @JsonKey(fromJson: _fromJsonDouble) this.minimum,
+    @JsonKey(fromJson: _fromJsonDouble) this.maximum,
+    this.exclusiveMinimum,
+    this.exclusiveMaximum,
+    @JsonKey(fromJson: _fromJsonDouble) this.multipleOf,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() this.ref,
+    final String? $type,
+  }) : $type = $type ?? 'number',
+       super._();
 
   factory _$SchemaNumberImpl.fromJson(Map<String, dynamic> json) =>
       _$$SchemaNumberImplFromJson(json);
@@ -10223,7 +10900,7 @@ class _$SchemaNumberImpl extends _SchemaNumber {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SchemaNumberImpl &&
@@ -10248,25 +10925,28 @@ class _$SchemaNumberImpl extends _SchemaNumber {
             (identical(other.ref, ref) || other.ref == ref));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      xml,
-      title,
-      description,
-      defaultValue,
-      nullable,
-      format,
-      example,
-      minimum,
-      maximum,
-      exclusiveMinimum,
-      exclusiveMaximum,
-      multipleOf,
-      ref);
+    runtimeType,
+    xml,
+    title,
+    description,
+    defaultValue,
+    nullable,
+    format,
+    example,
+    minimum,
+    maximum,
+    exclusiveMinimum,
+    exclusiveMaximum,
+    multipleOf,
+    ref,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SchemaNumberImplCopyWith<_$SchemaNumberImpl> get copyWith =>
@@ -10323,30 +11003,28 @@ class _$SchemaNumberImpl extends _SchemaNumber {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SchemaNumberImplToJson(
-      this,
-    );
+    return _$$SchemaNumberImplToJson(this);
   }
 }
 
 abstract class _SchemaNumber extends Schema {
-  const factory _SchemaNumber(
-          {final Xml? xml,
-          final String? title,
-          final String? description,
-          @JsonKey(name: 'default', fromJson: _fromJsonDouble)
-          final double? defaultValue,
-          final bool? nullable,
-          @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
-          final NumberFormat? format,
-          @JsonKey(fromJson: _fromJsonDouble) final double? example,
-          @JsonKey(fromJson: _fromJsonDouble) final double? minimum,
-          @JsonKey(fromJson: _fromJsonDouble) final double? maximum,
-          final bool? exclusiveMinimum,
-          final bool? exclusiveMaximum,
-          @JsonKey(fromJson: _fromJsonDouble) final double? multipleOf,
-          @JsonKey(name: '\$ref') @_SchemaRefConverter() final String? ref}) =
-      _$SchemaNumberImpl;
+  const factory _SchemaNumber({
+    final Xml? xml,
+    final String? title,
+    final String? description,
+    @JsonKey(name: 'default', fromJson: _fromJsonDouble)
+    final double? defaultValue,
+    final bool? nullable,
+    @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
+    final NumberFormat? format,
+    @JsonKey(fromJson: _fromJsonDouble) final double? example,
+    @JsonKey(fromJson: _fromJsonDouble) final double? minimum,
+    @JsonKey(fromJson: _fromJsonDouble) final double? maximum,
+    final bool? exclusiveMinimum,
+    final bool? exclusiveMaximum,
+    @JsonKey(fromJson: _fromJsonDouble) final double? multipleOf,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() final String? ref,
+  }) = _$SchemaNumberImpl;
   const _SchemaNumber._() : super._();
 
   factory _SchemaNumber.fromJson(Map<String, dynamic> json) =
@@ -10378,8 +11056,11 @@ abstract class _SchemaNumber extends Schema {
   @JsonKey(name: '\$ref')
   @_SchemaRefConverter()
   String? get ref;
+
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SchemaNumberImplCopyWith<_$SchemaNumberImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -10388,20 +11069,21 @@ abstract class _SchemaNumber extends Schema {
 abstract class _$$SchemaEnumImplCopyWith<$Res>
     implements $SchemaCopyWith<$Res> {
   factory _$$SchemaEnumImplCopyWith(
-          _$SchemaEnumImpl value, $Res Function(_$SchemaEnumImpl) then) =
-      __$$SchemaEnumImplCopyWithImpl<$Res>;
+    _$SchemaEnumImpl value,
+    $Res Function(_$SchemaEnumImpl) then,
+  ) = __$$SchemaEnumImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? title,
-      String? description,
-      String? example,
-      @JsonKey(name: 'default') String? defaultValue,
-      bool? nullable,
-      @JsonKey(includeToJson: false, includeFromJson: false)
-      String? unknownValue,
-      @JsonKey(name: 'enum') List<String>? values,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref});
+  $Res call({
+    String? title,
+    String? description,
+    String? example,
+    @JsonKey(name: 'default') String? defaultValue,
+    bool? nullable,
+    @JsonKey(includeToJson: false, includeFromJson: false) String? unknownValue,
+    @JsonKey(name: 'enum') List<String>? values,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
+  });
 }
 
 /// @nodoc
@@ -10409,9 +11091,12 @@ class __$$SchemaEnumImplCopyWithImpl<$Res>
     extends _$SchemaCopyWithImpl<$Res, _$SchemaEnumImpl>
     implements _$$SchemaEnumImplCopyWith<$Res> {
   __$$SchemaEnumImplCopyWithImpl(
-      _$SchemaEnumImpl _value, $Res Function(_$SchemaEnumImpl) _then)
-      : super(_value, _then);
+    _$SchemaEnumImpl _value,
+    $Res Function(_$SchemaEnumImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -10424,59 +11109,61 @@ class __$$SchemaEnumImplCopyWithImpl<$Res>
     Object? values = freezed,
     Object? ref = freezed,
   }) {
-    return _then(_$SchemaEnumImpl(
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      example: freezed == example
-          ? _value.example
-          : example // ignore: cast_nullable_to_non_nullable
-              as String?,
-      defaultValue: freezed == defaultValue
-          ? _value.defaultValue
-          : defaultValue // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nullable: freezed == nullable
-          ? _value.nullable
-          : nullable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      unknownValue: freezed == unknownValue
-          ? _value.unknownValue
-          : unknownValue // ignore: cast_nullable_to_non_nullable
-              as String?,
-      values: freezed == values
-          ? _value._values
-          : values // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$SchemaEnumImpl(
+        title: freezed == title
+            ? _value.title
+            : title // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        example: freezed == example
+            ? _value.example
+            : example // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        defaultValue: freezed == defaultValue
+            ? _value.defaultValue
+            : defaultValue // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        nullable: freezed == nullable
+            ? _value.nullable
+            : nullable // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        unknownValue: freezed == unknownValue
+            ? _value.unknownValue
+            : unknownValue // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        values: freezed == values
+            ? _value._values
+            : values // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$SchemaEnumImpl extends _SchemaEnum {
-  const _$SchemaEnumImpl(
-      {this.title,
-      this.description,
-      this.example,
-      @JsonKey(name: 'default') this.defaultValue,
-      this.nullable,
-      @JsonKey(includeToJson: false, includeFromJson: false) this.unknownValue,
-      @JsonKey(name: 'enum') final List<String>? values,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() this.ref,
-      final String? $type})
-      : _values = values,
-        $type = $type ?? 'enumeration',
-        super._();
+  const _$SchemaEnumImpl({
+    this.title,
+    this.description,
+    this.example,
+    @JsonKey(name: 'default') this.defaultValue,
+    this.nullable,
+    @JsonKey(includeToJson: false, includeFromJson: false) this.unknownValue,
+    @JsonKey(name: 'enum') final List<String>? values,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() this.ref,
+    final String? $type,
+  }) : _values = values,
+       $type = $type ?? 'enumeration',
+       super._();
 
   factory _$SchemaEnumImpl.fromJson(Map<String, dynamic> json) =>
       _$$SchemaEnumImplFromJson(json);
@@ -10520,7 +11207,7 @@ class _$SchemaEnumImpl extends _SchemaEnum {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SchemaEnumImpl &&
@@ -10538,20 +11225,23 @@ class _$SchemaEnumImpl extends _SchemaEnum {
             (identical(other.ref, ref) || other.ref == ref));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      title,
-      description,
-      example,
-      defaultValue,
-      nullable,
-      unknownValue,
-      const DeepCollectionEquality().hash(_values),
-      ref);
+    runtimeType,
+    title,
+    description,
+    example,
+    defaultValue,
+    nullable,
+    unknownValue,
+    const DeepCollectionEquality().hash(_values),
+    ref,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SchemaEnumImplCopyWith<_$SchemaEnumImpl> get copyWith =>
@@ -10608,24 +11298,22 @@ class _$SchemaEnumImpl extends _SchemaEnum {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SchemaEnumImplToJson(
-      this,
-    );
+    return _$$SchemaEnumImplToJson(this);
   }
 }
 
 abstract class _SchemaEnum extends Schema {
-  const factory _SchemaEnum(
-          {final String? title,
-          final String? description,
-          final String? example,
-          @JsonKey(name: 'default') final String? defaultValue,
-          final bool? nullable,
-          @JsonKey(includeToJson: false, includeFromJson: false)
-          final String? unknownValue,
-          @JsonKey(name: 'enum') final List<String>? values,
-          @JsonKey(name: '\$ref') @_SchemaRefConverter() final String? ref}) =
-      _$SchemaEnumImpl;
+  const factory _SchemaEnum({
+    final String? title,
+    final String? description,
+    final String? example,
+    @JsonKey(name: 'default') final String? defaultValue,
+    final bool? nullable,
+    @JsonKey(includeToJson: false, includeFromJson: false)
+    final String? unknownValue,
+    @JsonKey(name: 'enum') final List<String>? values,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() final String? ref,
+  }) = _$SchemaEnumImpl;
   const _SchemaEnum._() : super._();
 
   factory _SchemaEnum.fromJson(Map<String, dynamic> json) =
@@ -10649,8 +11337,11 @@ abstract class _SchemaEnum extends Schema {
   @JsonKey(name: '\$ref')
   @_SchemaRefConverter()
   String? get ref;
+
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SchemaEnumImplCopyWith<_$SchemaEnumImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -10659,21 +11350,23 @@ abstract class _SchemaEnum extends Schema {
 abstract class _$$SchemaArrayImplCopyWith<$Res>
     implements $SchemaCopyWith<$Res> {
   factory _$$SchemaArrayImplCopyWith(
-          _$SchemaArrayImpl value, $Res Function(_$SchemaArrayImpl) then) =
-      __$$SchemaArrayImplCopyWithImpl<$Res>;
+    _$SchemaArrayImpl value,
+    $Res Function(_$SchemaArrayImpl) then,
+  ) = __$$SchemaArrayImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {Xml? xml,
-      String? title,
-      String? description,
-      @JsonKey(name: 'default') List<dynamic>? defaultValue,
-      bool? nullable,
-      dynamic example,
-      @JsonKey(fromJson: _fromJsonInt) int? minItems,
-      @JsonKey(fromJson: _fromJsonInt) int? maxItems,
-      Schema items,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref});
+  $Res call({
+    Xml? xml,
+    String? title,
+    String? description,
+    @JsonKey(name: 'default') List<dynamic>? defaultValue,
+    bool? nullable,
+    dynamic example,
+    @JsonKey(fromJson: _fromJsonInt) int? minItems,
+    @JsonKey(fromJson: _fromJsonInt) int? maxItems,
+    Schema items,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
+  });
 
   $XmlCopyWith<$Res>? get xml;
   $SchemaCopyWith<$Res> get items;
@@ -10684,9 +11377,12 @@ class __$$SchemaArrayImplCopyWithImpl<$Res>
     extends _$SchemaCopyWithImpl<$Res, _$SchemaArrayImpl>
     implements _$$SchemaArrayImplCopyWith<$Res> {
   __$$SchemaArrayImplCopyWithImpl(
-      _$SchemaArrayImpl _value, $Res Function(_$SchemaArrayImpl) _then)
-      : super(_value, _then);
+    _$SchemaArrayImpl _value,
+    $Res Function(_$SchemaArrayImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -10701,50 +11397,54 @@ class __$$SchemaArrayImplCopyWithImpl<$Res>
     Object? items = null,
     Object? ref = freezed,
   }) {
-    return _then(_$SchemaArrayImpl(
-      xml: freezed == xml
-          ? _value.xml
-          : xml // ignore: cast_nullable_to_non_nullable
-              as Xml?,
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      defaultValue: freezed == defaultValue
-          ? _value._defaultValue
-          : defaultValue // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>?,
-      nullable: freezed == nullable
-          ? _value.nullable
-          : nullable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      example: freezed == example
-          ? _value.example
-          : example // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      minItems: freezed == minItems
-          ? _value.minItems
-          : minItems // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxItems: freezed == maxItems
-          ? _value.maxItems
-          : maxItems // ignore: cast_nullable_to_non_nullable
-              as int?,
-      items: null == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as Schema,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$SchemaArrayImpl(
+        xml: freezed == xml
+            ? _value.xml
+            : xml // ignore: cast_nullable_to_non_nullable
+                  as Xml?,
+        title: freezed == title
+            ? _value.title
+            : title // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        defaultValue: freezed == defaultValue
+            ? _value._defaultValue
+            : defaultValue // ignore: cast_nullable_to_non_nullable
+                  as List<dynamic>?,
+        nullable: freezed == nullable
+            ? _value.nullable
+            : nullable // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        example: freezed == example
+            ? _value.example
+            : example // ignore: cast_nullable_to_non_nullable
+                  as dynamic,
+        minItems: freezed == minItems
+            ? _value.minItems
+            : minItems // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        maxItems: freezed == maxItems
+            ? _value.maxItems
+            : maxItems // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        items: null == items
+            ? _value.items
+            : items // ignore: cast_nullable_to_non_nullable
+                  as Schema,
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $XmlCopyWith<$Res>? get xml {
@@ -10757,6 +11457,8 @@ class __$$SchemaArrayImplCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SchemaCopyWith<$Res> get items {
@@ -10769,21 +11471,21 @@ class __$$SchemaArrayImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SchemaArrayImpl extends _SchemaArray {
-  const _$SchemaArrayImpl(
-      {this.xml,
-      this.title,
-      this.description,
-      @JsonKey(name: 'default') final List<dynamic>? defaultValue,
-      this.nullable,
-      this.example,
-      @JsonKey(fromJson: _fromJsonInt) this.minItems,
-      @JsonKey(fromJson: _fromJsonInt) this.maxItems,
-      required this.items,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() this.ref,
-      final String? $type})
-      : _defaultValue = defaultValue,
-        $type = $type ?? 'array',
-        super._();
+  const _$SchemaArrayImpl({
+    this.xml,
+    this.title,
+    this.description,
+    @JsonKey(name: 'default') final List<dynamic>? defaultValue,
+    this.nullable,
+    this.example,
+    @JsonKey(fromJson: _fromJsonInt) this.minItems,
+    @JsonKey(fromJson: _fromJsonInt) this.maxItems,
+    required this.items,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() this.ref,
+    final String? $type,
+  }) : _defaultValue = defaultValue,
+       $type = $type ?? 'array',
+       super._();
 
   factory _$SchemaArrayImpl.fromJson(Map<String, dynamic> json) =>
       _$$SchemaArrayImplFromJson(json);
@@ -10831,7 +11533,7 @@ class _$SchemaArrayImpl extends _SchemaArray {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SchemaArrayImpl &&
@@ -10839,8 +11541,10 @@ class _$SchemaArrayImpl extends _SchemaArray {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            const DeepCollectionEquality()
-                .equals(other._defaultValue, _defaultValue) &&
+            const DeepCollectionEquality().equals(
+              other._defaultValue,
+              _defaultValue,
+            ) &&
             (identical(other.nullable, nullable) ||
                 other.nullable == nullable) &&
             const DeepCollectionEquality().equals(other.example, example) &&
@@ -10852,22 +11556,25 @@ class _$SchemaArrayImpl extends _SchemaArray {
             (identical(other.ref, ref) || other.ref == ref));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      xml,
-      title,
-      description,
-      const DeepCollectionEquality().hash(_defaultValue),
-      nullable,
-      const DeepCollectionEquality().hash(example),
-      minItems,
-      maxItems,
-      items,
-      ref);
+    runtimeType,
+    xml,
+    title,
+    description,
+    const DeepCollectionEquality().hash(_defaultValue),
+    nullable,
+    const DeepCollectionEquality().hash(example),
+    minItems,
+    maxItems,
+    items,
+    ref,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SchemaArrayImplCopyWith<_$SchemaArrayImpl> get copyWith =>
@@ -10924,25 +11631,23 @@ class _$SchemaArrayImpl extends _SchemaArray {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SchemaArrayImplToJson(
-      this,
-    );
+    return _$$SchemaArrayImplToJson(this);
   }
 }
 
 abstract class _SchemaArray extends Schema {
-  const factory _SchemaArray(
-          {final Xml? xml,
-          final String? title,
-          final String? description,
-          @JsonKey(name: 'default') final List<dynamic>? defaultValue,
-          final bool? nullable,
-          final dynamic example,
-          @JsonKey(fromJson: _fromJsonInt) final int? minItems,
-          @JsonKey(fromJson: _fromJsonInt) final int? maxItems,
-          required final Schema items,
-          @JsonKey(name: '\$ref') @_SchemaRefConverter() final String? ref}) =
-      _$SchemaArrayImpl;
+  const factory _SchemaArray({
+    final Xml? xml,
+    final String? title,
+    final String? description,
+    @JsonKey(name: 'default') final List<dynamic>? defaultValue,
+    final bool? nullable,
+    final dynamic example,
+    @JsonKey(fromJson: _fromJsonInt) final int? minItems,
+    @JsonKey(fromJson: _fromJsonInt) final int? maxItems,
+    required final Schema items,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() final String? ref,
+  }) = _$SchemaArrayImpl;
   const _SchemaArray._() : super._();
 
   factory _SchemaArray.fromJson(Map<String, dynamic> json) =
@@ -10968,8 +11673,11 @@ abstract class _SchemaArray extends Schema {
   @JsonKey(name: '\$ref')
   @_SchemaRefConverter()
   String? get ref;
+
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SchemaArrayImplCopyWith<_$SchemaArrayImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -10977,23 +11685,26 @@ abstract class _SchemaArray extends Schema {
 /// @nodoc
 abstract class _$$SchemaMapImplCopyWith<$Res> implements $SchemaCopyWith<$Res> {
   factory _$$SchemaMapImplCopyWith(
-          _$SchemaMapImpl value, $Res Function(_$SchemaMapImpl) then) =
-      __$$SchemaMapImplCopyWithImpl<$Res>;
+    _$SchemaMapImpl value,
+    $Res Function(_$SchemaMapImpl) then,
+  ) = __$$SchemaMapImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {Xml? xml,
-      String? title,
-      String? description,
-      @JsonKey(name: 'default') Map<dynamic, dynamic>? defaultValue,
-      bool? nullable,
-      Map<dynamic, dynamic>? example,
-      @JsonKey(
-          name: 'additionalProperties',
-          toJson: _toMapProps,
-          fromJson: _fromMapProps)
-      Schema? valueSchema,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref});
+  $Res call({
+    Xml? xml,
+    String? title,
+    String? description,
+    @JsonKey(name: 'default') Map<dynamic, dynamic>? defaultValue,
+    bool? nullable,
+    Map<dynamic, dynamic>? example,
+    @JsonKey(
+      name: 'additionalProperties',
+      toJson: _toMapProps,
+      fromJson: _fromMapProps,
+    )
+    Schema? valueSchema,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() String? ref,
+  });
 
   $XmlCopyWith<$Res>? get xml;
   $SchemaCopyWith<$Res>? get valueSchema;
@@ -11004,9 +11715,12 @@ class __$$SchemaMapImplCopyWithImpl<$Res>
     extends _$SchemaCopyWithImpl<$Res, _$SchemaMapImpl>
     implements _$$SchemaMapImplCopyWith<$Res> {
   __$$SchemaMapImplCopyWithImpl(
-      _$SchemaMapImpl _value, $Res Function(_$SchemaMapImpl) _then)
-      : super(_value, _then);
+    _$SchemaMapImpl _value,
+    $Res Function(_$SchemaMapImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -11019,42 +11733,46 @@ class __$$SchemaMapImplCopyWithImpl<$Res>
     Object? valueSchema = freezed,
     Object? ref = freezed,
   }) {
-    return _then(_$SchemaMapImpl(
-      xml: freezed == xml
-          ? _value.xml
-          : xml // ignore: cast_nullable_to_non_nullable
-              as Xml?,
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      defaultValue: freezed == defaultValue
-          ? _value._defaultValue
-          : defaultValue // ignore: cast_nullable_to_non_nullable
-              as Map<dynamic, dynamic>?,
-      nullable: freezed == nullable
-          ? _value.nullable
-          : nullable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      example: freezed == example
-          ? _value._example
-          : example // ignore: cast_nullable_to_non_nullable
-              as Map<dynamic, dynamic>?,
-      valueSchema: freezed == valueSchema
-          ? _value.valueSchema
-          : valueSchema // ignore: cast_nullable_to_non_nullable
-              as Schema?,
-      ref: freezed == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$SchemaMapImpl(
+        xml: freezed == xml
+            ? _value.xml
+            : xml // ignore: cast_nullable_to_non_nullable
+                  as Xml?,
+        title: freezed == title
+            ? _value.title
+            : title // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        defaultValue: freezed == defaultValue
+            ? _value._defaultValue
+            : defaultValue // ignore: cast_nullable_to_non_nullable
+                  as Map<dynamic, dynamic>?,
+        nullable: freezed == nullable
+            ? _value.nullable
+            : nullable // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        example: freezed == example
+            ? _value._example
+            : example // ignore: cast_nullable_to_non_nullable
+                  as Map<dynamic, dynamic>?,
+        valueSchema: freezed == valueSchema
+            ? _value.valueSchema
+            : valueSchema // ignore: cast_nullable_to_non_nullable
+                  as Schema?,
+        ref: freezed == ref
+            ? _value.ref
+            : ref // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $XmlCopyWith<$Res>? get xml {
@@ -11067,6 +11785,8 @@ class __$$SchemaMapImplCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SchemaCopyWith<$Res>? get valueSchema {
@@ -11083,24 +11803,25 @@ class __$$SchemaMapImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SchemaMapImpl extends _SchemaMap {
-  const _$SchemaMapImpl(
-      {this.xml,
-      this.title,
-      this.description,
-      @JsonKey(name: 'default') final Map<dynamic, dynamic>? defaultValue,
-      this.nullable,
-      final Map<dynamic, dynamic>? example,
-      @JsonKey(
-          name: 'additionalProperties',
-          toJson: _toMapProps,
-          fromJson: _fromMapProps)
-      this.valueSchema,
-      @JsonKey(name: '\$ref') @_SchemaRefConverter() this.ref,
-      final String? $type})
-      : _defaultValue = defaultValue,
-        _example = example,
-        $type = $type ?? 'map',
-        super._();
+  const _$SchemaMapImpl({
+    this.xml,
+    this.title,
+    this.description,
+    @JsonKey(name: 'default') final Map<dynamic, dynamic>? defaultValue,
+    this.nullable,
+    final Map<dynamic, dynamic>? example,
+    @JsonKey(
+      name: 'additionalProperties',
+      toJson: _toMapProps,
+      fromJson: _fromMapProps,
+    )
+    this.valueSchema,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() this.ref,
+    final String? $type,
+  }) : _defaultValue = defaultValue,
+       _example = example,
+       $type = $type ?? 'map',
+       super._();
 
   factory _$SchemaMapImpl.fromJson(Map<String, dynamic> json) =>
       _$$SchemaMapImplFromJson(json);
@@ -11136,9 +11857,10 @@ class _$SchemaMapImpl extends _SchemaMap {
 
   @override
   @JsonKey(
-      name: 'additionalProperties',
-      toJson: _toMapProps,
-      fromJson: _fromMapProps)
+    name: 'additionalProperties',
+    toJson: _toMapProps,
+    fromJson: _fromMapProps,
+  )
   final Schema? valueSchema;
   @override
   @JsonKey(name: '\$ref')
@@ -11154,7 +11876,7 @@ class _$SchemaMapImpl extends _SchemaMap {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SchemaMapImpl &&
@@ -11162,8 +11884,10 @@ class _$SchemaMapImpl extends _SchemaMap {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            const DeepCollectionEquality()
-                .equals(other._defaultValue, _defaultValue) &&
+            const DeepCollectionEquality().equals(
+              other._defaultValue,
+              _defaultValue,
+            ) &&
             (identical(other.nullable, nullable) ||
                 other.nullable == nullable) &&
             const DeepCollectionEquality().equals(other._example, _example) &&
@@ -11172,20 +11896,23 @@ class _$SchemaMapImpl extends _SchemaMap {
             (identical(other.ref, ref) || other.ref == ref));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      xml,
-      title,
-      description,
-      const DeepCollectionEquality().hash(_defaultValue),
-      nullable,
-      const DeepCollectionEquality().hash(_example),
-      valueSchema,
-      ref);
+    runtimeType,
+    xml,
+    title,
+    description,
+    const DeepCollectionEquality().hash(_defaultValue),
+    nullable,
+    const DeepCollectionEquality().hash(_example),
+    valueSchema,
+    ref,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SchemaMapImplCopyWith<_$SchemaMapImpl> get copyWith =>
@@ -11242,27 +11969,26 @@ class _$SchemaMapImpl extends _SchemaMap {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SchemaMapImplToJson(
-      this,
-    );
+    return _$$SchemaMapImplToJson(this);
   }
 }
 
 abstract class _SchemaMap extends Schema {
-  const factory _SchemaMap(
-          {final Xml? xml,
-          final String? title,
-          final String? description,
-          @JsonKey(name: 'default') final Map<dynamic, dynamic>? defaultValue,
-          final bool? nullable,
-          final Map<dynamic, dynamic>? example,
-          @JsonKey(
-              name: 'additionalProperties',
-              toJson: _toMapProps,
-              fromJson: _fromMapProps)
-          final Schema? valueSchema,
-          @JsonKey(name: '\$ref') @_SchemaRefConverter() final String? ref}) =
-      _$SchemaMapImpl;
+  const factory _SchemaMap({
+    final Xml? xml,
+    final String? title,
+    final String? description,
+    @JsonKey(name: 'default') final Map<dynamic, dynamic>? defaultValue,
+    final bool? nullable,
+    final Map<dynamic, dynamic>? example,
+    @JsonKey(
+      name: 'additionalProperties',
+      toJson: _toMapProps,
+      fromJson: _fromMapProps,
+    )
+    final Schema? valueSchema,
+    @JsonKey(name: '\$ref') @_SchemaRefConverter() final String? ref,
+  }) = _$SchemaMapImpl;
   const _SchemaMap._() : super._();
 
   factory _SchemaMap.fromJson(Map<String, dynamic> json) =
@@ -11280,16 +12006,20 @@ abstract class _SchemaMap extends Schema {
   bool? get nullable;
   Map<dynamic, dynamic>? get example;
   @JsonKey(
-      name: 'additionalProperties',
-      toJson: _toMapProps,
-      fromJson: _fromMapProps)
+    name: 'additionalProperties',
+    toJson: _toMapProps,
+    fromJson: _fromMapProps,
+  )
   Schema? get valueSchema;
   @override
   @JsonKey(name: '\$ref')
   @_SchemaRefConverter()
   String? get ref;
+
+  /// Create a copy of Schema
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SchemaMapImplCopyWith<_$SchemaMapImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -11306,21 +12036,20 @@ mixin _$Security {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_Security value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_Security value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_Security value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Security
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SecurityCopyWith<Security> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -11343,22 +12072,24 @@ class _$SecurityCopyWithImpl<$Res, $Val extends Security>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Security
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? name = freezed,
-    Object? scopes = null,
-  }) {
-    return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      scopes: null == scopes
-          ? _value.scopes
-          : scopes // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ) as $Val);
+  $Res call({Object? name = freezed, Object? scopes = null}) {
+    return _then(
+      _value.copyWith(
+            name: freezed == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            scopes: null == scopes
+                ? _value.scopes
+                : scopes // ignore: cast_nullable_to_non_nullable
+                      as List<String>,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -11366,8 +12097,9 @@ class _$SecurityCopyWithImpl<$Res, $Val extends Security>
 abstract class _$$SecurityImplCopyWith<$Res>
     implements $SecurityCopyWith<$Res> {
   factory _$$SecurityImplCopyWith(
-          _$SecurityImpl value, $Res Function(_$SecurityImpl) then) =
-      __$$SecurityImplCopyWithImpl<$Res>;
+    _$SecurityImpl value,
+    $Res Function(_$SecurityImpl) then,
+  ) = __$$SecurityImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? name, List<String> scopes});
@@ -11378,25 +12110,27 @@ class __$$SecurityImplCopyWithImpl<$Res>
     extends _$SecurityCopyWithImpl<$Res, _$SecurityImpl>
     implements _$$SecurityImplCopyWith<$Res> {
   __$$SecurityImplCopyWithImpl(
-      _$SecurityImpl _value, $Res Function(_$SecurityImpl) _then)
-      : super(_value, _then);
+    _$SecurityImpl _value,
+    $Res Function(_$SecurityImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Security
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? name = freezed,
-    Object? scopes = null,
-  }) {
-    return _then(_$SecurityImpl(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      scopes: null == scopes
-          ? _value._scopes
-          : scopes // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ));
+  $Res call({Object? name = freezed, Object? scopes = null}) {
+    return _then(
+      _$SecurityImpl(
+        name: freezed == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        scopes: null == scopes
+            ? _value._scopes
+            : scopes // ignore: cast_nullable_to_non_nullable
+                  as List<String>,
+      ),
+    );
   }
 }
 
@@ -11404,8 +12138,8 @@ class __$$SecurityImplCopyWithImpl<$Res>
 
 class _$SecurityImpl extends _Security {
   const _$SecurityImpl({this.name, final List<String> scopes = const []})
-      : _scopes = scopes,
-        super._();
+    : _scopes = scopes,
+      super._();
 
   /// Each name must correspond to a security scheme which is declared
   /// in the [Components.securitySchemes] list
@@ -11430,7 +12164,7 @@ class _$SecurityImpl extends _Security {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SecurityImpl &&
@@ -11440,9 +12174,14 @@ class _$SecurityImpl extends _Security {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, name, const DeepCollectionEquality().hash(_scopes));
+    runtimeType,
+    name,
+    const DeepCollectionEquality().hash(_scopes),
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Security
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SecurityImplCopyWith<_$SecurityImpl> get copyWith =>
@@ -11482,17 +12221,19 @@ abstract class _Security extends Security {
       _$SecurityImpl;
   const _Security._() : super._();
 
-  @override
-
   /// Each name must correspond to a security scheme which is declared
   /// in the [Components.securitySchemes] list
-  String? get name;
   @override
+  String? get name;
 
   /// List of scopes required to access the API, if any.
-  List<String> get scopes;
   @override
-  @JsonKey(ignore: true)
+  List<String> get scopes;
+
+  /// Create a copy of Security
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SecurityImplCopyWith<_$SecurityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -11511,8 +12252,12 @@ SecurityScheme _$SecuritySchemeFromJson(Map<String, dynamic> json) {
       return _SecuritySchemeOpenIdConnect.fromJson(json);
 
     default:
-      throw CheckedFromJsonException(json, 'type', 'SecurityScheme',
-          'Invalid union type "${json['type']}"!');
+      throw CheckedFromJsonException(
+        json,
+        'type',
+        'SecurityScheme',
+        'Invalid union type "${json['type']}"!',
+      );
   }
 }
 
@@ -11528,8 +12273,7 @@ mixin _$SecurityScheme {
     required TResult Function(_SecuritySchemeMutualTLS value) mutualTLS,
     required TResult Function(_SecuritySchemeOauth2 value) oauth2,
     required TResult Function(_SecuritySchemeOpenIdConnect value) openIdConnect,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SecuritySchemeApiKey value)? apiKey,
@@ -11537,8 +12281,7 @@ mixin _$SecurityScheme {
     TResult? Function(_SecuritySchemeMutualTLS value)? mutualTLS,
     TResult? Function(_SecuritySchemeOauth2 value)? oauth2,
     TResult? Function(_SecuritySchemeOpenIdConnect value)? openIdConnect,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SecuritySchemeApiKey value)? apiKey,
@@ -11547,10 +12290,14 @@ mixin _$SecurityScheme {
     TResult Function(_SecuritySchemeOauth2 value)? oauth2,
     TResult Function(_SecuritySchemeOpenIdConnect value)? openIdConnect,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this SecurityScheme to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SecuritySchemeCopyWith<SecurityScheme> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -11558,8 +12305,9 @@ mixin _$SecurityScheme {
 /// @nodoc
 abstract class $SecuritySchemeCopyWith<$Res> {
   factory $SecuritySchemeCopyWith(
-          SecurityScheme value, $Res Function(SecurityScheme) then) =
-      _$SecuritySchemeCopyWithImpl<$Res, SecurityScheme>;
+    SecurityScheme value,
+    $Res Function(SecurityScheme) then,
+  ) = _$SecuritySchemeCopyWithImpl<$Res, SecurityScheme>;
   @useResult
   $Res call({String? description});
 }
@@ -11574,42 +12322,50 @@ class _$SecuritySchemeCopyWithImpl<$Res, $Val extends SecurityScheme>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? description = freezed,
-  }) {
-    return _then(_value.copyWith(
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  $Res call({Object? description = freezed}) {
+    return _then(
+      _value.copyWith(
+            description: freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                      as String?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$SecuritySchemeApiKeyImplCopyWith<$Res>
     implements $SecuritySchemeCopyWith<$Res> {
-  factory _$$SecuritySchemeApiKeyImplCopyWith(_$SecuritySchemeApiKeyImpl value,
-          $Res Function(_$SecuritySchemeApiKeyImpl) then) =
-      __$$SecuritySchemeApiKeyImplCopyWithImpl<$Res>;
+  factory _$$SecuritySchemeApiKeyImplCopyWith(
+    _$SecuritySchemeApiKeyImpl value,
+    $Res Function(_$SecuritySchemeApiKeyImpl) then,
+  ) = __$$SecuritySchemeApiKeyImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String name,
-      String? description,
-      @JsonKey(name: 'in') ApiKeyLocation location});
+  $Res call({
+    String name,
+    String? description,
+    @JsonKey(name: 'in') ApiKeyLocation location,
+  });
 }
 
 /// @nodoc
 class __$$SecuritySchemeApiKeyImplCopyWithImpl<$Res>
     extends _$SecuritySchemeCopyWithImpl<$Res, _$SecuritySchemeApiKeyImpl>
     implements _$$SecuritySchemeApiKeyImplCopyWith<$Res> {
-  __$$SecuritySchemeApiKeyImplCopyWithImpl(_$SecuritySchemeApiKeyImpl _value,
-      $Res Function(_$SecuritySchemeApiKeyImpl) _then)
-      : super(_value, _then);
+  __$$SecuritySchemeApiKeyImplCopyWithImpl(
+    _$SecuritySchemeApiKeyImpl _value,
+    $Res Function(_$SecuritySchemeApiKeyImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -11617,32 +12373,34 @@ class __$$SecuritySchemeApiKeyImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? location = null,
   }) {
-    return _then(_$SecuritySchemeApiKeyImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      location: null == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as ApiKeyLocation,
-    ));
+    return _then(
+      _$SecuritySchemeApiKeyImpl(
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        location: null == location
+            ? _value.location
+            : location // ignore: cast_nullable_to_non_nullable
+                  as ApiKeyLocation,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$SecuritySchemeApiKeyImpl implements _SecuritySchemeApiKey {
-  const _$SecuritySchemeApiKeyImpl(
-      {required this.name,
-      this.description,
-      @JsonKey(name: 'in') required this.location,
-      final String? $type})
-      : $type = $type ?? 'apiKey';
+  const _$SecuritySchemeApiKeyImpl({
+    required this.name,
+    this.description,
+    @JsonKey(name: 'in') required this.location,
+    final String? $type,
+  }) : $type = $type ?? 'apiKey';
 
   factory _$SecuritySchemeApiKeyImpl.fromJson(Map<String, dynamic> json) =>
       _$$SecuritySchemeApiKeyImplFromJson(json);
@@ -11669,7 +12427,7 @@ class _$SecuritySchemeApiKeyImpl implements _SecuritySchemeApiKey {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SecuritySchemeApiKeyImpl &&
@@ -11680,17 +12438,21 @@ class _$SecuritySchemeApiKeyImpl implements _SecuritySchemeApiKey {
                 other.location == location));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, description, location);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SecuritySchemeApiKeyImplCopyWith<_$SecuritySchemeApiKeyImpl>
-      get copyWith =>
-          __$$SecuritySchemeApiKeyImplCopyWithImpl<_$SecuritySchemeApiKeyImpl>(
-              this, _$identity);
+  get copyWith =>
+      __$$SecuritySchemeApiKeyImplCopyWithImpl<_$SecuritySchemeApiKeyImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -11734,58 +12496,66 @@ class _$SecuritySchemeApiKeyImpl implements _SecuritySchemeApiKey {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SecuritySchemeApiKeyImplToJson(
-      this,
-    );
+    return _$$SecuritySchemeApiKeyImplToJson(this);
   }
 }
 
 abstract class _SecuritySchemeApiKey implements SecurityScheme {
-  const factory _SecuritySchemeApiKey(
-          {required final String name,
-          final String? description,
-          @JsonKey(name: 'in') required final ApiKeyLocation location}) =
-      _$SecuritySchemeApiKeyImpl;
+  const factory _SecuritySchemeApiKey({
+    required final String name,
+    final String? description,
+    @JsonKey(name: 'in') required final ApiKeyLocation location,
+  }) = _$SecuritySchemeApiKeyImpl;
 
   factory _SecuritySchemeApiKey.fromJson(Map<String, dynamic> json) =
       _$SecuritySchemeApiKeyImpl.fromJson;
 
   /// The name for security scheme.
   String get name;
-  @override
 
   /// A description for security scheme.
+  @override
   String? get description;
 
   /// The location of the API key.
   @JsonKey(name: 'in')
   ApiKeyLocation get location;
+
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SecuritySchemeApiKeyImplCopyWith<_$SecuritySchemeApiKeyImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SecuritySchemeHttpImplCopyWith<$Res>
     implements $SecuritySchemeCopyWith<$Res> {
-  factory _$$SecuritySchemeHttpImplCopyWith(_$SecuritySchemeHttpImpl value,
-          $Res Function(_$SecuritySchemeHttpImpl) then) =
-      __$$SecuritySchemeHttpImplCopyWithImpl<$Res>;
+  factory _$$SecuritySchemeHttpImplCopyWith(
+    _$SecuritySchemeHttpImpl value,
+    $Res Function(_$SecuritySchemeHttpImpl) then,
+  ) = __$$SecuritySchemeHttpImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {HttpSecurityScheme scheme, String? bearerFormat, String? description});
+  $Res call({
+    HttpSecurityScheme scheme,
+    String? bearerFormat,
+    String? description,
+  });
 }
 
 /// @nodoc
 class __$$SecuritySchemeHttpImplCopyWithImpl<$Res>
     extends _$SecuritySchemeCopyWithImpl<$Res, _$SecuritySchemeHttpImpl>
     implements _$$SecuritySchemeHttpImplCopyWith<$Res> {
-  __$$SecuritySchemeHttpImplCopyWithImpl(_$SecuritySchemeHttpImpl _value,
-      $Res Function(_$SecuritySchemeHttpImpl) _then)
-      : super(_value, _then);
+  __$$SecuritySchemeHttpImplCopyWithImpl(
+    _$SecuritySchemeHttpImpl _value,
+    $Res Function(_$SecuritySchemeHttpImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -11793,32 +12563,34 @@ class __$$SecuritySchemeHttpImplCopyWithImpl<$Res>
     Object? bearerFormat = freezed,
     Object? description = freezed,
   }) {
-    return _then(_$SecuritySchemeHttpImpl(
-      scheme: null == scheme
-          ? _value.scheme
-          : scheme // ignore: cast_nullable_to_non_nullable
-              as HttpSecurityScheme,
-      bearerFormat: freezed == bearerFormat
-          ? _value.bearerFormat
-          : bearerFormat // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$SecuritySchemeHttpImpl(
+        scheme: null == scheme
+            ? _value.scheme
+            : scheme // ignore: cast_nullable_to_non_nullable
+                  as HttpSecurityScheme,
+        bearerFormat: freezed == bearerFormat
+            ? _value.bearerFormat
+            : bearerFormat // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$SecuritySchemeHttpImpl implements _SecuritySchemeHttp {
-  const _$SecuritySchemeHttpImpl(
-      {required this.scheme,
-      this.bearerFormat,
-      this.description,
-      final String? $type})
-      : $type = $type ?? 'http';
+  const _$SecuritySchemeHttpImpl({
+    required this.scheme,
+    this.bearerFormat,
+    this.description,
+    final String? $type,
+  }) : $type = $type ?? 'http';
 
   factory _$SecuritySchemeHttpImpl.fromJson(Map<String, dynamic> json) =>
       _$$SecuritySchemeHttpImplFromJson(json);
@@ -11844,7 +12616,7 @@ class _$SecuritySchemeHttpImpl implements _SecuritySchemeHttp {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SecuritySchemeHttpImpl &&
@@ -11855,17 +12627,21 @@ class _$SecuritySchemeHttpImpl implements _SecuritySchemeHttp {
                 other.description == description));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, scheme, bearerFormat, description);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SecuritySchemeHttpImplCopyWith<_$SecuritySchemeHttpImpl> get copyWith =>
       __$$SecuritySchemeHttpImplCopyWithImpl<_$SecuritySchemeHttpImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -11909,17 +12685,16 @@ class _$SecuritySchemeHttpImpl implements _SecuritySchemeHttp {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SecuritySchemeHttpImplToJson(
-      this,
-    );
+    return _$$SecuritySchemeHttpImplToJson(this);
   }
 }
 
 abstract class _SecuritySchemeHttp implements SecurityScheme {
-  const factory _SecuritySchemeHttp(
-      {required final HttpSecurityScheme scheme,
-      final String? bearerFormat,
-      final String? description}) = _$SecuritySchemeHttpImpl;
+  const factory _SecuritySchemeHttp({
+    required final HttpSecurityScheme scheme,
+    final String? bearerFormat,
+    final String? description,
+  }) = _$SecuritySchemeHttpImpl;
 
   factory _SecuritySchemeHttp.fromJson(Map<String, dynamic> json) =
       _$SecuritySchemeHttpImpl.fromJson;
@@ -11929,12 +12704,15 @@ abstract class _SecuritySchemeHttp implements SecurityScheme {
 
   /// A hint to the client to identify how the bearer token is formatted.
   String? get bearerFormat;
-  @override
 
   /// A description for security scheme.
-  String? get description;
   @override
-  @JsonKey(ignore: true)
+  String? get description;
+
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SecuritySchemeHttpImplCopyWith<_$SecuritySchemeHttpImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -11943,9 +12721,9 @@ abstract class _SecuritySchemeHttp implements SecurityScheme {
 abstract class _$$SecuritySchemeMutualTLSImplCopyWith<$Res>
     implements $SecuritySchemeCopyWith<$Res> {
   factory _$$SecuritySchemeMutualTLSImplCopyWith(
-          _$SecuritySchemeMutualTLSImpl value,
-          $Res Function(_$SecuritySchemeMutualTLSImpl) then) =
-      __$$SecuritySchemeMutualTLSImplCopyWithImpl<$Res>;
+    _$SecuritySchemeMutualTLSImpl value,
+    $Res Function(_$SecuritySchemeMutualTLSImpl) then,
+  ) = __$$SecuritySchemeMutualTLSImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? description});
@@ -11956,21 +12734,23 @@ class __$$SecuritySchemeMutualTLSImplCopyWithImpl<$Res>
     extends _$SecuritySchemeCopyWithImpl<$Res, _$SecuritySchemeMutualTLSImpl>
     implements _$$SecuritySchemeMutualTLSImplCopyWith<$Res> {
   __$$SecuritySchemeMutualTLSImplCopyWithImpl(
-      _$SecuritySchemeMutualTLSImpl _value,
-      $Res Function(_$SecuritySchemeMutualTLSImpl) _then)
-      : super(_value, _then);
+    _$SecuritySchemeMutualTLSImpl _value,
+    $Res Function(_$SecuritySchemeMutualTLSImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? description = freezed,
-  }) {
-    return _then(_$SecuritySchemeMutualTLSImpl(
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? description = freezed}) {
+    return _then(
+      _$SecuritySchemeMutualTLSImpl(
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
@@ -11978,7 +12758,7 @@ class __$$SecuritySchemeMutualTLSImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SecuritySchemeMutualTLSImpl implements _SecuritySchemeMutualTLS {
   const _$SecuritySchemeMutualTLSImpl({this.description, final String? $type})
-      : $type = $type ?? 'mutualTLS';
+    : $type = $type ?? 'mutualTLS';
 
   factory _$SecuritySchemeMutualTLSImpl.fromJson(Map<String, dynamic> json) =>
       _$$SecuritySchemeMutualTLSImplFromJson(json);
@@ -11996,7 +12776,7 @@ class _$SecuritySchemeMutualTLSImpl implements _SecuritySchemeMutualTLS {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SecuritySchemeMutualTLSImpl &&
@@ -12004,16 +12784,20 @@ class _$SecuritySchemeMutualTLSImpl implements _SecuritySchemeMutualTLS {
                 other.description == description));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, description);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SecuritySchemeMutualTLSImplCopyWith<_$SecuritySchemeMutualTLSImpl>
-      get copyWith => __$$SecuritySchemeMutualTLSImplCopyWithImpl<
-          _$SecuritySchemeMutualTLSImpl>(this, _$identity);
+  get copyWith =>
+      __$$SecuritySchemeMutualTLSImplCopyWithImpl<
+        _$SecuritySchemeMutualTLSImpl
+      >(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -12057,9 +12841,7 @@ class _$SecuritySchemeMutualTLSImpl implements _SecuritySchemeMutualTLS {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SecuritySchemeMutualTLSImplToJson(
-      this,
-    );
+    return _$$SecuritySchemeMutualTLSImplToJson(this);
   }
 }
 
@@ -12070,22 +12852,25 @@ abstract class _SecuritySchemeMutualTLS implements SecurityScheme {
   factory _SecuritySchemeMutualTLS.fromJson(Map<String, dynamic> json) =
       _$SecuritySchemeMutualTLSImpl.fromJson;
 
-  @override
-
   /// A description for security scheme.
-  String? get description;
   @override
-  @JsonKey(ignore: true)
+  String? get description;
+
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SecuritySchemeMutualTLSImplCopyWith<_$SecuritySchemeMutualTLSImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SecuritySchemeOauth2ImplCopyWith<$Res>
     implements $SecuritySchemeCopyWith<$Res> {
-  factory _$$SecuritySchemeOauth2ImplCopyWith(_$SecuritySchemeOauth2Impl value,
-          $Res Function(_$SecuritySchemeOauth2Impl) then) =
-      __$$SecuritySchemeOauth2ImplCopyWithImpl<$Res>;
+  factory _$$SecuritySchemeOauth2ImplCopyWith(
+    _$SecuritySchemeOauth2Impl value,
+    $Res Function(_$SecuritySchemeOauth2Impl) then,
+  ) = __$$SecuritySchemeOauth2ImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? description, OAuthFlows flows});
@@ -12097,28 +12882,32 @@ abstract class _$$SecuritySchemeOauth2ImplCopyWith<$Res>
 class __$$SecuritySchemeOauth2ImplCopyWithImpl<$Res>
     extends _$SecuritySchemeCopyWithImpl<$Res, _$SecuritySchemeOauth2Impl>
     implements _$$SecuritySchemeOauth2ImplCopyWith<$Res> {
-  __$$SecuritySchemeOauth2ImplCopyWithImpl(_$SecuritySchemeOauth2Impl _value,
-      $Res Function(_$SecuritySchemeOauth2Impl) _then)
-      : super(_value, _then);
+  __$$SecuritySchemeOauth2ImplCopyWithImpl(
+    _$SecuritySchemeOauth2Impl _value,
+    $Res Function(_$SecuritySchemeOauth2Impl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? description = freezed,
-    Object? flows = null,
-  }) {
-    return _then(_$SecuritySchemeOauth2Impl(
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      flows: null == flows
-          ? _value.flows
-          : flows // ignore: cast_nullable_to_non_nullable
-              as OAuthFlows,
-    ));
+  $Res call({Object? description = freezed, Object? flows = null}) {
+    return _then(
+      _$SecuritySchemeOauth2Impl(
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        flows: null == flows
+            ? _value.flows
+            : flows // ignore: cast_nullable_to_non_nullable
+                  as OAuthFlows,
+      ),
+    );
   }
 
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OAuthFlowsCopyWith<$Res> get flows {
@@ -12131,9 +12920,11 @@ class __$$SecuritySchemeOauth2ImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SecuritySchemeOauth2Impl implements _SecuritySchemeOauth2 {
-  const _$SecuritySchemeOauth2Impl(
-      {this.description, required this.flows, final String? $type})
-      : $type = $type ?? 'oauth2';
+  const _$SecuritySchemeOauth2Impl({
+    this.description,
+    required this.flows,
+    final String? $type,
+  }) : $type = $type ?? 'oauth2';
 
   factory _$SecuritySchemeOauth2Impl.fromJson(Map<String, dynamic> json) =>
       _$$SecuritySchemeOauth2ImplFromJson(json);
@@ -12155,7 +12946,7 @@ class _$SecuritySchemeOauth2Impl implements _SecuritySchemeOauth2 {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SecuritySchemeOauth2Impl &&
@@ -12164,17 +12955,21 @@ class _$SecuritySchemeOauth2Impl implements _SecuritySchemeOauth2 {
             (identical(other.flows, flows) || other.flows == flows));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, description, flows);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SecuritySchemeOauth2ImplCopyWith<_$SecuritySchemeOauth2Impl>
-      get copyWith =>
-          __$$SecuritySchemeOauth2ImplCopyWithImpl<_$SecuritySchemeOauth2Impl>(
-              this, _$identity);
+  get copyWith =>
+      __$$SecuritySchemeOauth2ImplCopyWithImpl<_$SecuritySchemeOauth2Impl>(
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -12218,72 +13013,76 @@ class _$SecuritySchemeOauth2Impl implements _SecuritySchemeOauth2 {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SecuritySchemeOauth2ImplToJson(
-      this,
-    );
+    return _$$SecuritySchemeOauth2ImplToJson(this);
   }
 }
 
 abstract class _SecuritySchemeOauth2 implements SecurityScheme {
-  const factory _SecuritySchemeOauth2(
-      {final String? description,
-      required final OAuthFlows flows}) = _$SecuritySchemeOauth2Impl;
+  const factory _SecuritySchemeOauth2({
+    final String? description,
+    required final OAuthFlows flows,
+  }) = _$SecuritySchemeOauth2Impl;
 
   factory _SecuritySchemeOauth2.fromJson(Map<String, dynamic> json) =
       _$SecuritySchemeOauth2Impl.fromJson;
 
-  @override
-
   /// A description for security scheme.
+  @override
   String? get description;
 
   /// An object containing configuration information for the flow types supported.
   OAuthFlows get flows;
+
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SecuritySchemeOauth2ImplCopyWith<_$SecuritySchemeOauth2Impl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SecuritySchemeOpenIdConnectImplCopyWith<$Res>
     implements $SecuritySchemeCopyWith<$Res> {
   factory _$$SecuritySchemeOpenIdConnectImplCopyWith(
-          _$SecuritySchemeOpenIdConnectImpl value,
-          $Res Function(_$SecuritySchemeOpenIdConnectImpl) then) =
-      __$$SecuritySchemeOpenIdConnectImplCopyWithImpl<$Res>;
+    _$SecuritySchemeOpenIdConnectImpl value,
+    $Res Function(_$SecuritySchemeOpenIdConnectImpl) then,
+  ) = __$$SecuritySchemeOpenIdConnectImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? description, @JsonKey(name: 'openIdConnectUrl') String url});
+  $Res call({
+    String? description,
+    @JsonKey(name: 'openIdConnectUrl') String url,
+  });
 }
 
 /// @nodoc
 class __$$SecuritySchemeOpenIdConnectImplCopyWithImpl<$Res>
-    extends _$SecuritySchemeCopyWithImpl<$Res,
-        _$SecuritySchemeOpenIdConnectImpl>
+    extends
+        _$SecuritySchemeCopyWithImpl<$Res, _$SecuritySchemeOpenIdConnectImpl>
     implements _$$SecuritySchemeOpenIdConnectImplCopyWith<$Res> {
   __$$SecuritySchemeOpenIdConnectImplCopyWithImpl(
-      _$SecuritySchemeOpenIdConnectImpl _value,
-      $Res Function(_$SecuritySchemeOpenIdConnectImpl) _then)
-      : super(_value, _then);
+    _$SecuritySchemeOpenIdConnectImpl _value,
+    $Res Function(_$SecuritySchemeOpenIdConnectImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? description = freezed,
-    Object? url = null,
-  }) {
-    return _then(_$SecuritySchemeOpenIdConnectImpl(
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? description = freezed, Object? url = null}) {
+    return _then(
+      _$SecuritySchemeOpenIdConnectImpl(
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        url: null == url
+            ? _value.url
+            : url // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -12291,15 +13090,15 @@ class __$$SecuritySchemeOpenIdConnectImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SecuritySchemeOpenIdConnectImpl
     implements _SecuritySchemeOpenIdConnect {
-  const _$SecuritySchemeOpenIdConnectImpl(
-      {this.description,
-      @JsonKey(name: 'openIdConnectUrl') required this.url,
-      final String? $type})
-      : $type = $type ?? 'openIdConnect';
+  const _$SecuritySchemeOpenIdConnectImpl({
+    this.description,
+    @JsonKey(name: 'openIdConnectUrl') required this.url,
+    final String? $type,
+  }) : $type = $type ?? 'openIdConnect';
 
   factory _$SecuritySchemeOpenIdConnectImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$SecuritySchemeOpenIdConnectImplFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$$SecuritySchemeOpenIdConnectImplFromJson(json);
 
   /// A description for security scheme.
   @override
@@ -12319,7 +13118,7 @@ class _$SecuritySchemeOpenIdConnectImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SecuritySchemeOpenIdConnectImpl &&
@@ -12328,16 +13127,20 @@ class _$SecuritySchemeOpenIdConnectImpl
             (identical(other.url, url) || other.url == url));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, description, url);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SecuritySchemeOpenIdConnectImplCopyWith<_$SecuritySchemeOpenIdConnectImpl>
-      get copyWith => __$$SecuritySchemeOpenIdConnectImplCopyWithImpl<
-          _$SecuritySchemeOpenIdConnectImpl>(this, _$identity);
+  get copyWith =>
+      __$$SecuritySchemeOpenIdConnectImplCopyWithImpl<
+        _$SecuritySchemeOpenIdConnectImpl
+      >(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -12381,33 +13184,33 @@ class _$SecuritySchemeOpenIdConnectImpl
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SecuritySchemeOpenIdConnectImplToJson(
-      this,
-    );
+    return _$$SecuritySchemeOpenIdConnectImplToJson(this);
   }
 }
 
 abstract class _SecuritySchemeOpenIdConnect implements SecurityScheme {
-  const factory _SecuritySchemeOpenIdConnect(
-          {final String? description,
-          @JsonKey(name: 'openIdConnectUrl') required final String url}) =
-      _$SecuritySchemeOpenIdConnectImpl;
+  const factory _SecuritySchemeOpenIdConnect({
+    final String? description,
+    @JsonKey(name: 'openIdConnectUrl') required final String url,
+  }) = _$SecuritySchemeOpenIdConnectImpl;
 
   factory _SecuritySchemeOpenIdConnect.fromJson(Map<String, dynamic> json) =
       _$SecuritySchemeOpenIdConnectImpl.fromJson;
 
-  @override
-
   /// A description for security scheme.
+  @override
   String? get description;
 
   /// OpenId Connect URL to discover OAuth2 configuration values.
   @JsonKey(name: 'openIdConnectUrl')
   String get url;
+
+  /// Create a copy of SecurityScheme
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SecuritySchemeOpenIdConnectImplCopyWith<_$SecuritySchemeOpenIdConnectImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 Server _$ServerFromJson(Map<String, dynamic> json) {
@@ -12433,21 +13236,23 @@ mixin _$Server {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_Server value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_Server value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_Server value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Server to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Server
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ServerCopyWith<Server> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -12456,10 +13261,11 @@ abstract class $ServerCopyWith<$Res> {
   factory $ServerCopyWith(Server value, $Res Function(Server) then) =
       _$ServerCopyWithImpl<$Res, Server>;
   @useResult
-  $Res call(
-      {String? url,
-      String? description,
-      Map<String, ServerVariable>? variables});
+  $Res call({
+    String? url,
+    String? description,
+    Map<String, ServerVariable>? variables,
+  });
 }
 
 /// @nodoc
@@ -12472,6 +13278,8 @@ class _$ServerCopyWithImpl<$Res, $Val extends Server>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Server
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -12479,34 +13287,39 @@ class _$ServerCopyWithImpl<$Res, $Val extends Server>
     Object? description = freezed,
     Object? variables = freezed,
   }) {
-    return _then(_value.copyWith(
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      variables: freezed == variables
-          ? _value.variables
-          : variables // ignore: cast_nullable_to_non_nullable
-              as Map<String, ServerVariable>?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            url: freezed == url
+                ? _value.url
+                : url // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            description: freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            variables: freezed == variables
+                ? _value.variables
+                : variables // ignore: cast_nullable_to_non_nullable
+                      as Map<String, ServerVariable>?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$ServerImplCopyWith<$Res> implements $ServerCopyWith<$Res> {
   factory _$$ServerImplCopyWith(
-          _$ServerImpl value, $Res Function(_$ServerImpl) then) =
-      __$$ServerImplCopyWithImpl<$Res>;
+    _$ServerImpl value,
+    $Res Function(_$ServerImpl) then,
+  ) = __$$ServerImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? url,
-      String? description,
-      Map<String, ServerVariable>? variables});
+  $Res call({
+    String? url,
+    String? description,
+    Map<String, ServerVariable>? variables,
+  });
 }
 
 /// @nodoc
@@ -12514,9 +13327,12 @@ class __$$ServerImplCopyWithImpl<$Res>
     extends _$ServerCopyWithImpl<$Res, _$ServerImpl>
     implements _$$ServerImplCopyWith<$Res> {
   __$$ServerImplCopyWithImpl(
-      _$ServerImpl _value, $Res Function(_$ServerImpl) _then)
-      : super(_value, _then);
+    _$ServerImpl _value,
+    $Res Function(_$ServerImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of Server
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -12524,31 +13340,33 @@ class __$$ServerImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? variables = freezed,
   }) {
-    return _then(_$ServerImpl(
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      variables: freezed == variables
-          ? _value._variables
-          : variables // ignore: cast_nullable_to_non_nullable
-              as Map<String, ServerVariable>?,
-    ));
+    return _then(
+      _$ServerImpl(
+        url: freezed == url
+            ? _value.url
+            : url // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        variables: freezed == variables
+            ? _value._variables
+            : variables // ignore: cast_nullable_to_non_nullable
+                  as Map<String, ServerVariable>?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ServerImpl implements _Server {
-  const _$ServerImpl(
-      {this.url,
-      this.description,
-      final Map<String, ServerVariable>? variables})
-      : _variables = variables;
+  const _$ServerImpl({
+    this.url,
+    this.description,
+    final Map<String, ServerVariable>? variables,
+  }) : _variables = variables;
 
   factory _$ServerImpl.fromJson(Map<String, dynamic> json) =>
       _$$ServerImplFromJson(json);
@@ -12585,23 +13403,31 @@ class _$ServerImpl implements _Server {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ServerImpl &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            const DeepCollectionEquality()
-                .equals(other._variables, _variables));
+            const DeepCollectionEquality().equals(
+              other._variables,
+              _variables,
+            ));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, url, description,
-      const DeepCollectionEquality().hash(_variables));
+  int get hashCode => Object.hash(
+    runtimeType,
+    url,
+    description,
+    const DeepCollectionEquality().hash(_variables),
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Server
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ServerImplCopyWith<_$ServerImpl> get copyWith =>
@@ -12637,38 +13463,39 @@ class _$ServerImpl implements _Server {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ServerImplToJson(
-      this,
-    );
+    return _$$ServerImplToJson(this);
   }
 }
 
 abstract class _Server implements Server {
-  const factory _Server(
-      {final String? url,
-      final String? description,
-      final Map<String, ServerVariable>? variables}) = _$ServerImpl;
+  const factory _Server({
+    final String? url,
+    final String? description,
+    final Map<String, ServerVariable>? variables,
+  }) = _$ServerImpl;
 
   factory _Server.fromJson(Map<String, dynamic> json) = _$ServerImpl.fromJson;
-
-  @override
 
   /// A URL to the target host. This URL supports Server Variables and may
   /// be relative, to indicate that the host location is relative to the
   /// location where the OpenAPI document is being served. Variable
   /// substitutions will be made when a variable is named in {brackets}.
-  String? get url;
   @override
+  String? get url;
 
   /// An optional string describing the host designated by the URL.
-  String? get description;
   @override
+  String? get description;
 
   /// A map between a variable name and its value.
   /// The value is used for substitution in the server's URL template.
-  Map<String, ServerVariable>? get variables;
   @override
-  @JsonKey(ignore: true)
+  Map<String, ServerVariable>? get variables;
+
+  /// Create a copy of Server
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ServerImplCopyWith<_$ServerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -12697,21 +13524,23 @@ mixin _$ServerVariable {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_ServerVariable value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_ServerVariable value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_ServerVariable value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this ServerVariable to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ServerVariable
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ServerVariableCopyWith<ServerVariable> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -12719,13 +13548,15 @@ mixin _$ServerVariable {
 /// @nodoc
 abstract class $ServerVariableCopyWith<$Res> {
   factory $ServerVariableCopyWith(
-          ServerVariable value, $Res Function(ServerVariable) then) =
-      _$ServerVariableCopyWithImpl<$Res, ServerVariable>;
+    ServerVariable value,
+    $Res Function(ServerVariable) then,
+  ) = _$ServerVariableCopyWithImpl<$Res, ServerVariable>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'enum') List<String>? enumValue,
-      @JsonKey(name: 'default') String defaultValue,
-      String? description});
+  $Res call({
+    @JsonKey(name: 'enum') List<String>? enumValue,
+    @JsonKey(name: 'default') String defaultValue,
+    String? description,
+  });
 }
 
 /// @nodoc
@@ -12738,6 +13569,8 @@ class _$ServerVariableCopyWithImpl<$Res, $Val extends ServerVariable>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ServerVariable
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -12745,35 +13578,40 @@ class _$ServerVariableCopyWithImpl<$Res, $Val extends ServerVariable>
     Object? defaultValue = null,
     Object? description = freezed,
   }) {
-    return _then(_value.copyWith(
-      enumValue: freezed == enumValue
-          ? _value.enumValue
-          : enumValue // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      defaultValue: null == defaultValue
-          ? _value.defaultValue
-          : defaultValue // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            enumValue: freezed == enumValue
+                ? _value.enumValue
+                : enumValue // ignore: cast_nullable_to_non_nullable
+                      as List<String>?,
+            defaultValue: null == defaultValue
+                ? _value.defaultValue
+                : defaultValue // ignore: cast_nullable_to_non_nullable
+                      as String,
+            description: freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                      as String?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$ServerVariableImplCopyWith<$Res>
     implements $ServerVariableCopyWith<$Res> {
-  factory _$$ServerVariableImplCopyWith(_$ServerVariableImpl value,
-          $Res Function(_$ServerVariableImpl) then) =
-      __$$ServerVariableImplCopyWithImpl<$Res>;
+  factory _$$ServerVariableImplCopyWith(
+    _$ServerVariableImpl value,
+    $Res Function(_$ServerVariableImpl) then,
+  ) = __$$ServerVariableImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'enum') List<String>? enumValue,
-      @JsonKey(name: 'default') String defaultValue,
-      String? description});
+  $Res call({
+    @JsonKey(name: 'enum') List<String>? enumValue,
+    @JsonKey(name: 'default') String defaultValue,
+    String? description,
+  });
 }
 
 /// @nodoc
@@ -12781,9 +13619,12 @@ class __$$ServerVariableImplCopyWithImpl<$Res>
     extends _$ServerVariableCopyWithImpl<$Res, _$ServerVariableImpl>
     implements _$$ServerVariableImplCopyWith<$Res> {
   __$$ServerVariableImplCopyWithImpl(
-      _$ServerVariableImpl _value, $Res Function(_$ServerVariableImpl) _then)
-      : super(_value, _then);
+    _$ServerVariableImpl _value,
+    $Res Function(_$ServerVariableImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of ServerVariable
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -12791,31 +13632,33 @@ class __$$ServerVariableImplCopyWithImpl<$Res>
     Object? defaultValue = null,
     Object? description = freezed,
   }) {
-    return _then(_$ServerVariableImpl(
-      enumValue: freezed == enumValue
-          ? _value._enumValue
-          : enumValue // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      defaultValue: null == defaultValue
-          ? _value.defaultValue
-          : defaultValue // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$ServerVariableImpl(
+        enumValue: freezed == enumValue
+            ? _value._enumValue
+            : enumValue // ignore: cast_nullable_to_non_nullable
+                  as List<String>?,
+        defaultValue: null == defaultValue
+            ? _value.defaultValue
+            : defaultValue // ignore: cast_nullable_to_non_nullable
+                  as String,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ServerVariableImpl implements _ServerVariable {
-  const _$ServerVariableImpl(
-      {@JsonKey(name: 'enum') final List<String>? enumValue,
-      @JsonKey(name: 'default') required this.defaultValue,
-      this.description})
-      : _enumValue = enumValue;
+  const _$ServerVariableImpl({
+    @JsonKey(name: 'enum') final List<String>? enumValue,
+    @JsonKey(name: 'default') required this.defaultValue,
+    this.description,
+  }) : _enumValue = enumValue;
 
   factory _$ServerVariableImpl.fromJson(Map<String, dynamic> json) =>
       _$$ServerVariableImplFromJson(json);
@@ -12854,32 +13697,39 @@ class _$ServerVariableImpl implements _ServerVariable {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ServerVariableImpl &&
-            const DeepCollectionEquality()
-                .equals(other._enumValue, _enumValue) &&
+            const DeepCollectionEquality().equals(
+              other._enumValue,
+              _enumValue,
+            ) &&
             (identical(other.defaultValue, defaultValue) ||
                 other.defaultValue == defaultValue) &&
             (identical(other.description, description) ||
                 other.description == description));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_enumValue),
-      defaultValue,
-      description);
+    runtimeType,
+    const DeepCollectionEquality().hash(_enumValue),
+    defaultValue,
+    description,
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ServerVariable
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ServerVariableImplCopyWith<_$ServerVariableImpl> get copyWith =>
       __$$ServerVariableImplCopyWithImpl<_$ServerVariableImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -12911,41 +13761,42 @@ class _$ServerVariableImpl implements _ServerVariable {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ServerVariableImplToJson(
-      this,
-    );
+    return _$$ServerVariableImplToJson(this);
   }
 }
 
 abstract class _ServerVariable implements ServerVariable {
-  const factory _ServerVariable(
-      {@JsonKey(name: 'enum') final List<String>? enumValue,
-      @JsonKey(name: 'default') required final String defaultValue,
-      final String? description}) = _$ServerVariableImpl;
+  const factory _ServerVariable({
+    @JsonKey(name: 'enum') final List<String>? enumValue,
+    @JsonKey(name: 'default') required final String defaultValue,
+    final String? description,
+  }) = _$ServerVariableImpl;
 
   factory _ServerVariable.fromJson(Map<String, dynamic> json) =
       _$ServerVariableImpl.fromJson;
 
-  @override
-
   /// An enumeration of string values to be used if the substitution
   /// options are from a limited set. The array must not be empty.
+  @override
   @JsonKey(name: 'enum')
   List<String>? get enumValue;
-  @override
 
   /// The default value to use for substitution, which SHALL be sent if an alternate
   /// value is not supplied. Note this behavior is different than the Schema Object's
   /// treatment of default values, because in those cases parameter values are optional.
   /// If the enum is defined, the value must exist in the enum's values.
+  @override
   @JsonKey(name: 'default')
   String get defaultValue;
-  @override
 
   /// An optional string describing the host designated by the URL.
-  String? get description;
   @override
-  @JsonKey(ignore: true)
+  String? get description;
+
+  /// Create a copy of ServerVariable
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ServerVariableImplCopyWith<_$ServerVariableImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -13010,21 +13861,20 @@ mixin _$OpenApi {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_OpenApi value) $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_OpenApi value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_OpenApi value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OpenApi
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OpenApiCopyWith<OpenApi> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -13033,18 +13883,19 @@ abstract class $OpenApiCopyWith<$Res> {
   factory $OpenApiCopyWith(OpenApi value, $Res Function(OpenApi) then) =
       _$OpenApiCopyWithImpl<$Res, OpenApi>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'openapi') String version,
-      Info info,
-      ExternalDocs? externalDocs,
-      String? jsonSchemaDialect,
-      List<Server>? servers,
-      List<Tag>? tags,
-      Map<String, PathItem>? paths,
-      Map<String, PathItem>? webhooks,
-      Components? components,
-      List<Security>? security,
-      Map<String, List<String>> extraSchemaMapping});
+  $Res call({
+    @JsonKey(name: 'openapi') String version,
+    Info info,
+    ExternalDocs? externalDocs,
+    String? jsonSchemaDialect,
+    List<Server>? servers,
+    List<Tag>? tags,
+    Map<String, PathItem>? paths,
+    Map<String, PathItem>? webhooks,
+    Components? components,
+    List<Security>? security,
+    Map<String, List<String>> extraSchemaMapping,
+  });
 
   $InfoCopyWith<$Res> get info;
   $ExternalDocsCopyWith<$Res>? get externalDocs;
@@ -13061,6 +13912,8 @@ class _$OpenApiCopyWithImpl<$Res, $Val extends OpenApi>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OpenApi
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -13076,54 +13929,59 @@ class _$OpenApiCopyWithImpl<$Res, $Val extends OpenApi>
     Object? security = freezed,
     Object? extraSchemaMapping = null,
   }) {
-    return _then(_value.copyWith(
-      version: null == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as String,
-      info: null == info
-          ? _value.info
-          : info // ignore: cast_nullable_to_non_nullable
-              as Info,
-      externalDocs: freezed == externalDocs
-          ? _value.externalDocs
-          : externalDocs // ignore: cast_nullable_to_non_nullable
-              as ExternalDocs?,
-      jsonSchemaDialect: freezed == jsonSchemaDialect
-          ? _value.jsonSchemaDialect
-          : jsonSchemaDialect // ignore: cast_nullable_to_non_nullable
-              as String?,
-      servers: freezed == servers
-          ? _value.servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<Server>?,
-      tags: freezed == tags
-          ? _value.tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<Tag>?,
-      paths: freezed == paths
-          ? _value.paths
-          : paths // ignore: cast_nullable_to_non_nullable
-              as Map<String, PathItem>?,
-      webhooks: freezed == webhooks
-          ? _value.webhooks
-          : webhooks // ignore: cast_nullable_to_non_nullable
-              as Map<String, PathItem>?,
-      components: freezed == components
-          ? _value.components
-          : components // ignore: cast_nullable_to_non_nullable
-              as Components?,
-      security: freezed == security
-          ? _value.security
-          : security // ignore: cast_nullable_to_non_nullable
-              as List<Security>?,
-      extraSchemaMapping: null == extraSchemaMapping
-          ? _value.extraSchemaMapping
-          : extraSchemaMapping // ignore: cast_nullable_to_non_nullable
-              as Map<String, List<String>>,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            version: null == version
+                ? _value.version
+                : version // ignore: cast_nullable_to_non_nullable
+                      as String,
+            info: null == info
+                ? _value.info
+                : info // ignore: cast_nullable_to_non_nullable
+                      as Info,
+            externalDocs: freezed == externalDocs
+                ? _value.externalDocs
+                : externalDocs // ignore: cast_nullable_to_non_nullable
+                      as ExternalDocs?,
+            jsonSchemaDialect: freezed == jsonSchemaDialect
+                ? _value.jsonSchemaDialect
+                : jsonSchemaDialect // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            servers: freezed == servers
+                ? _value.servers
+                : servers // ignore: cast_nullable_to_non_nullable
+                      as List<Server>?,
+            tags: freezed == tags
+                ? _value.tags
+                : tags // ignore: cast_nullable_to_non_nullable
+                      as List<Tag>?,
+            paths: freezed == paths
+                ? _value.paths
+                : paths // ignore: cast_nullable_to_non_nullable
+                      as Map<String, PathItem>?,
+            webhooks: freezed == webhooks
+                ? _value.webhooks
+                : webhooks // ignore: cast_nullable_to_non_nullable
+                      as Map<String, PathItem>?,
+            components: freezed == components
+                ? _value.components
+                : components // ignore: cast_nullable_to_non_nullable
+                      as Components?,
+            security: freezed == security
+                ? _value.security
+                : security // ignore: cast_nullable_to_non_nullable
+                      as List<Security>?,
+            extraSchemaMapping: null == extraSchemaMapping
+                ? _value.extraSchemaMapping
+                : extraSchemaMapping // ignore: cast_nullable_to_non_nullable
+                      as Map<String, List<String>>,
+          )
+          as $Val,
+    );
   }
 
+  /// Create a copy of OpenApi
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $InfoCopyWith<$Res> get info {
@@ -13132,6 +13990,8 @@ class _$OpenApiCopyWithImpl<$Res, $Val extends OpenApi>
     });
   }
 
+  /// Create a copy of OpenApi
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ExternalDocsCopyWith<$Res>? get externalDocs {
@@ -13144,6 +14004,8 @@ class _$OpenApiCopyWithImpl<$Res, $Val extends OpenApi>
     });
   }
 
+  /// Create a copy of OpenApi
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ComponentsCopyWith<$Res>? get components {
@@ -13160,22 +14022,24 @@ class _$OpenApiCopyWithImpl<$Res, $Val extends OpenApi>
 /// @nodoc
 abstract class _$$OpenApiImplCopyWith<$Res> implements $OpenApiCopyWith<$Res> {
   factory _$$OpenApiImplCopyWith(
-          _$OpenApiImpl value, $Res Function(_$OpenApiImpl) then) =
-      __$$OpenApiImplCopyWithImpl<$Res>;
+    _$OpenApiImpl value,
+    $Res Function(_$OpenApiImpl) then,
+  ) = __$$OpenApiImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'openapi') String version,
-      Info info,
-      ExternalDocs? externalDocs,
-      String? jsonSchemaDialect,
-      List<Server>? servers,
-      List<Tag>? tags,
-      Map<String, PathItem>? paths,
-      Map<String, PathItem>? webhooks,
-      Components? components,
-      List<Security>? security,
-      Map<String, List<String>> extraSchemaMapping});
+  $Res call({
+    @JsonKey(name: 'openapi') String version,
+    Info info,
+    ExternalDocs? externalDocs,
+    String? jsonSchemaDialect,
+    List<Server>? servers,
+    List<Tag>? tags,
+    Map<String, PathItem>? paths,
+    Map<String, PathItem>? webhooks,
+    Components? components,
+    List<Security>? security,
+    Map<String, List<String>> extraSchemaMapping,
+  });
 
   @override
   $InfoCopyWith<$Res> get info;
@@ -13190,9 +14054,12 @@ class __$$OpenApiImplCopyWithImpl<$Res>
     extends _$OpenApiCopyWithImpl<$Res, _$OpenApiImpl>
     implements _$$OpenApiImplCopyWith<$Res> {
   __$$OpenApiImplCopyWithImpl(
-      _$OpenApiImpl _value, $Res Function(_$OpenApiImpl) _then)
-      : super(_value, _then);
+    _$OpenApiImpl _value,
+    $Res Function(_$OpenApiImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of OpenApi
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -13208,77 +14075,79 @@ class __$$OpenApiImplCopyWithImpl<$Res>
     Object? security = freezed,
     Object? extraSchemaMapping = null,
   }) {
-    return _then(_$OpenApiImpl(
-      version: null == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as String,
-      info: null == info
-          ? _value.info
-          : info // ignore: cast_nullable_to_non_nullable
-              as Info,
-      externalDocs: freezed == externalDocs
-          ? _value.externalDocs
-          : externalDocs // ignore: cast_nullable_to_non_nullable
-              as ExternalDocs?,
-      jsonSchemaDialect: freezed == jsonSchemaDialect
-          ? _value.jsonSchemaDialect
-          : jsonSchemaDialect // ignore: cast_nullable_to_non_nullable
-              as String?,
-      servers: freezed == servers
-          ? _value._servers
-          : servers // ignore: cast_nullable_to_non_nullable
-              as List<Server>?,
-      tags: freezed == tags
-          ? _value._tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<Tag>?,
-      paths: freezed == paths
-          ? _value._paths
-          : paths // ignore: cast_nullable_to_non_nullable
-              as Map<String, PathItem>?,
-      webhooks: freezed == webhooks
-          ? _value._webhooks
-          : webhooks // ignore: cast_nullable_to_non_nullable
-              as Map<String, PathItem>?,
-      components: freezed == components
-          ? _value.components
-          : components // ignore: cast_nullable_to_non_nullable
-              as Components?,
-      security: freezed == security
-          ? _value._security
-          : security // ignore: cast_nullable_to_non_nullable
-              as List<Security>?,
-      extraSchemaMapping: null == extraSchemaMapping
-          ? _value._extraSchemaMapping
-          : extraSchemaMapping // ignore: cast_nullable_to_non_nullable
-              as Map<String, List<String>>,
-    ));
+    return _then(
+      _$OpenApiImpl(
+        version: null == version
+            ? _value.version
+            : version // ignore: cast_nullable_to_non_nullable
+                  as String,
+        info: null == info
+            ? _value.info
+            : info // ignore: cast_nullable_to_non_nullable
+                  as Info,
+        externalDocs: freezed == externalDocs
+            ? _value.externalDocs
+            : externalDocs // ignore: cast_nullable_to_non_nullable
+                  as ExternalDocs?,
+        jsonSchemaDialect: freezed == jsonSchemaDialect
+            ? _value.jsonSchemaDialect
+            : jsonSchemaDialect // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        servers: freezed == servers
+            ? _value._servers
+            : servers // ignore: cast_nullable_to_non_nullable
+                  as List<Server>?,
+        tags: freezed == tags
+            ? _value._tags
+            : tags // ignore: cast_nullable_to_non_nullable
+                  as List<Tag>?,
+        paths: freezed == paths
+            ? _value._paths
+            : paths // ignore: cast_nullable_to_non_nullable
+                  as Map<String, PathItem>?,
+        webhooks: freezed == webhooks
+            ? _value._webhooks
+            : webhooks // ignore: cast_nullable_to_non_nullable
+                  as Map<String, PathItem>?,
+        components: freezed == components
+            ? _value.components
+            : components // ignore: cast_nullable_to_non_nullable
+                  as Components?,
+        security: freezed == security
+            ? _value._security
+            : security // ignore: cast_nullable_to_non_nullable
+                  as List<Security>?,
+        extraSchemaMapping: null == extraSchemaMapping
+            ? _value._extraSchemaMapping
+            : extraSchemaMapping // ignore: cast_nullable_to_non_nullable
+                  as Map<String, List<String>>,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$OpenApiImpl extends _OpenApi {
-  const _$OpenApiImpl(
-      {@JsonKey(name: 'openapi') this.version = '3.0.3',
-      required this.info,
-      this.externalDocs,
-      this.jsonSchemaDialect,
-      final List<Server>? servers,
-      final List<Tag>? tags,
-      final Map<String, PathItem>? paths,
-      final Map<String, PathItem>? webhooks,
-      this.components,
-      final List<Security>? security,
-      final Map<String, List<String>> extraSchemaMapping = const {}})
-      : _servers = servers,
-        _tags = tags,
-        _paths = paths,
-        _webhooks = webhooks,
-        _security = security,
-        _extraSchemaMapping = extraSchemaMapping,
-        super._();
+  const _$OpenApiImpl({
+    @JsonKey(name: 'openapi') this.version = '3.0.3',
+    required this.info,
+    this.externalDocs,
+    this.jsonSchemaDialect,
+    final List<Server>? servers,
+    final List<Tag>? tags,
+    final Map<String, PathItem>? paths,
+    final Map<String, PathItem>? webhooks,
+    this.components,
+    final List<Security>? security,
+    final Map<String, List<String>> extraSchemaMapping = const {},
+  }) : _servers = servers,
+       _tags = tags,
+       _paths = paths,
+       _webhooks = webhooks,
+       _security = security,
+       _extraSchemaMapping = extraSchemaMapping,
+       super._();
 
   /// This string must be the version number of the
   /// OpenAPI Specification that the OpenAPI document uses.
@@ -13419,7 +14288,7 @@ class _$OpenApiImpl extends _OpenApi {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OpenApiImpl &&
@@ -13436,26 +14305,31 @@ class _$OpenApiImpl extends _OpenApi {
             (identical(other.components, components) ||
                 other.components == components) &&
             const DeepCollectionEquality().equals(other._security, _security) &&
-            const DeepCollectionEquality()
-                .equals(other._extraSchemaMapping, _extraSchemaMapping));
+            const DeepCollectionEquality().equals(
+              other._extraSchemaMapping,
+              _extraSchemaMapping,
+            ));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      version,
-      info,
-      externalDocs,
-      jsonSchemaDialect,
-      const DeepCollectionEquality().hash(_servers),
-      const DeepCollectionEquality().hash(_tags),
-      const DeepCollectionEquality().hash(_paths),
-      const DeepCollectionEquality().hash(_webhooks),
-      components,
-      const DeepCollectionEquality().hash(_security),
-      const DeepCollectionEquality().hash(_extraSchemaMapping));
+    runtimeType,
+    version,
+    info,
+    externalDocs,
+    jsonSchemaDialect,
+    const DeepCollectionEquality().hash(_servers),
+    const DeepCollectionEquality().hash(_tags),
+    const DeepCollectionEquality().hash(_paths),
+    const DeepCollectionEquality().hash(_webhooks),
+    components,
+    const DeepCollectionEquality().hash(_security),
+    const DeepCollectionEquality().hash(_extraSchemaMapping),
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OpenApi
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OpenApiImplCopyWith<_$OpenApiImpl> get copyWith =>
@@ -13491,58 +14365,57 @@ class _$OpenApiImpl extends _OpenApi {
 }
 
 abstract class _OpenApi extends OpenApi {
-  const factory _OpenApi(
-      {@JsonKey(name: 'openapi') final String version,
-      required final Info info,
-      final ExternalDocs? externalDocs,
-      final String? jsonSchemaDialect,
-      final List<Server>? servers,
-      final List<Tag>? tags,
-      final Map<String, PathItem>? paths,
-      final Map<String, PathItem>? webhooks,
-      final Components? components,
-      final List<Security>? security,
-      final Map<String, List<String>> extraSchemaMapping}) = _$OpenApiImpl;
+  const factory _OpenApi({
+    @JsonKey(name: 'openapi') final String version,
+    required final Info info,
+    final ExternalDocs? externalDocs,
+    final String? jsonSchemaDialect,
+    final List<Server>? servers,
+    final List<Tag>? tags,
+    final Map<String, PathItem>? paths,
+    final Map<String, PathItem>? webhooks,
+    final Components? components,
+    final List<Security>? security,
+    final Map<String, List<String>> extraSchemaMapping,
+  }) = _$OpenApiImpl;
   const _OpenApi._() : super._();
-
-  @override
 
   /// This string must be the version number of the
   /// OpenAPI Specification that the OpenAPI document uses.
   /// This is not related to the API [Info.version] string.
   /// By default, this generator uses `3.0.3`.
+  @override
   @JsonKey(name: 'openapi')
   String get version;
-  @override
 
   /// Provides metadata about the API.
   /// The metadata MAY be used by tooling as required.
-  Info get info;
   @override
+  Info get info;
 
   /// Additional external documentation.
-  ExternalDocs? get externalDocs;
   @override
+  ExternalDocs? get externalDocs;
 
   /// The default value for the $schema keyword within
   /// Schema Objects contained within this OAS document
   /// This must be in the form of a URI.
-  String? get jsonSchemaDialect;
   @override
+  String? get jsonSchemaDialect;
 
   /// An array of [Server] objects, which provide connectivity information to a target server.
   /// If the servers property is not provided, or is an empty array,
   /// the default value would be a [Server] object with a url value of `/`.
-  List<Server>? get servers;
   @override
+  List<Server>? get servers;
 
   /// can be included in the array.
-  List<Tag>? get tags;
   @override
+  List<Tag>? get tags;
 
   /// The available paths and operations for the API.
-  Map<String, PathItem>? get paths;
   @override
+  Map<String, PathItem>? get paths;
 
   /// The incoming webhooks that may be received as part of this
   /// API and that the API consumer MAY choose to implement.
@@ -13551,12 +14424,12 @@ abstract class _OpenApi extends OpenApi {
   /// band registration. The key name is a unique string to refer to each
   /// webhook, while the (optionally referenced) path Item Object describes a
   /// request that may be initiated by the API provider and the expected responses.
-  Map<String, PathItem>? get webhooks;
   @override
+  Map<String, PathItem>? get webhooks;
 
   /// An element to hold various schemas for the document.
-  Components? get components;
   @override
+  Components? get components;
 
   /// A declaration of which security mechanisms can be used across the API.
   /// The list of values includes alternative security requirement objects
@@ -13564,14 +14437,18 @@ abstract class _OpenApi extends OpenApi {
   /// to be satisfied to authorize a request. Individual operations can override
   /// this definition. To make security optional, an empty security requirement ({})
   /// can be included in the array.
-  List<Security>? get security;
   @override
+  List<Security>? get security;
 
   /// A mapping of any extra schemas that this generator created and the parent schema
   /// that they were created from. This is used to improve the generated schema library
-  Map<String, List<String>> get extraSchemaMapping;
   @override
-  @JsonKey(ignore: true)
+  Map<String, List<String>> get extraSchemaMapping;
+
+  /// Create a copy of OpenApi
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OpenApiImplCopyWith<_$OpenApiImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -13592,23 +14469,24 @@ mixin _$Tag {
   ExternalDocs? get externalDocs => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Tag value) $default,
-  ) =>
+  TResult map<TResult extends Object?>(TResult Function(_Tag value) $default) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_Tag value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_Tag value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Tag to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Tag
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TagCopyWith<Tag> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -13631,6 +14509,8 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Tag
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -13638,22 +14518,27 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
     Object? description = freezed,
     Object? externalDocs = freezed,
   }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      externalDocs: freezed == externalDocs
-          ? _value.externalDocs
-          : externalDocs // ignore: cast_nullable_to_non_nullable
-              as ExternalDocs?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String,
+            description: freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            externalDocs: freezed == externalDocs
+                ? _value.externalDocs
+                : externalDocs // ignore: cast_nullable_to_non_nullable
+                      as ExternalDocs?,
+          )
+          as $Val,
+    );
   }
 
+  /// Create a copy of Tag
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ExternalDocsCopyWith<$Res>? get externalDocs {
@@ -13683,8 +14568,10 @@ abstract class _$$TagImplCopyWith<$Res> implements $TagCopyWith<$Res> {
 class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
     implements _$$TagImplCopyWith<$Res> {
   __$$TagImplCopyWithImpl(_$TagImpl _value, $Res Function(_$TagImpl) _then)
-      : super(_value, _then);
+    : super(_value, _then);
 
+  /// Create a copy of Tag
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -13692,20 +14579,22 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
     Object? description = freezed,
     Object? externalDocs = freezed,
   }) {
-    return _then(_$TagImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      externalDocs: freezed == externalDocs
-          ? _value.externalDocs
-          : externalDocs // ignore: cast_nullable_to_non_nullable
-              as ExternalDocs?,
-    ));
+    return _then(
+      _$TagImpl(
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        externalDocs: freezed == externalDocs
+            ? _value.externalDocs
+            : externalDocs // ignore: cast_nullable_to_non_nullable
+                  as ExternalDocs?,
+      ),
+    );
   }
 }
 
@@ -13735,7 +14624,7 @@ class _$TagImpl implements _Tag {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TagImpl &&
@@ -13746,11 +14635,13 @@ class _$TagImpl implements _Tag {
                 other.externalDocs == externalDocs));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, description, externalDocs);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Tag
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TagImplCopyWith<_$TagImpl> get copyWith =>
@@ -13758,9 +14649,7 @@ class _$TagImpl implements _Tag {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Tag value) $default,
-  ) {
+  TResult map<TResult extends Object?>(TResult Function(_Tag value) $default) {
     return $default(this);
   }
 
@@ -13786,34 +14675,35 @@ class _$TagImpl implements _Tag {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$TagImplToJson(
-      this,
-    );
+    return _$$TagImplToJson(this);
   }
 }
 
 abstract class _Tag implements Tag {
-  const factory _Tag(
-      {required final String name,
-      final String? description,
-      final ExternalDocs? externalDocs}) = _$TagImpl;
+  const factory _Tag({
+    required final String name,
+    final String? description,
+    final ExternalDocs? externalDocs,
+  }) = _$TagImpl;
 
   factory _Tag.fromJson(Map<String, dynamic> json) = _$TagImpl.fromJson;
 
-  @override
-
   /// The name of the tag.
-  String get name;
   @override
+  String get name;
 
   /// A description of the API.
-  String? get description;
   @override
+  String? get description;
 
   /// Additional external documentation for this tag.
-  ExternalDocs? get externalDocs;
   @override
-  @JsonKey(ignore: true)
+  ExternalDocs? get externalDocs;
+
+  /// Create a copy of Tag
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TagImplCopyWith<_$TagImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -13841,23 +14731,24 @@ mixin _$Xml {
   bool? get wrapped => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Xml value) $default,
-  ) =>
+  TResult map<TResult extends Object?>(TResult Function(_Xml value) $default) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_Xml value)? $default,
-  ) =>
-      throw _privateConstructorUsedError;
+  ) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_Xml value)? $default, {
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
+  /// Serializes this Xml to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Xml
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $XmlCopyWith<Xml> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -13866,12 +14757,13 @@ abstract class $XmlCopyWith<$Res> {
   factory $XmlCopyWith(Xml value, $Res Function(Xml) then) =
       _$XmlCopyWithImpl<$Res, Xml>;
   @useResult
-  $Res call(
-      {String? name,
-      String? namespace,
-      String? prefix,
-      bool? attribute,
-      bool? wrapped});
+  $Res call({
+    String? name,
+    String? namespace,
+    String? prefix,
+    bool? attribute,
+    bool? wrapped,
+  });
 }
 
 /// @nodoc
@@ -13883,6 +14775,8 @@ class _$XmlCopyWithImpl<$Res, $Val extends Xml> implements $XmlCopyWith<$Res> {
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Xml
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -13892,28 +14786,31 @@ class _$XmlCopyWithImpl<$Res, $Val extends Xml> implements $XmlCopyWith<$Res> {
     Object? attribute = freezed,
     Object? wrapped = freezed,
   }) {
-    return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      namespace: freezed == namespace
-          ? _value.namespace
-          : namespace // ignore: cast_nullable_to_non_nullable
-              as String?,
-      prefix: freezed == prefix
-          ? _value.prefix
-          : prefix // ignore: cast_nullable_to_non_nullable
-              as String?,
-      attribute: freezed == attribute
-          ? _value.attribute
-          : attribute // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      wrapped: freezed == wrapped
-          ? _value.wrapped
-          : wrapped // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            name: freezed == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            namespace: freezed == namespace
+                ? _value.namespace
+                : namespace // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            prefix: freezed == prefix
+                ? _value.prefix
+                : prefix // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            attribute: freezed == attribute
+                ? _value.attribute
+                : attribute // ignore: cast_nullable_to_non_nullable
+                      as bool?,
+            wrapped: freezed == wrapped
+                ? _value.wrapped
+                : wrapped // ignore: cast_nullable_to_non_nullable
+                      as bool?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -13923,20 +14820,23 @@ abstract class _$$XmlImplCopyWith<$Res> implements $XmlCopyWith<$Res> {
       __$$XmlImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? name,
-      String? namespace,
-      String? prefix,
-      bool? attribute,
-      bool? wrapped});
+  $Res call({
+    String? name,
+    String? namespace,
+    String? prefix,
+    bool? attribute,
+    bool? wrapped,
+  });
 }
 
 /// @nodoc
 class __$$XmlImplCopyWithImpl<$Res> extends _$XmlCopyWithImpl<$Res, _$XmlImpl>
     implements _$$XmlImplCopyWith<$Res> {
   __$$XmlImplCopyWithImpl(_$XmlImpl _value, $Res Function(_$XmlImpl) _then)
-      : super(_value, _then);
+    : super(_value, _then);
 
+  /// Create a copy of Xml
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -13946,36 +14846,43 @@ class __$$XmlImplCopyWithImpl<$Res> extends _$XmlCopyWithImpl<$Res, _$XmlImpl>
     Object? attribute = freezed,
     Object? wrapped = freezed,
   }) {
-    return _then(_$XmlImpl(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      namespace: freezed == namespace
-          ? _value.namespace
-          : namespace // ignore: cast_nullable_to_non_nullable
-              as String?,
-      prefix: freezed == prefix
-          ? _value.prefix
-          : prefix // ignore: cast_nullable_to_non_nullable
-              as String?,
-      attribute: freezed == attribute
-          ? _value.attribute
-          : attribute // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      wrapped: freezed == wrapped
-          ? _value.wrapped
-          : wrapped // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      _$XmlImpl(
+        name: freezed == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        namespace: freezed == namespace
+            ? _value.namespace
+            : namespace // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        prefix: freezed == prefix
+            ? _value.prefix
+            : prefix // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        attribute: freezed == attribute
+            ? _value.attribute
+            : attribute // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+        wrapped: freezed == wrapped
+            ? _value.wrapped
+            : wrapped // ignore: cast_nullable_to_non_nullable
+                  as bool?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$XmlImpl implements _Xml {
-  const _$XmlImpl(
-      {this.name, this.namespace, this.prefix, this.attribute, this.wrapped});
+  const _$XmlImpl({
+    this.name,
+    this.namespace,
+    this.prefix,
+    this.attribute,
+    this.wrapped,
+  });
 
   factory _$XmlImpl.fromJson(Map<String, dynamic> json) =>
       _$$XmlImplFromJson(json);
@@ -14007,7 +14914,7 @@ class _$XmlImpl implements _Xml {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$XmlImpl &&
@@ -14020,12 +14927,14 @@ class _$XmlImpl implements _Xml {
             (identical(other.wrapped, wrapped) || other.wrapped == wrapped));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, name, namespace, prefix, attribute, wrapped);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Xml
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$XmlImplCopyWith<_$XmlImpl> get copyWith =>
@@ -14033,9 +14942,7 @@ class _$XmlImpl implements _Xml {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Xml value) $default,
-  ) {
+  TResult map<TResult extends Object?>(TResult Function(_Xml value) $default) {
     return $default(this);
   }
 
@@ -14061,45 +14968,46 @@ class _$XmlImpl implements _Xml {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$XmlImplToJson(
-      this,
-    );
+    return _$$XmlImplToJson(this);
   }
 }
 
 abstract class _Xml implements Xml {
-  const factory _Xml(
-      {final String? name,
-      final String? namespace,
-      final String? prefix,
-      final bool? attribute,
-      final bool? wrapped}) = _$XmlImpl;
+  const factory _Xml({
+    final String? name,
+    final String? namespace,
+    final String? prefix,
+    final bool? attribute,
+    final bool? wrapped,
+  }) = _$XmlImpl;
 
   factory _Xml.fromJson(Map<String, dynamic> json) = _$XmlImpl.fromJson;
 
-  @override
-
   /// Replaces the name of the element/attribute used for the described schema property
-  String? get name;
   @override
+  String? get name;
 
   /// The URI of the namespace definition
   /// This must be in the form of an absolute URI.
-  String? get namespace;
   @override
+  String? get namespace;
 
   /// The prefix to be used for the [name].
-  String? get prefix;
   @override
+  String? get prefix;
 
   /// Declares whether the property definition translates to an attribute instead of an element
-  bool? get attribute;
   @override
+  bool? get attribute;
 
   /// May be used only for an array definition
-  bool? get wrapped;
   @override
-  @JsonKey(ignore: true)
+  bool? get wrapped;
+
+  /// Create a copy of Xml
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$XmlImplCopyWith<_$XmlImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

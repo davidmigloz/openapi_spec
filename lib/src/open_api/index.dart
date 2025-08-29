@@ -1,4 +1,4 @@
-library openapi_models;
+library;
 
 import 'dart:convert';
 import 'dart:io';
@@ -44,7 +44,7 @@ part 'tag.dart';
 part 'xml.dart';
 
 // Ensures that users specify references with the same types
-bool _checkReferenceTypes(name, ref, self) {
+bool _checkReferenceTypes(dynamic name, dynamic ref, dynamic self) {
   final sRefType = ref.runtimeType.toString().replaceAll(r'_$_', '');
   final sType = self.runtimeType.toString().replaceAll(r'_$_', '');
 

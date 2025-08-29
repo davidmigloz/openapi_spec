@@ -6,7 +6,7 @@ import 'package:test/test.dart';
 // METHOD: assertFileLineByLine
 // ------------------------------------------
 
-assertFileLineByLine({
+void assertFileLineByLine({
   required String truthFile,
   required String actualFile,
 }) {
