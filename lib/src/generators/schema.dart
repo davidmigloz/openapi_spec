@@ -26,6 +26,9 @@ class SchemaGenerator extends BaseGenerator {
 
   // Internal tracker of union types
   final Map<String, List<String>> _unions = {};
+  
+  // Track written enums to avoid duplicates in union files
+  final Set<String> _writtenEnums = {};
 
   // External getter for unions
   Map<String, List<String>> get unions =>
@@ -37,6 +40,9 @@ class SchemaGenerator extends BaseGenerator {
 
   @override
   Future<void> generate() async {
+    // Clear enum tracker at the start of generation
+    _writtenEnums.clear();
+    
     final schemas = spec.components?.schemas;
     if (schemas == null) {
       return;
@@ -1119,6 +1125,13 @@ class SchemaGenerator extends BaseGenerator {
     if (values == null) {
       return;
     }
+    
+    // Check if this enum has already been written (for union files)
+    final enumSignature = '${name}_${values.join('_')}';
+    if (_writtenEnums.contains(enumSignature)) {
+      return; // Skip duplicate enum
+    }
+    _writtenEnums.add(enumSignature);
 
     file.writeAsStringSync("""
     // ==========================================
