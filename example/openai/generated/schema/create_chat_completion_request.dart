@@ -10,7 +10,7 @@ part of open_a_i_schema;
 
 /// Request object for the Create chat completion endpoint.
 @freezed
-class CreateChatCompletionRequest with _$CreateChatCompletionRequest {
+abstract class CreateChatCompletionRequest with _$CreateChatCompletionRequest {
   const CreateChatCompletionRequest._();
 
   /// Factory constructor for CreateChatCompletionRequest
@@ -33,8 +33,6 @@ class CreateChatCompletionRequest with _$CreateChatCompletionRequest {
 
   /// Map representation of object (not serialized)
   Map<String, dynamic> toMap() {
-    return {
-      'messages': messages,
-    };
+    return {'messages': messages};
   }
 }

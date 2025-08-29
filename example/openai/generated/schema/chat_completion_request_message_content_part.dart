@@ -9,7 +9,7 @@ part of open_a_i_schema;
 // ==========================================
 
 /// A content part of a user message.
-@Freezed(unionKey: 'type')
+@Freezed(unionKey: 'type', unionValueCase: FreezedUnionCase.snake)
 sealed class ChatCompletionRequestMessageContentPart
     with _$ChatCompletionRequestMessageContentPart {
   const ChatCompletionRequestMessageContentPart._();
@@ -19,31 +19,35 @@ sealed class ChatCompletionRequestMessageContentPart
   // ------------------------------------------
 
   /// A text content part of a user message.
+
   const factory ChatCompletionRequestMessageContentPart.text({
     /// The type of the content part.
     required TextContentPartType type,
 
     /// The text content.
     required String text,
-  }) = ChatCompletionRequestMessageContentPartText;
+  }) =
+      _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText;
 
   // ------------------------------------------
   // UNION: ChatCompletionRequestMessageContentPartImage
   // ------------------------------------------
 
   /// An image content part of a user message.
+
   const factory ChatCompletionRequestMessageContentPart.image({
     /// The type of the content part.
     required ImageContentPartType type,
 
     /// The URL of the image.
     @JsonKey(name: 'image_url') required ImageContentPartImageUrl imageUrl,
-  }) = ChatCompletionRequestMessageContentPartImage;
+  }) =
+      _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage;
 
   /// Object construction from a JSON representation
   factory ChatCompletionRequestMessageContentPart.fromJson(
-          Map<String, dynamic> json) =>
-      _$ChatCompletionRequestMessageContentPartFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$ChatCompletionRequestMessageContentPartFromJson(json);
 }
 
 // ==========================================
@@ -72,7 +76,7 @@ enum ImageContentPartType {
 
 /// The URL of the image.
 @freezed
-class ImageContentPartImageUrl with _$ImageContentPartImageUrl {
+abstract class ImageContentPartImageUrl with _$ImageContentPartImageUrl {
   const ImageContentPartImageUrl._();
 
   /// Factory constructor for ImageContentPartImageUrl
@@ -99,10 +103,7 @@ class ImageContentPartImageUrl with _$ImageContentPartImageUrl {
 
   /// Map representation of object (not serialized)
   Map<String, dynamic> toMap() {
-    return {
-      'url': url,
-      'detail': detail,
-    };
+    return {'url': url, 'detail': detail};
   }
 }
 

@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,3447 +9,2398 @@ part of 'schema.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
-CreateChatCompletionRequest _$CreateChatCompletionRequestFromJson(
-  Map<String, dynamic> json,
-) {
-  return _CreateChatCompletionRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$CreateChatCompletionRequest {
-  /// A list of messages comprising the conversation so far
-  @JsonKey(includeIfNull: false)
-  List<ChatCompletionRequestMessage>? get messages =>
-      throw _privateConstructorUsedError;
 
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_CreateChatCompletionRequest value) $default,
-  ) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_CreateChatCompletionRequest value)? $default,
-  ) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_CreateChatCompletionRequest value)? $default, {
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+/// A list of messages comprising the conversation so far
+@JsonKey(includeIfNull: false) List<ChatCompletionRequestMessage>? get messages;
+/// Create a copy of CreateChatCompletionRequest
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$CreateChatCompletionRequestCopyWith<CreateChatCompletionRequest> get copyWith => _$CreateChatCompletionRequestCopyWithImpl<CreateChatCompletionRequest>(this as CreateChatCompletionRequest, _$identity);
 
   /// Serializes this CreateChatCompletionRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of CreateChatCompletionRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $CreateChatCompletionRequestCopyWith<CreateChatCompletionRequest>
-  get copyWith => throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreateChatCompletionRequest&&const DeepCollectionEquality().equals(other.messages, messages));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(messages));
+
+@override
+String toString() {
+  return 'CreateChatCompletionRequest(messages: $messages)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $CreateChatCompletionRequestCopyWith<$Res> {
-  factory $CreateChatCompletionRequestCopyWith(
-    CreateChatCompletionRequest value,
-    $Res Function(CreateChatCompletionRequest) then,
-  ) =
-      _$CreateChatCompletionRequestCopyWithImpl<
-        $Res,
-        CreateChatCompletionRequest
-      >;
-  @useResult
-  $Res call({
-    @JsonKey(includeIfNull: false) List<ChatCompletionRequestMessage>? messages,
-  });
-}
+abstract mixin class $CreateChatCompletionRequestCopyWith<$Res>  {
+  factory $CreateChatCompletionRequestCopyWith(CreateChatCompletionRequest value, $Res Function(CreateChatCompletionRequest) _then) = _$CreateChatCompletionRequestCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(includeIfNull: false) List<ChatCompletionRequestMessage>? messages
+});
 
+
+
+
+}
 /// @nodoc
-class _$CreateChatCompletionRequestCopyWithImpl<
-  $Res,
-  $Val extends CreateChatCompletionRequest
->
+class _$CreateChatCompletionRequestCopyWithImpl<$Res>
     implements $CreateChatCompletionRequestCopyWith<$Res> {
-  _$CreateChatCompletionRequestCopyWithImpl(this._value, this._then);
+  _$CreateChatCompletionRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final CreateChatCompletionRequest _self;
+  final $Res Function(CreateChatCompletionRequest) _then;
 
-  /// Create a copy of CreateChatCompletionRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? messages = freezed}) {
-    return _then(
-      _value.copyWith(
-            messages: freezed == messages
-                ? _value.messages
-                : messages // ignore: cast_nullable_to_non_nullable
-                      as List<ChatCompletionRequestMessage>?,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of CreateChatCompletionRequest
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? messages = freezed,}) {
+  return _then(_self.copyWith(
+messages: freezed == messages ? _self.messages : messages // ignore: cast_nullable_to_non_nullable
+as List<ChatCompletionRequestMessage>?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$CreateChatCompletionRequestImplCopyWith<$Res>
-    implements $CreateChatCompletionRequestCopyWith<$Res> {
-  factory _$$CreateChatCompletionRequestImplCopyWith(
-    _$CreateChatCompletionRequestImpl value,
-    $Res Function(_$CreateChatCompletionRequestImpl) then,
-  ) = __$$CreateChatCompletionRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({
-    @JsonKey(includeIfNull: false) List<ChatCompletionRequestMessage>? messages,
-  });
 }
 
-/// @nodoc
-class __$$CreateChatCompletionRequestImplCopyWithImpl<$Res>
-    extends
-        _$CreateChatCompletionRequestCopyWithImpl<
-          $Res,
-          _$CreateChatCompletionRequestImpl
-        >
-    implements _$$CreateChatCompletionRequestImplCopyWith<$Res> {
-  __$$CreateChatCompletionRequestImplCopyWithImpl(
-    _$CreateChatCompletionRequestImpl _value,
-    $Res Function(_$CreateChatCompletionRequestImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of CreateChatCompletionRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? messages = freezed}) {
-    return _then(
-      _$CreateChatCompletionRequestImpl(
-        messages: freezed == messages
-            ? _value._messages
-            : messages // ignore: cast_nullable_to_non_nullable
-                  as List<ChatCompletionRequestMessage>?,
-      ),
-    );
-  }
+/// Adds pattern-matching-related methods to [CreateChatCompletionRequest].
+extension CreateChatCompletionRequestPatterns on CreateChatCompletionRequest {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _CreateChatCompletionRequest value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _CreateChatCompletionRequest() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _CreateChatCompletionRequest value)  $default,){
+final _that = this;
+switch (_that) {
+case _CreateChatCompletionRequest():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _CreateChatCompletionRequest value)?  $default,){
+final _that = this;
+switch (_that) {
+case _CreateChatCompletionRequest() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$CreateChatCompletionRequestImpl extends _CreateChatCompletionRequest {
-  const _$CreateChatCompletionRequestImpl({
-    @JsonKey(includeIfNull: false)
-    final List<ChatCompletionRequestMessage>? messages,
-  }) : _messages = messages,
-       super._();
 
-  factory _$CreateChatCompletionRequestImpl.fromJson(
-    Map<String, dynamic> json,
-  ) => _$$CreateChatCompletionRequestImplFromJson(json);
+class _CreateChatCompletionRequest extends CreateChatCompletionRequest {
+  const _CreateChatCompletionRequest({@JsonKey(includeIfNull: false) final  List<ChatCompletionRequestMessage>? messages}): _messages = messages,super._();
+  factory _CreateChatCompletionRequest.fromJson(Map<String, dynamic> json) => _$CreateChatCompletionRequestFromJson(json);
 
-  /// A list of messages comprising the conversation so far
-  final List<ChatCompletionRequestMessage>? _messages;
-
-  /// A list of messages comprising the conversation so far
-  @override
-  @JsonKey(includeIfNull: false)
-  List<ChatCompletionRequestMessage>? get messages {
-    final value = _messages;
-    if (value == null) return null;
-    if (_messages is EqualUnmodifiableListView) return _messages;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  @override
-  String toString() {
-    return 'CreateChatCompletionRequest(messages: $messages)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CreateChatCompletionRequestImpl &&
-            const DeepCollectionEquality().equals(other._messages, _messages));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_messages));
-
-  /// Create a copy of CreateChatCompletionRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CreateChatCompletionRequestImplCopyWith<_$CreateChatCompletionRequestImpl>
-  get copyWith =>
-      __$$CreateChatCompletionRequestImplCopyWithImpl<
-        _$CreateChatCompletionRequestImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_CreateChatCompletionRequest value) $default,
-  ) {
-    return $default(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_CreateChatCompletionRequest value)? $default,
-  ) {
-    return $default?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_CreateChatCompletionRequest value)? $default, {
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateChatCompletionRequestImplToJson(this);
-  }
+/// A list of messages comprising the conversation so far
+ final  List<ChatCompletionRequestMessage>? _messages;
+/// A list of messages comprising the conversation so far
+@override@JsonKey(includeIfNull: false) List<ChatCompletionRequestMessage>? get messages {
+  final value = _messages;
+  if (value == null) return null;
+  if (_messages is EqualUnmodifiableListView) return _messages;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
 }
 
-abstract class _CreateChatCompletionRequest
-    extends CreateChatCompletionRequest {
-  const factory _CreateChatCompletionRequest({
-    @JsonKey(includeIfNull: false)
-    final List<ChatCompletionRequestMessage>? messages,
-  }) = _$CreateChatCompletionRequestImpl;
-  const _CreateChatCompletionRequest._() : super._();
 
-  factory _CreateChatCompletionRequest.fromJson(Map<String, dynamic> json) =
-      _$CreateChatCompletionRequestImpl.fromJson;
+/// Create a copy of CreateChatCompletionRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$CreateChatCompletionRequestCopyWith<_CreateChatCompletionRequest> get copyWith => __$CreateChatCompletionRequestCopyWithImpl<_CreateChatCompletionRequest>(this, _$identity);
 
-  /// A list of messages comprising the conversation so far
-  @override
-  @JsonKey(includeIfNull: false)
-  List<ChatCompletionRequestMessage>? get messages;
-
-  /// Create a copy of CreateChatCompletionRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CreateChatCompletionRequestImplCopyWith<_$CreateChatCompletionRequestImpl>
-  get copyWith => throw _privateConstructorUsedError;
+@override
+Map<String, dynamic> toJson() {
+  return _$CreateChatCompletionRequestToJson(this, );
 }
 
-ChatCompletionMessageToolCall _$ChatCompletionMessageToolCallFromJson(
-  Map<String, dynamic> json,
-) {
-  return _ChatCompletionMessageToolCall.fromJson(json);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CreateChatCompletionRequest&&const DeepCollectionEquality().equals(other._messages, _messages));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_messages));
+
+@override
+String toString() {
+  return 'CreateChatCompletionRequest(messages: $messages)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$CreateChatCompletionRequestCopyWith<$Res> implements $CreateChatCompletionRequestCopyWith<$Res> {
+  factory _$CreateChatCompletionRequestCopyWith(_CreateChatCompletionRequest value, $Res Function(_CreateChatCompletionRequest) _then) = __$CreateChatCompletionRequestCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(includeIfNull: false) List<ChatCompletionRequestMessage>? messages
+});
+
+
+
+
+}
+/// @nodoc
+class __$CreateChatCompletionRequestCopyWithImpl<$Res>
+    implements _$CreateChatCompletionRequestCopyWith<$Res> {
+  __$CreateChatCompletionRequestCopyWithImpl(this._self, this._then);
+
+  final _CreateChatCompletionRequest _self;
+  final $Res Function(_CreateChatCompletionRequest) _then;
+
+/// Create a copy of CreateChatCompletionRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? messages = freezed,}) {
+  return _then(_CreateChatCompletionRequest(
+messages: freezed == messages ? _self._messages : messages // ignore: cast_nullable_to_non_nullable
+as List<ChatCompletionRequestMessage>?,
+  ));
+}
+
+
+}
+
 
 /// @nodoc
 mixin _$ChatCompletionMessageToolCall {
-  /// The ID of the tool call.
-  String get id => throw _privateConstructorUsedError;
 
-  /// The type of the tool. Currently, only `function` is supported.
-  ChatCompletionMessageToolCallType get type =>
-      throw _privateConstructorUsedError;
-
-  /// The function that the model called.
-  ChatCompletionMessageToolCallFunction get function =>
-      throw _privateConstructorUsedError;
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_ChatCompletionMessageToolCall value) $default,
-  ) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_ChatCompletionMessageToolCall value)? $default,
-  ) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_ChatCompletionMessageToolCall value)? $default, {
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+/// The ID of the tool call.
+ String get id;/// The type of the tool. Currently, only `function` is supported.
+ ChatCompletionMessageToolCallType get type;/// The function that the model called.
+ ChatCompletionMessageToolCallFunction get function;
+/// Create a copy of ChatCompletionMessageToolCall
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChatCompletionMessageToolCallCopyWith<ChatCompletionMessageToolCall> get copyWith => _$ChatCompletionMessageToolCallCopyWithImpl<ChatCompletionMessageToolCall>(this as ChatCompletionMessageToolCall, _$identity);
 
   /// Serializes this ChatCompletionMessageToolCall to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of ChatCompletionMessageToolCall
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ChatCompletionMessageToolCallCopyWith<ChatCompletionMessageToolCall>
-  get copyWith => throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChatCompletionMessageToolCall&&(identical(other.id, id) || other.id == id)&&(identical(other.type, type) || other.type == type)&&(identical(other.function, function) || other.function == function));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,type,function);
+
+@override
+String toString() {
+  return 'ChatCompletionMessageToolCall(id: $id, type: $type, function: $function)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ChatCompletionMessageToolCallCopyWith<$Res> {
-  factory $ChatCompletionMessageToolCallCopyWith(
-    ChatCompletionMessageToolCall value,
-    $Res Function(ChatCompletionMessageToolCall) then,
-  ) =
-      _$ChatCompletionMessageToolCallCopyWithImpl<
-        $Res,
-        ChatCompletionMessageToolCall
-      >;
-  @useResult
-  $Res call({
-    String id,
-    ChatCompletionMessageToolCallType type,
-    ChatCompletionMessageToolCallFunction function,
-  });
+abstract mixin class $ChatCompletionMessageToolCallCopyWith<$Res>  {
+  factory $ChatCompletionMessageToolCallCopyWith(ChatCompletionMessageToolCall value, $Res Function(ChatCompletionMessageToolCall) _then) = _$ChatCompletionMessageToolCallCopyWithImpl;
+@useResult
+$Res call({
+ String id, ChatCompletionMessageToolCallType type, ChatCompletionMessageToolCallFunction function
+});
 
-  $ChatCompletionMessageToolCallFunctionCopyWith<$Res> get function;
+
+$ChatCompletionMessageToolCallFunctionCopyWith<$Res> get function;
+
 }
-
 /// @nodoc
-class _$ChatCompletionMessageToolCallCopyWithImpl<
-  $Res,
-  $Val extends ChatCompletionMessageToolCall
->
+class _$ChatCompletionMessageToolCallCopyWithImpl<$Res>
     implements $ChatCompletionMessageToolCallCopyWith<$Res> {
-  _$ChatCompletionMessageToolCallCopyWithImpl(this._value, this._then);
+  _$ChatCompletionMessageToolCallCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ChatCompletionMessageToolCall _self;
+  final $Res Function(ChatCompletionMessageToolCall) _then;
 
-  /// Create a copy of ChatCompletionMessageToolCall
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? id = null, Object? type = null, Object? function = null}) {
-    return _then(
-      _value.copyWith(
-            id: null == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
-                      as String,
-            type: null == type
-                ? _value.type
-                : type // ignore: cast_nullable_to_non_nullable
-                      as ChatCompletionMessageToolCallType,
-            function: null == function
-                ? _value.function
-                : function // ignore: cast_nullable_to_non_nullable
-                      as ChatCompletionMessageToolCallFunction,
-          )
-          as $Val,
-    );
-  }
-
-  /// Create a copy of ChatCompletionMessageToolCall
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ChatCompletionMessageToolCallFunctionCopyWith<$Res> get function {
-    return $ChatCompletionMessageToolCallFunctionCopyWith<$Res>(
-      _value.function,
-      (value) {
-        return _then(_value.copyWith(function: value) as $Val);
-      },
-    );
-  }
+/// Create a copy of ChatCompletionMessageToolCall
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? type = null,Object? function = null,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as ChatCompletionMessageToolCallType,function: null == function ? _self.function : function // ignore: cast_nullable_to_non_nullable
+as ChatCompletionMessageToolCallFunction,
+  ));
 }
-
-/// @nodoc
-abstract class _$$ChatCompletionMessageToolCallImplCopyWith<$Res>
-    implements $ChatCompletionMessageToolCallCopyWith<$Res> {
-  factory _$$ChatCompletionMessageToolCallImplCopyWith(
-    _$ChatCompletionMessageToolCallImpl value,
-    $Res Function(_$ChatCompletionMessageToolCallImpl) then,
-  ) = __$$ChatCompletionMessageToolCallImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({
-    String id,
-    ChatCompletionMessageToolCallType type,
-    ChatCompletionMessageToolCallFunction function,
+/// Create a copy of ChatCompletionMessageToolCall
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ChatCompletionMessageToolCallFunctionCopyWith<$Res> get function {
+  
+  return $ChatCompletionMessageToolCallFunctionCopyWith<$Res>(_self.function, (value) {
+    return _then(_self.copyWith(function: value));
   });
-
-  @override
-  $ChatCompletionMessageToolCallFunctionCopyWith<$Res> get function;
+}
 }
 
-/// @nodoc
-class __$$ChatCompletionMessageToolCallImplCopyWithImpl<$Res>
-    extends
-        _$ChatCompletionMessageToolCallCopyWithImpl<
-          $Res,
-          _$ChatCompletionMessageToolCallImpl
-        >
-    implements _$$ChatCompletionMessageToolCallImplCopyWith<$Res> {
-  __$$ChatCompletionMessageToolCallImplCopyWithImpl(
-    _$ChatCompletionMessageToolCallImpl _value,
-    $Res Function(_$ChatCompletionMessageToolCallImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of ChatCompletionMessageToolCall
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? id = null, Object? type = null, Object? function = null}) {
-    return _then(
-      _$ChatCompletionMessageToolCallImpl(
-        id: null == id
-            ? _value.id
-            : id // ignore: cast_nullable_to_non_nullable
-                  as String,
-        type: null == type
-            ? _value.type
-            : type // ignore: cast_nullable_to_non_nullable
-                  as ChatCompletionMessageToolCallType,
-        function: null == function
-            ? _value.function
-            : function // ignore: cast_nullable_to_non_nullable
-                  as ChatCompletionMessageToolCallFunction,
-      ),
-    );
-  }
+/// Adds pattern-matching-related methods to [ChatCompletionMessageToolCall].
+extension ChatCompletionMessageToolCallPatterns on ChatCompletionMessageToolCall {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ChatCompletionMessageToolCall value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ChatCompletionMessageToolCall() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ChatCompletionMessageToolCall value)  $default,){
+final _that = this;
+switch (_that) {
+case _ChatCompletionMessageToolCall():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ChatCompletionMessageToolCall value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ChatCompletionMessageToolCall() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ChatCompletionMessageToolCallImpl
-    extends _ChatCompletionMessageToolCall {
-  const _$ChatCompletionMessageToolCallImpl({
-    required this.id,
-    required this.type,
-    required this.function,
-  }) : super._();
 
-  factory _$ChatCompletionMessageToolCallImpl.fromJson(
-    Map<String, dynamic> json,
-  ) => _$$ChatCompletionMessageToolCallImplFromJson(json);
+class _ChatCompletionMessageToolCall extends ChatCompletionMessageToolCall {
+  const _ChatCompletionMessageToolCall({required this.id, required this.type, required this.function}): super._();
+  factory _ChatCompletionMessageToolCall.fromJson(Map<String, dynamic> json) => _$ChatCompletionMessageToolCallFromJson(json);
 
-  /// The ID of the tool call.
-  @override
-  final String id;
+/// The ID of the tool call.
+@override final  String id;
+/// The type of the tool. Currently, only `function` is supported.
+@override final  ChatCompletionMessageToolCallType type;
+/// The function that the model called.
+@override final  ChatCompletionMessageToolCallFunction function;
 
-  /// The type of the tool. Currently, only `function` is supported.
-  @override
-  final ChatCompletionMessageToolCallType type;
+/// Create a copy of ChatCompletionMessageToolCall
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChatCompletionMessageToolCallCopyWith<_ChatCompletionMessageToolCall> get copyWith => __$ChatCompletionMessageToolCallCopyWithImpl<_ChatCompletionMessageToolCall>(this, _$identity);
 
-  /// The function that the model called.
-  @override
-  final ChatCompletionMessageToolCallFunction function;
-
-  @override
-  String toString() {
-    return 'ChatCompletionMessageToolCall(id: $id, type: $type, function: $function)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChatCompletionMessageToolCallImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.function, function) ||
-                other.function == function));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, type, function);
-
-  /// Create a copy of ChatCompletionMessageToolCall
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChatCompletionMessageToolCallImplCopyWith<
-    _$ChatCompletionMessageToolCallImpl
-  >
-  get copyWith =>
-      __$$ChatCompletionMessageToolCallImplCopyWithImpl<
-        _$ChatCompletionMessageToolCallImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_ChatCompletionMessageToolCall value) $default,
-  ) {
-    return $default(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_ChatCompletionMessageToolCall value)? $default,
-  ) {
-    return $default?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_ChatCompletionMessageToolCall value)? $default, {
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatCompletionMessageToolCallImplToJson(this);
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$ChatCompletionMessageToolCallToJson(this, );
 }
 
-abstract class _ChatCompletionMessageToolCall
-    extends ChatCompletionMessageToolCall {
-  const factory _ChatCompletionMessageToolCall({
-    required final String id,
-    required final ChatCompletionMessageToolCallType type,
-    required final ChatCompletionMessageToolCallFunction function,
-  }) = _$ChatCompletionMessageToolCallImpl;
-  const _ChatCompletionMessageToolCall._() : super._();
-
-  factory _ChatCompletionMessageToolCall.fromJson(Map<String, dynamic> json) =
-      _$ChatCompletionMessageToolCallImpl.fromJson;
-
-  /// The ID of the tool call.
-  @override
-  String get id;
-
-  /// The type of the tool. Currently, only `function` is supported.
-  @override
-  ChatCompletionMessageToolCallType get type;
-
-  /// The function that the model called.
-  @override
-  ChatCompletionMessageToolCallFunction get function;
-
-  /// Create a copy of ChatCompletionMessageToolCall
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatCompletionMessageToolCallImplCopyWith<
-    _$ChatCompletionMessageToolCallImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChatCompletionMessageToolCall&&(identical(other.id, id) || other.id == id)&&(identical(other.type, type) || other.type == type)&&(identical(other.function, function) || other.function == function));
 }
 
-ChatCompletionMessageToolCallFunction
-_$ChatCompletionMessageToolCallFunctionFromJson(Map<String, dynamic> json) {
-  return _ChatCompletionMessageToolCallFunction.fromJson(json);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,type,function);
+
+@override
+String toString() {
+  return 'ChatCompletionMessageToolCall(id: $id, type: $type, function: $function)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ChatCompletionMessageToolCallCopyWith<$Res> implements $ChatCompletionMessageToolCallCopyWith<$Res> {
+  factory _$ChatCompletionMessageToolCallCopyWith(_ChatCompletionMessageToolCall value, $Res Function(_ChatCompletionMessageToolCall) _then) = __$ChatCompletionMessageToolCallCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, ChatCompletionMessageToolCallType type, ChatCompletionMessageToolCallFunction function
+});
+
+
+@override $ChatCompletionMessageToolCallFunctionCopyWith<$Res> get function;
+
+}
+/// @nodoc
+class __$ChatCompletionMessageToolCallCopyWithImpl<$Res>
+    implements _$ChatCompletionMessageToolCallCopyWith<$Res> {
+  __$ChatCompletionMessageToolCallCopyWithImpl(this._self, this._then);
+
+  final _ChatCompletionMessageToolCall _self;
+  final $Res Function(_ChatCompletionMessageToolCall) _then;
+
+/// Create a copy of ChatCompletionMessageToolCall
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? type = null,Object? function = null,}) {
+  return _then(_ChatCompletionMessageToolCall(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as ChatCompletionMessageToolCallType,function: null == function ? _self.function : function // ignore: cast_nullable_to_non_nullable
+as ChatCompletionMessageToolCallFunction,
+  ));
+}
+
+/// Create a copy of ChatCompletionMessageToolCall
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ChatCompletionMessageToolCallFunctionCopyWith<$Res> get function {
+  
+  return $ChatCompletionMessageToolCallFunctionCopyWith<$Res>(_self.function, (value) {
+    return _then(_self.copyWith(function: value));
+  });
+}
+}
+
 
 /// @nodoc
 mixin _$ChatCompletionMessageToolCallFunction {
-  /// The name of the function to call.
-  String get name => throw _privateConstructorUsedError;
 
-  /// The arguments to call the function with, as generated by the model in JSON format. Note that the model does not always generate valid JSON, and may hallucinate parameters not defined by your function schema. Validate the arguments in your code before calling your function.
-  String get arguments => throw _privateConstructorUsedError;
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_ChatCompletionMessageToolCallFunction value) $default,
-  ) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_ChatCompletionMessageToolCallFunction value)? $default,
-  ) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_ChatCompletionMessageToolCallFunction value)? $default, {
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+/// The name of the function to call.
+ String get name;/// The arguments to call the function with, as generated by the model in JSON format. Note that the model does not always generate valid JSON, and may hallucinate parameters not defined by your function schema. Validate the arguments in your code before calling your function.
+ String get arguments;
+/// Create a copy of ChatCompletionMessageToolCallFunction
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChatCompletionMessageToolCallFunctionCopyWith<ChatCompletionMessageToolCallFunction> get copyWith => _$ChatCompletionMessageToolCallFunctionCopyWithImpl<ChatCompletionMessageToolCallFunction>(this as ChatCompletionMessageToolCallFunction, _$identity);
 
   /// Serializes this ChatCompletionMessageToolCallFunction to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of ChatCompletionMessageToolCallFunction
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ChatCompletionMessageToolCallFunctionCopyWith<
-    ChatCompletionMessageToolCallFunction
-  >
-  get copyWith => throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChatCompletionMessageToolCallFunction&&(identical(other.name, name) || other.name == name)&&(identical(other.arguments, arguments) || other.arguments == arguments));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,name,arguments);
+
+@override
+String toString() {
+  return 'ChatCompletionMessageToolCallFunction(name: $name, arguments: $arguments)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ChatCompletionMessageToolCallFunctionCopyWith<$Res> {
-  factory $ChatCompletionMessageToolCallFunctionCopyWith(
-    ChatCompletionMessageToolCallFunction value,
-    $Res Function(ChatCompletionMessageToolCallFunction) then,
-  ) =
-      _$ChatCompletionMessageToolCallFunctionCopyWithImpl<
-        $Res,
-        ChatCompletionMessageToolCallFunction
-      >;
-  @useResult
-  $Res call({String name, String arguments});
-}
+abstract mixin class $ChatCompletionMessageToolCallFunctionCopyWith<$Res>  {
+  factory $ChatCompletionMessageToolCallFunctionCopyWith(ChatCompletionMessageToolCallFunction value, $Res Function(ChatCompletionMessageToolCallFunction) _then) = _$ChatCompletionMessageToolCallFunctionCopyWithImpl;
+@useResult
+$Res call({
+ String name, String arguments
+});
 
+
+
+
+}
 /// @nodoc
-class _$ChatCompletionMessageToolCallFunctionCopyWithImpl<
-  $Res,
-  $Val extends ChatCompletionMessageToolCallFunction
->
+class _$ChatCompletionMessageToolCallFunctionCopyWithImpl<$Res>
     implements $ChatCompletionMessageToolCallFunctionCopyWith<$Res> {
-  _$ChatCompletionMessageToolCallFunctionCopyWithImpl(this._value, this._then);
+  _$ChatCompletionMessageToolCallFunctionCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ChatCompletionMessageToolCallFunction _self;
+  final $Res Function(ChatCompletionMessageToolCallFunction) _then;
 
-  /// Create a copy of ChatCompletionMessageToolCallFunction
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? name = null, Object? arguments = null}) {
-    return _then(
-      _value.copyWith(
-            name: null == name
-                ? _value.name
-                : name // ignore: cast_nullable_to_non_nullable
-                      as String,
-            arguments: null == arguments
-                ? _value.arguments
-                : arguments // ignore: cast_nullable_to_non_nullable
-                      as String,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of ChatCompletionMessageToolCallFunction
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? arguments = null,}) {
+  return _then(_self.copyWith(
+name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,arguments: null == arguments ? _self.arguments : arguments // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$ChatCompletionMessageToolCallFunctionImplCopyWith<$Res>
-    implements $ChatCompletionMessageToolCallFunctionCopyWith<$Res> {
-  factory _$$ChatCompletionMessageToolCallFunctionImplCopyWith(
-    _$ChatCompletionMessageToolCallFunctionImpl value,
-    $Res Function(_$ChatCompletionMessageToolCallFunctionImpl) then,
-  ) = __$$ChatCompletionMessageToolCallFunctionImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String name, String arguments});
 }
 
-/// @nodoc
-class __$$ChatCompletionMessageToolCallFunctionImplCopyWithImpl<$Res>
-    extends
-        _$ChatCompletionMessageToolCallFunctionCopyWithImpl<
-          $Res,
-          _$ChatCompletionMessageToolCallFunctionImpl
-        >
-    implements _$$ChatCompletionMessageToolCallFunctionImplCopyWith<$Res> {
-  __$$ChatCompletionMessageToolCallFunctionImplCopyWithImpl(
-    _$ChatCompletionMessageToolCallFunctionImpl _value,
-    $Res Function(_$ChatCompletionMessageToolCallFunctionImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of ChatCompletionMessageToolCallFunction
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? name = null, Object? arguments = null}) {
-    return _then(
-      _$ChatCompletionMessageToolCallFunctionImpl(
-        name: null == name
-            ? _value.name
-            : name // ignore: cast_nullable_to_non_nullable
-                  as String,
-        arguments: null == arguments
-            ? _value.arguments
-            : arguments // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
+/// Adds pattern-matching-related methods to [ChatCompletionMessageToolCallFunction].
+extension ChatCompletionMessageToolCallFunctionPatterns on ChatCompletionMessageToolCallFunction {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ChatCompletionMessageToolCallFunction value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ChatCompletionMessageToolCallFunction() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ChatCompletionMessageToolCallFunction value)  $default,){
+final _that = this;
+switch (_that) {
+case _ChatCompletionMessageToolCallFunction():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ChatCompletionMessageToolCallFunction value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ChatCompletionMessageToolCallFunction() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ChatCompletionMessageToolCallFunctionImpl
-    extends _ChatCompletionMessageToolCallFunction {
-  const _$ChatCompletionMessageToolCallFunctionImpl({
-    required this.name,
-    required this.arguments,
-  }) : super._();
 
-  factory _$ChatCompletionMessageToolCallFunctionImpl.fromJson(
-    Map<String, dynamic> json,
-  ) => _$$ChatCompletionMessageToolCallFunctionImplFromJson(json);
+class _ChatCompletionMessageToolCallFunction extends ChatCompletionMessageToolCallFunction {
+  const _ChatCompletionMessageToolCallFunction({required this.name, required this.arguments}): super._();
+  factory _ChatCompletionMessageToolCallFunction.fromJson(Map<String, dynamic> json) => _$ChatCompletionMessageToolCallFunctionFromJson(json);
 
-  /// The name of the function to call.
-  @override
-  final String name;
+/// The name of the function to call.
+@override final  String name;
+/// The arguments to call the function with, as generated by the model in JSON format. Note that the model does not always generate valid JSON, and may hallucinate parameters not defined by your function schema. Validate the arguments in your code before calling your function.
+@override final  String arguments;
 
-  /// The arguments to call the function with, as generated by the model in JSON format. Note that the model does not always generate valid JSON, and may hallucinate parameters not defined by your function schema. Validate the arguments in your code before calling your function.
-  @override
-  final String arguments;
+/// Create a copy of ChatCompletionMessageToolCallFunction
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChatCompletionMessageToolCallFunctionCopyWith<_ChatCompletionMessageToolCallFunction> get copyWith => __$ChatCompletionMessageToolCallFunctionCopyWithImpl<_ChatCompletionMessageToolCallFunction>(this, _$identity);
 
-  @override
-  String toString() {
-    return 'ChatCompletionMessageToolCallFunction(name: $name, arguments: $arguments)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChatCompletionMessageToolCallFunctionImpl &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.arguments, arguments) ||
-                other.arguments == arguments));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, name, arguments);
-
-  /// Create a copy of ChatCompletionMessageToolCallFunction
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChatCompletionMessageToolCallFunctionImplCopyWith<
-    _$ChatCompletionMessageToolCallFunctionImpl
-  >
-  get copyWith =>
-      __$$ChatCompletionMessageToolCallFunctionImplCopyWithImpl<
-        _$ChatCompletionMessageToolCallFunctionImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_ChatCompletionMessageToolCallFunction value) $default,
-  ) {
-    return $default(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_ChatCompletionMessageToolCallFunction value)? $default,
-  ) {
-    return $default?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_ChatCompletionMessageToolCallFunction value)? $default, {
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatCompletionMessageToolCallFunctionImplToJson(this);
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$ChatCompletionMessageToolCallFunctionToJson(this, );
 }
 
-abstract class _ChatCompletionMessageToolCallFunction
-    extends ChatCompletionMessageToolCallFunction {
-  const factory _ChatCompletionMessageToolCallFunction({
-    required final String name,
-    required final String arguments,
-  }) = _$ChatCompletionMessageToolCallFunctionImpl;
-  const _ChatCompletionMessageToolCallFunction._() : super._();
-
-  factory _ChatCompletionMessageToolCallFunction.fromJson(
-    Map<String, dynamic> json,
-  ) = _$ChatCompletionMessageToolCallFunctionImpl.fromJson;
-
-  /// The name of the function to call.
-  @override
-  String get name;
-
-  /// The arguments to call the function with, as generated by the model in JSON format. Note that the model does not always generate valid JSON, and may hallucinate parameters not defined by your function schema. Validate the arguments in your code before calling your function.
-  @override
-  String get arguments;
-
-  /// Create a copy of ChatCompletionMessageToolCallFunction
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatCompletionMessageToolCallFunctionImplCopyWith<
-    _$ChatCompletionMessageToolCallFunctionImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChatCompletionMessageToolCallFunction&&(identical(other.name, name) || other.name == name)&&(identical(other.arguments, arguments) || other.arguments == arguments));
 }
 
-CreateChatCompletionResponse _$CreateChatCompletionResponseFromJson(
-  Map<String, dynamic> json,
-) {
-  return _CreateChatCompletionResponse.fromJson(json);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,name,arguments);
+
+@override
+String toString() {
+  return 'ChatCompletionMessageToolCallFunction(name: $name, arguments: $arguments)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ChatCompletionMessageToolCallFunctionCopyWith<$Res> implements $ChatCompletionMessageToolCallFunctionCopyWith<$Res> {
+  factory _$ChatCompletionMessageToolCallFunctionCopyWith(_ChatCompletionMessageToolCallFunction value, $Res Function(_ChatCompletionMessageToolCallFunction) _then) = __$ChatCompletionMessageToolCallFunctionCopyWithImpl;
+@override @useResult
+$Res call({
+ String name, String arguments
+});
+
+
+
+
+}
+/// @nodoc
+class __$ChatCompletionMessageToolCallFunctionCopyWithImpl<$Res>
+    implements _$ChatCompletionMessageToolCallFunctionCopyWith<$Res> {
+  __$ChatCompletionMessageToolCallFunctionCopyWithImpl(this._self, this._then);
+
+  final _ChatCompletionMessageToolCallFunction _self;
+  final $Res Function(_ChatCompletionMessageToolCallFunction) _then;
+
+/// Create a copy of ChatCompletionMessageToolCallFunction
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? arguments = null,}) {
+  return _then(_ChatCompletionMessageToolCallFunction(
+name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,arguments: null == arguments ? _self.arguments : arguments // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
 
 /// @nodoc
 mixin _$CreateChatCompletionResponse {
-  /// A unique identifier for the chat completion.
-  @JsonKey(includeIfNull: false)
-  String? get id => throw _privateConstructorUsedError;
 
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_CreateChatCompletionResponse value) $default,
-  ) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_CreateChatCompletionResponse value)? $default,
-  ) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_CreateChatCompletionResponse value)? $default, {
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+/// A unique identifier for the chat completion.
+@JsonKey(includeIfNull: false) String? get id;
+/// Create a copy of CreateChatCompletionResponse
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$CreateChatCompletionResponseCopyWith<CreateChatCompletionResponse> get copyWith => _$CreateChatCompletionResponseCopyWithImpl<CreateChatCompletionResponse>(this as CreateChatCompletionResponse, _$identity);
 
   /// Serializes this CreateChatCompletionResponse to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of CreateChatCompletionResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $CreateChatCompletionResponseCopyWith<CreateChatCompletionResponse>
-  get copyWith => throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreateChatCompletionResponse&&(identical(other.id, id) || other.id == id));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id);
+
+@override
+String toString() {
+  return 'CreateChatCompletionResponse(id: $id)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $CreateChatCompletionResponseCopyWith<$Res> {
-  factory $CreateChatCompletionResponseCopyWith(
-    CreateChatCompletionResponse value,
-    $Res Function(CreateChatCompletionResponse) then,
-  ) =
-      _$CreateChatCompletionResponseCopyWithImpl<
-        $Res,
-        CreateChatCompletionResponse
-      >;
-  @useResult
-  $Res call({@JsonKey(includeIfNull: false) String? id});
-}
+abstract mixin class $CreateChatCompletionResponseCopyWith<$Res>  {
+  factory $CreateChatCompletionResponseCopyWith(CreateChatCompletionResponse value, $Res Function(CreateChatCompletionResponse) _then) = _$CreateChatCompletionResponseCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(includeIfNull: false) String? id
+});
 
+
+
+
+}
 /// @nodoc
-class _$CreateChatCompletionResponseCopyWithImpl<
-  $Res,
-  $Val extends CreateChatCompletionResponse
->
+class _$CreateChatCompletionResponseCopyWithImpl<$Res>
     implements $CreateChatCompletionResponseCopyWith<$Res> {
-  _$CreateChatCompletionResponseCopyWithImpl(this._value, this._then);
+  _$CreateChatCompletionResponseCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final CreateChatCompletionResponse _self;
+  final $Res Function(CreateChatCompletionResponse) _then;
 
-  /// Create a copy of CreateChatCompletionResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? id = freezed}) {
-    return _then(
-      _value.copyWith(
-            id: freezed == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
-                      as String?,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of CreateChatCompletionResponse
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$CreateChatCompletionResponseImplCopyWith<$Res>
-    implements $CreateChatCompletionResponseCopyWith<$Res> {
-  factory _$$CreateChatCompletionResponseImplCopyWith(
-    _$CreateChatCompletionResponseImpl value,
-    $Res Function(_$CreateChatCompletionResponseImpl) then,
-  ) = __$$CreateChatCompletionResponseImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({@JsonKey(includeIfNull: false) String? id});
 }
 
-/// @nodoc
-class __$$CreateChatCompletionResponseImplCopyWithImpl<$Res>
-    extends
-        _$CreateChatCompletionResponseCopyWithImpl<
-          $Res,
-          _$CreateChatCompletionResponseImpl
-        >
-    implements _$$CreateChatCompletionResponseImplCopyWith<$Res> {
-  __$$CreateChatCompletionResponseImplCopyWithImpl(
-    _$CreateChatCompletionResponseImpl _value,
-    $Res Function(_$CreateChatCompletionResponseImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of CreateChatCompletionResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? id = freezed}) {
-    return _then(
-      _$CreateChatCompletionResponseImpl(
-        id: freezed == id
-            ? _value.id
-            : id // ignore: cast_nullable_to_non_nullable
-                  as String?,
-      ),
-    );
-  }
+/// Adds pattern-matching-related methods to [CreateChatCompletionResponse].
+extension CreateChatCompletionResponsePatterns on CreateChatCompletionResponse {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _CreateChatCompletionResponse value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _CreateChatCompletionResponse() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _CreateChatCompletionResponse value)  $default,){
+final _that = this;
+switch (_that) {
+case _CreateChatCompletionResponse():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _CreateChatCompletionResponse value)?  $default,){
+final _that = this;
+switch (_that) {
+case _CreateChatCompletionResponse() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$CreateChatCompletionResponseImpl extends _CreateChatCompletionResponse {
-  const _$CreateChatCompletionResponseImpl({
-    @JsonKey(includeIfNull: false) this.id,
-  }) : super._();
 
-  factory _$CreateChatCompletionResponseImpl.fromJson(
-    Map<String, dynamic> json,
-  ) => _$$CreateChatCompletionResponseImplFromJson(json);
+class _CreateChatCompletionResponse extends CreateChatCompletionResponse {
+  const _CreateChatCompletionResponse({@JsonKey(includeIfNull: false) this.id}): super._();
+  factory _CreateChatCompletionResponse.fromJson(Map<String, dynamic> json) => _$CreateChatCompletionResponseFromJson(json);
 
-  /// A unique identifier for the chat completion.
-  @override
-  @JsonKey(includeIfNull: false)
-  final String? id;
+/// A unique identifier for the chat completion.
+@override@JsonKey(includeIfNull: false) final  String? id;
 
-  @override
-  String toString() {
-    return 'CreateChatCompletionResponse(id: $id)';
-  }
+/// Create a copy of CreateChatCompletionResponse
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$CreateChatCompletionResponseCopyWith<_CreateChatCompletionResponse> get copyWith => __$CreateChatCompletionResponseCopyWithImpl<_CreateChatCompletionResponse>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CreateChatCompletionResponseImpl &&
-            (identical(other.id, id) || other.id == id));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id);
-
-  /// Create a copy of CreateChatCompletionResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CreateChatCompletionResponseImplCopyWith<
-    _$CreateChatCompletionResponseImpl
-  >
-  get copyWith =>
-      __$$CreateChatCompletionResponseImplCopyWithImpl<
-        _$CreateChatCompletionResponseImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_CreateChatCompletionResponse value) $default,
-  ) {
-    return $default(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_CreateChatCompletionResponse value)? $default,
-  ) {
-    return $default?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_CreateChatCompletionResponse value)? $default, {
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateChatCompletionResponseImplToJson(this);
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$CreateChatCompletionResponseToJson(this, );
 }
 
-abstract class _CreateChatCompletionResponse
-    extends CreateChatCompletionResponse {
-  const factory _CreateChatCompletionResponse({
-    @JsonKey(includeIfNull: false) final String? id,
-  }) = _$CreateChatCompletionResponseImpl;
-  const _CreateChatCompletionResponse._() : super._();
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CreateChatCompletionResponse&&(identical(other.id, id) || other.id == id));
+}
 
-  factory _CreateChatCompletionResponse.fromJson(Map<String, dynamic> json) =
-      _$CreateChatCompletionResponseImpl.fromJson;
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id);
 
-  /// A unique identifier for the chat completion.
-  @override
-  @JsonKey(includeIfNull: false)
-  String? get id;
+@override
+String toString() {
+  return 'CreateChatCompletionResponse(id: $id)';
+}
 
-  /// Create a copy of CreateChatCompletionResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CreateChatCompletionResponseImplCopyWith<
-    _$CreateChatCompletionResponseImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
+
+}
+
+/// @nodoc
+abstract mixin class _$CreateChatCompletionResponseCopyWith<$Res> implements $CreateChatCompletionResponseCopyWith<$Res> {
+  factory _$CreateChatCompletionResponseCopyWith(_CreateChatCompletionResponse value, $Res Function(_CreateChatCompletionResponse) _then) = __$CreateChatCompletionResponseCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(includeIfNull: false) String? id
+});
+
+
+
+
+}
+/// @nodoc
+class __$CreateChatCompletionResponseCopyWithImpl<$Res>
+    implements _$CreateChatCompletionResponseCopyWith<$Res> {
+  __$CreateChatCompletionResponseCopyWithImpl(this._self, this._then);
+
+  final _CreateChatCompletionResponse _self;
+  final $Res Function(_CreateChatCompletionResponse) _then;
+
+/// Create a copy of CreateChatCompletionResponse
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,}) {
+  return _then(_CreateChatCompletionResponse(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
 }
 
 ChatCompletionRequestMessage _$ChatCompletionRequestMessageFromJson(
-  Map<String, dynamic> json,
+  Map<String, dynamic> json
 ) {
-  switch (json['role']) {
-    case 'system':
-      return ChatCompletionRequestSystemMessage.fromJson(json);
-    case 'user':
-      return ChatCompletionRequestUserMessage.fromJson(json);
-    case 'assistant':
-      return ChatCompletionRequestAssistantMessage.fromJson(json);
-    case 'tool':
-      return ChatCompletionRequestToolMessage.fromJson(json);
-    case 'function':
-      return ChatCompletionRequestFunctionMessage.fromJson(json);
-
-    default:
-      throw CheckedFromJsonException(
-        json,
-        'role',
-        'ChatCompletionRequestMessage',
-        'Invalid union type "${json['role']}"!',
-      );
-  }
+        switch (json['role']) {
+                  case 'system':
+          return _ChatCompletionRequestMessageChatCompletionRequestSystemMessage.fromJson(
+            json
+          );
+                case 'user':
+          return _ChatCompletionRequestMessageChatCompletionRequestUserMessage.fromJson(
+            json
+          );
+                case 'assistant':
+          return _ChatCompletionRequestMessageChatCompletionRequestAssistantMessage.fromJson(
+            json
+          );
+                case 'tool':
+          return _ChatCompletionRequestMessageChatCompletionRequestToolMessage.fromJson(
+            json
+          );
+                case 'function':
+          return _ChatCompletionRequestMessageChatCompletionRequestFunctionMessage.fromJson(
+            json
+          );
+        
+          default:
+            throw CheckedFromJsonException(
+  json,
+  'role',
+  'ChatCompletionRequestMessage',
+  'Invalid union type "${json['role']}"!'
+);
+        }
+      
 }
 
 /// @nodoc
 mixin _$ChatCompletionRequestMessage {
-  /// The contents of the system message.
-  Object? get content => throw _privateConstructorUsedError;
 
-  /// The role of the messages author, in this case `system`.
-  Enum get role => throw _privateConstructorUsedError;
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChatCompletionRequestSystemMessage value) system,
-    required TResult Function(ChatCompletionRequestUserMessage value) user,
-    required TResult Function(ChatCompletionRequestAssistantMessage value)
-    assistant,
-    required TResult Function(ChatCompletionRequestToolMessage value) tool,
-    required TResult Function(ChatCompletionRequestFunctionMessage value)
-    function,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChatCompletionRequestSystemMessage value)? system,
-    TResult? Function(ChatCompletionRequestUserMessage value)? user,
-    TResult? Function(ChatCompletionRequestAssistantMessage value)? assistant,
-    TResult? Function(ChatCompletionRequestToolMessage value)? tool,
-    TResult? Function(ChatCompletionRequestFunctionMessage value)? function,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChatCompletionRequestSystemMessage value)? system,
-    TResult Function(ChatCompletionRequestUserMessage value)? user,
-    TResult Function(ChatCompletionRequestAssistantMessage value)? assistant,
-    TResult Function(ChatCompletionRequestToolMessage value)? tool,
-    TResult Function(ChatCompletionRequestFunctionMessage value)? function,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+/// The contents of the system message.
+@_UserMessageContentConverter() Object? get content;/// The role of the messages author, in this case `system`.
+ Enum get role;
 
   /// Serializes this ChatCompletionRequestMessage to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChatCompletionRequestMessage&&const DeepCollectionEquality().equals(other.content, content)&&(identical(other.role, role) || other.role == role));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(content),role);
+
+@override
+String toString() {
+  return 'ChatCompletionRequestMessage(content: $content, role: $role)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ChatCompletionRequestMessageCopyWith<$Res> {
-  factory $ChatCompletionRequestMessageCopyWith(
-    ChatCompletionRequestMessage value,
-    $Res Function(ChatCompletionRequestMessage) then,
-  ) =
-      _$ChatCompletionRequestMessageCopyWithImpl<
-        $Res,
-        ChatCompletionRequestMessage
-      >;
+class $ChatCompletionRequestMessageCopyWith<$Res>  {
+$ChatCompletionRequestMessageCopyWith(ChatCompletionRequestMessage _, $Res Function(ChatCompletionRequestMessage) __);
 }
 
-/// @nodoc
-class _$ChatCompletionRequestMessageCopyWithImpl<
-  $Res,
-  $Val extends ChatCompletionRequestMessage
->
-    implements $ChatCompletionRequestMessageCopyWith<$Res> {
-  _$ChatCompletionRequestMessageCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [ChatCompletionRequestMessage].
+extension ChatCompletionRequestMessagePatterns on ChatCompletionRequestMessage {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _ChatCompletionRequestMessageChatCompletionRequestSystemMessage value)?  system,TResult Function( _ChatCompletionRequestMessageChatCompletionRequestUserMessage value)?  user,TResult Function( _ChatCompletionRequestMessageChatCompletionRequestAssistantMessage value)?  assistant,TResult Function( _ChatCompletionRequestMessageChatCompletionRequestToolMessage value)?  tool,TResult Function( _ChatCompletionRequestMessageChatCompletionRequestFunctionMessage value)?  function,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ChatCompletionRequestMessageChatCompletionRequestSystemMessage() when system != null:
+return system(_that);case _ChatCompletionRequestMessageChatCompletionRequestUserMessage() when user != null:
+return user(_that);case _ChatCompletionRequestMessageChatCompletionRequestAssistantMessage() when assistant != null:
+return assistant(_that);case _ChatCompletionRequestMessageChatCompletionRequestToolMessage() when tool != null:
+return tool(_that);case _ChatCompletionRequestMessageChatCompletionRequestFunctionMessage() when function != null:
+return function(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _ChatCompletionRequestMessageChatCompletionRequestSystemMessage value)  system,required TResult Function( _ChatCompletionRequestMessageChatCompletionRequestUserMessage value)  user,required TResult Function( _ChatCompletionRequestMessageChatCompletionRequestAssistantMessage value)  assistant,required TResult Function( _ChatCompletionRequestMessageChatCompletionRequestToolMessage value)  tool,required TResult Function( _ChatCompletionRequestMessageChatCompletionRequestFunctionMessage value)  function,}){
+final _that = this;
+switch (_that) {
+case _ChatCompletionRequestMessageChatCompletionRequestSystemMessage():
+return system(_that);case _ChatCompletionRequestMessageChatCompletionRequestUserMessage():
+return user(_that);case _ChatCompletionRequestMessageChatCompletionRequestAssistantMessage():
+return assistant(_that);case _ChatCompletionRequestMessageChatCompletionRequestToolMessage():
+return tool(_that);case _ChatCompletionRequestMessageChatCompletionRequestFunctionMessage():
+return function(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _ChatCompletionRequestMessageChatCompletionRequestSystemMessage value)?  system,TResult? Function( _ChatCompletionRequestMessageChatCompletionRequestUserMessage value)?  user,TResult? Function( _ChatCompletionRequestMessageChatCompletionRequestAssistantMessage value)?  assistant,TResult? Function( _ChatCompletionRequestMessageChatCompletionRequestToolMessage value)?  tool,TResult? Function( _ChatCompletionRequestMessageChatCompletionRequestFunctionMessage value)?  function,}){
+final _that = this;
+switch (_that) {
+case _ChatCompletionRequestMessageChatCompletionRequestSystemMessage() when system != null:
+return system(_that);case _ChatCompletionRequestMessageChatCompletionRequestUserMessage() when user != null:
+return user(_that);case _ChatCompletionRequestMessageChatCompletionRequestAssistantMessage() when assistant != null:
+return assistant(_that);case _ChatCompletionRequestMessageChatCompletionRequestToolMessage() when tool != null:
+return tool(_that);case _ChatCompletionRequestMessageChatCompletionRequestFunctionMessage() when function != null:
+return function(_that);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$ChatCompletionRequestSystemMessageImplCopyWith<$Res> {
-  factory _$$ChatCompletionRequestSystemMessageImplCopyWith(
-    _$ChatCompletionRequestSystemMessageImpl value,
-    $Res Function(_$ChatCompletionRequestSystemMessageImpl) then,
-  ) = __$$ChatCompletionRequestSystemMessageImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String? content, SystemMessageRole role});
-}
-
-/// @nodoc
-class __$$ChatCompletionRequestSystemMessageImplCopyWithImpl<$Res>
-    extends
-        _$ChatCompletionRequestMessageCopyWithImpl<
-          $Res,
-          _$ChatCompletionRequestSystemMessageImpl
-        >
-    implements _$$ChatCompletionRequestSystemMessageImplCopyWith<$Res> {
-  __$$ChatCompletionRequestSystemMessageImplCopyWithImpl(
-    _$ChatCompletionRequestSystemMessageImpl _value,
-    $Res Function(_$ChatCompletionRequestSystemMessageImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? content = freezed, Object? role = null}) {
-    return _then(
-      _$ChatCompletionRequestSystemMessageImpl(
-        content: freezed == content
-            ? _value.content
-            : content // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        role: null == role
-            ? _value.role
-            : role // ignore: cast_nullable_to_non_nullable
-                  as SystemMessageRole,
-      ),
-    );
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ChatCompletionRequestSystemMessageImpl
-    extends ChatCompletionRequestSystemMessage {
-  const _$ChatCompletionRequestSystemMessageImpl({
-    required this.content,
-    required this.role,
-  }) : super._();
-
-  factory _$ChatCompletionRequestSystemMessageImpl.fromJson(
-    Map<String, dynamic> json,
-  ) => _$$ChatCompletionRequestSystemMessageImplFromJson(json);
-
-  /// The contents of the system message.
-  @override
-  final String? content;
-
-  /// The role of the messages author, in this case `system`.
-  @override
-  final SystemMessageRole role;
-
-  @override
-  String toString() {
-    return 'ChatCompletionRequestMessage.system(content: $content, role: $role)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChatCompletionRequestSystemMessageImpl &&
-            (identical(other.content, content) || other.content == content) &&
-            (identical(other.role, role) || other.role == role));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, content, role);
-
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChatCompletionRequestSystemMessageImplCopyWith<
-    _$ChatCompletionRequestSystemMessageImpl
-  >
-  get copyWith =>
-      __$$ChatCompletionRequestSystemMessageImplCopyWithImpl<
-        _$ChatCompletionRequestSystemMessageImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChatCompletionRequestSystemMessage value) system,
-    required TResult Function(ChatCompletionRequestUserMessage value) user,
-    required TResult Function(ChatCompletionRequestAssistantMessage value)
-    assistant,
-    required TResult Function(ChatCompletionRequestToolMessage value) tool,
-    required TResult Function(ChatCompletionRequestFunctionMessage value)
-    function,
-  }) {
-    return system(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChatCompletionRequestSystemMessage value)? system,
-    TResult? Function(ChatCompletionRequestUserMessage value)? user,
-    TResult? Function(ChatCompletionRequestAssistantMessage value)? assistant,
-    TResult? Function(ChatCompletionRequestToolMessage value)? tool,
-    TResult? Function(ChatCompletionRequestFunctionMessage value)? function,
-  }) {
-    return system?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChatCompletionRequestSystemMessage value)? system,
-    TResult Function(ChatCompletionRequestUserMessage value)? user,
-    TResult Function(ChatCompletionRequestAssistantMessage value)? assistant,
-    TResult Function(ChatCompletionRequestToolMessage value)? tool,
-    TResult Function(ChatCompletionRequestFunctionMessage value)? function,
-    required TResult orElse(),
-  }) {
-    if (system != null) {
-      return system(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatCompletionRequestSystemMessageImplToJson(this);
-  }
-}
-
-abstract class ChatCompletionRequestSystemMessage
-    extends ChatCompletionRequestMessage {
-  const factory ChatCompletionRequestSystemMessage({
-    required final String? content,
-    required final SystemMessageRole role,
-  }) = _$ChatCompletionRequestSystemMessageImpl;
-  const ChatCompletionRequestSystemMessage._() : super._();
-
-  factory ChatCompletionRequestSystemMessage.fromJson(
-    Map<String, dynamic> json,
-  ) = _$ChatCompletionRequestSystemMessageImpl.fromJson;
-
-  /// The contents of the system message.
-  @override
-  String? get content;
-
-  /// The role of the messages author, in this case `system`.
-  @override
-  SystemMessageRole get role;
-
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatCompletionRequestSystemMessageImplCopyWith<
-    _$ChatCompletionRequestSystemMessageImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ChatCompletionRequestUserMessageImplCopyWith<$Res> {
-  factory _$$ChatCompletionRequestUserMessageImplCopyWith(
-    _$ChatCompletionRequestUserMessageImpl value,
-    $Res Function(_$ChatCompletionRequestUserMessageImpl) then,
-  ) = __$$ChatCompletionRequestUserMessageImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({
-    @_UserMessageContentConverter() UserMessageContent? content,
-    UserMessageRole role,
-  });
-
-  $UserMessageContentCopyWith<$Res>? get content;
-}
-
-/// @nodoc
-class __$$ChatCompletionRequestUserMessageImplCopyWithImpl<$Res>
-    extends
-        _$ChatCompletionRequestMessageCopyWithImpl<
-          $Res,
-          _$ChatCompletionRequestUserMessageImpl
-        >
-    implements _$$ChatCompletionRequestUserMessageImplCopyWith<$Res> {
-  __$$ChatCompletionRequestUserMessageImplCopyWithImpl(
-    _$ChatCompletionRequestUserMessageImpl _value,
-    $Res Function(_$ChatCompletionRequestUserMessageImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? content = freezed, Object? role = null}) {
-    return _then(
-      _$ChatCompletionRequestUserMessageImpl(
-        content: freezed == content
-            ? _value.content
-            : content // ignore: cast_nullable_to_non_nullable
-                  as UserMessageContent?,
-        role: null == role
-            ? _value.role
-            : role // ignore: cast_nullable_to_non_nullable
-                  as UserMessageRole,
-      ),
-    );
-  }
-
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserMessageContentCopyWith<$Res>? get content {
-    if (_value.content == null) {
-      return null;
-    }
-
-    return $UserMessageContentCopyWith<$Res>(_value.content!, (value) {
-      return _then(_value.copyWith(content: value));
-    });
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ChatCompletionRequestUserMessageImpl
-    extends ChatCompletionRequestUserMessage {
-  const _$ChatCompletionRequestUserMessageImpl({
-    @_UserMessageContentConverter() required this.content,
-    required this.role,
-  }) : super._();
 
-  factory _$ChatCompletionRequestUserMessageImpl.fromJson(
-    Map<String, dynamic> json,
-  ) => _$$ChatCompletionRequestUserMessageImplFromJson(json);
+class _ChatCompletionRequestMessageChatCompletionRequestSystemMessage extends ChatCompletionRequestMessage {
+  const _ChatCompletionRequestMessageChatCompletionRequestSystemMessage({required this.content, required this.role}): super._();
+  factory _ChatCompletionRequestMessageChatCompletionRequestSystemMessage.fromJson(Map<String, dynamic> json) => _$ChatCompletionRequestMessageChatCompletionRequestSystemMessageFromJson(json);
 
-  /// The contents of the user message.
-  @override
-  @_UserMessageContentConverter()
-  final UserMessageContent? content;
+/// The contents of the system message.
+@override final  String? content;
+/// The role of the messages author, in this case `system`.
+@override final  SystemMessageRole role;
 
-  /// The role of the messages author, in this case `user`.
-  @override
-  final UserMessageRole role;
+/// Create a copy of ChatCompletionRequestMessage
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChatCompletionRequestMessageChatCompletionRequestSystemMessageCopyWith<_ChatCompletionRequestMessageChatCompletionRequestSystemMessage> get copyWith => __$ChatCompletionRequestMessageChatCompletionRequestSystemMessageCopyWithImpl<_ChatCompletionRequestMessageChatCompletionRequestSystemMessage>(this, _$identity);
 
-  @override
-  String toString() {
-    return 'ChatCompletionRequestMessage.user(content: $content, role: $role)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChatCompletionRequestUserMessageImpl &&
-            (identical(other.content, content) || other.content == content) &&
-            (identical(other.role, role) || other.role == role));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, content, role);
-
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChatCompletionRequestUserMessageImplCopyWith<
-    _$ChatCompletionRequestUserMessageImpl
-  >
-  get copyWith =>
-      __$$ChatCompletionRequestUserMessageImplCopyWithImpl<
-        _$ChatCompletionRequestUserMessageImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChatCompletionRequestSystemMessage value) system,
-    required TResult Function(ChatCompletionRequestUserMessage value) user,
-    required TResult Function(ChatCompletionRequestAssistantMessage value)
-    assistant,
-    required TResult Function(ChatCompletionRequestToolMessage value) tool,
-    required TResult Function(ChatCompletionRequestFunctionMessage value)
-    function,
-  }) {
-    return user(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChatCompletionRequestSystemMessage value)? system,
-    TResult? Function(ChatCompletionRequestUserMessage value)? user,
-    TResult? Function(ChatCompletionRequestAssistantMessage value)? assistant,
-    TResult? Function(ChatCompletionRequestToolMessage value)? tool,
-    TResult? Function(ChatCompletionRequestFunctionMessage value)? function,
-  }) {
-    return user?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChatCompletionRequestSystemMessage value)? system,
-    TResult Function(ChatCompletionRequestUserMessage value)? user,
-    TResult Function(ChatCompletionRequestAssistantMessage value)? assistant,
-    TResult Function(ChatCompletionRequestToolMessage value)? tool,
-    TResult Function(ChatCompletionRequestFunctionMessage value)? function,
-    required TResult orElse(),
-  }) {
-    if (user != null) {
-      return user(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatCompletionRequestUserMessageImplToJson(this);
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$ChatCompletionRequestMessageChatCompletionRequestSystemMessageToJson(this, );
 }
 
-abstract class ChatCompletionRequestUserMessage
-    extends ChatCompletionRequestMessage {
-  const factory ChatCompletionRequestUserMessage({
-    @_UserMessageContentConverter() required final UserMessageContent? content,
-    required final UserMessageRole role,
-  }) = _$ChatCompletionRequestUserMessageImpl;
-  const ChatCompletionRequestUserMessage._() : super._();
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChatCompletionRequestMessageChatCompletionRequestSystemMessage&&(identical(other.content, content) || other.content == content)&&(identical(other.role, role) || other.role == role));
+}
 
-  factory ChatCompletionRequestUserMessage.fromJson(Map<String, dynamic> json) =
-      _$ChatCompletionRequestUserMessageImpl.fromJson;
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,content,role);
 
-  /// The contents of the user message.
-  @override
-  @_UserMessageContentConverter()
-  UserMessageContent? get content;
+@override
+String toString() {
+  return 'ChatCompletionRequestMessage.system(content: $content, role: $role)';
+}
 
-  /// The role of the messages author, in this case `user`.
-  @override
-  UserMessageRole get role;
 
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatCompletionRequestUserMessageImplCopyWith<
-    _$ChatCompletionRequestUserMessageImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChatCompletionRequestAssistantMessageImplCopyWith<$Res> {
-  factory _$$ChatCompletionRequestAssistantMessageImplCopyWith(
-    _$ChatCompletionRequestAssistantMessageImpl value,
-    $Res Function(_$ChatCompletionRequestAssistantMessageImpl) then,
-  ) = __$$ChatCompletionRequestAssistantMessageImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({
-    String? content,
-    AssistantMessageRole role,
-    @JsonKey(name: 'tool_calls', includeIfNull: false)
-    List<ChatCompletionMessageToolCall>? toolCalls,
-    @JsonKey(name: 'function_call', includeIfNull: false)
-    AssistantMessageFunctionCall? functionCall,
-  });
+abstract mixin class _$ChatCompletionRequestMessageChatCompletionRequestSystemMessageCopyWith<$Res> implements $ChatCompletionRequestMessageCopyWith<$Res> {
+  factory _$ChatCompletionRequestMessageChatCompletionRequestSystemMessageCopyWith(_ChatCompletionRequestMessageChatCompletionRequestSystemMessage value, $Res Function(_ChatCompletionRequestMessageChatCompletionRequestSystemMessage) _then) = __$ChatCompletionRequestMessageChatCompletionRequestSystemMessageCopyWithImpl;
+@useResult
+$Res call({
+ String? content, SystemMessageRole role
+});
 
-  $AssistantMessageFunctionCallCopyWith<$Res>? get functionCall;
+
+
+
+}
+/// @nodoc
+class __$ChatCompletionRequestMessageChatCompletionRequestSystemMessageCopyWithImpl<$Res>
+    implements _$ChatCompletionRequestMessageChatCompletionRequestSystemMessageCopyWith<$Res> {
+  __$ChatCompletionRequestMessageChatCompletionRequestSystemMessageCopyWithImpl(this._self, this._then);
+
+  final _ChatCompletionRequestMessageChatCompletionRequestSystemMessage _self;
+  final $Res Function(_ChatCompletionRequestMessageChatCompletionRequestSystemMessage) _then;
+
+/// Create a copy of ChatCompletionRequestMessage
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? content = freezed,Object? role = null,}) {
+  return _then(_ChatCompletionRequestMessageChatCompletionRequestSystemMessage(
+content: freezed == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
+as String?,role: null == role ? _self.role : role // ignore: cast_nullable_to_non_nullable
+as SystemMessageRole,
+  ));
 }
 
-/// @nodoc
-class __$$ChatCompletionRequestAssistantMessageImplCopyWithImpl<$Res>
-    extends
-        _$ChatCompletionRequestMessageCopyWithImpl<
-          $Res,
-          _$ChatCompletionRequestAssistantMessageImpl
-        >
-    implements _$$ChatCompletionRequestAssistantMessageImplCopyWith<$Res> {
-  __$$ChatCompletionRequestAssistantMessageImplCopyWithImpl(
-    _$ChatCompletionRequestAssistantMessageImpl _value,
-    $Res Function(_$ChatCompletionRequestAssistantMessageImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? content = freezed,
-    Object? role = null,
-    Object? toolCalls = freezed,
-    Object? functionCall = freezed,
-  }) {
-    return _then(
-      _$ChatCompletionRequestAssistantMessageImpl(
-        content: freezed == content
-            ? _value.content
-            : content // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        role: null == role
-            ? _value.role
-            : role // ignore: cast_nullable_to_non_nullable
-                  as AssistantMessageRole,
-        toolCalls: freezed == toolCalls
-            ? _value._toolCalls
-            : toolCalls // ignore: cast_nullable_to_non_nullable
-                  as List<ChatCompletionMessageToolCall>?,
-        functionCall: freezed == functionCall
-            ? _value.functionCall
-            : functionCall // ignore: cast_nullable_to_non_nullable
-                  as AssistantMessageFunctionCall?,
-      ),
-    );
-  }
-
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AssistantMessageFunctionCallCopyWith<$Res>? get functionCall {
-    if (_value.functionCall == null) {
-      return null;
-    }
-
-    return $AssistantMessageFunctionCallCopyWith<$Res>(_value.functionCall!, (
-      value,
-    ) {
-      return _then(_value.copyWith(functionCall: value));
-    });
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ChatCompletionRequestAssistantMessageImpl
-    extends ChatCompletionRequestAssistantMessage {
-  const _$ChatCompletionRequestAssistantMessageImpl({
-    required this.content,
-    required this.role,
-    @JsonKey(name: 'tool_calls', includeIfNull: false)
-    final List<ChatCompletionMessageToolCall>? toolCalls,
-    @JsonKey(name: 'function_call', includeIfNull: false) this.functionCall,
-  }) : _toolCalls = toolCalls,
-       super._();
 
-  factory _$ChatCompletionRequestAssistantMessageImpl.fromJson(
-    Map<String, dynamic> json,
-  ) => _$$ChatCompletionRequestAssistantMessageImplFromJson(json);
+class _ChatCompletionRequestMessageChatCompletionRequestUserMessage extends ChatCompletionRequestMessage {
+  const _ChatCompletionRequestMessageChatCompletionRequestUserMessage({@_UserMessageContentConverter() required this.content, required this.role}): super._();
+  factory _ChatCompletionRequestMessageChatCompletionRequestUserMessage.fromJson(Map<String, dynamic> json) => _$ChatCompletionRequestMessageChatCompletionRequestUserMessageFromJson(json);
 
-  /// The contents of the assistant message.
-  @override
-  final String? content;
+/// The contents of the user message.
+@override@_UserMessageContentConverter() final  UserMessageContent? content;
+/// The role of the messages author, in this case `user`.
+@override final  UserMessageRole role;
 
-  /// The role of the messages author, in this case `assistant`.
-  @override
-  final AssistantMessageRole role;
+/// Create a copy of ChatCompletionRequestMessage
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChatCompletionRequestMessageChatCompletionRequestUserMessageCopyWith<_ChatCompletionRequestMessageChatCompletionRequestUserMessage> get copyWith => __$ChatCompletionRequestMessageChatCompletionRequestUserMessageCopyWithImpl<_ChatCompletionRequestMessageChatCompletionRequestUserMessage>(this, _$identity);
 
-  /// No Description
-  final List<ChatCompletionMessageToolCall>? _toolCalls;
-
-  /// No Description
-  @override
-  @JsonKey(name: 'tool_calls', includeIfNull: false)
-  List<ChatCompletionMessageToolCall>? get toolCalls {
-    final value = _toolCalls;
-    if (value == null) return null;
-    if (_toolCalls is EqualUnmodifiableListView) return _toolCalls;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// Deprecated and replaced by `tool_calls`. The name and arguments of a function that should be called, as generated by the model.
-  @override
-  @JsonKey(name: 'function_call', includeIfNull: false)
-  final AssistantMessageFunctionCall? functionCall;
-
-  @override
-  String toString() {
-    return 'ChatCompletionRequestMessage.assistant(content: $content, role: $role, toolCalls: $toolCalls, functionCall: $functionCall)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChatCompletionRequestAssistantMessageImpl &&
-            (identical(other.content, content) || other.content == content) &&
-            (identical(other.role, role) || other.role == role) &&
-            const DeepCollectionEquality().equals(
-              other._toolCalls,
-              _toolCalls,
-            ) &&
-            (identical(other.functionCall, functionCall) ||
-                other.functionCall == functionCall));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    content,
-    role,
-    const DeepCollectionEquality().hash(_toolCalls),
-    functionCall,
-  );
-
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChatCompletionRequestAssistantMessageImplCopyWith<
-    _$ChatCompletionRequestAssistantMessageImpl
-  >
-  get copyWith =>
-      __$$ChatCompletionRequestAssistantMessageImplCopyWithImpl<
-        _$ChatCompletionRequestAssistantMessageImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChatCompletionRequestSystemMessage value) system,
-    required TResult Function(ChatCompletionRequestUserMessage value) user,
-    required TResult Function(ChatCompletionRequestAssistantMessage value)
-    assistant,
-    required TResult Function(ChatCompletionRequestToolMessage value) tool,
-    required TResult Function(ChatCompletionRequestFunctionMessage value)
-    function,
-  }) {
-    return assistant(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChatCompletionRequestSystemMessage value)? system,
-    TResult? Function(ChatCompletionRequestUserMessage value)? user,
-    TResult? Function(ChatCompletionRequestAssistantMessage value)? assistant,
-    TResult? Function(ChatCompletionRequestToolMessage value)? tool,
-    TResult? Function(ChatCompletionRequestFunctionMessage value)? function,
-  }) {
-    return assistant?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChatCompletionRequestSystemMessage value)? system,
-    TResult Function(ChatCompletionRequestUserMessage value)? user,
-    TResult Function(ChatCompletionRequestAssistantMessage value)? assistant,
-    TResult Function(ChatCompletionRequestToolMessage value)? tool,
-    TResult Function(ChatCompletionRequestFunctionMessage value)? function,
-    required TResult orElse(),
-  }) {
-    if (assistant != null) {
-      return assistant(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatCompletionRequestAssistantMessageImplToJson(this);
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$ChatCompletionRequestMessageChatCompletionRequestUserMessageToJson(this, );
 }
 
-abstract class ChatCompletionRequestAssistantMessage
-    extends ChatCompletionRequestMessage {
-  const factory ChatCompletionRequestAssistantMessage({
-    required final String? content,
-    required final AssistantMessageRole role,
-    @JsonKey(name: 'tool_calls', includeIfNull: false)
-    final List<ChatCompletionMessageToolCall>? toolCalls,
-    @JsonKey(name: 'function_call', includeIfNull: false)
-    final AssistantMessageFunctionCall? functionCall,
-  }) = _$ChatCompletionRequestAssistantMessageImpl;
-  const ChatCompletionRequestAssistantMessage._() : super._();
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChatCompletionRequestMessageChatCompletionRequestUserMessage&&(identical(other.content, content) || other.content == content)&&(identical(other.role, role) || other.role == role));
+}
 
-  factory ChatCompletionRequestAssistantMessage.fromJson(
-    Map<String, dynamic> json,
-  ) = _$ChatCompletionRequestAssistantMessageImpl.fromJson;
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,content,role);
 
-  /// The contents of the assistant message.
-  @override
-  String? get content;
+@override
+String toString() {
+  return 'ChatCompletionRequestMessage.user(content: $content, role: $role)';
+}
 
-  /// The role of the messages author, in this case `assistant`.
-  @override
-  AssistantMessageRole get role;
 
-  /// No Description
-  @JsonKey(name: 'tool_calls', includeIfNull: false)
-  List<ChatCompletionMessageToolCall>? get toolCalls;
-
-  /// Deprecated and replaced by `tool_calls`. The name and arguments of a function that should be called, as generated by the model.
-  @JsonKey(name: 'function_call', includeIfNull: false)
-  AssistantMessageFunctionCall? get functionCall;
-
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatCompletionRequestAssistantMessageImplCopyWith<
-    _$ChatCompletionRequestAssistantMessageImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChatCompletionRequestToolMessageImplCopyWith<$Res> {
-  factory _$$ChatCompletionRequestToolMessageImplCopyWith(
-    _$ChatCompletionRequestToolMessageImpl value,
-    $Res Function(_$ChatCompletionRequestToolMessageImpl) then,
-  ) = __$$ChatCompletionRequestToolMessageImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({
-    ToolMessageRole role,
-    String? content,
-    @JsonKey(name: 'tool_call_id') String toolCallId,
+abstract mixin class _$ChatCompletionRequestMessageChatCompletionRequestUserMessageCopyWith<$Res> implements $ChatCompletionRequestMessageCopyWith<$Res> {
+  factory _$ChatCompletionRequestMessageChatCompletionRequestUserMessageCopyWith(_ChatCompletionRequestMessageChatCompletionRequestUserMessage value, $Res Function(_ChatCompletionRequestMessageChatCompletionRequestUserMessage) _then) = __$ChatCompletionRequestMessageChatCompletionRequestUserMessageCopyWithImpl;
+@useResult
+$Res call({
+@_UserMessageContentConverter() UserMessageContent? content, UserMessageRole role
+});
+
+
+$UserMessageContentCopyWith<$Res>? get content;
+
+}
+/// @nodoc
+class __$ChatCompletionRequestMessageChatCompletionRequestUserMessageCopyWithImpl<$Res>
+    implements _$ChatCompletionRequestMessageChatCompletionRequestUserMessageCopyWith<$Res> {
+  __$ChatCompletionRequestMessageChatCompletionRequestUserMessageCopyWithImpl(this._self, this._then);
+
+  final _ChatCompletionRequestMessageChatCompletionRequestUserMessage _self;
+  final $Res Function(_ChatCompletionRequestMessageChatCompletionRequestUserMessage) _then;
+
+/// Create a copy of ChatCompletionRequestMessage
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? content = freezed,Object? role = null,}) {
+  return _then(_ChatCompletionRequestMessageChatCompletionRequestUserMessage(
+content: freezed == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
+as UserMessageContent?,role: null == role ? _self.role : role // ignore: cast_nullable_to_non_nullable
+as UserMessageRole,
+  ));
+}
+
+/// Create a copy of ChatCompletionRequestMessage
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UserMessageContentCopyWith<$Res>? get content {
+    if (_self.content == null) {
+    return null;
+  }
+
+  return $UserMessageContentCopyWith<$Res>(_self.content!, (value) {
+    return _then(_self.copyWith(content: value));
   });
 }
-
-/// @nodoc
-class __$$ChatCompletionRequestToolMessageImplCopyWithImpl<$Res>
-    extends
-        _$ChatCompletionRequestMessageCopyWithImpl<
-          $Res,
-          _$ChatCompletionRequestToolMessageImpl
-        >
-    implements _$$ChatCompletionRequestToolMessageImplCopyWith<$Res> {
-  __$$ChatCompletionRequestToolMessageImplCopyWithImpl(
-    _$ChatCompletionRequestToolMessageImpl _value,
-    $Res Function(_$ChatCompletionRequestToolMessageImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? role = null,
-    Object? content = freezed,
-    Object? toolCallId = null,
-  }) {
-    return _then(
-      _$ChatCompletionRequestToolMessageImpl(
-        role: null == role
-            ? _value.role
-            : role // ignore: cast_nullable_to_non_nullable
-                  as ToolMessageRole,
-        content: freezed == content
-            ? _value.content
-            : content // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        toolCallId: null == toolCallId
-            ? _value.toolCallId
-            : toolCallId // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ChatCompletionRequestToolMessageImpl
-    extends ChatCompletionRequestToolMessage {
-  const _$ChatCompletionRequestToolMessageImpl({
-    required this.role,
-    required this.content,
-    @JsonKey(name: 'tool_call_id') required this.toolCallId,
-  }) : super._();
 
-  factory _$ChatCompletionRequestToolMessageImpl.fromJson(
-    Map<String, dynamic> json,
-  ) => _$$ChatCompletionRequestToolMessageImplFromJson(json);
+class _ChatCompletionRequestMessageChatCompletionRequestAssistantMessage extends ChatCompletionRequestMessage {
+  const _ChatCompletionRequestMessageChatCompletionRequestAssistantMessage({required this.content, required this.role, @JsonKey(name: 'tool_calls', includeIfNull: false) final  ChatCompletionMessageToolCalls? toolCalls, @JsonKey(name: 'function_call', includeIfNull: false) this.functionCall}): _toolCalls = toolCalls,super._();
+  factory _ChatCompletionRequestMessageChatCompletionRequestAssistantMessage.fromJson(Map<String, dynamic> json) => _$ChatCompletionRequestMessageChatCompletionRequestAssistantMessageFromJson(json);
 
-  /// The role of the messages author, in this case `tool`.
-  @override
-  final ToolMessageRole role;
-
-  /// The contents of the tool message.
-  @override
-  final String? content;
-
-  /// Tool call that this message is responding to.
-  @override
-  @JsonKey(name: 'tool_call_id')
-  final String toolCallId;
-
-  @override
-  String toString() {
-    return 'ChatCompletionRequestMessage.tool(role: $role, content: $content, toolCallId: $toolCallId)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChatCompletionRequestToolMessageImpl &&
-            (identical(other.role, role) || other.role == role) &&
-            (identical(other.content, content) || other.content == content) &&
-            (identical(other.toolCallId, toolCallId) ||
-                other.toolCallId == toolCallId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, role, content, toolCallId);
-
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChatCompletionRequestToolMessageImplCopyWith<
-    _$ChatCompletionRequestToolMessageImpl
-  >
-  get copyWith =>
-      __$$ChatCompletionRequestToolMessageImplCopyWithImpl<
-        _$ChatCompletionRequestToolMessageImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChatCompletionRequestSystemMessage value) system,
-    required TResult Function(ChatCompletionRequestUserMessage value) user,
-    required TResult Function(ChatCompletionRequestAssistantMessage value)
-    assistant,
-    required TResult Function(ChatCompletionRequestToolMessage value) tool,
-    required TResult Function(ChatCompletionRequestFunctionMessage value)
-    function,
-  }) {
-    return tool(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChatCompletionRequestSystemMessage value)? system,
-    TResult? Function(ChatCompletionRequestUserMessage value)? user,
-    TResult? Function(ChatCompletionRequestAssistantMessage value)? assistant,
-    TResult? Function(ChatCompletionRequestToolMessage value)? tool,
-    TResult? Function(ChatCompletionRequestFunctionMessage value)? function,
-  }) {
-    return tool?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChatCompletionRequestSystemMessage value)? system,
-    TResult Function(ChatCompletionRequestUserMessage value)? user,
-    TResult Function(ChatCompletionRequestAssistantMessage value)? assistant,
-    TResult Function(ChatCompletionRequestToolMessage value)? tool,
-    TResult Function(ChatCompletionRequestFunctionMessage value)? function,
-    required TResult orElse(),
-  }) {
-    if (tool != null) {
-      return tool(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatCompletionRequestToolMessageImplToJson(this);
-  }
+/// The contents of the assistant message.
+@override final  String? content;
+/// The role of the messages author, in this case `assistant`.
+@override final  AssistantMessageRole role;
+/// No Description
+ final  ChatCompletionMessageToolCalls? _toolCalls;
+/// No Description
+@JsonKey(name: 'tool_calls', includeIfNull: false) ChatCompletionMessageToolCalls? get toolCalls {
+  final value = _toolCalls;
+  if (value == null) return null;
+  if (_toolCalls is EqualUnmodifiableListView) return _toolCalls;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
 }
 
-abstract class ChatCompletionRequestToolMessage
-    extends ChatCompletionRequestMessage {
-  const factory ChatCompletionRequestToolMessage({
-    required final ToolMessageRole role,
-    required final String? content,
-    @JsonKey(name: 'tool_call_id') required final String toolCallId,
-  }) = _$ChatCompletionRequestToolMessageImpl;
-  const ChatCompletionRequestToolMessage._() : super._();
+/// Deprecated and replaced by `tool_calls`. The name and arguments of a function that should be called, as generated by the model.
+@JsonKey(name: 'function_call', includeIfNull: false) final  AssistantMessageFunctionCall? functionCall;
 
-  factory ChatCompletionRequestToolMessage.fromJson(Map<String, dynamic> json) =
-      _$ChatCompletionRequestToolMessageImpl.fromJson;
+/// Create a copy of ChatCompletionRequestMessage
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChatCompletionRequestMessageChatCompletionRequestAssistantMessageCopyWith<_ChatCompletionRequestMessageChatCompletionRequestAssistantMessage> get copyWith => __$ChatCompletionRequestMessageChatCompletionRequestAssistantMessageCopyWithImpl<_ChatCompletionRequestMessageChatCompletionRequestAssistantMessage>(this, _$identity);
 
-  /// The role of the messages author, in this case `tool`.
-  @override
-  ToolMessageRole get role;
+@override
+Map<String, dynamic> toJson() {
+  return _$ChatCompletionRequestMessageChatCompletionRequestAssistantMessageToJson(this, );
+}
 
-  /// The contents of the tool message.
-  @override
-  String? get content;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChatCompletionRequestMessageChatCompletionRequestAssistantMessage&&(identical(other.content, content) || other.content == content)&&(identical(other.role, role) || other.role == role)&&const DeepCollectionEquality().equals(other._toolCalls, _toolCalls)&&(identical(other.functionCall, functionCall) || other.functionCall == functionCall));
+}
 
-  /// Tool call that this message is responding to.
-  @JsonKey(name: 'tool_call_id')
-  String get toolCallId;
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,content,role,const DeepCollectionEquality().hash(_toolCalls),functionCall);
 
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatCompletionRequestToolMessageImplCopyWith<
-    _$ChatCompletionRequestToolMessageImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'ChatCompletionRequestMessage.assistant(content: $content, role: $role, toolCalls: $toolCalls, functionCall: $functionCall)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$ChatCompletionRequestFunctionMessageImplCopyWith<$Res> {
-  factory _$$ChatCompletionRequestFunctionMessageImplCopyWith(
-    _$ChatCompletionRequestFunctionMessageImpl value,
-    $Res Function(_$ChatCompletionRequestFunctionMessageImpl) then,
-  ) = __$$ChatCompletionRequestFunctionMessageImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({FunctionMessageRole role, String? content, String name});
+abstract mixin class _$ChatCompletionRequestMessageChatCompletionRequestAssistantMessageCopyWith<$Res> implements $ChatCompletionRequestMessageCopyWith<$Res> {
+  factory _$ChatCompletionRequestMessageChatCompletionRequestAssistantMessageCopyWith(_ChatCompletionRequestMessageChatCompletionRequestAssistantMessage value, $Res Function(_ChatCompletionRequestMessageChatCompletionRequestAssistantMessage) _then) = __$ChatCompletionRequestMessageChatCompletionRequestAssistantMessageCopyWithImpl;
+@useResult
+$Res call({
+ String? content, AssistantMessageRole role,@JsonKey(name: 'tool_calls', includeIfNull: false) ChatCompletionMessageToolCalls? toolCalls,@JsonKey(name: 'function_call', includeIfNull: false) AssistantMessageFunctionCall? functionCall
+});
+
+
+$AssistantMessageFunctionCallCopyWith<$Res>? get functionCall;
+
+}
+/// @nodoc
+class __$ChatCompletionRequestMessageChatCompletionRequestAssistantMessageCopyWithImpl<$Res>
+    implements _$ChatCompletionRequestMessageChatCompletionRequestAssistantMessageCopyWith<$Res> {
+  __$ChatCompletionRequestMessageChatCompletionRequestAssistantMessageCopyWithImpl(this._self, this._then);
+
+  final _ChatCompletionRequestMessageChatCompletionRequestAssistantMessage _self;
+  final $Res Function(_ChatCompletionRequestMessageChatCompletionRequestAssistantMessage) _then;
+
+/// Create a copy of ChatCompletionRequestMessage
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? content = freezed,Object? role = null,Object? toolCalls = freezed,Object? functionCall = freezed,}) {
+  return _then(_ChatCompletionRequestMessageChatCompletionRequestAssistantMessage(
+content: freezed == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
+as String?,role: null == role ? _self.role : role // ignore: cast_nullable_to_non_nullable
+as AssistantMessageRole,toolCalls: freezed == toolCalls ? _self._toolCalls : toolCalls // ignore: cast_nullable_to_non_nullable
+as ChatCompletionMessageToolCalls?,functionCall: freezed == functionCall ? _self.functionCall : functionCall // ignore: cast_nullable_to_non_nullable
+as AssistantMessageFunctionCall?,
+  ));
 }
 
-/// @nodoc
-class __$$ChatCompletionRequestFunctionMessageImplCopyWithImpl<$Res>
-    extends
-        _$ChatCompletionRequestMessageCopyWithImpl<
-          $Res,
-          _$ChatCompletionRequestFunctionMessageImpl
-        >
-    implements _$$ChatCompletionRequestFunctionMessageImplCopyWith<$Res> {
-  __$$ChatCompletionRequestFunctionMessageImplCopyWithImpl(
-    _$ChatCompletionRequestFunctionMessageImpl _value,
-    $Res Function(_$ChatCompletionRequestFunctionMessageImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? role = null,
-    Object? content = freezed,
-    Object? name = null,
-  }) {
-    return _then(
-      _$ChatCompletionRequestFunctionMessageImpl(
-        role: null == role
-            ? _value.role
-            : role // ignore: cast_nullable_to_non_nullable
-                  as FunctionMessageRole,
-        content: freezed == content
-            ? _value.content
-            : content // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        name: null == name
-            ? _value.name
-            : name // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+/// Create a copy of ChatCompletionRequestMessage
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssistantMessageFunctionCallCopyWith<$Res>? get functionCall {
+    if (_self.functionCall == null) {
+    return null;
   }
+
+  return $AssistantMessageFunctionCallCopyWith<$Res>(_self.functionCall!, (value) {
+    return _then(_self.copyWith(functionCall: value));
+  });
+}
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ChatCompletionRequestFunctionMessageImpl
-    extends ChatCompletionRequestFunctionMessage {
-  const _$ChatCompletionRequestFunctionMessageImpl({
-    required this.role,
-    required this.content,
-    required this.name,
-  }) : super._();
 
-  factory _$ChatCompletionRequestFunctionMessageImpl.fromJson(
-    Map<String, dynamic> json,
-  ) => _$$ChatCompletionRequestFunctionMessageImplFromJson(json);
+class _ChatCompletionRequestMessageChatCompletionRequestToolMessage extends ChatCompletionRequestMessage {
+  const _ChatCompletionRequestMessageChatCompletionRequestToolMessage({required this.role, required this.content, @JsonKey(name: 'tool_call_id') required this.toolCallId}): super._();
+  factory _ChatCompletionRequestMessageChatCompletionRequestToolMessage.fromJson(Map<String, dynamic> json) => _$ChatCompletionRequestMessageChatCompletionRequestToolMessageFromJson(json);
 
-  /// The role of the messages author, in this case `function`.
-  @override
-  final FunctionMessageRole role;
+/// The role of the messages author, in this case `tool`.
+@override final  ToolMessageRole role;
+/// The contents of the tool message.
+@override final  String? content;
+/// Tool call that this message is responding to.
+@JsonKey(name: 'tool_call_id') final  String toolCallId;
 
-  /// The return value from the function call, to return to the model.
-  @override
-  final String? content;
+/// Create a copy of ChatCompletionRequestMessage
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChatCompletionRequestMessageChatCompletionRequestToolMessageCopyWith<_ChatCompletionRequestMessageChatCompletionRequestToolMessage> get copyWith => __$ChatCompletionRequestMessageChatCompletionRequestToolMessageCopyWithImpl<_ChatCompletionRequestMessageChatCompletionRequestToolMessage>(this, _$identity);
 
-  /// The name of the function to call.
-  @override
-  final String name;
-
-  @override
-  String toString() {
-    return 'ChatCompletionRequestMessage.function(role: $role, content: $content, name: $name)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChatCompletionRequestFunctionMessageImpl &&
-            (identical(other.role, role) || other.role == role) &&
-            (identical(other.content, content) || other.content == content) &&
-            (identical(other.name, name) || other.name == name));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, role, content, name);
-
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChatCompletionRequestFunctionMessageImplCopyWith<
-    _$ChatCompletionRequestFunctionMessageImpl
-  >
-  get copyWith =>
-      __$$ChatCompletionRequestFunctionMessageImplCopyWithImpl<
-        _$ChatCompletionRequestFunctionMessageImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChatCompletionRequestSystemMessage value) system,
-    required TResult Function(ChatCompletionRequestUserMessage value) user,
-    required TResult Function(ChatCompletionRequestAssistantMessage value)
-    assistant,
-    required TResult Function(ChatCompletionRequestToolMessage value) tool,
-    required TResult Function(ChatCompletionRequestFunctionMessage value)
-    function,
-  }) {
-    return function(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChatCompletionRequestSystemMessage value)? system,
-    TResult? Function(ChatCompletionRequestUserMessage value)? user,
-    TResult? Function(ChatCompletionRequestAssistantMessage value)? assistant,
-    TResult? Function(ChatCompletionRequestToolMessage value)? tool,
-    TResult? Function(ChatCompletionRequestFunctionMessage value)? function,
-  }) {
-    return function?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChatCompletionRequestSystemMessage value)? system,
-    TResult Function(ChatCompletionRequestUserMessage value)? user,
-    TResult Function(ChatCompletionRequestAssistantMessage value)? assistant,
-    TResult Function(ChatCompletionRequestToolMessage value)? tool,
-    TResult Function(ChatCompletionRequestFunctionMessage value)? function,
-    required TResult orElse(),
-  }) {
-    if (function != null) {
-      return function(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatCompletionRequestFunctionMessageImplToJson(this);
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$ChatCompletionRequestMessageChatCompletionRequestToolMessageToJson(this, );
 }
 
-abstract class ChatCompletionRequestFunctionMessage
-    extends ChatCompletionRequestMessage {
-  const factory ChatCompletionRequestFunctionMessage({
-    required final FunctionMessageRole role,
-    required final String? content,
-    required final String name,
-  }) = _$ChatCompletionRequestFunctionMessageImpl;
-  const ChatCompletionRequestFunctionMessage._() : super._();
-
-  factory ChatCompletionRequestFunctionMessage.fromJson(
-    Map<String, dynamic> json,
-  ) = _$ChatCompletionRequestFunctionMessageImpl.fromJson;
-
-  /// The role of the messages author, in this case `function`.
-  @override
-  FunctionMessageRole get role;
-
-  /// The return value from the function call, to return to the model.
-  @override
-  String? get content;
-
-  /// The name of the function to call.
-  String get name;
-
-  /// Create a copy of ChatCompletionRequestMessage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatCompletionRequestFunctionMessageImplCopyWith<
-    _$ChatCompletionRequestFunctionMessageImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChatCompletionRequestMessageChatCompletionRequestToolMessage&&(identical(other.role, role) || other.role == role)&&(identical(other.content, content) || other.content == content)&&(identical(other.toolCallId, toolCallId) || other.toolCallId == toolCallId));
 }
 
-UserMessageContent _$UserMessageContentFromJson(Map<String, dynamic> json) {
-  switch (json['unionType']) {
-    case 'parts':
-      return UserMessageContentListChatCompletionRequestMessageContentPart.fromJson(
-        json,
-      );
-    case 'string':
-      return UserMessageContentString.fromJson(json);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,role,content,toolCallId);
 
-    default:
-      throw CheckedFromJsonException(
-        json,
-        'unionType',
-        'UserMessageContent',
-        'Invalid union type "${json['unionType']}"!',
-      );
-  }
+@override
+String toString() {
+  return 'ChatCompletionRequestMessage.tool(role: $role, content: $content, toolCallId: $toolCallId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ChatCompletionRequestMessageChatCompletionRequestToolMessageCopyWith<$Res> implements $ChatCompletionRequestMessageCopyWith<$Res> {
+  factory _$ChatCompletionRequestMessageChatCompletionRequestToolMessageCopyWith(_ChatCompletionRequestMessageChatCompletionRequestToolMessage value, $Res Function(_ChatCompletionRequestMessageChatCompletionRequestToolMessage) _then) = __$ChatCompletionRequestMessageChatCompletionRequestToolMessageCopyWithImpl;
+@useResult
+$Res call({
+ ToolMessageRole role, String? content,@JsonKey(name: 'tool_call_id') String toolCallId
+});
+
+
+
+
+}
+/// @nodoc
+class __$ChatCompletionRequestMessageChatCompletionRequestToolMessageCopyWithImpl<$Res>
+    implements _$ChatCompletionRequestMessageChatCompletionRequestToolMessageCopyWith<$Res> {
+  __$ChatCompletionRequestMessageChatCompletionRequestToolMessageCopyWithImpl(this._self, this._then);
+
+  final _ChatCompletionRequestMessageChatCompletionRequestToolMessage _self;
+  final $Res Function(_ChatCompletionRequestMessageChatCompletionRequestToolMessage) _then;
+
+/// Create a copy of ChatCompletionRequestMessage
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? role = null,Object? content = freezed,Object? toolCallId = null,}) {
+  return _then(_ChatCompletionRequestMessageChatCompletionRequestToolMessage(
+role: null == role ? _self.role : role // ignore: cast_nullable_to_non_nullable
+as ToolMessageRole,content: freezed == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
+as String?,toolCallId: null == toolCallId ? _self.toolCallId : toolCallId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ChatCompletionRequestMessageChatCompletionRequestFunctionMessage extends ChatCompletionRequestMessage {
+  const _ChatCompletionRequestMessageChatCompletionRequestFunctionMessage({required this.role, required this.content, required this.name}): super._();
+  factory _ChatCompletionRequestMessageChatCompletionRequestFunctionMessage.fromJson(Map<String, dynamic> json) => _$ChatCompletionRequestMessageChatCompletionRequestFunctionMessageFromJson(json);
+
+/// The role of the messages author, in this case `function`.
+@override final  FunctionMessageRole role;
+/// The return value from the function call, to return to the model.
+@override final  String? content;
+/// The name of the function to call.
+ final  String name;
+
+/// Create a copy of ChatCompletionRequestMessage
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChatCompletionRequestMessageChatCompletionRequestFunctionMessageCopyWith<_ChatCompletionRequestMessageChatCompletionRequestFunctionMessage> get copyWith => __$ChatCompletionRequestMessageChatCompletionRequestFunctionMessageCopyWithImpl<_ChatCompletionRequestMessageChatCompletionRequestFunctionMessage>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ChatCompletionRequestMessageChatCompletionRequestFunctionMessageToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChatCompletionRequestMessageChatCompletionRequestFunctionMessage&&(identical(other.role, role) || other.role == role)&&(identical(other.content, content) || other.content == content)&&(identical(other.name, name) || other.name == name));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,role,content,name);
+
+@override
+String toString() {
+  return 'ChatCompletionRequestMessage.function(role: $role, content: $content, name: $name)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ChatCompletionRequestMessageChatCompletionRequestFunctionMessageCopyWith<$Res> implements $ChatCompletionRequestMessageCopyWith<$Res> {
+  factory _$ChatCompletionRequestMessageChatCompletionRequestFunctionMessageCopyWith(_ChatCompletionRequestMessageChatCompletionRequestFunctionMessage value, $Res Function(_ChatCompletionRequestMessageChatCompletionRequestFunctionMessage) _then) = __$ChatCompletionRequestMessageChatCompletionRequestFunctionMessageCopyWithImpl;
+@useResult
+$Res call({
+ FunctionMessageRole role, String? content, String name
+});
+
+
+
+
+}
+/// @nodoc
+class __$ChatCompletionRequestMessageChatCompletionRequestFunctionMessageCopyWithImpl<$Res>
+    implements _$ChatCompletionRequestMessageChatCompletionRequestFunctionMessageCopyWith<$Res> {
+  __$ChatCompletionRequestMessageChatCompletionRequestFunctionMessageCopyWithImpl(this._self, this._then);
+
+  final _ChatCompletionRequestMessageChatCompletionRequestFunctionMessage _self;
+  final $Res Function(_ChatCompletionRequestMessageChatCompletionRequestFunctionMessage) _then;
+
+/// Create a copy of ChatCompletionRequestMessage
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? role = null,Object? content = freezed,Object? name = null,}) {
+  return _then(_ChatCompletionRequestMessageChatCompletionRequestFunctionMessage(
+role: null == role ? _self.role : role // ignore: cast_nullable_to_non_nullable
+as FunctionMessageRole,content: freezed == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+UserMessageContent _$UserMessageContentFromJson(
+  Map<String, dynamic> json
+) {
+        switch (json['unionType']) {
+                  case 'parts':
+          return UserMessageContentListChatCompletionRequestMessageContentPart.fromJson(
+            json
+          );
+                case 'string':
+          return UserMessageContentString.fromJson(
+            json
+          );
+        
+          default:
+            throw CheckedFromJsonException(
+  json,
+  'unionType',
+  'UserMessageContent',
+  'Invalid union type "${json['unionType']}"!'
+);
+        }
+      
 }
 
 /// @nodoc
 mixin _$UserMessageContent {
-  Object get value => throw _privateConstructorUsedError;
 
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(
-      UserMessageContentListChatCompletionRequestMessageContentPart value,
-    )
-    parts,
-    required TResult Function(UserMessageContentString value) string,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(
-      UserMessageContentListChatCompletionRequestMessageContentPart value,
-    )?
-    parts,
-    TResult? Function(UserMessageContentString value)? string,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(
-      UserMessageContentListChatCompletionRequestMessageContentPart value,
-    )?
-    parts,
-    TResult Function(UserMessageContentString value)? string,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+ Object get value;
 
   /// Serializes this UserMessageContent to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserMessageContent&&const DeepCollectionEquality().equals(other.value, value));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(value));
+
+@override
+String toString() {
+  return 'UserMessageContent(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $UserMessageContentCopyWith<$Res> {
-  factory $UserMessageContentCopyWith(
-    UserMessageContent value,
-    $Res Function(UserMessageContent) then,
-  ) = _$UserMessageContentCopyWithImpl<$Res, UserMessageContent>;
+class $UserMessageContentCopyWith<$Res>  {
+$UserMessageContentCopyWith(UserMessageContent _, $Res Function(UserMessageContent) __);
 }
 
-/// @nodoc
-class _$UserMessageContentCopyWithImpl<$Res, $Val extends UserMessageContent>
-    implements $UserMessageContentCopyWith<$Res> {
-  _$UserMessageContentCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [UserMessageContent].
+extension UserMessageContentPatterns on UserMessageContent {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of UserMessageContent
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( UserMessageContentListChatCompletionRequestMessageContentPart value)?  parts,TResult Function( UserMessageContentString value)?  string,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case UserMessageContentListChatCompletionRequestMessageContentPart() when parts != null:
+return parts(_that);case UserMessageContentString() when string != null:
+return string(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( UserMessageContentListChatCompletionRequestMessageContentPart value)  parts,required TResult Function( UserMessageContentString value)  string,}){
+final _that = this;
+switch (_that) {
+case UserMessageContentListChatCompletionRequestMessageContentPart():
+return parts(_that);case UserMessageContentString():
+return string(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( UserMessageContentListChatCompletionRequestMessageContentPart value)?  parts,TResult? Function( UserMessageContentString value)?  string,}){
+final _that = this;
+switch (_that) {
+case UserMessageContentListChatCompletionRequestMessageContentPart() when parts != null:
+return parts(_that);case UserMessageContentString() when string != null:
+return string(_that);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$UserMessageContentListChatCompletionRequestMessageContentPartImplCopyWith<
-  $Res
-> {
-  factory _$$UserMessageContentListChatCompletionRequestMessageContentPartImplCopyWith(
-    _$UserMessageContentListChatCompletionRequestMessageContentPartImpl value,
-    $Res Function(
-      _$UserMessageContentListChatCompletionRequestMessageContentPartImpl,
-    )
-    then,
-  ) =
-      __$$UserMessageContentListChatCompletionRequestMessageContentPartImplCopyWithImpl<
-        $Res
-      >;
-  @useResult
-  $Res call({List<ChatCompletionRequestMessageContentPart> value});
-}
-
-/// @nodoc
-class __$$UserMessageContentListChatCompletionRequestMessageContentPartImplCopyWithImpl<
-  $Res
->
-    extends
-        _$UserMessageContentCopyWithImpl<
-          $Res,
-          _$UserMessageContentListChatCompletionRequestMessageContentPartImpl
-        >
-    implements
-        _$$UserMessageContentListChatCompletionRequestMessageContentPartImplCopyWith<
-          $Res
-        > {
-  __$$UserMessageContentListChatCompletionRequestMessageContentPartImplCopyWithImpl(
-    _$UserMessageContentListChatCompletionRequestMessageContentPartImpl _value,
-    $Res Function(
-      _$UserMessageContentListChatCompletionRequestMessageContentPartImpl,
-    )
-    _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of UserMessageContent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$UserMessageContentListChatCompletionRequestMessageContentPartImpl(
-        null == value
-            ? _value._value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as List<ChatCompletionRequestMessageContentPart>,
-      ),
-    );
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$UserMessageContentListChatCompletionRequestMessageContentPartImpl
-    extends UserMessageContentListChatCompletionRequestMessageContentPart {
-  const _$UserMessageContentListChatCompletionRequestMessageContentPartImpl(
-    final List<ChatCompletionRequestMessageContentPart> value, {
-    final String? $type,
-  }) : _value = value,
-       $type = $type ?? 'parts',
-       super._();
-
-  factory _$UserMessageContentListChatCompletionRequestMessageContentPartImpl.fromJson(
-    Map<String, dynamic> json,
-  ) =>
-      _$$UserMessageContentListChatCompletionRequestMessageContentPartImplFromJson(
-        json,
-      );
-
-  final List<ChatCompletionRequestMessageContentPart> _value;
-  @override
-  List<ChatCompletionRequestMessageContentPart> get value {
-    if (_value is EqualUnmodifiableListView) return _value;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_value);
-  }
-
-  @JsonKey(name: 'unionType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'UserMessageContent.parts(value: $value)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other
-                is _$UserMessageContentListChatCompletionRequestMessageContentPartImpl &&
-            const DeepCollectionEquality().equals(other._value, _value));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_value));
-
-  /// Create a copy of UserMessageContent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UserMessageContentListChatCompletionRequestMessageContentPartImplCopyWith<
-    _$UserMessageContentListChatCompletionRequestMessageContentPartImpl
-  >
-  get copyWith =>
-      __$$UserMessageContentListChatCompletionRequestMessageContentPartImplCopyWithImpl<
-        _$UserMessageContentListChatCompletionRequestMessageContentPartImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(
-      UserMessageContentListChatCompletionRequestMessageContentPart value,
-    )
-    parts,
-    required TResult Function(UserMessageContentString value) string,
-  }) {
-    return parts(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(
-      UserMessageContentListChatCompletionRequestMessageContentPart value,
-    )?
-    parts,
-    TResult? Function(UserMessageContentString value)? string,
-  }) {
-    return parts?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(
-      UserMessageContentListChatCompletionRequestMessageContentPart value,
-    )?
-    parts,
-    TResult Function(UserMessageContentString value)? string,
-    required TResult orElse(),
-  }) {
-    if (parts != null) {
-      return parts(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UserMessageContentListChatCompletionRequestMessageContentPartImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class UserMessageContentListChatCompletionRequestMessageContentPart
-    extends UserMessageContent {
-  const factory UserMessageContentListChatCompletionRequestMessageContentPart(
-    final List<ChatCompletionRequestMessageContentPart> value,
-  ) = _$UserMessageContentListChatCompletionRequestMessageContentPartImpl;
-  const UserMessageContentListChatCompletionRequestMessageContentPart._()
-    : super._();
-
-  factory UserMessageContentListChatCompletionRequestMessageContentPart.fromJson(
-    Map<String, dynamic> json,
-  ) = _$UserMessageContentListChatCompletionRequestMessageContentPartImpl.fromJson;
-
-  @override
-  List<ChatCompletionRequestMessageContentPart> get value;
-
-  /// Create a copy of UserMessageContent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UserMessageContentListChatCompletionRequestMessageContentPartImplCopyWith<
-    _$UserMessageContentListChatCompletionRequestMessageContentPartImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UserMessageContentStringImplCopyWith<$Res> {
-  factory _$$UserMessageContentStringImplCopyWith(
-    _$UserMessageContentStringImpl value,
-    $Res Function(_$UserMessageContentStringImpl) then,
-  ) = __$$UserMessageContentStringImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String value});
-}
-
-/// @nodoc
-class __$$UserMessageContentStringImplCopyWithImpl<$Res>
-    extends
-        _$UserMessageContentCopyWithImpl<$Res, _$UserMessageContentStringImpl>
-    implements _$$UserMessageContentStringImplCopyWith<$Res> {
-  __$$UserMessageContentStringImplCopyWithImpl(
-    _$UserMessageContentStringImpl _value,
-    $Res Function(_$UserMessageContentStringImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of UserMessageContent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? value = null}) {
-    return _then(
-      _$UserMessageContentStringImpl(
-        null == value
-            ? _value.value
-            : value // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$UserMessageContentStringImpl extends UserMessageContentString {
-  const _$UserMessageContentStringImpl(this.value, {final String? $type})
-    : $type = $type ?? 'string',
-      super._();
 
-  factory _$UserMessageContentStringImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UserMessageContentStringImplFromJson(json);
+class UserMessageContentListChatCompletionRequestMessageContentPart extends UserMessageContent {
+  const UserMessageContentListChatCompletionRequestMessageContentPart(final  List<ChatCompletionRequestMessageContentPart> value, {final  String? $type}): _value = value,$type = $type ?? 'parts',super._();
+  factory UserMessageContentListChatCompletionRequestMessageContentPart.fromJson(Map<String, dynamic> json) => _$UserMessageContentListChatCompletionRequestMessageContentPartFromJson(json);
 
-  @override
-  final String value;
-
-  @JsonKey(name: 'unionType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'UserMessageContent.string(value: $value)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserMessageContentStringImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
-
-  /// Create a copy of UserMessageContent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UserMessageContentStringImplCopyWith<_$UserMessageContentStringImpl>
-  get copyWith =>
-      __$$UserMessageContentStringImplCopyWithImpl<
-        _$UserMessageContentStringImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(
-      UserMessageContentListChatCompletionRequestMessageContentPart value,
-    )
-    parts,
-    required TResult Function(UserMessageContentString value) string,
-  }) {
-    return string(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(
-      UserMessageContentListChatCompletionRequestMessageContentPart value,
-    )?
-    parts,
-    TResult? Function(UserMessageContentString value)? string,
-  }) {
-    return string?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(
-      UserMessageContentListChatCompletionRequestMessageContentPart value,
-    )?
-    parts,
-    TResult Function(UserMessageContentString value)? string,
-    required TResult orElse(),
-  }) {
-    if (string != null) {
-      return string(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UserMessageContentStringImplToJson(this);
-  }
+ final  List<ChatCompletionRequestMessageContentPart> _value;
+@override List<ChatCompletionRequestMessageContentPart> get value {
+  if (_value is EqualUnmodifiableListView) return _value;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_value);
 }
 
-abstract class UserMessageContentString extends UserMessageContent {
-  const factory UserMessageContentString(final String value) =
-      _$UserMessageContentStringImpl;
-  const UserMessageContentString._() : super._();
 
-  factory UserMessageContentString.fromJson(Map<String, dynamic> json) =
-      _$UserMessageContentStringImpl.fromJson;
+@JsonKey(name: 'unionType')
+final String $type;
 
-  @override
-  String get value;
 
-  /// Create a copy of UserMessageContent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UserMessageContentStringImplCopyWith<_$UserMessageContentStringImpl>
-  get copyWith => throw _privateConstructorUsedError;
+/// Create a copy of UserMessageContent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UserMessageContentListChatCompletionRequestMessageContentPartCopyWith<UserMessageContentListChatCompletionRequestMessageContentPart> get copyWith => _$UserMessageContentListChatCompletionRequestMessageContentPartCopyWithImpl<UserMessageContentListChatCompletionRequestMessageContentPart>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$UserMessageContentListChatCompletionRequestMessageContentPartToJson(this, );
 }
 
-AssistantMessageFunctionCall _$AssistantMessageFunctionCallFromJson(
-  Map<String, dynamic> json,
-) {
-  return _AssistantMessageFunctionCall.fromJson(json);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserMessageContentListChatCompletionRequestMessageContentPart&&const DeepCollectionEquality().equals(other._value, _value));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_value));
+
+@override
+String toString() {
+  return 'UserMessageContent.parts(value: $value)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UserMessageContentListChatCompletionRequestMessageContentPartCopyWith<$Res> implements $UserMessageContentCopyWith<$Res> {
+  factory $UserMessageContentListChatCompletionRequestMessageContentPartCopyWith(UserMessageContentListChatCompletionRequestMessageContentPart value, $Res Function(UserMessageContentListChatCompletionRequestMessageContentPart) _then) = _$UserMessageContentListChatCompletionRequestMessageContentPartCopyWithImpl;
+@useResult
+$Res call({
+ List<ChatCompletionRequestMessageContentPart> value
+});
+
+
+
+
+}
+/// @nodoc
+class _$UserMessageContentListChatCompletionRequestMessageContentPartCopyWithImpl<$Res>
+    implements $UserMessageContentListChatCompletionRequestMessageContentPartCopyWith<$Res> {
+  _$UserMessageContentListChatCompletionRequestMessageContentPartCopyWithImpl(this._self, this._then);
+
+  final UserMessageContentListChatCompletionRequestMessageContentPart _self;
+  final $Res Function(UserMessageContentListChatCompletionRequestMessageContentPart) _then;
+
+/// Create a copy of UserMessageContent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(UserMessageContentListChatCompletionRequestMessageContentPart(
+null == value ? _self._value : value // ignore: cast_nullable_to_non_nullable
+as List<ChatCompletionRequestMessageContentPart>,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class UserMessageContentString extends UserMessageContent {
+  const UserMessageContentString(this.value, {final  String? $type}): $type = $type ?? 'string',super._();
+  factory UserMessageContentString.fromJson(Map<String, dynamic> json) => _$UserMessageContentStringFromJson(json);
+
+@override final  String value;
+
+@JsonKey(name: 'unionType')
+final String $type;
+
+
+/// Create a copy of UserMessageContent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UserMessageContentStringCopyWith<UserMessageContentString> get copyWith => _$UserMessageContentStringCopyWithImpl<UserMessageContentString>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$UserMessageContentStringToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserMessageContentString&&(identical(other.value, value) || other.value == value));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'UserMessageContent.string(value: $value)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UserMessageContentStringCopyWith<$Res> implements $UserMessageContentCopyWith<$Res> {
+  factory $UserMessageContentStringCopyWith(UserMessageContentString value, $Res Function(UserMessageContentString) _then) = _$UserMessageContentStringCopyWithImpl;
+@useResult
+$Res call({
+ String value
+});
+
+
+
+
+}
+/// @nodoc
+class _$UserMessageContentStringCopyWithImpl<$Res>
+    implements $UserMessageContentStringCopyWith<$Res> {
+  _$UserMessageContentStringCopyWithImpl(this._self, this._then);
+
+  final UserMessageContentString _self;
+  final $Res Function(UserMessageContentString) _then;
+
+/// Create a copy of UserMessageContent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(UserMessageContentString(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
 
 /// @nodoc
 mixin _$AssistantMessageFunctionCall {
-  /// The arguments to call the function with, as generated by the model in JSON format. Note that the model does not always generate valid JSON, and may hallucinate parameters not defined by your function schema. Validate the arguments in your code before calling your function.
-  String get arguments => throw _privateConstructorUsedError;
 
-  /// The name of the function to call.
-  String get name => throw _privateConstructorUsedError;
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_AssistantMessageFunctionCall value) $default,
-  ) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_AssistantMessageFunctionCall value)? $default,
-  ) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_AssistantMessageFunctionCall value)? $default, {
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+/// The arguments to call the function with, as generated by the model in JSON format. Note that the model does not always generate valid JSON, and may hallucinate parameters not defined by your function schema. Validate the arguments in your code before calling your function.
+ String get arguments;/// The name of the function to call.
+ String get name;
+/// Create a copy of AssistantMessageFunctionCall
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AssistantMessageFunctionCallCopyWith<AssistantMessageFunctionCall> get copyWith => _$AssistantMessageFunctionCallCopyWithImpl<AssistantMessageFunctionCall>(this as AssistantMessageFunctionCall, _$identity);
 
   /// Serializes this AssistantMessageFunctionCall to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of AssistantMessageFunctionCall
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $AssistantMessageFunctionCallCopyWith<AssistantMessageFunctionCall>
-  get copyWith => throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AssistantMessageFunctionCall&&(identical(other.arguments, arguments) || other.arguments == arguments)&&(identical(other.name, name) || other.name == name));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,arguments,name);
+
+@override
+String toString() {
+  return 'AssistantMessageFunctionCall(arguments: $arguments, name: $name)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $AssistantMessageFunctionCallCopyWith<$Res> {
-  factory $AssistantMessageFunctionCallCopyWith(
-    AssistantMessageFunctionCall value,
-    $Res Function(AssistantMessageFunctionCall) then,
-  ) =
-      _$AssistantMessageFunctionCallCopyWithImpl<
-        $Res,
-        AssistantMessageFunctionCall
-      >;
-  @useResult
-  $Res call({String arguments, String name});
-}
+abstract mixin class $AssistantMessageFunctionCallCopyWith<$Res>  {
+  factory $AssistantMessageFunctionCallCopyWith(AssistantMessageFunctionCall value, $Res Function(AssistantMessageFunctionCall) _then) = _$AssistantMessageFunctionCallCopyWithImpl;
+@useResult
+$Res call({
+ String arguments, String name
+});
 
+
+
+
+}
 /// @nodoc
-class _$AssistantMessageFunctionCallCopyWithImpl<
-  $Res,
-  $Val extends AssistantMessageFunctionCall
->
+class _$AssistantMessageFunctionCallCopyWithImpl<$Res>
     implements $AssistantMessageFunctionCallCopyWith<$Res> {
-  _$AssistantMessageFunctionCallCopyWithImpl(this._value, this._then);
+  _$AssistantMessageFunctionCallCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AssistantMessageFunctionCall _self;
+  final $Res Function(AssistantMessageFunctionCall) _then;
 
-  /// Create a copy of AssistantMessageFunctionCall
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? arguments = null, Object? name = null}) {
-    return _then(
-      _value.copyWith(
-            arguments: null == arguments
-                ? _value.arguments
-                : arguments // ignore: cast_nullable_to_non_nullable
-                      as String,
-            name: null == name
-                ? _value.name
-                : name // ignore: cast_nullable_to_non_nullable
-                      as String,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of AssistantMessageFunctionCall
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? arguments = null,Object? name = null,}) {
+  return _then(_self.copyWith(
+arguments: null == arguments ? _self.arguments : arguments // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$AssistantMessageFunctionCallImplCopyWith<$Res>
-    implements $AssistantMessageFunctionCallCopyWith<$Res> {
-  factory _$$AssistantMessageFunctionCallImplCopyWith(
-    _$AssistantMessageFunctionCallImpl value,
-    $Res Function(_$AssistantMessageFunctionCallImpl) then,
-  ) = __$$AssistantMessageFunctionCallImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String arguments, String name});
 }
 
-/// @nodoc
-class __$$AssistantMessageFunctionCallImplCopyWithImpl<$Res>
-    extends
-        _$AssistantMessageFunctionCallCopyWithImpl<
-          $Res,
-          _$AssistantMessageFunctionCallImpl
-        >
-    implements _$$AssistantMessageFunctionCallImplCopyWith<$Res> {
-  __$$AssistantMessageFunctionCallImplCopyWithImpl(
-    _$AssistantMessageFunctionCallImpl _value,
-    $Res Function(_$AssistantMessageFunctionCallImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of AssistantMessageFunctionCall
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? arguments = null, Object? name = null}) {
-    return _then(
-      _$AssistantMessageFunctionCallImpl(
-        arguments: null == arguments
-            ? _value.arguments
-            : arguments // ignore: cast_nullable_to_non_nullable
-                  as String,
-        name: null == name
-            ? _value.name
-            : name // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
+/// Adds pattern-matching-related methods to [AssistantMessageFunctionCall].
+extension AssistantMessageFunctionCallPatterns on AssistantMessageFunctionCall {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AssistantMessageFunctionCall value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AssistantMessageFunctionCall() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AssistantMessageFunctionCall value)  $default,){
+final _that = this;
+switch (_that) {
+case _AssistantMessageFunctionCall():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AssistantMessageFunctionCall value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AssistantMessageFunctionCall() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$AssistantMessageFunctionCallImpl extends _AssistantMessageFunctionCall {
-  const _$AssistantMessageFunctionCallImpl({
-    required this.arguments,
-    required this.name,
-  }) : super._();
 
-  factory _$AssistantMessageFunctionCallImpl.fromJson(
-    Map<String, dynamic> json,
-  ) => _$$AssistantMessageFunctionCallImplFromJson(json);
+class _AssistantMessageFunctionCall extends AssistantMessageFunctionCall {
+  const _AssistantMessageFunctionCall({required this.arguments, required this.name}): super._();
+  factory _AssistantMessageFunctionCall.fromJson(Map<String, dynamic> json) => _$AssistantMessageFunctionCallFromJson(json);
 
-  /// The arguments to call the function with, as generated by the model in JSON format. Note that the model does not always generate valid JSON, and may hallucinate parameters not defined by your function schema. Validate the arguments in your code before calling your function.
-  @override
-  final String arguments;
+/// The arguments to call the function with, as generated by the model in JSON format. Note that the model does not always generate valid JSON, and may hallucinate parameters not defined by your function schema. Validate the arguments in your code before calling your function.
+@override final  String arguments;
+/// The name of the function to call.
+@override final  String name;
 
-  /// The name of the function to call.
-  @override
-  final String name;
+/// Create a copy of AssistantMessageFunctionCall
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AssistantMessageFunctionCallCopyWith<_AssistantMessageFunctionCall> get copyWith => __$AssistantMessageFunctionCallCopyWithImpl<_AssistantMessageFunctionCall>(this, _$identity);
 
-  @override
-  String toString() {
-    return 'AssistantMessageFunctionCall(arguments: $arguments, name: $name)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AssistantMessageFunctionCallImpl &&
-            (identical(other.arguments, arguments) ||
-                other.arguments == arguments) &&
-            (identical(other.name, name) || other.name == name));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, arguments, name);
-
-  /// Create a copy of AssistantMessageFunctionCall
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AssistantMessageFunctionCallImplCopyWith<
-    _$AssistantMessageFunctionCallImpl
-  >
-  get copyWith =>
-      __$$AssistantMessageFunctionCallImplCopyWithImpl<
-        _$AssistantMessageFunctionCallImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_AssistantMessageFunctionCall value) $default,
-  ) {
-    return $default(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_AssistantMessageFunctionCall value)? $default,
-  ) {
-    return $default?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_AssistantMessageFunctionCall value)? $default, {
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AssistantMessageFunctionCallImplToJson(this);
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$AssistantMessageFunctionCallToJson(this, );
 }
 
-abstract class _AssistantMessageFunctionCall
-    extends AssistantMessageFunctionCall {
-  const factory _AssistantMessageFunctionCall({
-    required final String arguments,
-    required final String name,
-  }) = _$AssistantMessageFunctionCallImpl;
-  const _AssistantMessageFunctionCall._() : super._();
-
-  factory _AssistantMessageFunctionCall.fromJson(Map<String, dynamic> json) =
-      _$AssistantMessageFunctionCallImpl.fromJson;
-
-  /// The arguments to call the function with, as generated by the model in JSON format. Note that the model does not always generate valid JSON, and may hallucinate parameters not defined by your function schema. Validate the arguments in your code before calling your function.
-  @override
-  String get arguments;
-
-  /// The name of the function to call.
-  @override
-  String get name;
-
-  /// Create a copy of AssistantMessageFunctionCall
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AssistantMessageFunctionCallImplCopyWith<
-    _$AssistantMessageFunctionCallImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AssistantMessageFunctionCall&&(identical(other.arguments, arguments) || other.arguments == arguments)&&(identical(other.name, name) || other.name == name));
 }
 
-ChatCompletionRequestMessageContentPart
-_$ChatCompletionRequestMessageContentPartFromJson(Map<String, dynamic> json) {
-  switch (json['type']) {
-    case 'text':
-      return ChatCompletionRequestMessageContentPartText.fromJson(json);
-    case 'image':
-      return ChatCompletionRequestMessageContentPartImage.fromJson(json);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,arguments,name);
 
-    default:
-      throw CheckedFromJsonException(
-        json,
-        'type',
-        'ChatCompletionRequestMessageContentPart',
-        'Invalid union type "${json['type']}"!',
-      );
-  }
+@override
+String toString() {
+  return 'AssistantMessageFunctionCall(arguments: $arguments, name: $name)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AssistantMessageFunctionCallCopyWith<$Res> implements $AssistantMessageFunctionCallCopyWith<$Res> {
+  factory _$AssistantMessageFunctionCallCopyWith(_AssistantMessageFunctionCall value, $Res Function(_AssistantMessageFunctionCall) _then) = __$AssistantMessageFunctionCallCopyWithImpl;
+@override @useResult
+$Res call({
+ String arguments, String name
+});
+
+
+
+
+}
+/// @nodoc
+class __$AssistantMessageFunctionCallCopyWithImpl<$Res>
+    implements _$AssistantMessageFunctionCallCopyWith<$Res> {
+  __$AssistantMessageFunctionCallCopyWithImpl(this._self, this._then);
+
+  final _AssistantMessageFunctionCall _self;
+  final $Res Function(_AssistantMessageFunctionCall) _then;
+
+/// Create a copy of AssistantMessageFunctionCall
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? arguments = null,Object? name = null,}) {
+  return _then(_AssistantMessageFunctionCall(
+arguments: null == arguments ? _self.arguments : arguments // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+ChatCompletionRequestMessageContentPart _$ChatCompletionRequestMessageContentPartFromJson(
+  Map<String, dynamic> json
+) {
+        switch (json['type']) {
+                  case 'text':
+          return _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText.fromJson(
+            json
+          );
+                case 'image':
+          return _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage.fromJson(
+            json
+          );
+        
+          default:
+            throw CheckedFromJsonException(
+  json,
+  'type',
+  'ChatCompletionRequestMessageContentPart',
+  'Invalid union type "${json['type']}"!'
+);
+        }
+      
 }
 
 /// @nodoc
 mixin _$ChatCompletionRequestMessageContentPart {
-  /// The type of the content part.
-  Enum get type => throw _privateConstructorUsedError;
 
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChatCompletionRequestMessageContentPartText value)
-    text,
-    required TResult Function(
-      ChatCompletionRequestMessageContentPartImage value,
-    )
-    image,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChatCompletionRequestMessageContentPartText value)? text,
-    TResult? Function(ChatCompletionRequestMessageContentPartImage value)?
-    image,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChatCompletionRequestMessageContentPartText value)? text,
-    TResult Function(ChatCompletionRequestMessageContentPartImage value)? image,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+/// The type of the content part.
+ Enum get type;
 
   /// Serializes this ChatCompletionRequestMessageContentPart to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChatCompletionRequestMessageContentPart&&(identical(other.type, type) || other.type == type));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,type);
+
+@override
+String toString() {
+  return 'ChatCompletionRequestMessageContentPart(type: $type)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ChatCompletionRequestMessageContentPartCopyWith<$Res> {
-  factory $ChatCompletionRequestMessageContentPartCopyWith(
-    ChatCompletionRequestMessageContentPart value,
-    $Res Function(ChatCompletionRequestMessageContentPart) then,
-  ) =
-      _$ChatCompletionRequestMessageContentPartCopyWithImpl<
-        $Res,
-        ChatCompletionRequestMessageContentPart
-      >;
+class $ChatCompletionRequestMessageContentPartCopyWith<$Res>  {
+$ChatCompletionRequestMessageContentPartCopyWith(ChatCompletionRequestMessageContentPart _, $Res Function(ChatCompletionRequestMessageContentPart) __);
 }
 
-/// @nodoc
-class _$ChatCompletionRequestMessageContentPartCopyWithImpl<
-  $Res,
-  $Val extends ChatCompletionRequestMessageContentPart
->
-    implements $ChatCompletionRequestMessageContentPartCopyWith<$Res> {
-  _$ChatCompletionRequestMessageContentPartCopyWithImpl(
-    this._value,
-    this._then,
-  );
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [ChatCompletionRequestMessageContentPart].
+extension ChatCompletionRequestMessageContentPartPatterns on ChatCompletionRequestMessageContentPart {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of ChatCompletionRequestMessageContentPart
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText value)?  text,TResult Function( _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage value)?  image,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText() when text != null:
+return text(_that);case _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage() when image != null:
+return image(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText value)  text,required TResult Function( _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage value)  image,}){
+final _that = this;
+switch (_that) {
+case _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText():
+return text(_that);case _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage():
+return image(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText value)?  text,TResult? Function( _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage value)?  image,}){
+final _that = this;
+switch (_that) {
+case _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText() when text != null:
+return text(_that);case _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage() when image != null:
+return image(_that);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$ChatCompletionRequestMessageContentPartTextImplCopyWith<
-  $Res
-> {
-  factory _$$ChatCompletionRequestMessageContentPartTextImplCopyWith(
-    _$ChatCompletionRequestMessageContentPartTextImpl value,
-    $Res Function(_$ChatCompletionRequestMessageContentPartTextImpl) then,
-  ) = __$$ChatCompletionRequestMessageContentPartTextImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({TextContentPartType type, String text});
-}
-
-/// @nodoc
-class __$$ChatCompletionRequestMessageContentPartTextImplCopyWithImpl<$Res>
-    extends
-        _$ChatCompletionRequestMessageContentPartCopyWithImpl<
-          $Res,
-          _$ChatCompletionRequestMessageContentPartTextImpl
-        >
-    implements
-        _$$ChatCompletionRequestMessageContentPartTextImplCopyWith<$Res> {
-  __$$ChatCompletionRequestMessageContentPartTextImplCopyWithImpl(
-    _$ChatCompletionRequestMessageContentPartTextImpl _value,
-    $Res Function(_$ChatCompletionRequestMessageContentPartTextImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of ChatCompletionRequestMessageContentPart
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? type = null, Object? text = null}) {
-    return _then(
-      _$ChatCompletionRequestMessageContentPartTextImpl(
-        type: null == type
-            ? _value.type
-            : type // ignore: cast_nullable_to_non_nullable
-                  as TextContentPartType,
-        text: null == text
-            ? _value.text
-            : text // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ChatCompletionRequestMessageContentPartTextImpl
-    extends ChatCompletionRequestMessageContentPartText {
-  const _$ChatCompletionRequestMessageContentPartTextImpl({
-    required this.type,
-    required this.text,
-  }) : super._();
 
-  factory _$ChatCompletionRequestMessageContentPartTextImpl.fromJson(
-    Map<String, dynamic> json,
-  ) => _$$ChatCompletionRequestMessageContentPartTextImplFromJson(json);
+class _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText extends ChatCompletionRequestMessageContentPart {
+  const _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText({required this.type, required this.text}): super._();
+  factory _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText.fromJson(Map<String, dynamic> json) => _$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartTextFromJson(json);
 
-  /// The type of the content part.
-  @override
-  final TextContentPartType type;
+/// The type of the content part.
+@override final  TextContentPartType type;
+/// The text content.
+ final  String text;
 
-  /// The text content.
-  @override
-  final String text;
+/// Create a copy of ChatCompletionRequestMessageContentPart
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartTextCopyWith<_ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText> get copyWith => __$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartTextCopyWithImpl<_ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText>(this, _$identity);
 
-  @override
-  String toString() {
-    return 'ChatCompletionRequestMessageContentPart.text(type: $type, text: $text)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChatCompletionRequestMessageContentPartTextImpl &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.text, text) || other.text == text));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, type, text);
-
-  /// Create a copy of ChatCompletionRequestMessageContentPart
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChatCompletionRequestMessageContentPartTextImplCopyWith<
-    _$ChatCompletionRequestMessageContentPartTextImpl
-  >
-  get copyWith =>
-      __$$ChatCompletionRequestMessageContentPartTextImplCopyWithImpl<
-        _$ChatCompletionRequestMessageContentPartTextImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChatCompletionRequestMessageContentPartText value)
-    text,
-    required TResult Function(
-      ChatCompletionRequestMessageContentPartImage value,
-    )
-    image,
-  }) {
-    return text(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChatCompletionRequestMessageContentPartText value)? text,
-    TResult? Function(ChatCompletionRequestMessageContentPartImage value)?
-    image,
-  }) {
-    return text?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChatCompletionRequestMessageContentPartText value)? text,
-    TResult Function(ChatCompletionRequestMessageContentPartImage value)? image,
-    required TResult orElse(),
-  }) {
-    if (text != null) {
-      return text(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatCompletionRequestMessageContentPartTextImplToJson(this);
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartTextToJson(this, );
 }
 
-abstract class ChatCompletionRequestMessageContentPartText
-    extends ChatCompletionRequestMessageContentPart {
-  const factory ChatCompletionRequestMessageContentPartText({
-    required final TextContentPartType type,
-    required final String text,
-  }) = _$ChatCompletionRequestMessageContentPartTextImpl;
-  const ChatCompletionRequestMessageContentPartText._() : super._();
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText&&(identical(other.type, type) || other.type == type)&&(identical(other.text, text) || other.text == text));
+}
 
-  factory ChatCompletionRequestMessageContentPartText.fromJson(
-    Map<String, dynamic> json,
-  ) = _$ChatCompletionRequestMessageContentPartTextImpl.fromJson;
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,type,text);
 
-  /// The type of the content part.
-  @override
-  TextContentPartType get type;
+@override
+String toString() {
+  return 'ChatCompletionRequestMessageContentPart.text(type: $type, text: $text)';
+}
 
-  /// The text content.
-  String get text;
 
-  /// Create a copy of ChatCompletionRequestMessageContentPart
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatCompletionRequestMessageContentPartTextImplCopyWith<
-    _$ChatCompletionRequestMessageContentPartTextImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChatCompletionRequestMessageContentPartImageImplCopyWith<
-  $Res
-> {
-  factory _$$ChatCompletionRequestMessageContentPartImageImplCopyWith(
-    _$ChatCompletionRequestMessageContentPartImageImpl value,
-    $Res Function(_$ChatCompletionRequestMessageContentPartImageImpl) then,
-  ) = __$$ChatCompletionRequestMessageContentPartImageImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({
-    ImageContentPartType type,
-    @JsonKey(name: 'image_url') ImageContentPartImageUrl imageUrl,
+abstract mixin class _$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartTextCopyWith<$Res> implements $ChatCompletionRequestMessageContentPartCopyWith<$Res> {
+  factory _$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartTextCopyWith(_ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText value, $Res Function(_ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText) _then) = __$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartTextCopyWithImpl;
+@useResult
+$Res call({
+ TextContentPartType type, String text
+});
+
+
+
+
+}
+/// @nodoc
+class __$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartTextCopyWithImpl<$Res>
+    implements _$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartTextCopyWith<$Res> {
+  __$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartTextCopyWithImpl(this._self, this._then);
+
+  final _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText _self;
+  final $Res Function(_ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText) _then;
+
+/// Create a copy of ChatCompletionRequestMessageContentPart
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? type = null,Object? text = null,}) {
+  return _then(_ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartText(
+type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as TextContentPartType,text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage extends ChatCompletionRequestMessageContentPart {
+  const _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage({required this.type, @JsonKey(name: 'image_url') required this.imageUrl}): super._();
+  factory _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage.fromJson(Map<String, dynamic> json) => _$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImageFromJson(json);
+
+/// The type of the content part.
+@override final  ImageContentPartType type;
+/// The URL of the image.
+@JsonKey(name: 'image_url') final  ImageContentPartImageUrl imageUrl;
+
+/// Create a copy of ChatCompletionRequestMessageContentPart
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImageCopyWith<_ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage> get copyWith => __$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImageCopyWithImpl<_ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImageToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage&&(identical(other.type, type) || other.type == type)&&(identical(other.imageUrl, imageUrl) || other.imageUrl == imageUrl));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,type,imageUrl);
+
+@override
+String toString() {
+  return 'ChatCompletionRequestMessageContentPart.image(type: $type, imageUrl: $imageUrl)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImageCopyWith<$Res> implements $ChatCompletionRequestMessageContentPartCopyWith<$Res> {
+  factory _$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImageCopyWith(_ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage value, $Res Function(_ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage) _then) = __$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImageCopyWithImpl;
+@useResult
+$Res call({
+ ImageContentPartType type,@JsonKey(name: 'image_url') ImageContentPartImageUrl imageUrl
+});
+
+
+$ImageContentPartImageUrlCopyWith<$Res> get imageUrl;
+
+}
+/// @nodoc
+class __$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImageCopyWithImpl<$Res>
+    implements _$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImageCopyWith<$Res> {
+  __$ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImageCopyWithImpl(this._self, this._then);
+
+  final _ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage _self;
+  final $Res Function(_ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage) _then;
+
+/// Create a copy of ChatCompletionRequestMessageContentPart
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? type = null,Object? imageUrl = null,}) {
+  return _then(_ChatCompletionRequestMessageContentPartChatCompletionRequestMessageContentPartImage(
+type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as ImageContentPartType,imageUrl: null == imageUrl ? _self.imageUrl : imageUrl // ignore: cast_nullable_to_non_nullable
+as ImageContentPartImageUrl,
+  ));
+}
+
+/// Create a copy of ChatCompletionRequestMessageContentPart
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ImageContentPartImageUrlCopyWith<$Res> get imageUrl {
+  
+  return $ImageContentPartImageUrlCopyWith<$Res>(_self.imageUrl, (value) {
+    return _then(_self.copyWith(imageUrl: value));
   });
-
-  $ImageContentPartImageUrlCopyWith<$Res> get imageUrl;
+}
 }
 
-/// @nodoc
-class __$$ChatCompletionRequestMessageContentPartImageImplCopyWithImpl<$Res>
-    extends
-        _$ChatCompletionRequestMessageContentPartCopyWithImpl<
-          $Res,
-          _$ChatCompletionRequestMessageContentPartImageImpl
-        >
-    implements
-        _$$ChatCompletionRequestMessageContentPartImageImplCopyWith<$Res> {
-  __$$ChatCompletionRequestMessageContentPartImageImplCopyWithImpl(
-    _$ChatCompletionRequestMessageContentPartImageImpl _value,
-    $Res Function(_$ChatCompletionRequestMessageContentPartImageImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of ChatCompletionRequestMessageContentPart
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? type = null, Object? imageUrl = null}) {
-    return _then(
-      _$ChatCompletionRequestMessageContentPartImageImpl(
-        type: null == type
-            ? _value.type
-            : type // ignore: cast_nullable_to_non_nullable
-                  as ImageContentPartType,
-        imageUrl: null == imageUrl
-            ? _value.imageUrl
-            : imageUrl // ignore: cast_nullable_to_non_nullable
-                  as ImageContentPartImageUrl,
-      ),
-    );
-  }
-
-  /// Create a copy of ChatCompletionRequestMessageContentPart
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ImageContentPartImageUrlCopyWith<$Res> get imageUrl {
-    return $ImageContentPartImageUrlCopyWith<$Res>(_value.imageUrl, (value) {
-      return _then(_value.copyWith(imageUrl: value));
-    });
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ChatCompletionRequestMessageContentPartImageImpl
-    extends ChatCompletionRequestMessageContentPartImage {
-  const _$ChatCompletionRequestMessageContentPartImageImpl({
-    required this.type,
-    @JsonKey(name: 'image_url') required this.imageUrl,
-  }) : super._();
-
-  factory _$ChatCompletionRequestMessageContentPartImageImpl.fromJson(
-    Map<String, dynamic> json,
-  ) => _$$ChatCompletionRequestMessageContentPartImageImplFromJson(json);
-
-  /// The type of the content part.
-  @override
-  final ImageContentPartType type;
-
-  /// The URL of the image.
-  @override
-  @JsonKey(name: 'image_url')
-  final ImageContentPartImageUrl imageUrl;
-
-  @override
-  String toString() {
-    return 'ChatCompletionRequestMessageContentPart.image(type: $type, imageUrl: $imageUrl)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChatCompletionRequestMessageContentPartImageImpl &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.imageUrl, imageUrl) ||
-                other.imageUrl == imageUrl));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, type, imageUrl);
-
-  /// Create a copy of ChatCompletionRequestMessageContentPart
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChatCompletionRequestMessageContentPartImageImplCopyWith<
-    _$ChatCompletionRequestMessageContentPartImageImpl
-  >
-  get copyWith =>
-      __$$ChatCompletionRequestMessageContentPartImageImplCopyWithImpl<
-        _$ChatCompletionRequestMessageContentPartImageImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChatCompletionRequestMessageContentPartText value)
-    text,
-    required TResult Function(
-      ChatCompletionRequestMessageContentPartImage value,
-    )
-    image,
-  }) {
-    return image(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChatCompletionRequestMessageContentPartText value)? text,
-    TResult? Function(ChatCompletionRequestMessageContentPartImage value)?
-    image,
-  }) {
-    return image?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChatCompletionRequestMessageContentPartText value)? text,
-    TResult Function(ChatCompletionRequestMessageContentPartImage value)? image,
-    required TResult orElse(),
-  }) {
-    if (image != null) {
-      return image(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ChatCompletionRequestMessageContentPartImageImplToJson(this);
-  }
-}
-
-abstract class ChatCompletionRequestMessageContentPartImage
-    extends ChatCompletionRequestMessageContentPart {
-  const factory ChatCompletionRequestMessageContentPartImage({
-    required final ImageContentPartType type,
-    @JsonKey(name: 'image_url')
-    required final ImageContentPartImageUrl imageUrl,
-  }) = _$ChatCompletionRequestMessageContentPartImageImpl;
-  const ChatCompletionRequestMessageContentPartImage._() : super._();
-
-  factory ChatCompletionRequestMessageContentPartImage.fromJson(
-    Map<String, dynamic> json,
-  ) = _$ChatCompletionRequestMessageContentPartImageImpl.fromJson;
-
-  /// The type of the content part.
-  @override
-  ImageContentPartType get type;
-
-  /// The URL of the image.
-  @JsonKey(name: 'image_url')
-  ImageContentPartImageUrl get imageUrl;
-
-  /// Create a copy of ChatCompletionRequestMessageContentPart
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatCompletionRequestMessageContentPartImageImplCopyWith<
-    _$ChatCompletionRequestMessageContentPartImageImpl
-  >
-  get copyWith => throw _privateConstructorUsedError;
-}
-
-ImageContentPartImageUrl _$ImageContentPartImageUrlFromJson(
-  Map<String, dynamic> json,
-) {
-  return _ImageContentPartImageUrl.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ImageContentPartImageUrl {
-  /// Either a URL of the image or the base64 encoded image data.
-  String get url => throw _privateConstructorUsedError;
 
-  /// Specifies the detail level of the image.
-  ImageContentPartImageUrlDetail get detail =>
-      throw _privateConstructorUsedError;
-
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_ImageContentPartImageUrl value) $default,
-  ) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_ImageContentPartImageUrl value)? $default,
-  ) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_ImageContentPartImageUrl value)? $default, {
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+/// Either a URL of the image or the base64 encoded image data.
+ String get url;/// Specifies the detail level of the image.
+ ImageContentPartImageUrlDetail get detail;
+/// Create a copy of ImageContentPartImageUrl
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ImageContentPartImageUrlCopyWith<ImageContentPartImageUrl> get copyWith => _$ImageContentPartImageUrlCopyWithImpl<ImageContentPartImageUrl>(this as ImageContentPartImageUrl, _$identity);
 
   /// Serializes this ImageContentPartImageUrl to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of ImageContentPartImageUrl
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ImageContentPartImageUrlCopyWith<ImageContentPartImageUrl> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ImageContentPartImageUrl&&(identical(other.url, url) || other.url == url)&&(identical(other.detail, detail) || other.detail == detail));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,url,detail);
+
+@override
+String toString() {
+  return 'ImageContentPartImageUrl(url: $url, detail: $detail)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ImageContentPartImageUrlCopyWith<$Res> {
-  factory $ImageContentPartImageUrlCopyWith(
-    ImageContentPartImageUrl value,
-    $Res Function(ImageContentPartImageUrl) then,
-  ) = _$ImageContentPartImageUrlCopyWithImpl<$Res, ImageContentPartImageUrl>;
-  @useResult
-  $Res call({String url, ImageContentPartImageUrlDetail detail});
-}
+abstract mixin class $ImageContentPartImageUrlCopyWith<$Res>  {
+  factory $ImageContentPartImageUrlCopyWith(ImageContentPartImageUrl value, $Res Function(ImageContentPartImageUrl) _then) = _$ImageContentPartImageUrlCopyWithImpl;
+@useResult
+$Res call({
+ String url, ImageContentPartImageUrlDetail detail
+});
 
+
+
+
+}
 /// @nodoc
-class _$ImageContentPartImageUrlCopyWithImpl<
-  $Res,
-  $Val extends ImageContentPartImageUrl
->
+class _$ImageContentPartImageUrlCopyWithImpl<$Res>
     implements $ImageContentPartImageUrlCopyWith<$Res> {
-  _$ImageContentPartImageUrlCopyWithImpl(this._value, this._then);
+  _$ImageContentPartImageUrlCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ImageContentPartImageUrl _self;
+  final $Res Function(ImageContentPartImageUrl) _then;
 
-  /// Create a copy of ImageContentPartImageUrl
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? url = null, Object? detail = null}) {
-    return _then(
-      _value.copyWith(
-            url: null == url
-                ? _value.url
-                : url // ignore: cast_nullable_to_non_nullable
-                      as String,
-            detail: null == detail
-                ? _value.detail
-                : detail // ignore: cast_nullable_to_non_nullable
-                      as ImageContentPartImageUrlDetail,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of ImageContentPartImageUrl
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? url = null,Object? detail = null,}) {
+  return _then(_self.copyWith(
+url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String,detail: null == detail ? _self.detail : detail // ignore: cast_nullable_to_non_nullable
+as ImageContentPartImageUrlDetail,
+  ));
 }
 
-/// @nodoc
-abstract class _$$ImageContentPartImageUrlImplCopyWith<$Res>
-    implements $ImageContentPartImageUrlCopyWith<$Res> {
-  factory _$$ImageContentPartImageUrlImplCopyWith(
-    _$ImageContentPartImageUrlImpl value,
-    $Res Function(_$ImageContentPartImageUrlImpl) then,
-  ) = __$$ImageContentPartImageUrlImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String url, ImageContentPartImageUrlDetail detail});
 }
 
-/// @nodoc
-class __$$ImageContentPartImageUrlImplCopyWithImpl<$Res>
-    extends
-        _$ImageContentPartImageUrlCopyWithImpl<
-          $Res,
-          _$ImageContentPartImageUrlImpl
-        >
-    implements _$$ImageContentPartImageUrlImplCopyWith<$Res> {
-  __$$ImageContentPartImageUrlImplCopyWithImpl(
-    _$ImageContentPartImageUrlImpl _value,
-    $Res Function(_$ImageContentPartImageUrlImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of ImageContentPartImageUrl
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? url = null, Object? detail = null}) {
-    return _then(
-      _$ImageContentPartImageUrlImpl(
-        url: null == url
-            ? _value.url
-            : url // ignore: cast_nullable_to_non_nullable
-                  as String,
-        detail: null == detail
-            ? _value.detail
-            : detail // ignore: cast_nullable_to_non_nullable
-                  as ImageContentPartImageUrlDetail,
-      ),
-    );
-  }
+/// Adds pattern-matching-related methods to [ImageContentPartImageUrl].
+extension ImageContentPartImageUrlPatterns on ImageContentPartImageUrl {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ImageContentPartImageUrl value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ImageContentPartImageUrl() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ImageContentPartImageUrl value)  $default,){
+final _that = this;
+switch (_that) {
+case _ImageContentPartImageUrl():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ImageContentPartImageUrl value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ImageContentPartImageUrl() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ImageContentPartImageUrlImpl extends _ImageContentPartImageUrl {
-  const _$ImageContentPartImageUrlImpl({
-    required this.url,
-    this.detail = ImageContentPartImageUrlDetail.auto,
-  }) : super._();
 
-  factory _$ImageContentPartImageUrlImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ImageContentPartImageUrlImplFromJson(json);
+class _ImageContentPartImageUrl extends ImageContentPartImageUrl {
+  const _ImageContentPartImageUrl({required this.url, this.detail = ImageContentPartImageUrlDetail.auto}): super._();
+  factory _ImageContentPartImageUrl.fromJson(Map<String, dynamic> json) => _$ImageContentPartImageUrlFromJson(json);
 
-  /// Either a URL of the image or the base64 encoded image data.
-  @override
-  final String url;
+/// Either a URL of the image or the base64 encoded image data.
+@override final  String url;
+/// Specifies the detail level of the image.
+@override@JsonKey() final  ImageContentPartImageUrlDetail detail;
 
-  /// Specifies the detail level of the image.
-  @override
-  @JsonKey()
-  final ImageContentPartImageUrlDetail detail;
+/// Create a copy of ImageContentPartImageUrl
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ImageContentPartImageUrlCopyWith<_ImageContentPartImageUrl> get copyWith => __$ImageContentPartImageUrlCopyWithImpl<_ImageContentPartImageUrl>(this, _$identity);
 
-  @override
-  String toString() {
-    return 'ImageContentPartImageUrl(url: $url, detail: $detail)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ImageContentPartImageUrlImpl &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.detail, detail) || other.detail == detail));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, url, detail);
-
-  /// Create a copy of ImageContentPartImageUrl
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ImageContentPartImageUrlImplCopyWith<_$ImageContentPartImageUrlImpl>
-  get copyWith =>
-      __$$ImageContentPartImageUrlImplCopyWithImpl<
-        _$ImageContentPartImageUrlImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_ImageContentPartImageUrl value) $default,
-  ) {
-    return $default(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_ImageContentPartImageUrl value)? $default,
-  ) {
-    return $default?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_ImageContentPartImageUrl value)? $default, {
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ImageContentPartImageUrlImplToJson(this);
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$ImageContentPartImageUrlToJson(this, );
 }
 
-abstract class _ImageContentPartImageUrl extends ImageContentPartImageUrl {
-  const factory _ImageContentPartImageUrl({
-    required final String url,
-    final ImageContentPartImageUrlDetail detail,
-  }) = _$ImageContentPartImageUrlImpl;
-  const _ImageContentPartImageUrl._() : super._();
-
-  factory _ImageContentPartImageUrl.fromJson(Map<String, dynamic> json) =
-      _$ImageContentPartImageUrlImpl.fromJson;
-
-  /// Either a URL of the image or the base64 encoded image data.
-  @override
-  String get url;
-
-  /// Specifies the detail level of the image.
-  @override
-  ImageContentPartImageUrlDetail get detail;
-
-  /// Create a copy of ImageContentPartImageUrl
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ImageContentPartImageUrlImplCopyWith<_$ImageContentPartImageUrlImpl>
-  get copyWith => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ImageContentPartImageUrl&&(identical(other.url, url) || other.url == url)&&(identical(other.detail, detail) || other.detail == detail));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,url,detail);
+
+@override
+String toString() {
+  return 'ImageContentPartImageUrl(url: $url, detail: $detail)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ImageContentPartImageUrlCopyWith<$Res> implements $ImageContentPartImageUrlCopyWith<$Res> {
+  factory _$ImageContentPartImageUrlCopyWith(_ImageContentPartImageUrl value, $Res Function(_ImageContentPartImageUrl) _then) = __$ImageContentPartImageUrlCopyWithImpl;
+@override @useResult
+$Res call({
+ String url, ImageContentPartImageUrlDetail detail
+});
+
+
+
+
+}
+/// @nodoc
+class __$ImageContentPartImageUrlCopyWithImpl<$Res>
+    implements _$ImageContentPartImageUrlCopyWith<$Res> {
+  __$ImageContentPartImageUrlCopyWithImpl(this._self, this._then);
+
+  final _ImageContentPartImageUrl _self;
+  final $Res Function(_ImageContentPartImageUrl) _then;
+
+/// Create a copy of ImageContentPartImageUrl
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? url = null,Object? detail = null,}) {
+  return _then(_ImageContentPartImageUrl(
+url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String,detail: null == detail ? _self.detail : detail // ignore: cast_nullable_to_non_nullable
+as ImageContentPartImageUrlDetail,
+  ));
+}
+
+
+}
+
+// dart format on

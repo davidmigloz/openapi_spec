@@ -45,12 +45,6 @@ void main() {
         destination: genSchemaDir,
       );
       final expectedFiles = [
-        'alpha_training.dart',
-        'beta_training.dart',
-        'alpha_transform.dart',
-        'beta_transform.dart',
-        'gamma_transform.dart',
-        'group_transform.dart',
         'schema.dart',
         'training_setup.dart',
         'union_training.dart',
@@ -96,12 +90,6 @@ void main() {
         ),
       );
       final expectedFiles = [
-        'alpha_training.dart',
-        'beta_training.dart',
-        'alpha_transform.dart',
-        'beta_transform.dart',
-        'gamma_transform.dart',
-        'group_transform.dart',
         'schema.dart',
         'training_setup.dart',
         'union_training.dart',

@@ -20,7 +20,7 @@ final _oAuthTypes = [
 /// This Dart class is a container around the spec in order to parse
 /// and generate clients, servers, component schemas, and documentation
 @freezed
-class OpenApi with _$OpenApi {
+abstract class OpenApi with _$OpenApi {
   const OpenApi._();
 
   const factory OpenApi({

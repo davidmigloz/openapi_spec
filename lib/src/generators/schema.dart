@@ -681,9 +681,7 @@ class SchemaGenerator extends BaseGenerator {
     
     /// ${s.description?.trim().replaceAll('\n', '\n/// ') ?? 'No Description'}
     @freezed
-    class $name with _\$$name  {
-      
-      
+    abstract class $name with _\$$name  {
       const $name._();
 
       /// Factory constructor for $name

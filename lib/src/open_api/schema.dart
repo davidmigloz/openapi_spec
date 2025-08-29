@@ -37,7 +37,7 @@ enum SchemaType {
 /// https://swagger.io/specification/#schema-object
 /// https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md
 @Freezed(unionKey: 'type', fallbackUnion: 'object')
-class Schema with _$Schema {
+sealed class Schema with _$Schema {
   const Schema._();
 
   const factory Schema.object({

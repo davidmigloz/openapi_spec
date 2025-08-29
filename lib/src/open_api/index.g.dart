@@ -6,9 +6,7 @@ part of 'index.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OAuthFlowsImpl _$$OAuthFlowsImplFromJson(
-  Map<String, dynamic> json,
-) => _$OAuthFlowsImpl(
+_OAuthFlows _$OAuthFlowsFromJson(Map<String, dynamic> json) => _OAuthFlows(
   implicit: json['implicit'] == null
       ? null
       : OAuthFlow.fromJson(json['implicit'] as Map<String, dynamic>),
@@ -23,73 +21,67 @@ _$OAuthFlowsImpl _$$OAuthFlowsImplFromJson(
       : OAuthFlow.fromJson(json['authorizationCode'] as Map<String, dynamic>),
 );
 
-Map<String, dynamic> _$$OAuthFlowsImplToJson(_$OAuthFlowsImpl instance) =>
+Map<String, dynamic> _$OAuthFlowsToJson(_OAuthFlows instance) =>
     <String, dynamic>{
-      if (instance.implicit?.toJson() case final value?) 'implicit': value,
-      if (instance.password?.toJson() case final value?) 'password': value,
-      if (instance.clientCredentials?.toJson() case final value?)
-        'clientCredentials': value,
-      if (instance.authorizationCode?.toJson() case final value?)
-        'authorizationCode': value,
+      'implicit': ?instance.implicit?.toJson(),
+      'password': ?instance.password?.toJson(),
+      'clientCredentials': ?instance.clientCredentials?.toJson(),
+      'authorizationCode': ?instance.authorizationCode?.toJson(),
     };
 
-_$OAuthFlowImplicitImpl _$$OAuthFlowImplicitImplFromJson(
-  Map<String, dynamic> json,
-) => _$OAuthFlowImplicitImpl(
-  authorizationUrl: json['authorizationUrl'] as String,
-  refreshUrl: json['refreshUrl'] as String?,
-  scopes: Map<String, String>.from(json['scopes'] as Map),
-  $type: json['unionType'] as String?,
-);
+_OAuthFlowImplicit _$OAuthFlowImplicitFromJson(Map<String, dynamic> json) =>
+    _OAuthFlowImplicit(
+      authorizationUrl: json['authorizationUrl'] as String,
+      refreshUrl: json['refreshUrl'] as String?,
+      scopes: Map<String, String>.from(json['scopes'] as Map),
+      $type: json['unionType'] as String?,
+    );
 
-Map<String, dynamic> _$$OAuthFlowImplicitImplToJson(
-  _$OAuthFlowImplicitImpl instance,
-) => <String, dynamic>{
-  'authorizationUrl': instance.authorizationUrl,
-  if (instance.refreshUrl case final value?) 'refreshUrl': value,
-  'scopes': instance.scopes,
-  'unionType': instance.$type,
-};
+Map<String, dynamic> _$OAuthFlowImplicitToJson(_OAuthFlowImplicit instance) =>
+    <String, dynamic>{
+      'authorizationUrl': instance.authorizationUrl,
+      'refreshUrl': ?instance.refreshUrl,
+      'scopes': instance.scopes,
+      'unionType': instance.$type,
+    };
 
-_$OAuthFlowPasswordImpl _$$OAuthFlowPasswordImplFromJson(
+_OAuthFlowPassword _$OAuthFlowPasswordFromJson(Map<String, dynamic> json) =>
+    _OAuthFlowPassword(
+      tokenUrl: json['tokenUrl'] as String,
+      refreshUrl: json['refreshUrl'] as String?,
+      scopes: Map<String, String>.from(json['scopes'] as Map),
+      $type: json['unionType'] as String?,
+    );
+
+Map<String, dynamic> _$OAuthFlowPasswordToJson(_OAuthFlowPassword instance) =>
+    <String, dynamic>{
+      'tokenUrl': instance.tokenUrl,
+      'refreshUrl': ?instance.refreshUrl,
+      'scopes': instance.scopes,
+      'unionType': instance.$type,
+    };
+
+_OAuthFlowClientCredentials _$OAuthFlowClientCredentialsFromJson(
   Map<String, dynamic> json,
-) => _$OAuthFlowPasswordImpl(
+) => _OAuthFlowClientCredentials(
   tokenUrl: json['tokenUrl'] as String,
   refreshUrl: json['refreshUrl'] as String?,
   scopes: Map<String, String>.from(json['scopes'] as Map),
   $type: json['unionType'] as String?,
 );
 
-Map<String, dynamic> _$$OAuthFlowPasswordImplToJson(
-  _$OAuthFlowPasswordImpl instance,
+Map<String, dynamic> _$OAuthFlowClientCredentialsToJson(
+  _OAuthFlowClientCredentials instance,
 ) => <String, dynamic>{
   'tokenUrl': instance.tokenUrl,
-  if (instance.refreshUrl case final value?) 'refreshUrl': value,
+  'refreshUrl': ?instance.refreshUrl,
   'scopes': instance.scopes,
   'unionType': instance.$type,
 };
 
-_$OAuthFlowClientCredentialsImpl _$$OAuthFlowClientCredentialsImplFromJson(
+_OAuthFlowAuthorizationCode _$OAuthFlowAuthorizationCodeFromJson(
   Map<String, dynamic> json,
-) => _$OAuthFlowClientCredentialsImpl(
-  tokenUrl: json['tokenUrl'] as String,
-  refreshUrl: json['refreshUrl'] as String?,
-  scopes: Map<String, String>.from(json['scopes'] as Map),
-  $type: json['unionType'] as String?,
-);
-
-Map<String, dynamic> _$$OAuthFlowClientCredentialsImplToJson(
-  _$OAuthFlowClientCredentialsImpl instance,
-) => <String, dynamic>{
-  'tokenUrl': instance.tokenUrl,
-  if (instance.refreshUrl case final value?) 'refreshUrl': value,
-  'scopes': instance.scopes,
-  'unionType': instance.$type,
-};
-
-_$OAuthFlowAuthorizationCodeImpl _$$OAuthFlowAuthorizationCodeImplFromJson(
-  Map<String, dynamic> json,
-) => _$OAuthFlowAuthorizationCodeImpl(
+) => _OAuthFlowAuthorizationCode(
   authorizationUrl: json['authorizationUrl'] as String,
   tokenUrl: json['tokenUrl'] as String,
   refreshUrl: json['refreshUrl'] as String?,
@@ -97,19 +89,17 @@ _$OAuthFlowAuthorizationCodeImpl _$$OAuthFlowAuthorizationCodeImplFromJson(
   $type: json['unionType'] as String?,
 );
 
-Map<String, dynamic> _$$OAuthFlowAuthorizationCodeImplToJson(
-  _$OAuthFlowAuthorizationCodeImpl instance,
+Map<String, dynamic> _$OAuthFlowAuthorizationCodeToJson(
+  _OAuthFlowAuthorizationCode instance,
 ) => <String, dynamic>{
   'authorizationUrl': instance.authorizationUrl,
   'tokenUrl': instance.tokenUrl,
-  if (instance.refreshUrl case final value?) 'refreshUrl': value,
+  'refreshUrl': ?instance.refreshUrl,
   'scopes': instance.scopes,
   'unionType': instance.$type,
 };
 
-_$ComponentsImpl _$$ComponentsImplFromJson(
-  Map<String, dynamic> json,
-) => _$ComponentsImpl(
+_Components _$ComponentsFromJson(Map<String, dynamic> json) => _Components(
   schemas: _$JsonConverterFromJson<Map<String, dynamic>, Map<String, Schema>>(
     json['schemas'],
     const _SchemaMapConverter().fromJson,
@@ -145,44 +135,30 @@ _$ComponentsImpl _$$ComponentsImplFromJson(
   ),
 );
 
-Map<String, dynamic> _$$ComponentsImplToJson(
-  _$ComponentsImpl instance,
+Map<String, dynamic> _$ComponentsToJson(
+  _Components instance,
 ) => <String, dynamic>{
-  if (_$JsonConverterToJson<Map<String, dynamic>, Map<String, Schema>>(
-        instance.schemas,
-        const _SchemaMapConverter().toJson,
-      )
-      case final value?)
-    'schemas': value,
-  if (instance.responses?.map((k, e) => MapEntry(k, e.toJson()))
-      case final value?)
-    'responses': value,
-  if (instance.parameters?.map((k, e) => MapEntry(k, e.toJson()))
-      case final value?)
-    'parameters': value,
-  if (instance.examples?.map((k, e) => MapEntry(k, e.toJson()))
-      case final value?)
-    'examples': value,
-  if (instance.requestBodies?.map((k, e) => MapEntry(k, e.toJson()))
-      case final value?)
-    'requestBodies': value,
-  if (instance.headers?.map((k, e) => MapEntry(k, e.toJson()))
-      case final value?)
-    'headers': value,
-  if (instance.securitySchemes?.map((k, e) => MapEntry(k, e.toJson()))
-      case final value?)
-    'securitySchemes': value,
-  if (instance.links?.map((k, e) => MapEntry(k, e.toJson())) case final value?)
-    'links': value,
-  if (_$JsonConverterToJson<Map<String, dynamic>, Map<String, ApiCallback>>(
+  'schemas': ?_$JsonConverterToJson<Map<String, dynamic>, Map<String, Schema>>(
+    instance.schemas,
+    const _SchemaMapConverter().toJson,
+  ),
+  'responses': ?instance.responses?.map((k, e) => MapEntry(k, e.toJson())),
+  'parameters': ?instance.parameters?.map((k, e) => MapEntry(k, e.toJson())),
+  'examples': ?instance.examples?.map((k, e) => MapEntry(k, e.toJson())),
+  'requestBodies': ?instance.requestBodies?.map(
+    (k, e) => MapEntry(k, e.toJson()),
+  ),
+  'headers': ?instance.headers?.map((k, e) => MapEntry(k, e.toJson())),
+  'securitySchemes': ?instance.securitySchemes?.map(
+    (k, e) => MapEntry(k, e.toJson()),
+  ),
+  'links': ?instance.links?.map((k, e) => MapEntry(k, e.toJson())),
+  'callbacks':
+      ?_$JsonConverterToJson<Map<String, dynamic>, Map<String, ApiCallback>>(
         instance.callbacks,
         const _ApiCallbackMapConverter().toJson,
-      )
-      case final value?)
-    'callbacks': value,
-  if (instance.pathItems?.map((k, e) => MapEntry(k, e.toJson()))
-      case final value?)
-    'pathItems': value,
+      ),
+  'pathItems': ?instance.pathItems?.map((k, e) => MapEntry(k, e.toJson())),
 };
 
 Value? _$JsonConverterFromJson<Json, Value>(
@@ -195,44 +171,41 @@ Json? _$JsonConverterToJson<Json, Value>(
   Json? Function(Value value) toJson,
 ) => value == null ? null : toJson(value);
 
-_$ContactImpl _$$ContactImplFromJson(Map<String, dynamic> json) =>
-    _$ContactImpl(
-      name: json['name'] as String?,
-      email: json['email'] as String?,
-      url: json['url'] as String?,
-    );
+_Contact _$ContactFromJson(Map<String, dynamic> json) => _Contact(
+  name: json['name'] as String?,
+  email: json['email'] as String?,
+  url: json['url'] as String?,
+);
 
-Map<String, dynamic> _$$ContactImplToJson(_$ContactImpl instance) =>
-    <String, dynamic>{
-      if (instance.name case final value?) 'name': value,
-      if (instance.email case final value?) 'email': value,
-      if (instance.url case final value?) 'url': value,
-    };
+Map<String, dynamic> _$ContactToJson(_Contact instance) => <String, dynamic>{
+  'name': ?instance.name,
+  'email': ?instance.email,
+  'url': ?instance.url,
+};
 
-_$DiscriminatorImpl _$$DiscriminatorImplFromJson(Map<String, dynamic> json) =>
-    _$DiscriminatorImpl(
+_Discriminator _$DiscriminatorFromJson(Map<String, dynamic> json) =>
+    _Discriminator(
       propertyName: json['propertyName'] as String,
       mapping: (json['mapping'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       ),
     );
 
-Map<String, dynamic> _$$DiscriminatorImplToJson(_$DiscriminatorImpl instance) =>
+Map<String, dynamic> _$DiscriminatorToJson(_Discriminator instance) =>
     <String, dynamic>{
       'propertyName': instance.propertyName,
-      if (instance.mapping case final value?) 'mapping': value,
+      'mapping': ?instance.mapping,
     };
 
-_$EncodingImpl _$$EncodingImplFromJson(Map<String, dynamic> json) =>
-    _$EncodingImpl(contentType: json['contentType'] as String?);
+_Encoding _$EncodingFromJson(Map<String, dynamic> json) =>
+    _Encoding(contentType: json['contentType'] as String?);
 
-Map<String, dynamic> _$$EncodingImplToJson(_$EncodingImpl instance) =>
-    <String, dynamic>{
-      if (instance.contentType case final value?) 'contentType': value,
-    };
+Map<String, dynamic> _$EncodingToJson(_Encoding instance) => <String, dynamic>{
+  'contentType': ?instance.contentType,
+};
 
-_$ExampleObjectImpl _$$ExampleObjectImplFromJson(Map<String, dynamic> json) =>
-    _$ExampleObjectImpl(
+ExampleObject _$ExampleObjectFromJson(Map<String, dynamic> json) =>
+    ExampleObject(
       summary: json['summary'] as String?,
       description: json['description'] as String?,
       value: json['value'],
@@ -240,42 +213,40 @@ _$ExampleObjectImpl _$$ExampleObjectImplFromJson(Map<String, dynamic> json) =>
       ref: const _ExampleRefConverter().fromJson(json[r'$ref'] as String?),
     );
 
-Map<String, dynamic> _$$ExampleObjectImplToJson(_$ExampleObjectImpl instance) =>
+Map<String, dynamic> _$ExampleObjectToJson(ExampleObject instance) =>
     <String, dynamic>{
-      if (instance.summary case final value?) 'summary': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.value case final value?) 'value': value,
-      if (instance.externalValue case final value?) 'externalValue': value,
-      if (const _ExampleRefConverter().toJson(instance.ref) case final value?)
-        r'$ref': value,
+      'summary': ?instance.summary,
+      'description': ?instance.description,
+      'value': ?instance.value,
+      'externalValue': ?instance.externalValue,
+      r'$ref': ?const _ExampleRefConverter().toJson(instance.ref),
     };
 
-_$ExternalDocsImpl _$$ExternalDocsImplFromJson(Map<String, dynamic> json) =>
-    _$ExternalDocsImpl(
+_ExternalDocs _$ExternalDocsFromJson(Map<String, dynamic> json) =>
+    _ExternalDocs(
       description: json['description'] as String?,
       url: json['url'] as String,
     );
 
-Map<String, dynamic> _$$ExternalDocsImplToJson(_$ExternalDocsImpl instance) =>
+Map<String, dynamic> _$ExternalDocsToJson(_ExternalDocs instance) =>
     <String, dynamic>{
-      if (instance.description case final value?) 'description': value,
+      'description': ?instance.description,
       'url': instance.url,
     };
 
-_$HeaderImpl _$$HeaderImplFromJson(Map<String, dynamic> json) => _$HeaderImpl(
+_Header _$HeaderFromJson(Map<String, dynamic> json) => _Header(
   description: json['description'] as String?,
   schema: json['schema'] == null
       ? null
       : Schema.fromJson(json['schema'] as Map<String, dynamic>),
 );
 
-Map<String, dynamic> _$$HeaderImplToJson(_$HeaderImpl instance) =>
-    <String, dynamic>{
-      if (instance.description case final value?) 'description': value,
-      if (instance.schema?.toJson() case final value?) 'schema': value,
-    };
+Map<String, dynamic> _$HeaderToJson(_Header instance) => <String, dynamic>{
+  'description': ?instance.description,
+  'schema': ?instance.schema?.toJson(),
+};
 
-_$InfoImpl _$$InfoImplFromJson(Map<String, dynamic> json) => _$InfoImpl(
+_Info _$InfoFromJson(Map<String, dynamic> json) => _Info(
   title: json['title'] as String,
   summary: json['summary'] as String?,
   description: json['description'] as String?,
@@ -289,32 +260,29 @@ _$InfoImpl _$$InfoImplFromJson(Map<String, dynamic> json) => _$InfoImpl(
   version: json['version'] as String,
 );
 
-Map<String, dynamic> _$$InfoImplToJson(_$InfoImpl instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      if (instance.summary case final value?) 'summary': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.termsOfService case final value?) 'termsOfService': value,
-      if (instance.contact?.toJson() case final value?) 'contact': value,
-      if (instance.license?.toJson() case final value?) 'license': value,
-      'version': instance.version,
-    };
+Map<String, dynamic> _$InfoToJson(_Info instance) => <String, dynamic>{
+  'title': instance.title,
+  'summary': ?instance.summary,
+  'description': ?instance.description,
+  'termsOfService': ?instance.termsOfService,
+  'contact': ?instance.contact?.toJson(),
+  'license': ?instance.license?.toJson(),
+  'version': instance.version,
+};
 
-_$LicenseImpl _$$LicenseImplFromJson(Map<String, dynamic> json) =>
-    _$LicenseImpl(
-      name: json['name'] as String,
-      identifier: json['identifier'] as String?,
-      url: json['url'] as String?,
-    );
+_License _$LicenseFromJson(Map<String, dynamic> json) => _License(
+  name: json['name'] as String,
+  identifier: json['identifier'] as String?,
+  url: json['url'] as String?,
+);
 
-Map<String, dynamic> _$$LicenseImplToJson(_$LicenseImpl instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      if (instance.identifier case final value?) 'identifier': value,
-      if (instance.url case final value?) 'url': value,
-    };
+Map<String, dynamic> _$LicenseToJson(_License instance) => <String, dynamic>{
+  'name': instance.name,
+  'identifier': ?instance.identifier,
+  'url': ?instance.url,
+};
 
-_$LinkImpl _$$LinkImplFromJson(Map<String, dynamic> json) => _$LinkImpl(
+_Link _$LinkFromJson(Map<String, dynamic> json) => _Link(
   ref: const _LinkRefConverter().fromJson(json[r'$ref'] as String?),
   operationId: json['operationId'] as String?,
   parameters: (json['parameters'] as Map<String, dynamic>?)?.map(
@@ -322,43 +290,34 @@ _$LinkImpl _$$LinkImplFromJson(Map<String, dynamic> json) => _$LinkImpl(
   ),
 );
 
-Map<String, dynamic> _$$LinkImplToJson(_$LinkImpl instance) =>
+Map<String, dynamic> _$LinkToJson(_Link instance) => <String, dynamic>{
+  r'$ref': ?const _LinkRefConverter().toJson(instance.ref),
+  'operationId': ?instance.operationId,
+  'parameters': ?instance.parameters,
+};
+
+_MediaType _$MediaTypeFromJson(Map<String, dynamic> json) => _MediaType(
+  schema: json['schema'] == null
+      ? null
+      : Schema.fromJson(json['schema'] as Map<String, dynamic>),
+  example: json['example'],
+  examples: (json['examples'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(k, Example.fromJson(e as Map<String, dynamic>)),
+  ),
+  encoding: (json['encoding'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(k, Encoding.fromJson(e as Map<String, dynamic>)),
+  ),
+);
+
+Map<String, dynamic> _$MediaTypeToJson(_MediaType instance) =>
     <String, dynamic>{
-      if (const _LinkRefConverter().toJson(instance.ref) case final value?)
-        r'$ref': value,
-      if (instance.operationId case final value?) 'operationId': value,
-      if (instance.parameters case final value?) 'parameters': value,
+      'schema': ?instance.schema?.toJson(),
+      'example': ?instance.example,
+      'examples': ?instance.examples?.map((k, e) => MapEntry(k, e.toJson())),
+      'encoding': ?instance.encoding?.map((k, e) => MapEntry(k, e.toJson())),
     };
 
-_$MediaTypeImpl _$$MediaTypeImplFromJson(Map<String, dynamic> json) =>
-    _$MediaTypeImpl(
-      schema: json['schema'] == null
-          ? null
-          : Schema.fromJson(json['schema'] as Map<String, dynamic>),
-      example: json['example'],
-      examples: (json['examples'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, Example.fromJson(e as Map<String, dynamic>)),
-      ),
-      encoding: (json['encoding'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, Encoding.fromJson(e as Map<String, dynamic>)),
-      ),
-    );
-
-Map<String, dynamic> _$$MediaTypeImplToJson(_$MediaTypeImpl instance) =>
-    <String, dynamic>{
-      if (instance.schema?.toJson() case final value?) 'schema': value,
-      if (instance.example case final value?) 'example': value,
-      if (instance.examples?.map((k, e) => MapEntry(k, e.toJson()))
-          case final value?)
-        'examples': value,
-      if (instance.encoding?.map((k, e) => MapEntry(k, e.toJson()))
-          case final value?)
-        'encoding': value,
-    };
-
-_$OperationImpl _$$OperationImplFromJson(
-  Map<String, dynamic> json,
-) => _$OperationImpl(
+_Operation _$OperationFromJson(Map<String, dynamic> json) => _Operation(
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
   summary: json['summary'] as String?,
   description: json['description'] as String?,
@@ -389,34 +348,28 @@ _$OperationImpl _$$OperationImplFromJson(
       .toList(),
 );
 
-Map<String, dynamic> _$$OperationImplToJson(
-  _$OperationImpl instance,
+Map<String, dynamic> _$OperationToJson(
+  _Operation instance,
 ) => <String, dynamic>{
-  if (instance.tags case final value?) 'tags': value,
-  if (instance.summary case final value?) 'summary': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.externalDocs?.toJson() case final value?) 'externalDocs': value,
-  if (instance.id case final value?) 'operationId': value,
-  if (instance.parameters?.map((e) => e.toJson()).toList() case final value?)
-    'parameters': value,
-  if (instance.requestBody?.toJson() case final value?) 'requestBody': value,
-  if (instance.responses?.map((k, e) => MapEntry(k, e.toJson()))
-      case final value?)
-    'responses': value,
-  if (_$JsonConverterToJson<Map<String, dynamic>, Map<String, ApiCallback>>(
+  'tags': ?instance.tags,
+  'summary': ?instance.summary,
+  'description': ?instance.description,
+  'externalDocs': ?instance.externalDocs?.toJson(),
+  'operationId': ?instance.id,
+  'parameters': ?instance.parameters?.map((e) => e.toJson()).toList(),
+  'requestBody': ?instance.requestBody?.toJson(),
+  'responses': ?instance.responses?.map((k, e) => MapEntry(k, e.toJson())),
+  'callbacks':
+      ?_$JsonConverterToJson<Map<String, dynamic>, Map<String, ApiCallback>>(
         instance.callbacks,
         const _ApiCallbackMapConverter().toJson,
-      )
-      case final value?)
-    'callbacks': value,
-  if (instance.deprecated case final value?) 'deprecated': value,
-  if (instance.security?.map((e) => e.toJson()).toList() case final value?)
-    'security': value,
-  if (instance.servers?.map((e) => e.toJson()).toList() case final value?)
-    'servers': value,
+      ),
+  'deprecated': ?instance.deprecated,
+  'security': ?instance.security?.map((e) => e.toJson()).toList(),
+  'servers': ?instance.servers?.map((e) => e.toJson()).toList(),
 };
 
-_$OpenIdImpl _$$OpenIdImplFromJson(Map<String, dynamic> json) => _$OpenIdImpl(
+_OpenId _$OpenIdFromJson(Map<String, dynamic> json) => _OpenId(
   issuer: json['issuer'] as String?,
   authorizationEndpoint: json['authorization_endpoint'] as String?,
   tokenEndpoint: json['token_endpoint'] as String?,
@@ -463,113 +416,34 @@ _$OpenIdImpl _$$OpenIdImplFromJson(Map<String, dynamic> json) => _$OpenIdImpl(
           .toList(),
 );
 
-Map<String, dynamic> _$$OpenIdImplToJson(
-  _$OpenIdImpl instance,
-) => <String, dynamic>{
-  if (instance.issuer case final value?) 'issuer': value,
-  if (instance.authorizationEndpoint case final value?)
-    'authorization_endpoint': value,
-  if (instance.tokenEndpoint case final value?) 'token_endpoint': value,
-  if (instance.deviceAuthorizationEndpoint case final value?)
-    'device_authorization_endpoint': value,
-  if (instance.userinfoEndpoint case final value?) 'userinfo_endpoint': value,
-  if (instance.mfaChallengeEndpoint case final value?)
-    'mfa_challenge_endpoint': value,
-  if (instance.jwksUri case final value?) 'jwks_uri': value,
-  if (instance.registrationEndpoint case final value?)
-    'registration_endpoint': value,
-  if (instance.revocationEndpoint case final value?)
-    'revocation_endpoint': value,
-  if (instance.scopesSupported case final value?) 'scopes_supported': value,
-  if (instance.responseTypesSupported case final value?)
-    'response_types_supported': value,
-  if (instance.codeChallengeMethodsSupported case final value?)
-    'code_challenge_methods_supported': value,
-  if (instance.responseModesSupported case final value?)
-    'response_modes_supported': value,
-  if (instance.subjectTypesSupported case final value?)
-    'subject_types_supported': value,
-  if (instance.idTokenSigningAlgValuesSupported case final value?)
-    'id_token_signing_alg_values_supported': value,
-  if (instance.tokenEndpointAuthMethodsSupported case final value?)
-    'token_endpoint_auth_methods_supported': value,
-  if (instance.claimsSupported case final value?) 'claims_supported': value,
-  if (instance.requestUriParameterSupported case final value?)
-    'request_uri_parameter_supported': value,
-  if (instance.requestParameterSupported case final value?)
-    'request_parameter_supported': value,
-  if (instance.tokenEndpointAuthSigningAlgValuesSupported case final value?)
-    'token_endpoint_auth_signing_alg_values_supported': value,
+Map<String, dynamic> _$OpenIdToJson(_OpenId instance) => <String, dynamic>{
+  'issuer': ?instance.issuer,
+  'authorization_endpoint': ?instance.authorizationEndpoint,
+  'token_endpoint': ?instance.tokenEndpoint,
+  'device_authorization_endpoint': ?instance.deviceAuthorizationEndpoint,
+  'userinfo_endpoint': ?instance.userinfoEndpoint,
+  'mfa_challenge_endpoint': ?instance.mfaChallengeEndpoint,
+  'jwks_uri': ?instance.jwksUri,
+  'registration_endpoint': ?instance.registrationEndpoint,
+  'revocation_endpoint': ?instance.revocationEndpoint,
+  'scopes_supported': ?instance.scopesSupported,
+  'response_types_supported': ?instance.responseTypesSupported,
+  'code_challenge_methods_supported': ?instance.codeChallengeMethodsSupported,
+  'response_modes_supported': ?instance.responseModesSupported,
+  'subject_types_supported': ?instance.subjectTypesSupported,
+  'id_token_signing_alg_values_supported':
+      ?instance.idTokenSigningAlgValuesSupported,
+  'token_endpoint_auth_methods_supported':
+      ?instance.tokenEndpointAuthMethodsSupported,
+  'claims_supported': ?instance.claimsSupported,
+  'request_uri_parameter_supported': ?instance.requestUriParameterSupported,
+  'request_parameter_supported': ?instance.requestParameterSupported,
+  'token_endpoint_auth_signing_alg_values_supported':
+      ?instance.tokenEndpointAuthSigningAlgValuesSupported,
 };
 
-_$ParameterCookieImpl _$$ParameterCookieImplFromJson(
-  Map<String, dynamic> json,
-) => _$ParameterCookieImpl(
-  name: json['name'] as String?,
-  description: json['description'] as String?,
-  required: json['required'] as bool?,
-  deprecated: json['deprecated'] as bool?,
-  style: json['style'] as String?,
-  explode: json['explode'] as bool?,
-  allowReserved: json['allowReserved'] as bool?,
-  example: json['example'] as String?,
-  schema: Schema.fromJson(json['schema'] as Map<String, dynamic>),
-  ref: const _ParamRefConverter().fromJson(json[r'$ref'] as String?),
-  $type: json['in'] as String?,
-);
-
-Map<String, dynamic> _$$ParameterCookieImplToJson(
-  _$ParameterCookieImpl instance,
-) => <String, dynamic>{
-  if (instance.name case final value?) 'name': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.required case final value?) 'required': value,
-  if (instance.deprecated case final value?) 'deprecated': value,
-  if (instance.style case final value?) 'style': value,
-  if (instance.explode case final value?) 'explode': value,
-  if (instance.allowReserved case final value?) 'allowReserved': value,
-  if (instance.example case final value?) 'example': value,
-  'schema': instance.schema.toJson(),
-  if (const _ParamRefConverter().toJson(instance.ref) case final value?)
-    r'$ref': value,
-  'in': instance.$type,
-};
-
-_$ParameterHeaderImpl _$$ParameterHeaderImplFromJson(
-  Map<String, dynamic> json,
-) => _$ParameterHeaderImpl(
-  name: json['name'] as String?,
-  description: json['description'] as String?,
-  required: json['required'] as bool?,
-  deprecated: json['deprecated'] as bool?,
-  style: json['style'] as String?,
-  explode: json['explode'] as bool?,
-  allowReserved: json['allowReserved'] as bool?,
-  example: json['example'] as String?,
-  schema: Schema.fromJson(json['schema'] as Map<String, dynamic>),
-  ref: const _ParamRefConverter().fromJson(json[r'$ref'] as String?),
-  $type: json['in'] as String?,
-);
-
-Map<String, dynamic> _$$ParameterHeaderImplToJson(
-  _$ParameterHeaderImpl instance,
-) => <String, dynamic>{
-  if (instance.name case final value?) 'name': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.required case final value?) 'required': value,
-  if (instance.deprecated case final value?) 'deprecated': value,
-  if (instance.style case final value?) 'style': value,
-  if (instance.explode case final value?) 'explode': value,
-  if (instance.allowReserved case final value?) 'allowReserved': value,
-  if (instance.example case final value?) 'example': value,
-  'schema': instance.schema.toJson(),
-  if (const _ParamRefConverter().toJson(instance.ref) case final value?)
-    r'$ref': value,
-  'in': instance.$type,
-};
-
-_$ParameterQueryImpl _$$ParameterQueryImplFromJson(Map<String, dynamic> json) =>
-    _$ParameterQueryImpl(
+_ParameterCookie _$ParameterCookieFromJson(Map<String, dynamic> json) =>
+    _ParameterCookie(
       name: json['name'] as String?,
       description: json['description'] as String?,
       required: json['required'] as bool?,
@@ -583,25 +457,83 @@ _$ParameterQueryImpl _$$ParameterQueryImplFromJson(Map<String, dynamic> json) =>
       $type: json['in'] as String?,
     );
 
-Map<String, dynamic> _$$ParameterQueryImplToJson(
-  _$ParameterQueryImpl instance,
-) => <String, dynamic>{
-  if (instance.name case final value?) 'name': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.required case final value?) 'required': value,
-  if (instance.deprecated case final value?) 'deprecated': value,
-  if (instance.style case final value?) 'style': value,
-  if (instance.explode case final value?) 'explode': value,
-  if (instance.allowReserved case final value?) 'allowReserved': value,
-  if (instance.example case final value?) 'example': value,
-  'schema': instance.schema.toJson(),
-  if (const _ParamRefConverter().toJson(instance.ref) case final value?)
-    r'$ref': value,
-  'in': instance.$type,
-};
+Map<String, dynamic> _$ParameterCookieToJson(_ParameterCookie instance) =>
+    <String, dynamic>{
+      'name': ?instance.name,
+      'description': ?instance.description,
+      'required': ?instance.required,
+      'deprecated': ?instance.deprecated,
+      'style': ?instance.style,
+      'explode': ?instance.explode,
+      'allowReserved': ?instance.allowReserved,
+      'example': ?instance.example,
+      'schema': instance.schema.toJson(),
+      r'$ref': ?const _ParamRefConverter().toJson(instance.ref),
+      'in': instance.$type,
+    };
 
-_$ParameterPathImpl _$$ParameterPathImplFromJson(Map<String, dynamic> json) =>
-    _$ParameterPathImpl(
+_ParameterHeader _$ParameterHeaderFromJson(Map<String, dynamic> json) =>
+    _ParameterHeader(
+      name: json['name'] as String?,
+      description: json['description'] as String?,
+      required: json['required'] as bool?,
+      deprecated: json['deprecated'] as bool?,
+      style: json['style'] as String?,
+      explode: json['explode'] as bool?,
+      allowReserved: json['allowReserved'] as bool?,
+      example: json['example'] as String?,
+      schema: Schema.fromJson(json['schema'] as Map<String, dynamic>),
+      ref: const _ParamRefConverter().fromJson(json[r'$ref'] as String?),
+      $type: json['in'] as String?,
+    );
+
+Map<String, dynamic> _$ParameterHeaderToJson(_ParameterHeader instance) =>
+    <String, dynamic>{
+      'name': ?instance.name,
+      'description': ?instance.description,
+      'required': ?instance.required,
+      'deprecated': ?instance.deprecated,
+      'style': ?instance.style,
+      'explode': ?instance.explode,
+      'allowReserved': ?instance.allowReserved,
+      'example': ?instance.example,
+      'schema': instance.schema.toJson(),
+      r'$ref': ?const _ParamRefConverter().toJson(instance.ref),
+      'in': instance.$type,
+    };
+
+_ParameterQuery _$ParameterQueryFromJson(Map<String, dynamic> json) =>
+    _ParameterQuery(
+      name: json['name'] as String?,
+      description: json['description'] as String?,
+      required: json['required'] as bool?,
+      deprecated: json['deprecated'] as bool?,
+      style: json['style'] as String?,
+      explode: json['explode'] as bool?,
+      allowReserved: json['allowReserved'] as bool?,
+      example: json['example'] as String?,
+      schema: Schema.fromJson(json['schema'] as Map<String, dynamic>),
+      ref: const _ParamRefConverter().fromJson(json[r'$ref'] as String?),
+      $type: json['in'] as String?,
+    );
+
+Map<String, dynamic> _$ParameterQueryToJson(_ParameterQuery instance) =>
+    <String, dynamic>{
+      'name': ?instance.name,
+      'description': ?instance.description,
+      'required': ?instance.required,
+      'deprecated': ?instance.deprecated,
+      'style': ?instance.style,
+      'explode': ?instance.explode,
+      'allowReserved': ?instance.allowReserved,
+      'example': ?instance.example,
+      'schema': instance.schema.toJson(),
+      r'$ref': ?const _ParamRefConverter().toJson(instance.ref),
+      'in': instance.$type,
+    };
+
+_ParameterPath _$ParameterPathFromJson(Map<String, dynamic> json) =>
+    _ParameterPath(
       name: json['name'] as String?,
       description: json['description'] as String?,
       deprecated: json['deprecated'] as bool?,
@@ -616,133 +548,113 @@ _$ParameterPathImpl _$$ParameterPathImplFromJson(Map<String, dynamic> json) =>
       $type: json['in'] as String?,
     );
 
-Map<String, dynamic> _$$ParameterPathImplToJson(_$ParameterPathImpl instance) =>
+Map<String, dynamic> _$ParameterPathToJson(_ParameterPath instance) =>
     <String, dynamic>{
-      if (instance.name case final value?) 'name': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.deprecated case final value?) 'deprecated': value,
-      if (instance.style case final value?) 'style': value,
-      if (instance.explode case final value?) 'explode': value,
-      if (instance.allowReserved case final value?) 'allowReserved': value,
-      if (instance.example case final value?) 'example': value,
-      if (instance.schema?.toJson() case final value?) 'schema': value,
-      if (const _ParamRefConverter().toJson(instance.ref) case final value?)
-        r'$ref': value,
+      'name': ?instance.name,
+      'description': ?instance.description,
+      'deprecated': ?instance.deprecated,
+      'style': ?instance.style,
+      'explode': ?instance.explode,
+      'allowReserved': ?instance.allowReserved,
+      'example': ?instance.example,
+      'schema': ?instance.schema?.toJson(),
+      r'$ref': ?const _ParamRefConverter().toJson(instance.ref),
       'in': instance.$type,
     };
 
-_$PathItemImpl _$$PathItemImplFromJson(Map<String, dynamic> json) =>
-    _$PathItemImpl(
-      summary: json['summary'] as String?,
-      description: json['description'] as String?,
-      get: json['get'] == null
-          ? null
-          : Operation.fromJson(json['get'] as Map<String, dynamic>),
-      put: json['put'] == null
-          ? null
-          : Operation.fromJson(json['put'] as Map<String, dynamic>),
-      post: json['post'] == null
-          ? null
-          : Operation.fromJson(json['post'] as Map<String, dynamic>),
-      delete: json['delete'] == null
-          ? null
-          : Operation.fromJson(json['delete'] as Map<String, dynamic>),
-      options: json['options'] == null
-          ? null
-          : Operation.fromJson(json['options'] as Map<String, dynamic>),
-      head: json['head'] == null
-          ? null
-          : Operation.fromJson(json['head'] as Map<String, dynamic>),
-      patch: json['patch'] == null
-          ? null
-          : Operation.fromJson(json['patch'] as Map<String, dynamic>),
-      trace: json['trace'] == null
-          ? null
-          : Operation.fromJson(json['trace'] as Map<String, dynamic>),
-      servers: (json['servers'] as List<dynamic>?)
-          ?.map((e) => Server.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      parameters: (json['parameters'] as List<dynamic>?)
-          ?.map((e) => Parameter.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      ref: const _PathRefConverter().fromJson(json[r'$ref'] as String?),
-    );
+_PathItem _$PathItemFromJson(Map<String, dynamic> json) => _PathItem(
+  summary: json['summary'] as String?,
+  description: json['description'] as String?,
+  get: json['get'] == null
+      ? null
+      : Operation.fromJson(json['get'] as Map<String, dynamic>),
+  put: json['put'] == null
+      ? null
+      : Operation.fromJson(json['put'] as Map<String, dynamic>),
+  post: json['post'] == null
+      ? null
+      : Operation.fromJson(json['post'] as Map<String, dynamic>),
+  delete: json['delete'] == null
+      ? null
+      : Operation.fromJson(json['delete'] as Map<String, dynamic>),
+  options: json['options'] == null
+      ? null
+      : Operation.fromJson(json['options'] as Map<String, dynamic>),
+  head: json['head'] == null
+      ? null
+      : Operation.fromJson(json['head'] as Map<String, dynamic>),
+  patch: json['patch'] == null
+      ? null
+      : Operation.fromJson(json['patch'] as Map<String, dynamic>),
+  trace: json['trace'] == null
+      ? null
+      : Operation.fromJson(json['trace'] as Map<String, dynamic>),
+  servers: (json['servers'] as List<dynamic>?)
+      ?.map((e) => Server.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  parameters: (json['parameters'] as List<dynamic>?)
+      ?.map((e) => Parameter.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  ref: const _PathRefConverter().fromJson(json[r'$ref'] as String?),
+);
 
-Map<String, dynamic> _$$PathItemImplToJson(
-  _$PathItemImpl instance,
-) => <String, dynamic>{
-  if (instance.summary case final value?) 'summary': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.get?.toJson() case final value?) 'get': value,
-  if (instance.put?.toJson() case final value?) 'put': value,
-  if (instance.post?.toJson() case final value?) 'post': value,
-  if (instance.delete?.toJson() case final value?) 'delete': value,
-  if (instance.options?.toJson() case final value?) 'options': value,
-  if (instance.head?.toJson() case final value?) 'head': value,
-  if (instance.patch?.toJson() case final value?) 'patch': value,
-  if (instance.trace?.toJson() case final value?) 'trace': value,
-  if (instance.servers?.map((e) => e.toJson()).toList() case final value?)
-    'servers': value,
-  if (instance.parameters?.map((e) => e.toJson()).toList() case final value?)
-    'parameters': value,
-  if (const _PathRefConverter().toJson(instance.ref) case final value?)
-    r'$ref': value,
+Map<String, dynamic> _$PathItemToJson(_PathItem instance) => <String, dynamic>{
+  'summary': ?instance.summary,
+  'description': ?instance.description,
+  'get': ?instance.get?.toJson(),
+  'put': ?instance.put?.toJson(),
+  'post': ?instance.post?.toJson(),
+  'delete': ?instance.delete?.toJson(),
+  'options': ?instance.options?.toJson(),
+  'head': ?instance.head?.toJson(),
+  'patch': ?instance.patch?.toJson(),
+  'trace': ?instance.trace?.toJson(),
+  'servers': ?instance.servers?.map((e) => e.toJson()).toList(),
+  'parameters': ?instance.parameters?.map((e) => e.toJson()).toList(),
+  r'$ref': ?const _PathRefConverter().toJson(instance.ref),
 };
 
-_$RequestBodyImpl _$$RequestBodyImplFromJson(Map<String, dynamic> json) =>
-    _$RequestBodyImpl(
-      description: json['description'] as String?,
-      required: json['required'] as bool?,
-      content: (json['content'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, MediaType.fromJson(e as Map<String, dynamic>)),
-      ),
-      ref: const _RequestRefConverter().fromJson(json[r'$ref'] as String?),
-    );
+_RequestBody _$RequestBodyFromJson(Map<String, dynamic> json) => _RequestBody(
+  description: json['description'] as String?,
+  required: json['required'] as bool?,
+  content: (json['content'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(k, MediaType.fromJson(e as Map<String, dynamic>)),
+  ),
+  ref: const _RequestRefConverter().fromJson(json[r'$ref'] as String?),
+);
 
-Map<String, dynamic> _$$RequestBodyImplToJson(_$RequestBodyImpl instance) =>
+Map<String, dynamic> _$RequestBodyToJson(_RequestBody instance) =>
     <String, dynamic>{
-      if (instance.description case final value?) 'description': value,
-      if (instance.required case final value?) 'required': value,
-      if (instance.content?.map((k, e) => MapEntry(k, e.toJson()))
-          case final value?)
-        'content': value,
-      if (const _RequestRefConverter().toJson(instance.ref) case final value?)
-        r'$ref': value,
+      'description': ?instance.description,
+      'required': ?instance.required,
+      'content': ?instance.content?.map((k, e) => MapEntry(k, e.toJson())),
+      r'$ref': ?const _RequestRefConverter().toJson(instance.ref),
     };
 
-_$ResponseImpl _$$ResponseImplFromJson(Map<String, dynamic> json) =>
-    _$ResponseImpl(
-      description: json['description'] as String? ?? '',
-      headers: (json['headers'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, Header.fromJson(e as Map<String, dynamic>)),
-      ),
-      content: (json['content'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, MediaType.fromJson(e as Map<String, dynamic>)),
-      ),
-      links: (json['links'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, Link.fromJson(e as Map<String, dynamic>)),
-      ),
-      ref: const _ResponseRefConverter().fromJson(json[r'$ref'] as String?),
-    );
+_Response _$ResponseFromJson(Map<String, dynamic> json) => _Response(
+  description: json['description'] as String? ?? '',
+  headers: (json['headers'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(k, Header.fromJson(e as Map<String, dynamic>)),
+  ),
+  content: (json['content'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(k, MediaType.fromJson(e as Map<String, dynamic>)),
+  ),
+  links: (json['links'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(k, Link.fromJson(e as Map<String, dynamic>)),
+  ),
+  ref: const _ResponseRefConverter().fromJson(json[r'$ref'] as String?),
+);
 
-Map<String, dynamic> _$$ResponseImplToJson(
-  _$ResponseImpl instance,
-) => <String, dynamic>{
+Map<String, dynamic> _$ResponseToJson(_Response instance) => <String, dynamic>{
   'description': instance.description,
-  if (instance.headers?.map((k, e) => MapEntry(k, e.toJson()))
-      case final value?)
-    'headers': value,
-  if (instance.content?.map((k, e) => MapEntry(k, e.toJson()))
-      case final value?)
-    'content': value,
-  if (instance.links?.map((k, e) => MapEntry(k, e.toJson())) case final value?)
-    'links': value,
-  if (const _ResponseRefConverter().toJson(instance.ref) case final value?)
-    r'$ref': value,
+  'headers': ?instance.headers?.map((k, e) => MapEntry(k, e.toJson())),
+  'content': ?instance.content?.map((k, e) => MapEntry(k, e.toJson())),
+  'links': ?instance.links?.map((k, e) => MapEntry(k, e.toJson())),
+  r'$ref': ?const _ResponseRefConverter().toJson(instance.ref),
 };
 
-_$SchemaObjectImpl _$$SchemaObjectImplFromJson(Map<String, dynamic> json) =>
-    _$SchemaObjectImpl(
+_SchemaObject _$SchemaObjectFromJson(Map<String, dynamic> json) =>
+    _SchemaObject(
       title: json['title'] as String?,
       description: json['description'] as String?,
       defaultValue: json['defaultValue'],
@@ -776,40 +688,32 @@ _$SchemaObjectImpl _$$SchemaObjectImplFromJson(Map<String, dynamic> json) =>
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$SchemaObjectImplToJson(
-  _$SchemaObjectImpl instance,
+Map<String, dynamic> _$SchemaObjectToJson(
+  _SchemaObject instance,
 ) => <String, dynamic>{
-  if (instance.title case final value?) 'title': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.defaultValue case final value?) 'defaultValue': value,
-  if (const _SchemaRefConverter().toJson(instance.ref) case final value?)
-    r'$ref': value,
-  if (_$JsonConverterToJson<List<dynamic>, List<Schema>>(
-        instance.allOf,
-        const _SchemaListConverter().toJson,
-      )
-      case final value?)
-    'allOf': value,
-  if (_$JsonConverterToJson<List<dynamic>, List<Schema>>(
-        instance.anyOf,
-        const _SchemaListConverter().toJson,
-      )
-      case final value?)
-    'anyOf': value,
-  if (instance.required case final value?) 'required': value,
-  if (instance.discriminator?.toJson() case final value?)
-    'discriminator': value,
-  if (instance.externalDocs?.toJson() case final value?) 'externalDocs': value,
-  if (instance.properties?.map((k, e) => MapEntry(k, e.toJson()))
-      case final value?)
-    'properties': value,
-  if (instance.nullable case final value?) 'nullable': value,
-  if (instance.xml?.toJson() case final value?) 'xml': value,
+  'title': ?instance.title,
+  'description': ?instance.description,
+  'defaultValue': ?instance.defaultValue,
+  r'$ref': ?const _SchemaRefConverter().toJson(instance.ref),
+  'allOf': ?_$JsonConverterToJson<List<dynamic>, List<Schema>>(
+    instance.allOf,
+    const _SchemaListConverter().toJson,
+  ),
+  'anyOf': ?_$JsonConverterToJson<List<dynamic>, List<Schema>>(
+    instance.anyOf,
+    const _SchemaListConverter().toJson,
+  ),
+  'required': ?instance.required,
+  'discriminator': ?instance.discriminator?.toJson(),
+  'externalDocs': ?instance.externalDocs?.toJson(),
+  'properties': ?instance.properties?.map((k, e) => MapEntry(k, e.toJson())),
+  'nullable': ?instance.nullable,
+  'xml': ?instance.xml?.toJson(),
   'type': instance.$type,
 };
 
-_$SchemaBooleanImpl _$$SchemaBooleanImplFromJson(Map<String, dynamic> json) =>
-    _$SchemaBooleanImpl(
+_SchemaBoolean _$SchemaBooleanFromJson(Map<String, dynamic> json) =>
+    _SchemaBoolean(
       xml: json['xml'] == null
           ? null
           : Xml.fromJson(json['xml'] as Map<String, dynamic>),
@@ -822,21 +726,20 @@ _$SchemaBooleanImpl _$$SchemaBooleanImplFromJson(Map<String, dynamic> json) =>
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$SchemaBooleanImplToJson(_$SchemaBooleanImpl instance) =>
+Map<String, dynamic> _$SchemaBooleanToJson(_SchemaBoolean instance) =>
     <String, dynamic>{
-      if (instance.xml?.toJson() case final value?) 'xml': value,
-      if (instance.title case final value?) 'title': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.defaultValue case final value?) 'default': value,
-      if (instance.nullable case final value?) 'nullable': value,
-      if (instance.example case final value?) 'example': value,
-      if (const _SchemaRefConverter().toJson(instance.ref) case final value?)
-        r'$ref': value,
+      'xml': ?instance.xml?.toJson(),
+      'title': ?instance.title,
+      'description': ?instance.description,
+      'default': ?instance.defaultValue,
+      'nullable': ?instance.nullable,
+      'example': ?instance.example,
+      r'$ref': ?const _SchemaRefConverter().toJson(instance.ref),
       'type': instance.$type,
     };
 
-_$SchemaStringImpl _$$SchemaStringImplFromJson(Map<String, dynamic> json) =>
-    _$SchemaStringImpl(
+_SchemaString _$SchemaStringFromJson(Map<String, dynamic> json) =>
+    _SchemaString(
       xml: json['xml'] == null
           ? null
           : Xml.fromJson(json['xml'] as Map<String, dynamic>),
@@ -859,25 +762,23 @@ _$SchemaStringImpl _$$SchemaStringImplFromJson(Map<String, dynamic> json) =>
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$SchemaStringImplToJson(
-  _$SchemaStringImpl instance,
-) => <String, dynamic>{
-  if (instance.xml?.toJson() case final value?) 'xml': value,
-  if (instance.title case final value?) 'title': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.defaultValue case final value?) 'default': value,
-  if (instance.nullable case final value?) 'nullable': value,
-  if (_$StringFormatEnumMap[instance.format] case final value?) 'format': value,
-  if (instance.pattern case final value?) 'pattern': value,
-  if (instance.example case final value?) 'example': value,
-  if (instance.minLength case final value?) 'minLength': value,
-  if (instance.maxLength case final value?) 'maxLength': value,
-  if (instance.exclusiveMinimum case final value?) 'exclusiveMinimum': value,
-  if (instance.exclusiveMaximum case final value?) 'exclusiveMaximum': value,
-  if (const _SchemaRefConverter().toJson(instance.ref) case final value?)
-    r'$ref': value,
-  'type': instance.$type,
-};
+Map<String, dynamic> _$SchemaStringToJson(_SchemaString instance) =>
+    <String, dynamic>{
+      'xml': ?instance.xml?.toJson(),
+      'title': ?instance.title,
+      'description': ?instance.description,
+      'default': ?instance.defaultValue,
+      'nullable': ?instance.nullable,
+      'format': ?_$StringFormatEnumMap[instance.format],
+      'pattern': ?instance.pattern,
+      'example': ?instance.example,
+      'minLength': ?instance.minLength,
+      'maxLength': ?instance.maxLength,
+      'exclusiveMinimum': ?instance.exclusiveMinimum,
+      'exclusiveMaximum': ?instance.exclusiveMaximum,
+      r'$ref': ?const _SchemaRefConverter().toJson(instance.ref),
+      'type': instance.$type,
+    };
 
 const _$StringFormatEnumMap = {
   StringFormat.byte: 'byte',
@@ -894,8 +795,8 @@ const _$StringFormatEnumMap = {
   StringFormat.uuid: 'uuid',
 };
 
-_$SchemaIntegerImpl _$$SchemaIntegerImplFromJson(Map<String, dynamic> json) =>
-    _$SchemaIntegerImpl(
+_SchemaInteger _$SchemaIntegerFromJson(Map<String, dynamic> json) =>
+    _SchemaInteger(
       xml: json['xml'] == null
           ? null
           : Xml.fromJson(json['xml'] as Map<String, dynamic>),
@@ -918,34 +819,31 @@ _$SchemaIntegerImpl _$$SchemaIntegerImplFromJson(Map<String, dynamic> json) =>
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$SchemaIntegerImplToJson(
-  _$SchemaIntegerImpl instance,
-) => <String, dynamic>{
-  if (instance.xml?.toJson() case final value?) 'xml': value,
-  if (instance.title case final value?) 'title': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.defaultValue case final value?) 'default': value,
-  if (instance.nullable case final value?) 'nullable': value,
-  if (_$IntegerFormatEnumMap[instance.format] case final value?)
-    'format': value,
-  if (instance.example case final value?) 'example': value,
-  if (instance.minimum case final value?) 'minimum': value,
-  if (instance.maximum case final value?) 'maximum': value,
-  if (instance.exclusiveMinimum case final value?) 'exclusiveMinimum': value,
-  if (instance.exclusiveMaximum case final value?) 'exclusiveMaximum': value,
-  if (instance.multipleOf case final value?) 'multipleOf': value,
-  if (const _SchemaRefConverter().toJson(instance.ref) case final value?)
-    r'$ref': value,
-  'type': instance.$type,
-};
+Map<String, dynamic> _$SchemaIntegerToJson(_SchemaInteger instance) =>
+    <String, dynamic>{
+      'xml': ?instance.xml?.toJson(),
+      'title': ?instance.title,
+      'description': ?instance.description,
+      'default': ?instance.defaultValue,
+      'nullable': ?instance.nullable,
+      'format': ?_$IntegerFormatEnumMap[instance.format],
+      'example': ?instance.example,
+      'minimum': ?instance.minimum,
+      'maximum': ?instance.maximum,
+      'exclusiveMinimum': ?instance.exclusiveMinimum,
+      'exclusiveMaximum': ?instance.exclusiveMaximum,
+      'multipleOf': ?instance.multipleOf,
+      r'$ref': ?const _SchemaRefConverter().toJson(instance.ref),
+      'type': instance.$type,
+    };
 
 const _$IntegerFormatEnumMap = {
   IntegerFormat.int32: 'int32',
   IntegerFormat.int64: 'int64',
 };
 
-_$SchemaNumberImpl _$$SchemaNumberImplFromJson(Map<String, dynamic> json) =>
-    _$SchemaNumberImpl(
+_SchemaNumber _$SchemaNumberFromJson(Map<String, dynamic> json) =>
+    _SchemaNumber(
       xml: json['xml'] == null
           ? null
           : Xml.fromJson(json['xml'] as Map<String, dynamic>),
@@ -968,135 +866,124 @@ _$SchemaNumberImpl _$$SchemaNumberImplFromJson(Map<String, dynamic> json) =>
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$SchemaNumberImplToJson(
-  _$SchemaNumberImpl instance,
-) => <String, dynamic>{
-  if (instance.xml?.toJson() case final value?) 'xml': value,
-  if (instance.title case final value?) 'title': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.defaultValue case final value?) 'default': value,
-  if (instance.nullable case final value?) 'nullable': value,
-  if (_$NumberFormatEnumMap[instance.format] case final value?) 'format': value,
-  if (instance.example case final value?) 'example': value,
-  if (instance.minimum case final value?) 'minimum': value,
-  if (instance.maximum case final value?) 'maximum': value,
-  if (instance.exclusiveMinimum case final value?) 'exclusiveMinimum': value,
-  if (instance.exclusiveMaximum case final value?) 'exclusiveMaximum': value,
-  if (instance.multipleOf case final value?) 'multipleOf': value,
-  if (const _SchemaRefConverter().toJson(instance.ref) case final value?)
-    r'$ref': value,
-  'type': instance.$type,
-};
+Map<String, dynamic> _$SchemaNumberToJson(_SchemaNumber instance) =>
+    <String, dynamic>{
+      'xml': ?instance.xml?.toJson(),
+      'title': ?instance.title,
+      'description': ?instance.description,
+      'default': ?instance.defaultValue,
+      'nullable': ?instance.nullable,
+      'format': ?_$NumberFormatEnumMap[instance.format],
+      'example': ?instance.example,
+      'minimum': ?instance.minimum,
+      'maximum': ?instance.maximum,
+      'exclusiveMinimum': ?instance.exclusiveMinimum,
+      'exclusiveMaximum': ?instance.exclusiveMaximum,
+      'multipleOf': ?instance.multipleOf,
+      r'$ref': ?const _SchemaRefConverter().toJson(instance.ref),
+      'type': instance.$type,
+    };
 
 const _$NumberFormatEnumMap = {
   NumberFormat.float: 'float',
   NumberFormat.double: 'double',
 };
 
-_$SchemaEnumImpl _$$SchemaEnumImplFromJson(Map<String, dynamic> json) =>
-    _$SchemaEnumImpl(
-      title: json['title'] as String?,
-      description: json['description'] as String?,
-      example: json['example'] as String?,
-      defaultValue: json['default'] as String?,
-      nullable: json['nullable'] as bool?,
-      values: (json['enum'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      ref: const _SchemaRefConverter().fromJson(json[r'$ref'] as String?),
-      $type: json['type'] as String?,
-    );
+_SchemaEnum _$SchemaEnumFromJson(Map<String, dynamic> json) => _SchemaEnum(
+  title: json['title'] as String?,
+  description: json['description'] as String?,
+  example: json['example'] as String?,
+  defaultValue: json['default'] as String?,
+  nullable: json['nullable'] as bool?,
+  values: (json['enum'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  ref: const _SchemaRefConverter().fromJson(json[r'$ref'] as String?),
+  $type: json['type'] as String?,
+);
 
-Map<String, dynamic> _$$SchemaEnumImplToJson(_$SchemaEnumImpl instance) =>
+Map<String, dynamic> _$SchemaEnumToJson(_SchemaEnum instance) =>
     <String, dynamic>{
-      if (instance.title case final value?) 'title': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.example case final value?) 'example': value,
-      if (instance.defaultValue case final value?) 'default': value,
-      if (instance.nullable case final value?) 'nullable': value,
-      if (instance.values case final value?) 'enum': value,
-      if (const _SchemaRefConverter().toJson(instance.ref) case final value?)
-        r'$ref': value,
+      'title': ?instance.title,
+      'description': ?instance.description,
+      'example': ?instance.example,
+      'default': ?instance.defaultValue,
+      'nullable': ?instance.nullable,
+      'enum': ?instance.values,
+      r'$ref': ?const _SchemaRefConverter().toJson(instance.ref),
       'type': instance.$type,
     };
 
-_$SchemaArrayImpl _$$SchemaArrayImplFromJson(Map<String, dynamic> json) =>
-    _$SchemaArrayImpl(
-      xml: json['xml'] == null
-          ? null
-          : Xml.fromJson(json['xml'] as Map<String, dynamic>),
-      title: json['title'] as String?,
-      description: json['description'] as String?,
-      defaultValue: json['default'] as List<dynamic>?,
-      nullable: json['nullable'] as bool?,
-      example: json['example'],
-      minItems: _fromJsonInt(json['minItems']),
-      maxItems: _fromJsonInt(json['maxItems']),
-      items: Schema.fromJson(json['items'] as Map<String, dynamic>),
-      ref: const _SchemaRefConverter().fromJson(json[r'$ref'] as String?),
-      $type: json['type'] as String?,
-    );
+_SchemaArray _$SchemaArrayFromJson(Map<String, dynamic> json) => _SchemaArray(
+  xml: json['xml'] == null
+      ? null
+      : Xml.fromJson(json['xml'] as Map<String, dynamic>),
+  title: json['title'] as String?,
+  description: json['description'] as String?,
+  defaultValue: json['default'] as List<dynamic>?,
+  nullable: json['nullable'] as bool?,
+  example: json['example'],
+  minItems: _fromJsonInt(json['minItems']),
+  maxItems: _fromJsonInt(json['maxItems']),
+  items: Schema.fromJson(json['items'] as Map<String, dynamic>),
+  ref: const _SchemaRefConverter().fromJson(json[r'$ref'] as String?),
+  $type: json['type'] as String?,
+);
 
-Map<String, dynamic> _$$SchemaArrayImplToJson(_$SchemaArrayImpl instance) =>
+Map<String, dynamic> _$SchemaArrayToJson(_SchemaArray instance) =>
     <String, dynamic>{
-      if (instance.xml?.toJson() case final value?) 'xml': value,
-      if (instance.title case final value?) 'title': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.defaultValue case final value?) 'default': value,
-      if (instance.nullable case final value?) 'nullable': value,
-      if (instance.example case final value?) 'example': value,
-      if (instance.minItems case final value?) 'minItems': value,
-      if (instance.maxItems case final value?) 'maxItems': value,
+      'xml': ?instance.xml?.toJson(),
+      'title': ?instance.title,
+      'description': ?instance.description,
+      'default': ?instance.defaultValue,
+      'nullable': ?instance.nullable,
+      'example': ?instance.example,
+      'minItems': ?instance.minItems,
+      'maxItems': ?instance.maxItems,
       'items': instance.items.toJson(),
-      if (const _SchemaRefConverter().toJson(instance.ref) case final value?)
-        r'$ref': value,
+      r'$ref': ?const _SchemaRefConverter().toJson(instance.ref),
       'type': instance.$type,
     };
 
-_$SchemaMapImpl _$$SchemaMapImplFromJson(Map<String, dynamic> json) =>
-    _$SchemaMapImpl(
-      xml: json['xml'] == null
-          ? null
-          : Xml.fromJson(json['xml'] as Map<String, dynamic>),
-      title: json['title'] as String?,
-      description: json['description'] as String?,
-      defaultValue: json['default'] as Map<String, dynamic>?,
-      nullable: json['nullable'] as bool?,
-      example: json['example'] as Map<String, dynamic>?,
-      valueSchema: _fromMapProps(json['additionalProperties']),
-      ref: const _SchemaRefConverter().fromJson(json[r'$ref'] as String?),
-      $type: json['type'] as String?,
-    );
+_SchemaMap _$SchemaMapFromJson(Map<String, dynamic> json) => _SchemaMap(
+  xml: json['xml'] == null
+      ? null
+      : Xml.fromJson(json['xml'] as Map<String, dynamic>),
+  title: json['title'] as String?,
+  description: json['description'] as String?,
+  defaultValue: json['default'] as Map<String, dynamic>?,
+  nullable: json['nullable'] as bool?,
+  example: json['example'] as Map<String, dynamic>?,
+  valueSchema: _fromMapProps(json['additionalProperties']),
+  ref: const _SchemaRefConverter().fromJson(json[r'$ref'] as String?),
+  $type: json['type'] as String?,
+);
 
-Map<String, dynamic> _$$SchemaMapImplToJson(_$SchemaMapImpl instance) =>
+Map<String, dynamic> _$SchemaMapToJson(_SchemaMap instance) =>
     <String, dynamic>{
-      if (instance.xml?.toJson() case final value?) 'xml': value,
-      if (instance.title case final value?) 'title': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.defaultValue case final value?) 'default': value,
-      if (instance.nullable case final value?) 'nullable': value,
-      if (instance.example case final value?) 'example': value,
-      if (_toMapProps(instance.valueSchema) case final value?)
-        'additionalProperties': value,
-      if (const _SchemaRefConverter().toJson(instance.ref) case final value?)
-        r'$ref': value,
+      'xml': ?instance.xml?.toJson(),
+      'title': ?instance.title,
+      'description': ?instance.description,
+      'default': ?instance.defaultValue,
+      'nullable': ?instance.nullable,
+      'example': ?instance.example,
+      'additionalProperties': ?_toMapProps(instance.valueSchema),
+      r'$ref': ?const _SchemaRefConverter().toJson(instance.ref),
       'type': instance.$type,
     };
 
-_$SecuritySchemeApiKeyImpl _$$SecuritySchemeApiKeyImplFromJson(
+_SecuritySchemeApiKey _$SecuritySchemeApiKeyFromJson(
   Map<String, dynamic> json,
-) => _$SecuritySchemeApiKeyImpl(
+) => _SecuritySchemeApiKey(
   name: json['name'] as String,
   description: json['description'] as String?,
   location: $enumDecode(_$ApiKeyLocationEnumMap, json['in']),
   $type: json['type'] as String?,
 );
 
-Map<String, dynamic> _$$SecuritySchemeApiKeyImplToJson(
-  _$SecuritySchemeApiKeyImpl instance,
+Map<String, dynamic> _$SecuritySchemeApiKeyToJson(
+  _SecuritySchemeApiKey instance,
 ) => <String, dynamic>{
   'name': instance.name,
-  if (instance.description case final value?) 'description': value,
+  'description': ?instance.description,
   'in': _$ApiKeyLocationEnumMap[instance.location]!,
   'type': instance.$type,
 };
@@ -1107,76 +994,74 @@ const _$ApiKeyLocationEnumMap = {
   ApiKeyLocation.cookie: 'cookie',
 };
 
-_$SecuritySchemeHttpImpl _$$SecuritySchemeHttpImplFromJson(
-  Map<String, dynamic> json,
-) => _$SecuritySchemeHttpImpl(
-  scheme: $enumDecode(_$HttpSecuritySchemeEnumMap, json['scheme']),
-  bearerFormat: json['bearerFormat'] as String?,
-  description: json['description'] as String?,
-  $type: json['type'] as String?,
-);
+_SecuritySchemeHttp _$SecuritySchemeHttpFromJson(Map<String, dynamic> json) =>
+    _SecuritySchemeHttp(
+      scheme: $enumDecode(_$HttpSecuritySchemeEnumMap, json['scheme']),
+      bearerFormat: json['bearerFormat'] as String?,
+      description: json['description'] as String?,
+      $type: json['type'] as String?,
+    );
 
-Map<String, dynamic> _$$SecuritySchemeHttpImplToJson(
-  _$SecuritySchemeHttpImpl instance,
-) => <String, dynamic>{
-  'scheme': _$HttpSecuritySchemeEnumMap[instance.scheme]!,
-  if (instance.bearerFormat case final value?) 'bearerFormat': value,
-  if (instance.description case final value?) 'description': value,
-  'type': instance.$type,
-};
+Map<String, dynamic> _$SecuritySchemeHttpToJson(_SecuritySchemeHttp instance) =>
+    <String, dynamic>{
+      'scheme': _$HttpSecuritySchemeEnumMap[instance.scheme]!,
+      'bearerFormat': ?instance.bearerFormat,
+      'description': ?instance.description,
+      'type': instance.$type,
+    };
 
 const _$HttpSecuritySchemeEnumMap = {
   HttpSecurityScheme.basic: 'basic',
   HttpSecurityScheme.bearer: 'bearer',
 };
 
-_$SecuritySchemeMutualTLSImpl _$$SecuritySchemeMutualTLSImplFromJson(
+_SecuritySchemeMutualTLS _$SecuritySchemeMutualTLSFromJson(
   Map<String, dynamic> json,
-) => _$SecuritySchemeMutualTLSImpl(
+) => _SecuritySchemeMutualTLS(
   description: json['description'] as String?,
   $type: json['type'] as String?,
 );
 
-Map<String, dynamic> _$$SecuritySchemeMutualTLSImplToJson(
-  _$SecuritySchemeMutualTLSImpl instance,
+Map<String, dynamic> _$SecuritySchemeMutualTLSToJson(
+  _SecuritySchemeMutualTLS instance,
 ) => <String, dynamic>{
-  if (instance.description case final value?) 'description': value,
+  'description': ?instance.description,
   'type': instance.$type,
 };
 
-_$SecuritySchemeOauth2Impl _$$SecuritySchemeOauth2ImplFromJson(
+_SecuritySchemeOauth2 _$SecuritySchemeOauth2FromJson(
   Map<String, dynamic> json,
-) => _$SecuritySchemeOauth2Impl(
+) => _SecuritySchemeOauth2(
   description: json['description'] as String?,
   flows: OAuthFlows.fromJson(json['flows'] as Map<String, dynamic>),
   $type: json['type'] as String?,
 );
 
-Map<String, dynamic> _$$SecuritySchemeOauth2ImplToJson(
-  _$SecuritySchemeOauth2Impl instance,
+Map<String, dynamic> _$SecuritySchemeOauth2ToJson(
+  _SecuritySchemeOauth2 instance,
 ) => <String, dynamic>{
-  if (instance.description case final value?) 'description': value,
+  'description': ?instance.description,
   'flows': instance.flows.toJson(),
   'type': instance.$type,
 };
 
-_$SecuritySchemeOpenIdConnectImpl _$$SecuritySchemeOpenIdConnectImplFromJson(
+_SecuritySchemeOpenIdConnect _$SecuritySchemeOpenIdConnectFromJson(
   Map<String, dynamic> json,
-) => _$SecuritySchemeOpenIdConnectImpl(
+) => _SecuritySchemeOpenIdConnect(
   description: json['description'] as String?,
   url: json['openIdConnectUrl'] as String,
   $type: json['type'] as String?,
 );
 
-Map<String, dynamic> _$$SecuritySchemeOpenIdConnectImplToJson(
-  _$SecuritySchemeOpenIdConnectImpl instance,
+Map<String, dynamic> _$SecuritySchemeOpenIdConnectToJson(
+  _SecuritySchemeOpenIdConnect instance,
 ) => <String, dynamic>{
-  if (instance.description case final value?) 'description': value,
+  'description': ?instance.description,
   'openIdConnectUrl': instance.url,
   'type': instance.$type,
 };
 
-_$ServerImpl _$$ServerImplFromJson(Map<String, dynamic> json) => _$ServerImpl(
+_Server _$ServerFromJson(Map<String, dynamic> json) => _Server(
   url: json['url'] as String?,
   description: json['description'] as String?,
   variables: (json['variables'] as Map<String, dynamic>?)?.map(
@@ -1184,17 +1069,14 @@ _$ServerImpl _$$ServerImplFromJson(Map<String, dynamic> json) => _$ServerImpl(
   ),
 );
 
-Map<String, dynamic> _$$ServerImplToJson(_$ServerImpl instance) =>
-    <String, dynamic>{
-      if (instance.url case final value?) 'url': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.variables?.map((k, e) => MapEntry(k, e.toJson()))
-          case final value?)
-        'variables': value,
-    };
+Map<String, dynamic> _$ServerToJson(_Server instance) => <String, dynamic>{
+  'url': ?instance.url,
+  'description': ?instance.description,
+  'variables': ?instance.variables?.map((k, e) => MapEntry(k, e.toJson())),
+};
 
-_$ServerVariableImpl _$$ServerVariableImplFromJson(Map<String, dynamic> json) =>
-    _$ServerVariableImpl(
+_ServerVariable _$ServerVariableFromJson(Map<String, dynamic> json) =>
+    _ServerVariable(
       enumValue: (json['enum'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -1202,15 +1084,14 @@ _$ServerVariableImpl _$$ServerVariableImplFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String?,
     );
 
-Map<String, dynamic> _$$ServerVariableImplToJson(
-  _$ServerVariableImpl instance,
-) => <String, dynamic>{
-  if (instance.enumValue case final value?) 'enum': value,
-  'default': instance.defaultValue,
-  if (instance.description case final value?) 'description': value,
-};
+Map<String, dynamic> _$ServerVariableToJson(_ServerVariable instance) =>
+    <String, dynamic>{
+      'enum': ?instance.enumValue,
+      'default': instance.defaultValue,
+      'description': ?instance.description,
+    };
 
-_$TagImpl _$$TagImplFromJson(Map<String, dynamic> json) => _$TagImpl(
+_Tag _$TagFromJson(Map<String, dynamic> json) => _Tag(
   name: json['name'] as String,
   description: json['description'] as String?,
   externalDocs: json['externalDocs'] == null
@@ -1218,13 +1099,13 @@ _$TagImpl _$$TagImplFromJson(Map<String, dynamic> json) => _$TagImpl(
       : ExternalDocs.fromJson(json['externalDocs'] as Map<String, dynamic>),
 );
 
-Map<String, dynamic> _$$TagImplToJson(_$TagImpl instance) => <String, dynamic>{
+Map<String, dynamic> _$TagToJson(_Tag instance) => <String, dynamic>{
   'name': instance.name,
-  if (instance.description case final value?) 'description': value,
-  if (instance.externalDocs?.toJson() case final value?) 'externalDocs': value,
+  'description': ?instance.description,
+  'externalDocs': ?instance.externalDocs?.toJson(),
 };
 
-_$XmlImpl _$$XmlImplFromJson(Map<String, dynamic> json) => _$XmlImpl(
+_Xml _$XmlFromJson(Map<String, dynamic> json) => _Xml(
   name: json['name'] as String?,
   namespace: json['namespace'] as String?,
   prefix: json['prefix'] as String?,
@@ -1232,10 +1113,10 @@ _$XmlImpl _$$XmlImplFromJson(Map<String, dynamic> json) => _$XmlImpl(
   wrapped: json['wrapped'] as bool?,
 );
 
-Map<String, dynamic> _$$XmlImplToJson(_$XmlImpl instance) => <String, dynamic>{
-  if (instance.name case final value?) 'name': value,
-  if (instance.namespace case final value?) 'namespace': value,
-  if (instance.prefix case final value?) 'prefix': value,
-  if (instance.attribute case final value?) 'attribute': value,
-  if (instance.wrapped case final value?) 'wrapped': value,
+Map<String, dynamic> _$XmlToJson(_Xml instance) => <String, dynamic>{
+  'name': ?instance.name,
+  'namespace': ?instance.namespace,
+  'prefix': ?instance.prefix,
+  'attribute': ?instance.attribute,
+  'wrapped': ?instance.wrapped,
 };

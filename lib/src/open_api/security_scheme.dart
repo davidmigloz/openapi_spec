@@ -26,7 +26,7 @@ enum HttpSecurityScheme {
 
 /// Text
 @Freezed(unionKey: 'type')
-class SecurityScheme with _$SecurityScheme {
+sealed class SecurityScheme with _$SecurityScheme {
   // ------------------------------------------
   // FACTORY: SecurityScheme.apiKey
   // ------------------------------------------
